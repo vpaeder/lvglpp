@@ -9,8 +9,6 @@ idf_component_register(
     "src/lvgl/draw/image.cpp"
 
     "src/lvgl/font/font.cpp"
-  
-    "src/lvgl/libs/lv_pngle.c"
     
     "src/lvgl/misc/anim.cpp"
     "src/lvgl/misc/area.cpp"

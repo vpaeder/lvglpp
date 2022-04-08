@@ -2,11 +2,15 @@
 
 This package contains a rather bushy wrapper for LVGL. I originally needed to program a simple user interface, but I didn't want to write a GUI framework from scratch, and found LVGL rather nice. Only that it's written in C. So I started writing C++ classes for the part of the code I wanted to use, and then it got out of control. Now most of the library has some kind of wrapper class provided, although most of them haven't been tested yet (they compile).
 
+This is a work in progress. I will likely improve things as I use it, which will take between one day and forever. I of course welcome any contribution.
+
+Note that I'm not part of the LVGL team. If you have requests related to LVGL itself, please rather ask them.
+
 ## Structure
 
 I tried to mirror the directory structure of LVGL to some degree (with exceptions with *extra*, *hal* directories). A number of types that are defined in multiple files are compiled together as one (e.g. style, image, draw). I've put all the widgets (include extra ones) in the *widgets* directory.
 
-My point was to provide functions that take a certain LVGL object type as first argument as a class method. For instance, all functions taking a `lv_obj_t*` as first argument end up as method of the `Object` class. I tried to replace raw pointer args either with a C++ class instance passed by reference or a smart pointer.
+My point was to provide functions that take a certain LVGL object type as first argument as a class method. For instance, all functions taking a `lv_obj_t*` as first argument end up as methods of the `Object` class. I tried to replace raw pointer args either with a C++ class instance passed by reference or a smart pointer.
 
 There are two template classes in *lv_thin_wrapper.h* to facilitate encapsulation. The 1st one, `ThinWrapper<lv_class>`, stores an instance of type `lv_class`. The other one, `ThinPointerWrapper<lv_class, lv_deleter>` stores a `unique_ptr` of type `lv_class` with custom deleter function `lv_deleter`. A number of LVGL types have an associated deleter function, which can be provided there. For widgets, there's a template class called `Widget<lv_allocator>` that provides a constructor to nest objects.
 
@@ -76,3 +80,7 @@ There is a documentation generated from docstrings in the *doc* folder. See [her
 ## Tests
 
 Time to write some...
+
+## Examples
+
+Time to write some too...
