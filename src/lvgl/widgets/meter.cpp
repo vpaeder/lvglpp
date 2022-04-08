@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Meter::Meter() {
-        this->initialize();
-    }
-
-    Meter::Meter(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Meter::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_meter_create(nullptr));
-    }
-    void Meter::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_meter_create(parent.raw_ptr()));
-    }
-
     std::shared_ptr<lv_meter_scale_t> Meter::add_scale() {
         return std::shared_ptr<lv_meter_scale_t>(lv_meter_add_scale(this->raw_ptr()));
     }

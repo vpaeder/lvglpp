@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Tileview::Tileview() {
-        this->initialize();
-    }
-
-    Tileview::Tileview(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Tileview::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_tileview_create(nullptr));
-    }
-    void Tileview::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_tileview_create(parent.raw_ptr()));
-    }
-
     Object Tileview::add_tile(uint8_t col_id, uint8_t row_id, lv_dir_t dir) {
         return Object(lv_tileview_add_tile(this->raw_ptr(), col_id, row_id, dir));
     }

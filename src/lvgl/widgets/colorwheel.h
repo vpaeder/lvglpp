@@ -19,12 +19,12 @@ namespace lvgl::widgets {
         /** \fn void initialize()
          *  \brief Initialize object.
          */
-        void initialize() override;
+        void initialize();
         /** \fn void initialize(Object & parent)
          *  \brief Initialize object and assign parent object.
          *  \param parent: parent LVGL object.
          */
-        void initialize(Object & parent) override;
+        void initialize(Object & parent);
         /** \fn void initialize(bool knob_recolor)
          *  \brief Initialize object with parameters.
          *  \param knob_recolor: if true, sets knob color to selected color.

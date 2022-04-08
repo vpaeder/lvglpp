@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Label::Label() {
-        this->initialize();
-    }
-
-    Label::Label(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Label::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_label_create(nullptr));
-    }
-    void Label::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_label_create(parent.raw_ptr()));
-    }
-
     void Label::set_text(const std::string & text) {
         lv_label_set_text(this->raw_ptr(), text.c_str());
     }

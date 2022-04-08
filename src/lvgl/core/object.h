@@ -19,17 +19,6 @@ namespace lvgl::core {
      *  \brief Wraps a lv_obj_t object. This is the generic LVGL object type.
      */
     class Object : public ThinPointerWrapper<lv_obj_t, lv_obj_del> {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        virtual void initialize() {};
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        virtual void initialize(Object & parent) {};
-
     public:
         using ThinPointerWrapper::ThinPointerWrapper;
 
@@ -863,6 +852,47 @@ namespace lvgl::core {
          *  \param cb: callback function called for each object in the tree.
          */
         void tree_walk(lv_obj_tree_walk_cb_t cb) const;
+    };
+
+
+    /** \brief Wraps a lv_obj_t object created with the given allocator.
+     *  \tparam lv_allocator: an allocator function that returns a pointer
+     *  to a lv_obj_t instance.
+     */
+    template <auto lv_allocator> class Widget : public Object {
+    protected:
+        /** \fn void initialize()
+         *  \brief Initialize object.
+         */
+        virtual void initialize() {
+            this->lv_obj = LvPointerType(lv_allocator(nullptr));
+        }
+
+        /** \fn void initialize(Object & parent)
+         *  \brief Initialize object and assign parent object.
+         *  \param parent: parent LVGL object.
+         */
+        virtual void initialize(Object & parent) {
+            this->lv_obj = LvPointerType(lv_allocator(parent.raw_ptr()));
+        }
+    
+    public:
+        using Object::Object;
+
+        /** \fn Widget()
+         *  \brief Default constructor.
+         */
+        Widget() {
+            this->initialize();
+        }
+
+        /** \fn Widget(Object & parent)
+         *  \brief Constructor with parent object.
+         */
+        Widget(Object & parent) {
+            this->initialize(parent);
+        }
+
     };
 
 }

@@ -14,29 +14,10 @@ namespace lvgl::widgets {
     /** \class ImageButton
      *  \brief Wraps a lv_imgbtn_t object.
      */
-    class ImageButton : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class ImageButton : public Widget<lv_imgbtn_create> {
     public:
-        /** \fn ImageButton()
-         *  \brief Default constructor.
-         */
-        ImageButton();
-        /** \fn ImageButton(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        ImageButton(Object & parent);
-
+        using Widget::Widget;
+        
         /** \fn void set_src_left_img(lv_imgbtn_state_t state, const ImageDescriptor & src)
          *  \brief Sets source of left image for given state from image buffer.
          *  \param state: button state.

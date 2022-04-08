@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Bar::Bar() {
-        this->initialize();
-    }
-
-    Bar::Bar(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Bar::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_bar_create(nullptr));
-    }
-    void Bar::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_bar_create(parent.raw_ptr()));
-    }
-
     void Bar::set_value(int32_t value, lv_anim_enable_t anim) {
         lv_bar_set_value(this->raw_ptr(), value, anim);
     }

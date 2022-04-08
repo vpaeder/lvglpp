@@ -14,29 +14,10 @@ namespace lvgl::widgets {
     /** \class Menu
      *  \brief Wraps a lv_menu_t object.
      */
-    class Menu : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Menu : public Widget<lv_menu_create> {
     public:
-        /** \fn Menu()
-         *  \brief Default constructor.
-         */
-        Menu();
-        /** \fn Menu(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Menu(Object & parent);
-
+        using Widget::Widget;
+        
         /** \fn Object page_create(const std::string & title)
          *  \brief Creates a menu page object.
          *  \param title: page title.

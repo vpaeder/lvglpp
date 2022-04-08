@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class Image
      *  \brief Wraps a lv_img_t object.
      */
-    class Image : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Image : public Widget<lv_img_create> {
     public:
-        /** \fn Image()
-         *  \brief Default constructor.
-         */
-        Image();
-        /** \fn Image(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Image(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_src(const ImageDescriptor & src)
          *  \brief Sets image source from image descriptor.

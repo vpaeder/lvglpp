@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class Led
      *  \brief Wraps a lv_led_t object.
      */
-    class Led : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Led : public Widget<lv_led_create> {
     public:
-        /** \fn Led()
-         *  \brief Default constructor.
-         */
-        Led();
-        /** \fn Led(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Led(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_color(lv_color_t color)
          *  \brief Sets LED color.

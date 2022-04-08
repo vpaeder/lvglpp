@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Arc::Arc() {
-        this->initialize();
-    }
-
-    Arc::Arc(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Arc::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_arc_create(nullptr));
-    }
-    void Arc::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_arc_create(parent.raw_ptr()));
-    }
-
     void Arc::set_start_angle(uint16_t start) {
         lv_arc_set_start_angle(this->raw_ptr(), start);
     }

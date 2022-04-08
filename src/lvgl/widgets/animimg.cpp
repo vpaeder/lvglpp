@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    AnimatedImage::AnimatedImage() {
-        this->initialize();
-    }
-
-    AnimatedImage::AnimatedImage(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void AnimatedImage::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_animimg_create(nullptr));
-    }
-    void AnimatedImage::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_animimg_create(parent.raw_ptr()));
-    }
-
     void AnimatedImage::set_src(const std::vector<ImageDescriptor> & imgs) {
         this->dsc = std::make_unique<lv_img_dsc_t*[]>(imgs.size());
         for (size_t n=0; n<imgs.size(); n++) {

@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    ButtonMatrix::ButtonMatrix() {
-        this->initialize();
-    }
-
-    ButtonMatrix::ButtonMatrix(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void ButtonMatrix::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_btnmatrix_create(nullptr));
-    }
-    void ButtonMatrix::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_btnmatrix_create(parent.raw_ptr()));
-    }
-
     void ButtonMatrix::set_map(const std::vector<std::string> & map) {
         this->map = str_vector_to_char_array(map);
         // this->map is defined but this->map.get() returns a char** and not

@@ -21,21 +21,6 @@ namespace lvgl::widgets {
     }
 
 
-    SpanGroup::SpanGroup() {
-        this->initialize();
-    }
-
-    SpanGroup::SpanGroup(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void SpanGroup::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_spangroup_create(nullptr));
-    }
-    void SpanGroup::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_spangroup_create(parent.raw_ptr()));
-    }
-
     Span SpanGroup::new_span() {
         return Span(lv_spangroup_new_span(this->raw_ptr()));
     }

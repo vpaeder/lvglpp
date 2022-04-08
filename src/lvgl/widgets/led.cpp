@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Led::Led() {
-        this->initialize();
-    }
-
-    Led::Led(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Led::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_led_create(nullptr));
-    }
-    void Led::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_led_create(parent.raw_ptr()));
-    }
-
     void Led::set_color(lv_color_t color) {
         lv_led_set_color(this->raw_ptr(), color);
     }

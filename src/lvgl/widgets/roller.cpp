@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Roller::Roller() {
-        this->initialize();
-    }
-
-    Roller::Roller(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Roller::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_roller_create(nullptr));
-    }
-    void Roller::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_roller_create(parent.raw_ptr()));
-    }
-
     void Roller::set_options(const std::string & options, lv_roller_mode_t mode) {
         lv_roller_set_options(this->raw_ptr(), options.c_str(), mode);
     }

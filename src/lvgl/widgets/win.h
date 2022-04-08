@@ -16,9 +16,6 @@ namespace lvgl::widgets {
      */
     class Window : public Object {
     protected:
-        void initialize() override {}
-        void initialize(Object & parent) override {}
-
         /** \fn void initialize(lv_coord_t header_height)
          *  \brief Initialize object.
          *  \param header_height: size of window header.

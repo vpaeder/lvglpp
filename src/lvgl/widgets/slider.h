@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class Slider
      *  \brief Wraps a lv_slider_t object.
      */
-    class Slider : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Slider : public Widget<lv_slider_create> {
     public:
-        /** \fn Slider()
-         *  \brief Default constructor.
-         */
-        Slider();
-        /** \fn Slider(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Slider(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_value(int32_t value, lv_anim_enable_t anim)
          *  \brief Sets slider value.

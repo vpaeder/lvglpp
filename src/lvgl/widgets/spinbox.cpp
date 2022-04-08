@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Spinbox::Spinbox() {
-        this->initialize();
-    }
-
-    Spinbox::Spinbox(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Spinbox::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_spinbox_create(nullptr));
-    }
-    void Spinbox::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_spinbox_create(parent.raw_ptr()));
-    }
-
     void Spinbox::set_value(int32_t i) {
         lv_spinbox_set_value(this->raw_ptr(), i);
     }

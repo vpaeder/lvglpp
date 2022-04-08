@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Table::Table() {
-        this->initialize();
-    }
-
-    Table::Table(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Table::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_table_create(nullptr));
-    }
-    void Table::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_table_create(parent.raw_ptr()));
-    }
-
     void Table::set_cell_value(uint16_t row, uint16_t col, const std::string & txt) {
         lv_table_set_cell_value(this->raw_ptr(), row, col, txt.c_str());
     }

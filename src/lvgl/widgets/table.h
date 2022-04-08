@@ -15,29 +15,10 @@ namespace lvgl::widgets {
     /** \class Table
      *  \brief Wraps a lv_table_t object.
      */
-    class Table : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Table : public Widget<lv_table_create> {
     public:
-        /** \fn Table()
-         *  \brief Default constructor.
-         */
-        Table();
-        /** \fn Table(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Table(Object & parent);
-
+        using Widget::Widget;
+        
         /** \fn void set_cell_value(uint16_t row, uint16_t col, const std::string & txt)
          *  \brief Sets table cell value.
          *  \param row: cell row index.

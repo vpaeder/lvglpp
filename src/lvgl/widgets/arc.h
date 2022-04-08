@@ -17,28 +17,9 @@ namespace lvgl::widgets {
     /** \class Arc
      *  \brief Wraps a lv_arc_t object. This is a circular progress/indicator bar.
      */
-    class Arc : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Arc : public Widget<lv_arc_create> {
     public:
-        /** \fn Arc()
-         *  \brief Default constructor.
-         */
-        Arc();
-        /** \fn Arc(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Arc(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_start_angle(uint16_t start)
          *  \brief Sets the start angle of the arc. 0 deg: right, 90 bottom, etc.

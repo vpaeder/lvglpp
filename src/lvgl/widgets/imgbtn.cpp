@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    ImageButton::ImageButton() {
-        this->initialize();
-    }
-
-    ImageButton::ImageButton(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void ImageButton::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_imgbtn_create(nullptr));
-    }
-    void ImageButton::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_imgbtn_create(parent.raw_ptr()));
-    }
-
     void ImageButton::set_src_left_img(lv_imgbtn_state_t state, const ImageDescriptor & src) {
         reinterpret_cast<lv_imgbtn_t*>(this->raw_ptr())->img_src_left[state] = src.raw_ptr();
     }

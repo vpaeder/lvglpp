@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class Dropdown
      *  \brief Wraps a lv_dropdown_t object. This makes a dropdown menu.
      */
-    class Dropdown : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Dropdown : public Widget<lv_dropdown_create> {
     public:
-        /** \fn Dropdown()
-         *  \brief Default constructor.
-         */
-        Dropdown();
-        /** \fn Dropdown(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Dropdown(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_text(const std::string & txt)
          *  \brief Sets text displayed on dropdown menu.

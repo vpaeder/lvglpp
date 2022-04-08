@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class Bar
      *  \brief Wraps a lv_bar_t object. This is a linear progress/indicator bar.
      */
-    class Bar : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Bar : public Widget<lv_bar_create> {
     public:
-        /** \fn Bar()
-         *  \brief Default constructor.
-         */
-        Bar();
-        /** \fn Bar(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Bar(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_value(int32_t value, lv_anim_enable_t anim)
          *  \brief Sets the bar value.

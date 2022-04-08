@@ -16,8 +16,6 @@ namespace lvgl::widgets {
      */
     class Tabview : public Object {
     protected:
-        void initialize() override {}
-        void initialize(Object & parent) override {}
         /** \fn void initialize(lv_dir_t tab_pos, lv_coord_t tab_size)
          *  \brief Initialize object with parameters.
          *  \param tab_pos: orientation of tabs (LV_DIR_TOP/BOTTOM/LEFT/RIGHT).

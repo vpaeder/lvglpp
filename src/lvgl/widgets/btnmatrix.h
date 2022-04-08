@@ -14,34 +14,15 @@ namespace lvgl::widgets {
     /** \class ButtonMatrix
      *  \brief Wraps a lv_btnmatrix_t object.
      */
-    class ButtonMatrix : public Object {
+    class ButtonMatrix : public Widget<lv_btnmatrix_create> {
     private:
         /** \property RawDblArray<char> map
          *  \brief Button map.
          */
         RawDblArray<char> map;
 
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
     public:
-        /** \fn ButtonMatrix()
-         *  \brief Default constructor.
-         */
-        ButtonMatrix();
-        /** \fn ButtonMatrix(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        ButtonMatrix(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_map(const std::vector<std::string> & map)
          *  \brief Sets button map. This is an array of strings with

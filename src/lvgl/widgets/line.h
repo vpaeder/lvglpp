@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class Line
      *  \brief Wraps a lv_line_t object.
      */
-    class Line : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Line : public Widget<lv_line_create> {
     public:
-        /** \fn Line()
-         *  \brief Default constructor.
-         */
-        Line();
-        /** \fn Line(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Line(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_points(const std::vector<lv_point_t> points, uint16_t point_num)
          *  \brief Sets line points. Points array must remain allocated.

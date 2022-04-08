@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    TextArea::TextArea() {
-        this->initialize();
-    }
-
-    TextArea::TextArea(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void TextArea::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_textarea_create(nullptr));
-    }
-    void TextArea::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_textarea_create(parent.raw_ptr()));
-    }
-
     void TextArea::add_char(uint32_t c) {
         lv_textarea_add_char(this->raw_ptr(), c);
     }

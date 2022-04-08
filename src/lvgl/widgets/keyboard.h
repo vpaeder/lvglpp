@@ -14,7 +14,7 @@ namespace lvgl::widgets {
     /** \class Keyboard
      *  \brief Wraps a lv_keyboard_t object.
      */
-    class Keyboard : public Object {
+    class Keyboard : public Widget<lv_keyboard_create> {
     private:
         /** \property std::vector< RawDblArray<char> > map
          *  \brief Keyboard maps.
@@ -33,15 +33,7 @@ namespace lvgl::widgets {
         void initialize(Object & parent) override;
     
     public:
-        /** \fn Keyboard()
-         *  \brief Default constructor.
-         */
-        Keyboard();
-        /** \fn Keyboard(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Keyboard(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_textarea(Object & ta)
          *  \brief Sets the text area towards which key events are sent.

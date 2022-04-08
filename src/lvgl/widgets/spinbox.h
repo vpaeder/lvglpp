@@ -14,29 +14,10 @@ namespace lvgl::widgets {
     /** \class Spinbox
      *  \brief Wraps a lv_spinbox_t object.
      */
-    class Spinbox : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Spinbox : public Widget<lv_spinbox_create> {
     public:
-        /** \fn Spinbox()
-         *  \brief Default constructor.
-         */
-        Spinbox();
-        /** \fn Spinbox(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Spinbox(Object & parent);
-
+        using Widget::Widget;
+        
         /** \fn void set_value(int32_t i)
          *  \brief Sets spinbox value.
          *  \param i: target value.

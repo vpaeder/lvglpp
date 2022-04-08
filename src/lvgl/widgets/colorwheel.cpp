@@ -1,4 +1,4 @@
-/** \file button.cpp
+/** \file colorwheel.cpp
  *  \brief Implementation file for C++ wrapper for lv_colorwheel_t objects.
  *
  *  Author: Vincent Paeder
@@ -33,11 +33,11 @@ namespace lvgl::widgets {
     }
 
     void ColorWheel::initialize(bool knob_recolor) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_colorwheel_create(nullptr, knob_recolor));
+        this->lv_obj = LvPointerType(lv_colorwheel_create(nullptr, knob_recolor));
     }
 
     void ColorWheel::initialize(Object & parent, bool knob_recolor) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_colorwheel_create(parent.raw_ptr(), knob_recolor));
+        this->lv_obj = LvPointerType(lv_colorwheel_create(parent.raw_ptr(), knob_recolor));
     }
 
     bool ColorWheel::set_hsv(lv_color_hsv_t hsv) {

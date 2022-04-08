@@ -13,28 +13,9 @@ namespace lvgl::widgets {
     /** \class Checkbox
      *  \brief Wraps a lv_checkbox_t object.
      */
-    class Checkbox : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Checkbox : public Widget<lv_checkbox_create> {
     public:
-        /** \fn Checkbox()
-         *  \brief Default constructor.
-         */
-        Checkbox();
-        /** \fn Checkbox(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Checkbox(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_text(const std::string & txt)
          *  \brief Sets checkbox text.

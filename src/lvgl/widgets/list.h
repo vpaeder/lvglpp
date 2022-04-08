@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class List
      *  \brief Wraps a lv_list_t object.
      */
-    class List : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class List : public Widget<lv_list_create> {
     public:
-        /** \fn List()
-         *  \brief Default constructor.
-         */
-        List();
-        /** \fn List(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        List(Object & parent);
+        using Widget::Widget;
 
         /** \fn Object add_text(const std::string & txt)
          *  \brief Adds a text entry to the list.

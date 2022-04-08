@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class Chart
      *  \brief Wraps a lv_chart_t object.
      */
-    class Chart : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Chart : public Widget<lv_chart_create> {
     public:
-        /** \fn Chart()
-         *  \brief Default constructor.
-         */
-        Chart();
-        /** \fn Chart(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Chart(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_type(lv_chart_type_t type)
          *  \brief Sets chart type.

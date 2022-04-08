@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Image::Image() {
-        this->initialize();
-    }
-
-    Image::Image(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Image::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_img_create(nullptr));
-    }
-    void Image::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_img_create(parent.raw_ptr()));
-    }
-
     void Image::set_src(const ImageDescriptor & src) {
         lv_img_set_src(this->raw_ptr(), src.raw_ptr());
     }

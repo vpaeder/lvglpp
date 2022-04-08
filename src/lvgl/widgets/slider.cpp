@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Slider::Slider() {
-        this->initialize();
-    }
-
-    Slider::Slider(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Slider::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_slider_create(nullptr));
-    }
-    void Slider::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_slider_create(parent.raw_ptr()));
-    }
-
     void Slider::set_value(int32_t value, lv_anim_enable_t anim) {
         lv_slider_set_value(this->raw_ptr(), value, anim);
     }

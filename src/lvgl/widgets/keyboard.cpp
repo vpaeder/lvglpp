@@ -8,21 +8,13 @@
 
 namespace lvgl::widgets {
 
-    Keyboard::Keyboard() {
-        this->initialize();
-    }
-
-    Keyboard::Keyboard(Object & parent) {
-        this->initialize(parent);
-    }
-
     void Keyboard::initialize() {
         this->map = std::vector<RawDblArray<char>>(8);
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_keyboard_create(nullptr));
+        Widget::initialize();
     }
     void Keyboard::initialize(Object & parent) {
         this->map = std::vector<RawDblArray<char>>(8);
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_keyboard_create(parent.raw_ptr()));
+        Widget::initialize(parent);
     }
 
     void Keyboard::set_textarea(Object & ta) {

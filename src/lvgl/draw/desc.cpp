@@ -1,4 +1,4 @@
-/** \file draw.cpp
+/** \file desc.cpp
  *  \brief Implementation file for C++ wrapper for LVGL draw descriptors.
  *
  *  Author: Vincent Paeder

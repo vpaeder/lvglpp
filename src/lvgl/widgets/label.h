@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class Label
      *  \brief Wraps a lv_label_t object.
      */
-    class Label : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Label : public Widget<lv_label_create> {
     public:
-        /** \fn Label()
-         *  \brief Default constructor.
-         */
-        Label();
-        /** \fn Label(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Label(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_text(const std::string & text)
          *  \brief Sets label text.

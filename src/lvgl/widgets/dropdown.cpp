@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Dropdown::Dropdown() {
-        this->initialize();
-    }
-
-    Dropdown::Dropdown(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Dropdown::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_dropdown_create(nullptr));
-    }
-    void Dropdown::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_dropdown_create(parent.raw_ptr()));
-    }
-
     void Dropdown::set_text(const std::string & txt) {
         if (txt.size()==0) {
             lv_dropdown_set_text(this->raw_ptr(), nullptr);

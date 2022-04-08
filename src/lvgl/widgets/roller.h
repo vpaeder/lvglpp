@@ -15,28 +15,9 @@ namespace lvgl::widgets {
      *  \brief Wraps a lv_roller_t object. This is a widget that lets you
      *  scroll through different options by gestures.
      */
-    class Roller : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Roller : public Widget<lv_roller_create> {
     public:
-        /** \fn Roller()
-         *  \brief Default constructor.
-         */
-        Roller();
-        /** \fn Roller(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Roller(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_options(const std::string & options, lv_roller_mode_t mode)
          *  \brief Sets roller options.

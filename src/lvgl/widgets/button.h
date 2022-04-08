@@ -11,31 +11,9 @@ namespace lvgl::widgets {
 
     using namespace lvgl::core;
     
-    /** \class Button
+    /** \typedef Button
      *  \brief Wraps a lv_btn_t object.
      */
-    class Button : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
-    public:
-        /** \fn Button()
-         *  \brief Default constructor.
-         */
-        Button();
-        /** \fn Button(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Button(Object & parent);
-    };
+    using Button = Widget<lv_btn_create>;
 
 }

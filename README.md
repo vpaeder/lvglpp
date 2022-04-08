@@ -1,6 +1,6 @@
 # A C++ wrapper for LVGL
 
-This package contains a rather bushy wrapper for LVGL. This wasn't the original goal here, but I didn't want to write a GUI framework from scratch, and found LVGL rather nice. Only that it's written in C. So I started writing C++ classes for the part of the code I wanted to use, and then it got out of control. Now most of the library has some kind of wrapper class provided, although most of them haven't been tested yet (they compile).
+This package contains a rather bushy wrapper for LVGL. I originally needed to program a simple user interface, but I didn't want to write a GUI framework from scratch, and found LVGL rather nice. Only that it's written in C. So I started writing C++ classes for the part of the code I wanted to use, and then it got out of control. Now most of the library has some kind of wrapper class provided, although most of them haven't been tested yet (they compile).
 
 ## Structure
 
@@ -8,7 +8,7 @@ I tried to mirror the directory structure of LVGL to some degree (with exception
 
 My point was to provide functions that take a certain LVGL object type as first argument as a class method. For instance, all functions taking a `lv_obj_t*` as first argument end up as method of the `Object` class. I tried to replace raw pointer args either with a C++ class instance passed by reference or a smart pointer.
 
-There are two template classes in *lv_thin_wrapper.h* to facilitate encapsulation. The 1st one, `ThinWrapper<lv_class>`, stores an instance of type `lv_class`. The other one, `ThinPointerWrapper<lv_class, lv_deleter>` stores a `unique_ptr` of type `lv_class` with custom deleter function `lv_deleter`. A number of LVGL types have an associated deleter function, which can be provided there.
+There are two template classes in *lv_thin_wrapper.h* to facilitate encapsulation. The 1st one, `ThinWrapper<lv_class>`, stores an instance of type `lv_class`. The other one, `ThinPointerWrapper<lv_class, lv_deleter>` stores a `unique_ptr` of type `lv_class` with custom deleter function `lv_deleter`. A number of LVGL types have an associated deleter function, which can be provided there. For widgets, there's a template class called `Widget<lv_allocator>` that provides a constructor to nest objects.
 
 Here is a list of classes with the corresponding link to LVGL:
 | Class | File | Wrapped type | LVGL file(s) |
@@ -71,7 +71,7 @@ Here is a list of classes with the corresponding link to LVGL:
 
 # API documentation
 
-There is a documentation generated from docstrings in the *doc* folder. 
+There is a documentation generated from docstrings in the *doc* folder. See [here](doc/html/index.html).
 
 ## Tests
 

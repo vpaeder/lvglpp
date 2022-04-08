@@ -41,28 +41,9 @@ namespace lvgl::widgets {
     /** \class SpanGroup
      *  \brief Wraps a lv_spangroup_t object.
      */
-    class SpanGroup : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class SpanGroup : public Widget<lv_spangroup_create> {
     public:
-        /** \fn SpanGroup()
-         *  \brief Default constructor.
-         */
-        SpanGroup();
-        /** \fn SpanGroup(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        SpanGroup(Object & parent);
+        using Widget::Widget;
 
         /** \fn Span new_span()
          *  \brief Creates a new span.

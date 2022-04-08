@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class Canvas
      *  \brief Wraps a lv_canvas_t object.
      */
-    class Canvas : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Canvas : public Widget<lv_canvas_create> {
     public:
-        /** \fn Canvas()
-         *  \brief Default constructor.
-         */
-        Canvas();
-        /** \fn Canvas(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Canvas(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_buffer(std::shared_ptr<void> buf, lv_coord_t w, lv_coord_t h, lv_img_cf_t cf)
          *  \brief Sets buffer in which canvas data will be stored.

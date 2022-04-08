@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class Meter
      *  \brief Wraps a lv_meter_t object.
      */
-    class Meter : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Meter : public Widget<lv_meter_create> {
     public:
-        /** \fn Meter()
-         *  \brief Default constructor.
-         */
-        Meter();
-        /** \fn Meter(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Meter(Object & parent);
+        using Widget::Widget;
 
         /** \fn std::shared_ptr<lv_meter_scale_t> add_scale()
          *  \brief Creates a new scale for the meter.

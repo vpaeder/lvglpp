@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Menu::Menu() {
-        this->initialize();
-    }
-
-    Menu::Menu(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Menu::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_menu_create(nullptr));
-    }
-    void Menu::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_menu_create(parent.raw_ptr()));
-    }
-
     Object Menu::page_create(const std::string & title) {
         return Object(lv_menu_page_create(this->raw_ptr(), const_cast<char*>(title.c_str())));
     }

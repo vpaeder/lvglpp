@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Canvas::Canvas() {
-        this->initialize();
-    }
-
-    Canvas::Canvas(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Canvas::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_canvas_create(nullptr));
-    }
-    void Canvas::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_canvas_create(parent.raw_ptr()));
-    }
-
     void Canvas::set_buffer(std::shared_ptr<void> buf, lv_coord_t w, lv_coord_t h, lv_img_cf_t cf) {
         lv_canvas_set_buffer(this->raw_ptr(), buf.get(), w, h, cf);
     }

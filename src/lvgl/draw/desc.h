@@ -1,4 +1,4 @@
-/** \file draw.h
+/** \file desc.h
  *  \brief Header file for C++ wrapper for LVGL draw descriptors.
  *
  *  Author: Vincent Paeder

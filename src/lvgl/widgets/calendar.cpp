@@ -7,21 +7,6 @@
 #include "calendar.h"
 
 namespace lvgl::widgets {
-
-    Calendar::Calendar() {
-        this->initialize();
-    }
-
-    Calendar::Calendar(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Calendar::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_calendar_create(nullptr));
-    }
-    void Calendar::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_calendar_create(parent.raw_ptr()));
-    }
  
     void Calendar::set_today_date(uint32_t year, uint32_t month, uint32_t day) {
         lv_calendar_set_today_date(this->raw_ptr(), year, month, day);

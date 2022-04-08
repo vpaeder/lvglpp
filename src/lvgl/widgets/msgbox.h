@@ -24,8 +24,6 @@ namespace lvgl::widgets {
         RawDblArray<char> btn_txts;
 
     protected:
-        void initialize() override {}
-        void initialize(Object & parent) override {}
         /** \fn void initialize(const std::string & title, const std::string & txt,
          *                      const std::vector<std::string> & btn_txts,
          *                      bool add_close_btn)

@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    List::List() {
-        this->initialize();
-    }
-
-    List::List(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void List::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_list_create(nullptr));
-    }
-    void List::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_list_create(parent.raw_ptr()));
-    }
-
     Object List::add_text(const std::string & txt) {
         return Object(lv_list_add_text(this->raw_ptr(), txt.c_str()));
     }

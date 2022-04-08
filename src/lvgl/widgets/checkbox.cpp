@@ -8,21 +8,6 @@
 
 namespace lvgl::widgets {
 
-    Checkbox::Checkbox() {
-        this->initialize();
-    }
-
-    Checkbox::Checkbox(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Checkbox::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_checkbox_create(nullptr));
-    }
-    void Checkbox::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_checkbox_create(parent.raw_ptr()));
-    }
-
     void Checkbox::set_text(const std::string & txt) {
         lv_checkbox_set_text(this->raw_ptr(), txt.c_str());
     }

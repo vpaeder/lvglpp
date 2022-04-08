@@ -14,34 +14,15 @@ namespace lvgl::widgets {
     /** \class Calendar
      *  \brief Wraps a lv_calendar_t object.
      */
-    class Calendar : public Object {
+    class Calendar : public Widget<lv_calendar_create> {
     private:
         /** \property RawDblArray<char> day_names
          *  \brief Days names.
          */
         RawDblArray<char> day_names;
 
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
     public:
-        /** \fn Calendar()
-         *  \brief Default constructor.
-         */
-        Calendar();
-        /** \fn Calendar(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Calendar(Object & parent);
+        using Widget::Widget;
 
         /** \fn void set_today_date(uint32_t year, uint32_t month, uint32_t day)
          *  \brief Sets today's date.

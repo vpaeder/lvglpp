@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class TextArea
      *  \brief Wraps a lv_textarea_t object.
      */
-    class TextArea : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class TextArea : public Widget<lv_textarea_create> {
     public:
-        /** \fn TextArea()
-         *  \brief Default constructor.
-         */
-        TextArea();
-        /** \fn TextArea(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        TextArea(Object & parent);
+        using Widget::Widget;
 
         /** \fn void add_char(uint32_t c)
          *  \brief Adds character to the text area content at the current cursor position.

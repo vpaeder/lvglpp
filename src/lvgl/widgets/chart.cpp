@@ -1,4 +1,4 @@
-/** \file button.cpp
+/** \file chart.cpp
  *  \brief Implementation file for C++ wrapper for lv_chart_t objects.
  *
  *  Author: Vincent Paeder
@@ -7,21 +7,6 @@
 #include "chart.h"
 
 namespace lvgl::widgets {
-
-    Chart::Chart() {
-        this->initialize();
-    }
-
-    Chart::Chart(Object & parent) {
-        this->initialize(parent);
-    }
-
-    void Chart::initialize() {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_chart_create(nullptr));
-    }
-    void Chart::initialize(Object & parent) {
-        this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_chart_create(parent.raw_ptr()));
-    }
 
     void Chart::set_type(lv_chart_type_t type) {
         lv_chart_set_type(this->raw_ptr(), type);

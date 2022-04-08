@@ -14,28 +14,9 @@ namespace lvgl::widgets {
     /** \class Tileview
      *  \brief Wraps a lv_tileview_t object.
      */
-    class Tileview : public Object {
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
+    class Tileview : public Widget<lv_tileview_create> {
     public:
-        /** \fn Tileview()
-         *  \brief Default constructor.
-         */
-        Tileview();
-        /** \fn Tileview(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        Tileview(Object & parent);
+        using Widget::Widget;
 
         /** \fn Object add_tile(uint8_t col_id, uint8_t row_id, lv_dir_t dir)
          *  \brief Adds tile with given parameters.

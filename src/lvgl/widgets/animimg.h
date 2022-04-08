@@ -18,35 +18,16 @@ namespace lvgl::widgets {
     /** \class AnimatedImage
      *  \brief Wraps a lv_animimg_t object.
      */
-    class AnimatedImage : public Object {
+    class AnimatedImage : public Widget<lv_animimg_create> {
     private:
         /** \property std::unique_ptr<lv_img_dsc_t*[]> dsc
          *  \brief A list of pointers to the animation images.
          */
         std::unique_ptr<lv_img_dsc_t*[]> dsc;
     
-    protected:
-        /** \fn void initialize()
-         *  \brief Initialize object.
-         */
-        void initialize() override;
-        /** \fn void initialize(Object & parent)
-         *  \brief Initialize object and assign parent object.
-         *  \param parent: parent LVGL object.
-         */
-        void initialize(Object & parent) override;
-    
     public:
-        /** \fn AnimatedImage()
-         *  \brief Default constructor.
-         */
-        AnimatedImage();
-        /** \fn AnimatedImage(Object & parent)
-         *  \brief Constructor with parent object.
-         *  \param parent: parent LVGL object.
-         */
-        AnimatedImage(Object & parent);
-
+        using Widget::Widget;
+        
         /** \fn void set_src(const std::vector<ImageDescriptor> & imgs)
          *  \brief Sets images.
          *  \param imgs: a list of images.
