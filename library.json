@@ -1,0 +1,16 @@
+{
+	"name": "lvglpp",
+	"version": "0.1.0",
+	"keywords": "graphics, gui, embedded, tft, lvgl",
+	"description": "A C++ wrapper for LVGL.",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vpaeder/lvglpp.git"
+	},
+	"build": {
+		"includeDir": "src"
+	},
+	"license": "MIT",
+	"frameworks": "*",
+	"platforms": "*"
+}
