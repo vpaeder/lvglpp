@@ -45,11 +45,11 @@ namespace lvgl::examples {
 
         uint32_t i;
 
-        auto cont1 = Container(root);
+        static auto cont1 = Container(root);
         cont1.set_flex_flow(LV_FLEX_FLOW_COLUMN);
         cont1.set_size(lv_pct(40), lv_pct(80));
         cont1.add_event_cb(radio_event_handler, LV_EVENT_CLICKED);
-        std::vector<std::unique_ptr<Checkbox>> rb;
+        static std::vector<std::unique_ptr<Checkbox>> rb;
 
         for(i = 0; i < 5; i++)
             rb.push_back(radiobutton_create(cont1, "A " + std::to_string(i+1)));
@@ -57,7 +57,7 @@ namespace lvgl::examples {
         /*Make the first checkbox checked*/
         cont1.get_child<Checkbox>(0).add_state(LV_STATE_CHECKED);
 
-        auto cont2 = Container(root);
+        static auto cont2 = Container(root);
         cont2.set_flex_flow(LV_FLEX_FLOW_COLUMN);
         cont2.set_size(lv_pct(40), lv_pct(80));
         cont2.set_x(lv_pct(50));

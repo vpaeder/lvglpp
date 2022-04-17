@@ -12,28 +12,27 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void imgbtn_1() {
-        std::vector<ImageDescriptor> btn_imgs(3);
+        static std::vector<ImageDescriptor> btn_imgs(3);
         btn_imgs[0].set_src(imgbtn_left_map, 8, 50, LV_IMG_CF_TRUE_COLOR_ALPHA);
         btn_imgs[1].set_src(imgbtn_mid_map, 5, 49, LV_IMG_CF_TRUE_COLOR_ALPHA);
         btn_imgs[2].set_src(imgbtn_right_map, 8, 50, LV_IMG_CF_TRUE_COLOR_ALPHA);
 
-        auto root = scr_act();
         /*Create a transition animation on width transformation and recolor.*/
         std::vector<lv_style_prop_t> tr_prop = {LV_STYLE_TRANSFORM_WIDTH, LV_STYLE_IMG_RECOLOR_OPA, LV_STYLE_PROP_INV};
-        LinearStyleTransition tr(tr_prop, 200, 0);
+        static LinearStyleTransition tr(tr_prop, 200, 0);
 
-        Style style_def;
+        static Style style_def;
         style_def.set_text_color(palette::white());
         style_def.set_transition(tr);
 
         /*Darken the button when pressed and make it wider*/
-        Style style_pr;
+        static Style style_pr;
         style_pr.set_img_recolor_opa(LV_OPA_30);
         style_pr.set_img_recolor(palette::black());
         style_pr.set_transform_width(20);
 
         /*Create an image button*/
-        auto imgbtn = ImageButton(root);
+        static auto imgbtn = ImageButton(scr_act());
         imgbtn.set_src_left_img(LV_IMGBTN_STATE_RELEASED, btn_imgs[0]);
         imgbtn.set_src_mid_img(LV_IMGBTN_STATE_RELEASED, btn_imgs[1]);
         imgbtn.set_src_right_img(LV_IMGBTN_STATE_RELEASED, btn_imgs[2]);
@@ -43,7 +42,7 @@ namespace lvgl::examples {
         imgbtn.align(LV_ALIGN_CENTER, 0, 0);
 
         /*Create a label on the image button*/
-        auto label = Label(imgbtn);
+        static auto label = Label(imgbtn);
         label.set_text("Button");
         label.align(LV_ALIGN_CENTER, 0, -4);
 

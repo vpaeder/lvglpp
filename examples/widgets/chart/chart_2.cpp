@@ -102,8 +102,7 @@ namespace lvgl::examples {
     };
 
     void chart_2() {
-        auto root = scr_act();
-        auto chart = std::make_shared<Chart>(root);
+        static auto chart = std::make_shared<Chart>(scr_act());
 
         chart->set_size(200, 150);
         chart->center();
@@ -124,6 +123,6 @@ namespace lvgl::examples {
             chart->set_next_y_value(ser2, lv_rand(30, 70));
         }
 
-        auto timer = ChartTimer(200, chart, ser1, ser2);
+        static auto timer = ChartTimer(200, chart, ser1, ser2);
     }
 }

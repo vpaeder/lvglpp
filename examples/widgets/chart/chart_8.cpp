@@ -60,8 +60,7 @@ namespace lvgl::examples {
     }
 
     void chart_8() {
-        auto root = scr_act();
-        auto chart = StackedAreaChart(root);
+        static auto chart = StackedAreaChart(scr_act());
 
         chart.set_size(200, 150);
         chart.center();

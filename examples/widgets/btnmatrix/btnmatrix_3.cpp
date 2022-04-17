@@ -32,10 +32,9 @@ namespace lvgl::examples {
 
 
     void btnmatrix_2() {
-        auto root = scr_act();
-        auto btnm = ButtonMatrix(root);
+        static auto btnm = ButtonMatrix(scr_act());
 
-        Style style_bg;
+        static Style style_bg;
         style_bg.set_pad_all(0);
         style_bg.set_pad_gap(0);
         style_bg.set_clip_corner(true);
@@ -43,7 +42,7 @@ namespace lvgl::examples {
         style_bg.set_border_width(0);
 
 
-        Style style_btn;
+        static Style style_btn;
         style_btn.set_radius(0);
         style_btn.set_border_width(1);
         style_btn.set_border_opa(LV_OPA_50);
@@ -51,7 +50,7 @@ namespace lvgl::examples {
         style_btn.set_border_side(LV_BORDER_SIDE_INTERNAL);
         style_btn.set_radius(0);
 
-        std::vector<std::string> map = {LV_SYMBOL_LEFT, "1", "2", "3", "4", "5", LV_SYMBOL_RIGHT, ""};
+        static std::vector<std::string> map = {LV_SYMBOL_LEFT, "1", "2", "3", "4", "5", LV_SYMBOL_RIGHT, ""};
 
         btnm.set_map(map);
         btnm.add_style(style_bg, 0);

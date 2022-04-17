@@ -10,16 +10,11 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void slider_2() {
-        auto root = scr_act();
-        
         /*Create a transition*/
         auto props = std::vector<lv_style_prop_t>{LV_STYLE_BG_COLOR, LV_STYLE_PROP_INV};
-        auto transition_dsc = LinearStyleTransition(props, 300, 0);
+        static auto transition_dsc = LinearStyleTransition(props, 300, 0);
 
-        Style style_main;
-        Style style_indicator;
-        Style style_knob;
-        Style style_pressed_color;
+        static Style style_main, style_indicator, style_knob, style_pressed_color;
         style_main.set_bg_opa(LV_OPA_COVER);
         style_main.set_bg_color(lv_color_hex3(0xbbb));
         style_main.set_radius(LV_RADIUS_CIRCLE);
@@ -41,7 +36,7 @@ namespace lvgl::examples {
         style_pressed_color.set_bg_color(palette::dark(Color::Cyan, 2));
 
         /*Create a slider and add the style*/
-        auto slider = Slider(root);
+        static auto slider = Slider(scr_act());
         slider.remove_style_all();        /*Remove the styles coming from the theme*/
 
         slider.add_style(style_main, LV_PART_MAIN);

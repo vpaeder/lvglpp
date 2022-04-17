@@ -21,7 +21,7 @@ namespace lvgl::examples {
     void roller_2() {
         auto root = scr_act();
         
-        auto roller = Roller(root);
+        static auto roller = Roller(root);
         /*A style to make the selected option larger*/
         Style style_sel;
         style_sel.set_text_font(&lv_font_montserrat_22);
@@ -29,7 +29,7 @@ namespace lvgl::examples {
         const std::string opts = "1\n2\n3\n4\n5\n6\n7\n8\n9\n10";
 
         /*A roller on the left with left aligned text, and custom width*/
-        auto roller1 = Roller(root);
+        static auto roller1 = Roller(root);
         roller1.set_options(opts, LV_ROLLER_MODE_NORMAL);
         roller1.set_visible_row_count(2);
         roller1.set_width(100);
@@ -40,7 +40,7 @@ namespace lvgl::examples {
         roller1.set_selected(2, LV_ANIM_OFF);
 
         /*A roller on the middle with center aligned text, and auto (default) width*/
-        auto roller2 = Roller(root);
+        static auto roller2 = Roller(root);
         roller2.set_options(opts, LV_ROLLER_MODE_NORMAL);
         roller2.set_visible_row_count(3);
         roller2.add_style(style_sel, LV_PART_SELECTED);
@@ -49,7 +49,7 @@ namespace lvgl::examples {
         roller2.set_selected(5, LV_ANIM_OFF);
 
         /*A roller on the right with right aligned text, and custom width*/
-        auto roller3 = Roller(root);
+        static auto roller3 = Roller(root);
         roller3.set_options(opts, LV_ROLLER_MODE_NORMAL);
         roller3.set_visible_row_count(4);
         roller3.set_width(80);

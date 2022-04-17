@@ -23,7 +23,7 @@ namespace lvgl::examples {
 
         auto h = spinbox->get_height();
 
-        auto btn1 = Button(root);
+        static auto btn1 = Button(root);
         btn1.set_size(h, h);
         btn1.align_to(*spinbox, LV_ALIGN_OUT_RIGHT_MID, 5, 0);
         btn1.set_style_bg_img_src(LV_SYMBOL_PLUS, 0);
@@ -34,7 +34,7 @@ namespace lvgl::examples {
         };
         btn1.add_event_cb(lv_spinbox_increment_event_cb, LV_EVENT_ALL);
 
-        auto btn2 = Button(root);
+        static auto btn2 = Button(root);
         btn2.set_size(h, h);
         btn2.align_to(*spinbox, LV_ALIGN_OUT_LEFT_MID, -5, 0);
         btn2.set_style_bg_img_src(LV_SYMBOL_MINUS, 0);

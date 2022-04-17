@@ -37,7 +37,7 @@ namespace lvgl::core {
     class Event;
     class Theme;
     class Group;
-
+    
     /** \class Object
      *  \brief Wraps a lv_obj_t object. This is the generic LVGL object type.
      */

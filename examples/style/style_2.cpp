@@ -9,7 +9,7 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void style_2() {
-        Style style;
+        static Style style;
         style.set_radius(5);
 
         /*Make a gradient*/
@@ -26,8 +26,7 @@ namespace lvgl::examples {
 
         style.set_bg_grad(&grad);
         /*Create an object with the new style*/
-        auto root = scr_act();
-        auto obj = Container(root);
+        static auto obj = Container(scr_act());
         obj.add_style(style, LV_STATE_DEFAULT);
         obj.center();
     }

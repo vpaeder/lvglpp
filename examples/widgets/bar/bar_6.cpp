@@ -44,13 +44,12 @@ namespace lvgl::examples {
     }
 
     void bar_6() {
-        auto root = scr_act();
-        auto bar = Bar(root);
+        static auto bar = Bar(scr_act());
         bar.add_event_cb(event_cb, LV_EVENT_DRAW_PART_END);
         bar.set_size(200, 20);
         bar.center();
 
-        Animation a;
+        static Animation a;
         a.set_var(bar);
         a.set_values(0, 100);
         auto set_value = [](Bar & bar, int32_t v) {

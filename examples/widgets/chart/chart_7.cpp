@@ -52,8 +52,7 @@ namespace lvgl::examples {
     };
 
     void chart_7() {
-        auto root = scr_act();
-        auto chart = std::make_shared<Chart>(root);
+        static auto chart = std::make_shared<Chart>(scr_act());
 
         chart->set_size(200, 150);
         chart->align(LV_ALIGN_CENTER, 0, 0);
@@ -70,12 +69,10 @@ namespace lvgl::examples {
 
         chart->set_point_count(50);
 
-        lv_chart_series_t * ser = chart->add_series(palette::main(Color::Red), LV_CHART_AXIS_PRIMARY_Y);
-        uint32_t i;
-        for(i = 0; i < 50; i++) {
+        auto ser = chart->add_series(palette::main(Color::Red), LV_CHART_AXIS_PRIMARY_Y);
+        for(uint32_t i = 0; i < 50; i++)
             chart->set_next_xy_values(ser, lv_rand(0, 200), lv_rand(0, 1000));
-        }
 
-        auto timer = ChartTimer(100, chart);
+        static auto timer = ChartTimer(100, chart);
     }
 }

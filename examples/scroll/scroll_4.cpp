@@ -10,11 +10,11 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void scroll_4() {
-        auto obj = Container(scr_act());
+        static auto obj = Container(scr_act());
         obj.set_size(200, 100);
         obj.center();
 
-        auto label = Label(obj);
+        static auto label = Label(obj);
         label.set_text("Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n"
                        "Etiam dictum, tortor vestibulum lacinia laoreet, mi neque consectetur neque, vel mattis odio dolor egestas ligula. \n"
                        "Sed vestibulum sapien nulla, id convallis ex porttitor nec. \n"

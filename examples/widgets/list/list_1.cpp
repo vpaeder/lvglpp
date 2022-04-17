@@ -15,16 +15,13 @@ namespace lvgl::examples {
     static void event_handler(Event & e) {
         auto code = e.get_code();
         auto obj = e.get_target<Button>();
-        if(code == LV_EVENT_CLICKED) {
+        if(code == LV_EVENT_CLICKED)
             LV_LOG_USER("Clicked: %s", list->get_btn_text(obj).c_str());
-        }
     }
 
     void list_1() {
-        auto root = scr_act();
-
         /*Create a list*/
-        list = std::make_shared<List>(root);
+        list = std::make_shared<List>(scr_act());
         list->set_size(180, 220);
         list->center();
 

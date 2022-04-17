@@ -9,7 +9,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void flex_6() {
-        auto cont = Container(scr_act());
+        static auto cont = Container(scr_act());
         cont.set_style_base_dir(LV_BASE_DIR_RTL, 0);
         cont.set_size(300, 220);
         cont.center();

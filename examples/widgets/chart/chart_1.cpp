@@ -9,8 +9,7 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void chart_1() {
-        auto root = scr_act();
-        auto chart = Chart(root);
+        static auto chart = Chart(scr_act());
         chart.set_size(200, 150);
         chart.center();
         chart.set_type(LV_CHART_TYPE_LINE);   /*Show lines and points too*/

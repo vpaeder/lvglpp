@@ -1,0 +1,25 @@
+var classlvgl_1_1widgets_1_1_menu =
+[
+    [ "back_btn_is_root", "classlvgl_1_1widgets_1_1_menu.html#ada87f480dfa676144fa88d4d59c68480", null ],
+    [ "clear_history", "classlvgl_1_1widgets_1_1_menu.html#aeb975d1e88437c9c53aabb0b7ff55f1a", null ],
+    [ "clear_page", "classlvgl_1_1widgets_1_1_menu.html#ae25ab66f76142bfed8a1f12c0a1acbc0", null ],
+    [ "clear_sidebar_page", "classlvgl_1_1widgets_1_1_menu.html#aa33021f9b22139521020d05588435353", null ],
+    [ "cont_create", "classlvgl_1_1widgets_1_1_menu.html#adbe7a2c76ffbeb494d63996bba06a63b", null ],
+    [ "get_cur_main_page", "classlvgl_1_1widgets_1_1_menu.html#aa149b54122393ef6e3dbe8e4f252801b", null ],
+    [ "get_cur_sidebar_page", "classlvgl_1_1widgets_1_1_menu.html#a4aa7520b87e553a8fdd89dd73a1b2b38", null ],
+    [ "get_main_header", "classlvgl_1_1widgets_1_1_menu.html#a1c787844ec99f4b08a88c17dcdac80c3", null ],
+    [ "get_main_header_back_btn", "classlvgl_1_1widgets_1_1_menu.html#aa12156e4e844c9e39228e0103bd79526", null ],
+    [ "get_sidebar_header", "classlvgl_1_1widgets_1_1_menu.html#ad410c32a23bc1aa3606897684541074b", null ],
+    [ "get_sidebar_header_back_btn", "classlvgl_1_1widgets_1_1_menu.html#ad27f6f4ea6004c021b0bf051f8593243", null ],
+    [ "page_create", "classlvgl_1_1widgets_1_1_menu.html#a9435adc5f4d7e4253528e094bcb86e0b", null ],
+    [ "section_create", "classlvgl_1_1widgets_1_1_menu.html#aba93209521a0c1024954445b382d2c4d", null ],
+    [ "separator_create", "classlvgl_1_1widgets_1_1_menu.html#aefbb7ba667cb5148523d06af1695cc02", null ],
+    [ "set_load_page_event", "classlvgl_1_1widgets_1_1_menu.html#a5f9ac2fd1d02bd54119e4cd095a6104f", null ],
+    [ "set_mode_header", "classlvgl_1_1widgets_1_1_menu.html#a24bd3554110b45be7ae9519363838063", null ],
+    [ "set_mode_root_back_btn", "classlvgl_1_1widgets_1_1_menu.html#afdc2dabe4ebb00ba1d510d2a57db85a2", null ],
+    [ "set_page", "classlvgl_1_1widgets_1_1_menu.html#a809d85908eac0cdb54cc44f6bda7b810", null ],
+    [ "set_sidebar_page", "classlvgl_1_1widgets_1_1_menu.html#a1e467f386a88d22063f70dab1ccc2837", null ],
+    [ "Widget", "classlvgl_1_1widgets_1_1_menu.html#a73d09fe7fcf13b343629fb1641455682", null ],
+    [ "Widget", "classlvgl_1_1widgets_1_1_menu.html#a0158d59f2ee6c4ad3379c6562f13cad6", null ],
+    [ "Widget", "classlvgl_1_1widgets_1_1_menu.html#ac8954d407bdb29e1d490fad9a6f25e50", null ]
+];

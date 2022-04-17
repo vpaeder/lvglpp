@@ -9,8 +9,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void win_1() {
-        auto root = scr_act();
-        auto win = Window(root, 40);
+        static auto win = Window(scr_act(), 40);
         win.add_title("A title");
 
         auto event_handler(Event & e) {
@@ -26,7 +25,7 @@ namespace lvgl::examples {
         btn3.add_event_cb(event_handler, LV_EVENT_CLICKED);
 
         auto cont = win.get_content();  /*Content can be added here*/
-        auto label = Label(cont);
+        static auto label = Label(cont);
         label.set_text("This is\n"
                        "a pretty\n"
                        "long text\n"

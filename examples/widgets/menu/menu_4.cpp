@@ -9,10 +9,8 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     static uint32_t btn_cnt = 1;
-    using ObjectPtr = std::shared_ptr<Object>;
-    using MenuPtr = std::unique_ptr<Menu>;
-    static ObjectPtr main_page;
-    static MenuPtr menu;
+    static std::shared_ptr<Object> main_page;
+    static std::unique_ptr<Menu> menu;
 
     static void float_btn_event_cb(Event & e) {
         btn_cnt++;
@@ -59,7 +57,7 @@ namespace lvgl::examples {
         menu->set_page(*main_page);
 
         /*Create floating btn*/
-        auto float_btn = Button(root);
+        static auto float_btn = Button(root);
         float_btn.set_size(50, 50);
         float_btn.add_flag(LV_OBJ_FLAG_FLOATING);
         float_btn.align(LV_ALIGN_BOTTOM_RIGHT, -10, -10);

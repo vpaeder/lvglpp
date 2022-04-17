@@ -9,8 +9,7 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void meter_4() {
-        auto root = scr_act();
-        auto meter = Meter(root);
+        static auto meter = Meter(scr_act());
         meter.center();
         meter.set_size(200, 200);
         /*Remove the background and the circle from the middle*/

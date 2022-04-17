@@ -36,18 +36,18 @@ namespace lvgl::examples {
 
     void style_14() {
         auto root = scr_act();
-        auto btn1 = Button(root);
+        static auto btn1 = Button(root);
         btn1.align(LV_ALIGN_TOP_MID, 0, 20);
 
-        auto label1 = Label(btn1);
+        static auto label1 = Label(btn1);
         label1.set_text("Original theme");
 
         new_theme_init_and_set();
 
-        auto btn2 = Button(root);
+        static auto btn2 = Button(root);
         btn2.align(LV_ALIGN_BOTTOM_MID, 0, -20);
 
-        auto label2 = Label(btn2);
+        static auto label2 = Label(btn2);
         label2.set_text("New theme");
     }
 }

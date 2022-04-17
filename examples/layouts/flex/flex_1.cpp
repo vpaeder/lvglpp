@@ -11,13 +11,13 @@ namespace lvgl::examples {
     void flex_1() {
         auto root = scr_act();
         /*Create a container with ROW flex direction*/
-        auto cont_row = Container(root);
+        static auto cont_row = Container(root);
         cont_row.set_size(300, 75);
         cont_row.align(LV_ALIGN_TOP_MID, 0, 5);
         cont_row.set_flex_flow(LV_FLEX_FLOW_ROW);
 
         /*Create a container with COLUMN flex direction*/
-        auto cont_col = Container(root);
+        static auto cont_col = Container(root);
         cont_col.set_size(200, 150);
         cont_col.align_to(cont_row, LV_ALIGN_OUT_BOTTOM_MID, 0, 5);
         cont_col.set_flex_flow(LV_FLEX_FLOW_COLUMN);

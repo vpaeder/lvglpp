@@ -23,14 +23,13 @@ namespace lvgl::examples {
     }
 
     void object_2() {
-        auto root = scr_act();
         // the Object class is a base class without an allocator;
         // the Container class derives from Object and has the lv_obj_create allocator.
-        auto obj = Container(root);
+        static auto obj = Container(scr_act());
         obj.set_size(150, 100);
         obj.add_event_cb(drag_event_handler, LV_EVENT_PRESSING);
 
-        auto label = Label(obj);
+        static auto label = Label(obj);
         label.set_text("Drag me");
         label.center();
     }

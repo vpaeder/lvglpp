@@ -21,18 +21,18 @@ namespace lvgl::examples {
         root.set_flex_flow(LV_FLEX_FLOW_COLUMN);
         root.set_flex_align(LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
 
-        auto sw1 = Switch(root);
+        static auto sw1 = Switch(root);
         sw1.add_event_cb(event_handler, LV_EVENT_ALL);
 
-        auto sw2 = Switch(root);
+        static auto sw2 = Switch(root);
         sw2.add_state(LV_STATE_CHECKED);
         sw2.add_event_cb(event_handler, LV_EVENT_ALL);
 
-        auto sw3 = Switch(root);
+        static auto sw3 = Switch(root);
         sw3.add_state(LV_STATE_DISABLED);
         sw3.add_event_cb(event_handler, LV_EVENT_ALL);
 
-        auto sw4 = Switch(root);
+        static auto sw4 = Switch(root);
         sw4.add_state(LV_STATE_CHECKED | LV_STATE_DISABLED);
         sw4.add_event_cb(event_handler, LV_EVENT_ALL);
     }

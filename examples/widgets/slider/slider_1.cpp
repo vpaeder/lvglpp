@@ -8,8 +8,7 @@ namespace lvgl::examples {
     using namespace lvgl::core;
     using namespace lvgl::widgets;
 
-    using LabelPtr = std::unique_ptr<Label>;
-    LabelPtr slider_label;
+    std::unique_ptr<Label> slider_label;
 
     static void event_handler(Event & e) {
         auto slider = e.get_target<Slider>();
@@ -20,7 +19,7 @@ namespace lvgl::examples {
     void slider_1() {
         auto root = scr_act();
         
-        auto slider = Slider(root);
+        static auto slider = Slider(root);
         slider.center();
         slider.add_event_cb(event_handler, LV_EVENT_VALUE_CHANGED);
 

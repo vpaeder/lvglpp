@@ -17,9 +17,7 @@ namespace lvgl::examples {
     }
 
     void dropdown_1() {
-        auto root = scr_act();
-
-        auto dd = Dropdown(root);
+        static auto dd = Dropdown(scr_act());
         dd.set_options("Apple\n"
                        "Banana\n"
                        "Orange\n"

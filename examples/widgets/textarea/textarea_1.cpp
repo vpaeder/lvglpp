@@ -43,7 +43,7 @@ namespace lvgl::examples {
             LV_SYMBOL_BACKSPACE, "0", LV_SYMBOL_NEW_LINE, ""
         };
 
-        auto btnm = ButtonMatrix(root);
+        static auto btnm = ButtonMatrix(root);
         btnm.set_size(200, 150);
         btnm.align(LV_ALIGN_BOTTOM_MID, 0, -10);
         btnm.add_event_cb(btnm_event_handler, LV_EVENT_VALUE_CHANGED);

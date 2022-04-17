@@ -12,22 +12,22 @@ namespace lvgl::examples {
     void bar_5() {
         auto root = scr_act();
 
-        auto bar_ltr = Bar(root);
+        static auto bar_ltr = Bar(root);
         bar_ltr.set_size(200, 20);
         bar_ltr.set_value(70, LV_ANIM_OFF);
         bar_ltr.align(LV_ALIGN_CENTER, 0, -30);
 
-        auto label_ltr = Label(root);
+        static auto label_ltr = Label(root);
         label_ltr.set_text("Left to Right base direction");
         label_ltr.align_to(bar_ltr, LV_ALIGN_OUT_TOP_MID, 0, -5);
 
-        auto bar_rtl = Bar(root);
+        static auto bar_rtl = Bar(root);
         bar_rtl.set_style_base_dir(LV_BASE_DIR_RTL, 0);
         bar_rtl.set_size(200, 20);
         bar_rtl.set_value(70, LV_ANIM_OFF);
         bar_rtl.align(LV_ALIGN_CENTER, 0, 30);
 
-        auto label_rtl = Label(root);
+        static auto label_rtl = Label(root);
         label_rtl.set_text("Right to Left base direction");
         label_rtl.align_to(bar_rtl, LV_ALIGN_OUT_TOP_MID, 0, -5);
     }

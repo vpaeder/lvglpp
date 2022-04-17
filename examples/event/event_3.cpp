@@ -9,8 +9,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void event_3() {
-        auto root = scr_act();
-        auto cont = Container(root);
+        static auto cont = Container(scr_act());
         cont.set_size(290, 200);
         cont.center();
         cont.set_flex_flow(LV_FLEX_FLOW_ROW_WRAP);

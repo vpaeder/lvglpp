@@ -10,7 +10,7 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void bar_2() {
-        Style style_bg, style_indic;
+        static Style style_bg, style_indic;
 
         style_bg.set_border_color(palette::main(Color::Blue));
         style_bg.set_border_width(2);
@@ -22,8 +22,7 @@ namespace lvgl::examples {
         style_indic.set_bg_color(palette::main(Color::Blue));
         style_indic.set_radius(3);
 
-        auto root = scr_act();
-        auto bar = Bar(root);
+        static auto bar = Bar(scr_act());
         bar.remove_style_all();
         bar.add_style(style_bg, LV_PART_MAIN);
         bar.add_style(style_indic, LV_PART_INDICATOR);

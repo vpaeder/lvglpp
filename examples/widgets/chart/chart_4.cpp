@@ -57,8 +57,7 @@ namespace lvgl::examples {
     }
 
     void chart_4() {
-        auto root = scr_act();
-        auto chart = Chart(root);
+        static auto chart = Chart(scr_act());
 
         chart.set_size(200, 150);
         chart.center();

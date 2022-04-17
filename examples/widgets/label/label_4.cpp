@@ -54,7 +54,7 @@ namespace lvgl::examples {
 
         /* Create an object from where the text will be masked out.
         * Now it's a rectangle with a gradient but it could be an image too*/
-        auto grad = Container(root);
+        static auto grad = Container(root);
         grad.set_size(MASK_WIDTH, MASK_HEIGHT);
         grad.center();
         grad.set_style_bg_color(lv_color_hex(0xff0000), 0);

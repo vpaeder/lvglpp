@@ -9,7 +9,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void flex_4() {
-        auto cont = Container(scr_act());
+        static auto cont = Container(scr_act());
         cont.set_size(300, 220);
         cont.center();
         cont.set_flex_flow(LV_FLEX_FLOW_COLUMN_REVERSE);

@@ -10,7 +10,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void style_6() {
-        Style style;
+        static Style style;
         /*Set a background color and a radius*/
         style.set_radius(5);
         style.set_bg_opa(LV_OPA_COVER);
@@ -23,10 +23,9 @@ namespace lvgl::examples {
         style.set_transform_angle(300);
         
         /*Create an object with the new style*/
-        auto root = scr_act();
-        auto obj = Image(root);
+        static auto obj = Image(scr_act());
         obj.add_style(style, LV_STATE_DEFAULT);
-        ImageDescriptor img_cogwheel_argb;
+        static ImageDescriptor img_cogwheel_argb;
         img_cogwheel_argb.set_src(img_cogwheel_argb_map, 100, 100, LV_IMG_CF_TRUE_COLOR_ALPHA);
         obj.set_src(img_cogwheel_argb);
         obj.center();

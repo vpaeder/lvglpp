@@ -117,9 +117,7 @@ namespace lvgl::examples {
     }
 
     void menu_5() {
-        auto root = scr_act();
-        
-        menu = std::make_unique<Menu>(root);
+        menu = std::make_unique<Menu>(scr_act());
 
         auto bg_color = menu->get_style_bg_color(0);
         if (lv_color_brightness(bg_color) > 127) {

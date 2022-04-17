@@ -10,20 +10,17 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void span_1() {
-        auto root = scr_act();
-        auto spangrp = SpanGroup(root);
-
+        static auto spangrp = SpanGroup(scr_act());
         spangrp.set_width(300);
         spangrp.set_height(300);
         spangrp.center();
 
-        Style style;
+        static Style style;
         style.set_border_width(1);
         style.set_border_color(palette::main(Color::Orange));
         style.set_pad_all(2);
 
-        spangrp.add_style(style, 0);
-
+        spangrp.add_style(style, LV_PART_MAIN);
         spangrp.set_align(LV_TEXT_ALIGN_LEFT);
         spangrp.set_overflow(LV_SPAN_OVERFLOW_CLIP);
         spangrp.set_indent(20);

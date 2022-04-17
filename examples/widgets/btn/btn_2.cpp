@@ -12,9 +12,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void button_2() {
-        auto root = scr_act();
-
-        Style style;
+        static Style style;
 
         style.set_radius(3);
 
@@ -38,7 +36,7 @@ namespace lvgl::examples {
         style.set_pad_all(10);
 
         /*Init the pressed style*/
-        Style style_pr;
+        static Style style_pr;
 
         /*Add a large outline when pressed*/
         style_pr.set_outline_width(30);
@@ -51,10 +49,10 @@ namespace lvgl::examples {
 
         /*Add a transition to the outline*/
         std::vector<lv_style_prop_t> props = {LV_STYLE_OUTLINE_WIDTH, LV_STYLE_OUTLINE_OPA, LV_STYLE_PROP_INV};
-        LinearStyleTransition trans(props, 300, 0);
+        static LinearStyleTransition trans(props, 300, 0);
         style_pr.set_transition(trans);
         
-        auto button = Button(root);
+        static auto button = Button(scr_act());
         button.remove_style_all();
         
         button.add_style(style, LV_STATE_DEFAULT);
@@ -62,7 +60,7 @@ namespace lvgl::examples {
         button.set_size(LV_SIZE_CONTENT, LV_SIZE_CONTENT);
         button.center();
 
-        auto label = Label(button);
+        static auto label = Label(button);
         label.set_text("Button");
         label.center();
     }

@@ -9,7 +9,7 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void style_5() {
-        Style style;
+        static Style style;
         /*Set a background color and a radius*/
         style.set_radius(5);
         style.set_bg_opa(LV_OPA_COVER);
@@ -22,8 +22,7 @@ namespace lvgl::examples {
         //    style.set_shadow_ofs_y(20);
         
         /*Create an object with the new style*/
-        auto root = scr_act();
-        auto obj = Container(root);
+        auto obj = Container(scr_act());
         obj.add_style(style, LV_STATE_DEFAULT);
         obj.center();
     }

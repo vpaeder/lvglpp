@@ -12,25 +12,23 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void image_4() {
-        auto root = scr_act();
-        
-        auto img_src = ImageDescriptor();
+        static auto img_src = ImageDescriptor();
         img_src.set_src(img_skew_strip_map, 80, 20, LV_IMG_CF_TRUE_COLOR_ALPHA);
 
-        Style style;
+        static Style style;
         style.set_bg_color(palette::main(Color::Yellow));
         style.set_bg_opa(LV_OPA_COVER);
         style.set_img_recolor_opa(LV_OPA_COVER);
         style.set_img_recolor(palette::black());
 
         /*Now create the actual image*/
-        auto img = Image(root);
+        static auto img = Image(scr_act());
         img.set_src(img_src);
         img.add_style(style, LV_PART_MAIN);
         img.set_size(150, 100);
         img.center();
 
-        Animation a;
+        static Animation a;
         a.set_var(img);
         auto ofs_y_anim = [](Image & img, int32_t v) {
             img.set_offset_y(v);

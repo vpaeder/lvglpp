@@ -1,14 +1,14 @@
-# A C++ wrapper for LVGL
+# lvglpp: a C++ wrapper for LVGL
 
-This package contains a rather bushy wrapper for LVGL. I originally needed to program a simple user interface, but I didn't want to write a GUI framework from scratch, and found LVGL rather nice. Only that it's written in C. So I started writing C++ classes for the part of the code I wanted to use, and then it got out of control. Now most of the library has some kind of wrapper class provided, although most of them haven't been tested yet (they compile).
+This package contains a rather bushy wrapper for LVGL. I originally needed to program a simple user interface, but I didn't want to write a GUI framework from scratch, and found LVGL rather nice. Only that it's written in C. So I started writing C++ classes for the part of the code I wanted to use, and then it got out of control. Now most of the library has some kind of wrapper class provided. I've tested nearly all examples on an ESP32 with a touch screen interface.
 
 This is a work in progress. I will likely improve things as I use it, which will take between one day and forever. I of course welcome any contribution.
 
-Note that I'm not part of the LVGL team. If you have requests related to LVGL itself, please rather ask them.
+Note that I'm not part of the LVGL team. If you have requests related to LVGL itself, please ask them.
 
 ## Structure
 
-I tried to mirror the directory structure of LVGL to some degree (with exceptions with *extra*, *hal* directories). A number of types that are defined in multiple files are compiled together as one (e.g. style, image, draw). I've put all the widgets (include extra ones) in the *widgets* directory.
+I tried to mirror the directory structure of LVGL to some degree (with exceptions with *extra* and *hal* directories). A number of types that are defined in multiple files are compiled together as one (e.g. style, image, draw). I've put all the widgets (including extra ones) in the *widgets* directory.
 
 My point was to provide functions that take a certain LVGL object type as first argument as a class method. For instance, all functions taking a `lv_obj_t*` as first argument end up as methods of the `Object` class. I tried to replace raw pointer args either with a C++ class instance passed by reference or a smart pointer.
 
@@ -21,7 +21,8 @@ Here is a list of classes with the corresponding link to LVGL:
 | `Event` | *core/event.h* | `lv_event_t` | *core/lv_event.h* |
 | `Group` | *core/group.h* | `lv_group_t` | *core/lv_group.h* |
 | `InputDevice`<br/>`PointerInputDevice`<br/>`ButtonInputDevice`<br/>`KeypadInputDevice`<br/>`EncoderInputDevice` | *core/indev.h* | `lv_indev_t`<br/>`lv_indev_drv_t` | *hal/lv_hal_indev.h*<br/>*core/lv_indev.h* |
-| `Object` | *core/object.h* | `lv_obj_t` | *core/lv_obj.h*<br/>*core/lv_obj_draw.h*<br/>*core/lv_obj_pos.h*<br/>*core/lv_scroll.h*<br/>*core/lv_obj_style.h*<br/>*core/lv_obj_tree.h* |
+| `Object` | *core/object.h* | `lv_obj_t` | *core/lv_obj.h*<br/>*core/lv_obj_draw.h*<br/>*core/lv_obj_pos.h*<br/>*core/lv_scroll.h*<br/>*core/lv_obj_style.h*<br/>*core/lv_obj_style_gen.h*<br/>*core/lv_obj_tree.h*<br/>*extra/layouts/flex/lv_flex.h*<br/>*extra/layouts/grid/lv_grid.h* |
+| `Theme` | *core/theme.h* | `lv_theme_t` | *core/lv_theme.h* |
 | `RectangleDrawDescriptor` | *draw/desc.h* | `lv_draw_rect_dsc_t` | *draw/lv_draw_rect.h* |
 | `LabelDrawDescriptor` | *draw/desc.h* | `lv_draw_label_dsc_t` | *draw/lv_draw_label.h* |
 | `ImageDrawDescriptor` | *draw/desc.h* | `lv_draw_img_dsc_t` | *draw/lv_draw_img.h* |
@@ -30,11 +31,16 @@ Here is a list of classes with the corresponding link to LVGL:
 | `ImageDecoder` | *draw/image.h* | `lv_img_decoder_dsc_t` | *draw/lv_img_decoder.h* |
 | `ImageHeader` | *draw/image.h* | `lv_img_header_t` | *draw/lv_img_buf.h* |
 | `ImageDescriptor` | *draw/image.h* | `lv_img_dsc_t` | *draw/lv_img_buf.h* |
+| `LineMask` | *draw/mask.h* | `lv_draw_mask_line_param_t` | *draw/lv_draw_mask.h* |
+| `AngleMask` | *draw/mask.h* | `lv_draw_mask_angle_param_t` | *draw/lv_draw_mask.h* |
+| `RadiusMask` | *draw/mask.h* | `lv_draw_mask_radius_param_t` | *draw/lv_draw_mask.h* |
+| `FadeMask` | *draw/mask.h* | `lv_draw_mask_fade_param_t` | *draw/lv_draw_mask.h* |
+| `MapMask` | *draw/mask.h* | `lv_draw_mask_map_param_t` | *draw/lv_draw_mask.h* |
+| `PolygonMask` | *draw/mask.h* | `lv_draw_mask_polygon_param_t` | *draw/lv_draw_mask.h* |
 | `Font` | *font/font.h* | `lv_font_t` | *font/lv_font.h* |
 | `Animation` | *misc/anim.h* | `lv_anim_t` | *misc/lv_anim.h* |
 | `AnimationTimeline` | *misc/anim.h* | `lv_anim_timeline_t` | *misc/lv_anim_timeline.h* |
 | `Area` | *misc/area.h* | `lv_area_t` | *misc/lv_area.h* |
-| `Color` | *misc/color.h* | `lv_color_t` | *misc/lv_color.h* |
 | `FileSystem` | *misc/fs.h* | `lv_fs_t` | *misc/lv_fs.h* |
 | `File` | *misc/fs.h* | `lv_fs_file_t` | *misc/lv_fs.h* |
 | `Directory` | *misc/fs.h* | `lv_fs_dir_t` | *misc/lv_fs.h* |
@@ -73,14 +79,83 @@ Here is a list of classes with the corresponding link to LVGL:
 | `TileView` | *widgets/tileview.h* | `lv_tileview_t` | *extra/widgets/tileview/lv_tileview.h* |
 | `Window` | *widgets/win.h* | `lv_win_t` | *extra/widgets/win/lv_win.h* |
 
+I've included some useful functions that don't take a specific LVGL type as argument in namespaces. These are:
+| Namespace | Content |
+|-----------|---------|
+| `lvgl::core::obj` | For now, contains the function `draw_part_check_type`, that allows checking the type of a drawable part. I may move other functions related to objects there in the future. |
+| `lvgl::draw::mask` | This contains functions about masks. |
+| `lvgl::misc::color` | Since `lv_color_t` is a `uint32_t` with some coating, I found inefficient to build a class around it. Therefore, you'll find color functions in there. |
+| `lvgl::misc::palette` | Access to the three standard palettes is found here in a C++ way. |
+| `lvgl::misc::txt` | This contains some of the text functions found in `lv_txt.h`. |
+
+## How to use
+
+Unlike with LVGL, you need to include the headers that correspond to what you want to use. A typical program would be:
+```
+#include "lvglpp/lvglpp.h" // for init
+#include "lvglpp/core/display.h" // for Display
+#include "lvglpp/core/indev.h" // for InputDevice
+#include "lvglpp/widgets/button.h" // for Button
+// ... add includes for widgets your want to use here
+#include "lvglpp/misc/style.h" // for Style
+// .. add includes for other classes you want to use (Animation, Timer, ...)
+
+using namespace lvgl::core;
+using namespace lvgl::misc;
+using namespace lvgl::widgets;
+
+void main() {
+    // initialize LVGL
+    lvgl::init();
+    // place here display and input device initialization;
+    // For now I didn't write an example for that, but I will.
+
+    // create button on active display
+    auto btn = Button(scr_act());
+    btn.center();
+    // ... initialize more things ...
+
+    // main loop
+    for (;;) {
+        // I didn't implement ticks yet -> use base LVGL ones
+        lv_tick_inc(10);
+        lv_task_handler();
+        // add here a function to wait for 10ms
+    }
+}
+```
+
+## Accessing managed object
+
+Through the `PointerWrapper` class, I provide several ways to access the managed LVGL object:
+- `raw()` returns a reference to the object;
+- `raw_ptr()` returns a pointer to the object;
+- the dereference operator `*` (e.g. *obj) returns a reference to the object (equivalent to `raw()`);
+- the pointer-to-member operator `->` gives access to the object's structure (e.g. obj->coords for a wrapped `lv_obj_t*` will yield `coords` field of type `lv_area_t`).
+
+## A note on callbacks and child objects
+
+A number of classes (e.g. objects, timers, animations) use callbacks for different purposes. To make them look C++-like, I used the `user_data` field, which (almost) every LVGL structure provides, to give access to the C++ callback (by storing a pointer to the class object containing the callback function, or a pointer to a structure containing the callback functions, or a pointer to the callback function itself). This avoids storing C++ objects in some kind of global storage, but comes with two limitations: 1) we cannot use the `user_data` field for anything else; 2) we need to re-instantiate a C++ object to feed the callback with, everytime the callback is called. In most cases, the additional complexity won't matter. Nonetheless, where speed matters, it's always possible to use raw C callbacks instead.
+
+Another caveat comes with child objects. Several widgets, especially, provide functions to create elements. For instance, the `Tabview` class has a function `add_tab` that returns an `Object` giving access to the created tab. The `Tabview` instance manages the new tab and deletes it when it gets deleted. Therefore, it's important not to delete it otherwise. Since `Object` instances wrap a raw C pointer in a `unique_ptr`, this would happen if the tab object gets out of scope. Therefore, I introduced a property, `owns_ptr`, that can be set on construction, and tells if the object owns the wrapped pointer. If it doesn't, the pointer gets released in the object's destructor. One can also force releasing the wrapped pointer with `release_ptr`. This can be useful when defining complex objects with lots of children that won't need to be accessed after creation. This way, the C++ object can be deleted without affecting the element it has created, freeing memory. You'll find several examples that make use of this.
+
+## Caveats
+
+Because of the way wrappers are implemented, it is important to remember to store the elements that are displayed. If any instance of a C++ object gets out of scope, the wrapped element gets deleted too (unless you use `release_ptr` or it's a child element created with an ad-hoc function).
+
+LVGL stores the relationship of objects and takes care of deleting children of objects getting deleted. This means that you can safely use `release_ptr` on sub-widgets. Conversely, nothing is stored about instances of other types, like styles, animations, timers, ... Therefore, you **must not** `release_ptr` one of those, of you won't have any possibility to free it up afterwards. For those, you should either provide some kind of storage (`std::vector`, class member variable, ...) or make them static. 
+
+For C++-style callbacks, it is important to remember that any object obtained from within the callback by calling an accessor function (such as `Event::get_target`) creates a temporary object wrapping a raw pointer. This means that you cannot create derived classes that would carry data along. Every call to the callback gets fed with a newly created temporary object with, other than the raw pointer, default values. Moreover, you cannot pass data using the `user_data` field, as it is used internally to pass the C++-style callback. For such cases, you need to define a global variable to transfer data to or from the callback.
+
 # API documentation
 
 There is a documentation generated from docstrings in the *doc* folder. See [here](doc/html/index.html).
 
-## Tests
-
-Time to write some...
-
 ## Examples
 
-Time to write some too...
+I adapted most of the examples provided with LVGL. You'll find them in the *examples* folder. For examples that involve images, you need to include the appropriate files from LVGL examples. Don't forget to initialize LVGL and define a screen and an input device.
+
+## Tests
+
+Time to write some... err...
+

@@ -11,21 +11,20 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void bar_3() {
-        Style style_indic;
+        static Style style_indic;
 
         style_indic.set_bg_opa(LV_OPA_COVER);
         style_indic.set_bg_color(palette::main(Color::Red));
         style_indic.set_bg_grad_color(palette::main(Color::Blue));
         style_indic.set_bg_grad_dir(LV_GRAD_DIR_VER);
 
-        auto root = scr_act();
-        auto bar = Bar(root);
+        static auto bar = Bar(scr_act());
         bar.add_style(style_indic, LV_PART_INDICATOR);
         bar.set_size(20, 200);
         bar.center();
         bar.set_range(-20, 40);
 
-        Animation a;
+        static Animation a;
         auto set_temp = [](Bar & bar, int32_t temp) {
             bar.set_value(temp, LV_ANIM_ON);
         };

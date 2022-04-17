@@ -23,21 +23,21 @@ namespace lvgl::examples {
         root.set_flex_flow(LV_FLEX_FLOW_COLUMN);
         root.set_flex_align(LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_START, LV_FLEX_ALIGN_CENTER);
 
-        auto cb1 = Checkbox(root);
+        static auto cb1 = Checkbox(root);
         cb1.set_text("Apple");
         cb1.add_event_cb(event_handler, LV_EVENT_ALL);
 
-        auto cb2 = Checkbox(root);
+        static auto cb2 = Checkbox(root);
         cb2.set_text("Banana");
         cb2.add_state(LV_STATE_CHECKED);
         cb2.add_event_cb(event_handler, LV_EVENT_ALL);
 
-        auto cb3 = Checkbox(root);
+        static auto cb3 = Checkbox(root);
         cb3.set_text("Lemon");
         cb3.add_state(LV_STATE_DISABLED);
         cb3.add_event_cb(event_handler, LV_EVENT_ALL);
 
-        auto cb4 = Checkbox(root);
+        static auto cb4 = Checkbox(root);
         cb4.add_state(LV_STATE_CHECKED | LV_STATE_DISABLED);
         cb4.set_text("Melon\nand a new line");
         cb4.add_event_cb(event_handler, LV_EVENT_ALL);

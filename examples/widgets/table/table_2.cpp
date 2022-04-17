@@ -62,7 +62,7 @@ namespace lvgl::examples {
 
         auto root = scr_act();
         
-        auto table = Table(root);
+        static auto table = Table(root);
 
         /*Set a smaller height to the table. It'll make it scrollable*/
         table.set_size(LV_SIZE_CONTENT, 200);
@@ -91,7 +91,7 @@ namespace lvgl::examples {
 
         uint32_t elaps = lv_tick_elaps(t);
 
-        auto label = Label(root);
+        static auto label = Label(root);
         label.set_text_fmt("%u items were created in %u ms\n"
                            "using %u bytes of memory",
                            ITEM_CNT, elaps, mem_used);

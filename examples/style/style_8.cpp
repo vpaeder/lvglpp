@@ -10,7 +10,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void style_8() {
-        Style style;
+        static Style style;
         style.set_radius(5);
         style.set_bg_opa(LV_OPA_COVER);
         style.set_bg_color(palette::light(Color::Grey, 2));
@@ -22,8 +22,7 @@ namespace lvgl::examples {
         style.set_text_line_space(20);
         style.set_text_decor(LV_TEXT_DECOR_UNDERLINE);        
         /*Create an object with the new style*/
-        auto root = scr_act();
-        auto obj = Label(root);
+        static auto obj = Label(scr_act());
         obj.add_style(style, LV_STATE_DEFAULT);
         obj.set_text("Text of\n"
                      "a label");

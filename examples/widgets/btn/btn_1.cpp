@@ -10,8 +10,8 @@ namespace lvgl::examples {
 
     void button_1() {
         auto root = scr_act();
-        auto button1 = Button(root);
-        auto label1 = Label(button1);
+        static auto button1 = Button(root);
+        static auto label1 = Label(button1);
 
         auto event_handler = [](Event & e) {
             auto code = e.get_code();
@@ -29,8 +29,8 @@ namespace lvgl::examples {
         label1.set_text("Button");
         label1.center();
 
-        auto button2 = Button(root);
-        auto label2 = Label(button2);
+        static auto button2 = Button(root);
+        static auto label2 = Label(button2);
         button2.add_event_cb(event_handler, LV_EVENT_ALL);
         button2.align(LV_ALIGN_CENTER, 0, 40);
         button2.add_flag(LV_OBJ_FLAG_CHECKABLE);

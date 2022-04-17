@@ -21,7 +21,7 @@ namespace lvgl::examples {
 
     void calendar_1() {
         auto root = scr_act();
-        auto calendar = Calendar(root);
+        static auto calendar = Calendar(scr_act());
         calendar.set_size(185, 185);
         calendar.align(LV_ALIGN_CENTER, 0, 27);
         calendar.add_event_cb(event_handler, LV_EVENT_ALL);

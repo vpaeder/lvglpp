@@ -123,38 +123,38 @@ namespace lvgl::examples {
         root.set_flex_align(LV_FLEX_ALIGN_SPACE_AROUND, LV_FLEX_ALIGN_CENTER, LV_FLEX_ALIGN_CENTER);
 
         /* create btn_start */
-        auto btn_start = Button(root);
+        static auto btn_start = Button(root);
         btn_start.add_event_cb(btn_start_event_handler, LV_EVENT_VALUE_CHANGED);
         btn_start.add_flag(LV_OBJ_FLAG_IGNORE_LAYOUT);
         btn_start.add_flag(LV_OBJ_FLAG_CHECKABLE);
         btn_start.align(LV_ALIGN_TOP_MID, -100, 20);
 
-        auto label_start = Label(btn_start);
+        static auto label_start = Label(btn_start);
         label_start.set_text("Start");
         label_start.center();
 
         /* create btn_del */
-        auto btn_del = Button(root);
+        static auto btn_del = Button(root);
         btn_del.add_event_cb(btn_del_event_handler, LV_EVENT_CLICKED);
         btn_del.add_flag(LV_OBJ_FLAG_IGNORE_LAYOUT);
         btn_del.align(LV_ALIGN_TOP_MID, 0, 20);
 
-        auto label_del = Label(btn_del);
+        static auto label_del = Label(btn_del);
         label_del.set_text("Delete");
         label_del.center();
 
         /* create btn_stop */
-        auto btn_stop = Button(root);
+        static auto btn_stop = Button(root);
         btn_stop.add_event_cb(btn_stop_event_handler, LV_EVENT_CLICKED);
         btn_stop.add_flag(LV_OBJ_FLAG_IGNORE_LAYOUT);
         btn_stop.align(LV_ALIGN_TOP_MID, 100, 20);
 
-        auto label_stop = Label(btn_stop);
+        static auto label_stop = Label(btn_stop);
         label_stop.set_text("Stop");
         label_stop.center();
 
         /* create slider_prg */
-        auto slider_prg = Slider(root);
+        static auto slider_prg = Slider(root);
         slider_prg.add_event_cb(slider_prg_event_handler, LV_EVENT_VALUE_CHANGED);
         slider_prg.add_flag(LV_OBJ_FLAG_IGNORE_LAYOUT);
         slider_prg.align(LV_ALIGN_BOTTOM_MID, 0, -20);

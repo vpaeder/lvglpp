@@ -10,15 +10,15 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void bar_4() {
-        auto img = ImageDescriptor(&img_skew_strip);
+        static auto img = ImageDescriptor();
+        img.set_src(img_skew_strip_map, 80, 20, LV_IMG_CF_TRUE_COLOR_ALPHA);
 
-        Style style_indic;
+        static Style style_indic;
         style_indic.set_bg_img_src(img);
         style_indic.set_bg_img_tiled(true);
         style_indic.set_bg_img_opa(LV_OPA_30);
 
-        auto root = scr_act();
-        auto bar = Bar(root);
+        static auto bar = Bar(scr_act());
         bar.add_style(style_indic, LV_PART_INDICATOR);
 
         bar.set_size(260, 20);

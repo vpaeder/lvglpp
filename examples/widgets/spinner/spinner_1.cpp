@@ -7,8 +7,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void spinner_1() {
-        auto root = scr_act();
-        auto spinner = Spinner(root, 1000, 60);
+        static auto spinner = Spinner(scr_act(), 1000, 60);
         spinner.set_size(100, 100);
         spinner.center();
     }

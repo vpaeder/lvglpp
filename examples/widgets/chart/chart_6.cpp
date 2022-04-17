@@ -55,7 +55,7 @@ namespace lvgl::examples {
 
     void chart_6() {
         auto root = scr_act();
-        auto chart = Chart(root);
+        static auto chart = Chart(root);
 
         chart.set_size(200, 150);
         chart.align(LV_ALIGN_CENTER, 0, -10);
@@ -69,14 +69,12 @@ namespace lvgl::examples {
         cursor = chart.add_cursor(palette::main(Color::Blue), LV_DIR_LEFT | LV_DIR_BOTTOM);
 
         ser = chart.add_series(palette::main(Color::Red), LV_CHART_AXIS_PRIMARY_Y);
-        uint32_t i;
-        for(i = 0; i < 10; i++) {
+        for(uint32_t i = 0; i < 10; i++)
             chart.set_next_y_value(ser, lv_rand(10, 90));
-        }
-
+        
         chart.set_zoom_x(500);
 
-        auto label = Label(root);
+        static auto label = Label(root);
         label.set_text("Click on a point");
         label.align_to(chart, LV_ALIGN_OUT_TOP_MID, 0, -5);
     }

@@ -9,15 +9,14 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void anim_2() {
-        auto root = scr_act();
-        auto obj = Container(root);
+        static auto obj = Container(scr_act());
 
         obj.set_style_bg_color(palette::main(Color::Red), 0);
         obj.set_style_radius(LV_RADIUS_CIRCLE, 0);
 
         obj.align(LV_ALIGN_LEFT_MID, 10, 0);
 
-        Animation a1, a2;
+        static Animation a1, a2;
         a1.set_var(obj);
         a1.set_values(10, 50);
         a1.set_time(1000);

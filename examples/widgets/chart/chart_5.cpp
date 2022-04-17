@@ -85,13 +85,13 @@ namespace lvgl::examples {
         chart->set_point_count(ecg_sample.size());
         chart->set_ext_y_array(ser, ecg_sample);
 
-        auto slider_x = Slider(root);
+        static auto slider_x = Slider(root);
         slider_x.set_range(LV_IMG_ZOOM_NONE, LV_IMG_ZOOM_NONE * 10);
         slider_x.add_event_cb(slider_x_event_cb, LV_EVENT_VALUE_CHANGED);
         slider_x.set_size(200, 10);
         slider_x.align_to(*chart, LV_ALIGN_OUT_BOTTOM_MID, 0, 20);
 
-        auto slider_y = Slider(root);
+        static auto slider_y = Slider(root);
         slider_y.set_range(LV_IMG_ZOOM_NONE, LV_IMG_ZOOM_NONE * 10);
         slider_y.add_event_cb(slider_y_event_cb, LV_EVENT_VALUE_CHANGED);
         slider_y.set_size(10, 150);

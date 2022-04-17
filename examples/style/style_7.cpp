@@ -10,12 +10,11 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void style_7() {
-        Style style;
+        static Style style;
         style.set_arc_color(palette::main(Color::Red));
         style.set_arc_width(4);        
         /*Create an object with the new style*/
-        auto root = scr_act();
-        auto obj = Arc(root);
+        static auto obj = Arc(scr_act());
         obj.add_style(style, LV_STATE_DEFAULT);
         obj.center();
     }

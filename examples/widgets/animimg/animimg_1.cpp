@@ -14,8 +14,7 @@ namespace lvgl::examples {
         anim_imgs[1].set_src(animimg002_map, 130, 170, LV_IMG_CF_TRUE_COLOR_ALPHA);
         anim_imgs[2].set_src(animimg003_map, 130, 170, LV_IMG_CF_TRUE_COLOR_ALPHA);
 
-        auto root = scr_act();
-        auto animimg = AnimatedImage(root);
+        static auto animimg = AnimatedImage(scr_act());
         animimg.center();
         animimg.set_src(anim_imgs);
         animimg.set_duration(1000);

@@ -17,9 +17,7 @@ namespace lvgl::examples {
     }
 
     void roller_1() {
-        auto root = scr_act();
-        
-        auto roller = Roller(root);
+        static auto roller = Roller(scr_act());
         roller.set_options("January\n"
                            "February\n"
                            "March\n"

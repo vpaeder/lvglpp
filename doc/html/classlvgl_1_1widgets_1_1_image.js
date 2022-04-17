@@ -1,0 +1,25 @@
+var classlvgl_1_1widgets_1_1_image =
+[
+    [ "get_angle", "classlvgl_1_1widgets_1_1_image.html#ae32118353977e7d48c9278cd24e068ac", null ],
+    [ "get_antialias", "classlvgl_1_1widgets_1_1_image.html#acd2470f7198facf7d9ff9760c4eb6c26", null ],
+    [ "get_offset_x", "classlvgl_1_1widgets_1_1_image.html#a9809645b299efa8bc31c16208ad6ee63", null ],
+    [ "get_offset_y", "classlvgl_1_1widgets_1_1_image.html#ad369c9bb45eb50d983c6086e5f953be8", null ],
+    [ "get_pivot", "classlvgl_1_1widgets_1_1_image.html#a98b88c4aa0840271c53b7ce398f7fd17", null ],
+    [ "get_size_mode", "classlvgl_1_1widgets_1_1_image.html#a0c0b600a97da3b4bf41d3e05331753df", null ],
+    [ "get_src_img", "classlvgl_1_1widgets_1_1_image.html#abf454296355282b26e2abf9d06629a41", null ],
+    [ "get_src_str", "classlvgl_1_1widgets_1_1_image.html#a4672a5c103893d915ab042f86be88372", null ],
+    [ "get_src_type", "classlvgl_1_1widgets_1_1_image.html#acc02a5fa918b67c54adb1b2f1f4c6d07", null ],
+    [ "get_zoom", "classlvgl_1_1widgets_1_1_image.html#a211d69689a4274d90fa04de8f80814df", null ],
+    [ "set_angle", "classlvgl_1_1widgets_1_1_image.html#a8106fe817e3732df756323e0a0823601", null ],
+    [ "set_antialias", "classlvgl_1_1widgets_1_1_image.html#ad5c5b36fb569c6563460aee803136c66", null ],
+    [ "set_offset_x", "classlvgl_1_1widgets_1_1_image.html#a46428f8f20bd741dca9a770963712894", null ],
+    [ "set_offset_y", "classlvgl_1_1widgets_1_1_image.html#aa2fef831f5b9f94b8f3a4d4468651e4f", null ],
+    [ "set_pivot", "classlvgl_1_1widgets_1_1_image.html#ad49c23e874df78d32974b2c26f54270c", null ],
+    [ "set_size_mode", "classlvgl_1_1widgets_1_1_image.html#a2f4ee4b223a77c95c01db3e25cb6ecb6", null ],
+    [ "set_src", "classlvgl_1_1widgets_1_1_image.html#aa3db54422689d2d2d8c88887f3b308a8", null ],
+    [ "set_src", "classlvgl_1_1widgets_1_1_image.html#a85e39dc72ee04796a49ed409e4989329", null ],
+    [ "set_zoom", "classlvgl_1_1widgets_1_1_image.html#afeb20c2378f699c876f84355974c6478", null ],
+    [ "Widget", "classlvgl_1_1widgets_1_1_image.html#a73d09fe7fcf13b343629fb1641455682", null ],
+    [ "Widget", "classlvgl_1_1widgets_1_1_image.html#a0158d59f2ee6c4ad3379c6562f13cad6", null ],
+    [ "Widget", "classlvgl_1_1widgets_1_1_image.html#ac8954d407bdb29e1d490fad9a6f25e50", null ]
+];

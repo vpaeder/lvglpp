@@ -9,8 +9,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void event_1() {
-        auto root = scr_act();
-        auto btn = Button(root);
+        static auto btn = Button(scr_act());
         btn.set_size(100, 50);
         btn.center();
         auto event_cb = [](Event & e) {
@@ -22,7 +21,7 @@ namespace lvgl::examples {
         };
         btn.add_event_cb(event_cb, LV_EVENT_CLICKED);
 
-        auto label = Label(btn);
+        static auto label = Label(btn);
         label.set_text("Click me!");
         label.center();
     }

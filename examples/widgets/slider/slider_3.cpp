@@ -38,9 +38,7 @@ namespace lvgl::examples {
    }
 
     void slider_3() {
-        auto root = scr_act();
-        
-        auto slider = Slider(root);
+        static auto slider = Slider(scr_act());
         slider.center();
 
         slider.set_mode(LV_SLIDER_MODE_RANGE);

@@ -22,7 +22,7 @@ namespace lvgl::examples {
     void textarea_3() {
         auto root = scr_act();
         
-        auto ta = TextArea(root);
+        static auto ta = TextArea(root);
         ta.add_event_cb(ta_event_cb, LV_EVENT_VALUE_CHANGED);
         ta.set_accepted_chars("0123456789:");
         ta.set_max_length(5);
@@ -30,7 +30,7 @@ namespace lvgl::examples {
         ta.set_text("");
 
         /*Create a keyboard*/
-        auto kb = Keyboard(root);
+        static auto kb = Keyboard(root);
         kb.set_size(LV_HOR_RES, LV_VER_RES / 2);
         kb.set_mode(LV_KEYBOARD_MODE_NUMBER);
         kb.set_textarea(ta);

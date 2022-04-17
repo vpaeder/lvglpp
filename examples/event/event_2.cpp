@@ -13,11 +13,11 @@ namespace lvgl::examples {
 
     void event_2() {
         auto root = scr_act();
-        auto btn = Button(root);
+        static auto btn = Button(root);
         btn.set_size(100, 50);
         btn.center();
 
-        auto btn_label = Label(btn);
+        static auto btn_label = Label(btn);
         btn_label.set_text("Click me!");
         btn_label.center();
 

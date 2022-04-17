@@ -13,23 +13,22 @@ namespace lvgl::examples {
         std::vector<lv_style_prop_t> props = {LV_STYLE_BG_COLOR, LV_STYLE_BORDER_COLOR, LV_STYLE_BORDER_WIDTH, LV_STYLE_PROP_INV};
         /* A default transition
         * Make it fast (100ms) and start with some delay (200 ms)*/
-        LinearStyleTransition trans_def(props, 100, 200);
+        static LinearStyleTransition trans_def(props, 100, 200);
         /* A special transition when going to pressed state
         * Make it slow (500 ms) but start  without delay*/
-        LinearStyleTransition trans_pr(props, 500, 0);
+        static LinearStyleTransition trans_pr(props, 500, 0);
 
-        Style style_def;
+        static Style style_def;
         style_def.set_transition(trans_def);
 
-        Style style_pr;
+        static Style style_pr;
         style_pr.set_bg_color(palette::main(Color::Red));
         style_pr.set_border_width(6);
         style_pr.set_border_color(palette::dark(Color::Red, 3));
         style_pr.set_transition(trans_pr);
         
         /*Create an object with the new style*/
-        auto root = scr_act();
-        auto obj = Container(root);
+        static auto obj = Container(scr_act());
         obj.add_style(style_def, LV_STATE_DEFAULT);
         obj.add_style(style_pr, LV_STATE_PRESSED);
         obj.center();

@@ -11,19 +11,17 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void line_1() {
-        auto root = scr_act();
-        
         /*Create an array for the points of the line*/
-        auto line_points = std::vector<lv_point_t>{ {5, 5}, {70, 70}, {120, 10}, {180, 60}, {240, 10} };
+        static auto line_points = std::vector<lv_point_t>{ {5, 5}, {70, 70}, {120, 10}, {180, 60}, {240, 10} };
 
         /*Create style*/
-        Style style_line;
+        static Style style_line;
         style_line.set_line_width(8);
         style_line.set_line_color(palette::main(Color::Blue));
         style_line.set_line_rounded(true);
 
         /*Create a line and apply the new style*/
-        auto line = Line(root);
+        static auto line = Line(scr_act());
         line.set_points(line_points);     /*Set the points*/
         line.add_style(style_line, 0);
         line.center();

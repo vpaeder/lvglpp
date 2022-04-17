@@ -41,7 +41,7 @@ namespace lvgl::examples {
         label->set_text("Hello animations!");
         label->set_pos(100, 10);
 
-        auto sw = Switch(root);
+        static auto sw = Switch(root);
         sw.center();
         sw.add_state(LV_STATE_CHECKED);
         sw.add_event_cb(sw_event_cb, LV_EVENT_VALUE_CHANGED);

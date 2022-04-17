@@ -13,16 +13,16 @@ namespace lvgl::examples {
         auto root = scr_act();
         
         /*Create a style for the shadow*/
-        Style style_shadow;
+        static Style style_shadow;
         style_shadow.set_text_opa(LV_OPA_30);
         style_shadow.set_text_color(palette::black());
 
         /*Create a label for the shadow first (it's in the background)*/
-        auto shadow_label = Label(root);
+        static auto shadow_label = Label(root);
         shadow_label.add_style(style_shadow, LV_PART_MAIN);
 
         /*Create the main label*/
-        auto main_label = Label(root);
+        static auto main_label = Label(root);
         main_label.set_text("A simple method to create\n"
                             "shadows on a text.\n"
                             "It even works with\n\n"

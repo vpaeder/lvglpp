@@ -9,8 +9,7 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void arc_2() {
-        auto root = scr_act();
-        auto arc = Arc(root);
+        static auto arc = Arc(scr_act());
         arc.set_size(150, 150);
         arc.set_rotation(270);
         arc.set_bg_angles(0, 360);
@@ -18,7 +17,7 @@ namespace lvgl::examples {
         arc.clear_flag(LV_OBJ_FLAG_CLICKABLE);
         arc.center();
 
-        Animation a;
+        static Animation a;
         a.set_var(arc);
         auto set_angle = [] (Arc & obj, int32_t v) {
             obj.set_value(v);

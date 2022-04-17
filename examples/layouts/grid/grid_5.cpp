@@ -14,7 +14,7 @@ namespace lvgl::examples {
         static std::vector<lv_coord_t> row_dsc = {45, 45, 45, LV_GRID_TEMPLATE_LAST};
 
         /*Create a container with grid*/
-        auto cont = Container(scr_act());
+        static auto cont = Container(scr_act());
         cont.set_size(300, 220);
         cont.center();
         cont.set_grid_dsc_array(col_dsc, row_dsc);
@@ -41,7 +41,7 @@ namespace lvgl::examples {
             obj.set_style_pad_column(v, 0);
         };
 
-        Animation a1, a2;
+        static Animation a1, a2;
         a1.set_var(cont);
         a1.set_values(0, 10);
         a1.set_repeat_count(LV_ANIM_REPEAT_INFINITE);

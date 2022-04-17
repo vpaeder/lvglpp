@@ -56,6 +56,18 @@ namespace lvgl::misc {
             lv_color_t mix(lv_color_t c1, lv_color_t c2, uint8_t ratio) {
                 return lv_color_mix(c1, c2, ratio);
             }
+
+            lv_color_t lighten(lv_color_t color, lv_opa_t lvl) {
+                return lv_color_lighten(color, lvl);
+            }
+
+            lv_color_t darken(lv_color_t color, lv_opa_t lvl) {
+                return lv_color_darken(color, lvl);
+            }
+
+            lv_color_t change_lightness(lv_color_t color, lv_opa_t lvl) {
+                return lv_color_change_lightness(color, lvl);
+            }
         }
 
         namespace palette {

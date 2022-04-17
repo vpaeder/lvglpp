@@ -7,8 +7,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void arc_1() {
-        auto root = scr_act();
-        auto arc = Arc(root);
+        static auto arc = Arc(scr_act());
         arc.set_size(150, 150);
         arc.set_rotation(135);
         arc.set_bg_angles(0, 270);

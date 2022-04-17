@@ -11,7 +11,7 @@ namespace lvgl::examples {
 
     void style_11() {
         /*A base style*/
-        Style style_base;
+        static Style style_base;
         style_base.set_bg_color(palette::main(Color::LightBlue));
         style_base.set_border_color(palette::dark(Color::LightBlue, 3));
         style_base.set_border_width(2);
@@ -24,28 +24,28 @@ namespace lvgl::examples {
         style_base.set_height(LV_SIZE_CONTENT);
 
         /*Set only the properties that should be different*/
-        Style style_warning;
+        static Style style_warning;
         style_warning.set_bg_color(palette::main(Color::Yellow));
         style_warning.set_border_color(palette::dark(Color::Yellow, 3));
         style_warning.set_text_color(palette::dark(Color::Yellow, 4));
 
         /*Create an object with the base style only*/
         auto root = scr_act();
-        auto obj_base = Container(root);
+        static auto obj_base = Container(root);
         obj_base.add_style(style_base, LV_STATE_DEFAULT);
         obj_base.align(LV_ALIGN_LEFT_MID, 20, 0);
 
-        auto label_base = Label(obj_base);
+        static auto label_base = Label(obj_base);
         label_base.set_text("Base");
         label_base.center();
 
         /*Create another object with the base style and earnings style too*/
-        auto obj_warning = Container(root);
+        static auto obj_warning = Container(root);
         obj_warning.add_style(style_base, LV_STATE_DEFAULT);
         obj_warning.add_style(style_warning, LV_STATE_DEFAULT);
         obj_warning.align(LV_ALIGN_RIGHT_MID, -20, 0);
 
-        auto label_warning = Label(obj_warning);
+        static auto label_warning = Label(obj_warning);
         label_warning.set_text("Base");
         label_warning.center();
 

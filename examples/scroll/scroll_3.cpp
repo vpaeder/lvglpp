@@ -39,7 +39,7 @@ namespace lvgl::examples {
             list->add_btn(LV_SYMBOL_AUDIO, txt);
         }
 
-        auto float_btn = Button(*list);
+        static auto float_btn = Button(*list);
         float_btn.set_size(50, 50);
         float_btn.add_flag(LV_OBJ_FLAG_FLOATING);
         float_btn.align(LV_ALIGN_BOTTOM_RIGHT, 0, -list->get_style_pad_right(LV_PART_MAIN));

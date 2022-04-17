@@ -70,8 +70,7 @@ namespace lvgl::examples {
     }
 
     void btnmatrix_2() {
-        auto root = scr_act();
-        auto btnm = ButtonMatrix(root);
+        static auto btnm = ButtonMatrix(scr_act());
         btnm.add_event_cb(event_cb, LV_EVENT_ALL);
         btnm.center();
    }

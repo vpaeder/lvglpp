@@ -14,8 +14,7 @@ namespace lvgl::examples {
     static MeterPtr meter;
 
     void meter_3() {
-        auto root = scr_act();
-        meter = std::make_unique<Meter>(root);
+        meter = std::make_unique<Meter>(scr_act());
         meter->center();
         meter->set_size(200, 200);
         /*Create a scale for the minutes*/
@@ -30,7 +29,7 @@ namespace lvgl::examples {
         meter->set_scale_major_ticks(scale_hour, 1, 2, 20, palette::black(), 10);    /*Every tick is major*/
         meter->set_scale_range(scale_hour, 1, 12, 330, 300);       /*[1..12] values in an almost full circle*/
 
-        ImageDescriptor img_hand;
+        static ImageDescriptor img_hand;
         img_hand.set_src(img_hand_map, 100, 9, LV_IMG_CF_TRUE_COLOR_ALPHA);
 
         /*Add a the hands from images*/
@@ -38,7 +37,7 @@ namespace lvgl::examples {
         auto indic_hour = meter->add_needle_img(scale_min, img_hand, 5, 5);
 
         /*Create an animation to set the value*/
-        Animation a1, a2;
+        static Animation a1, a2;
         auto set_value = [](lv_meter_indicator_t *& indic, int32_t v) {
             meter->set_indicator_end_value(indic, v);
         };

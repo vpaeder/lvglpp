@@ -10,18 +10,16 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void image_3() {
-        auto root = scr_act();
-        
-        auto img_src = ImageDescriptor();
+        static auto img_src = ImageDescriptor();
         img_src.set_src(img_cogwheel_argb_map, 100, 100, LV_IMG_CF_TRUE_COLOR_ALPHA);
 
         /*Now create the actual image*/
-        auto img = Image(root);
+        static auto img = Image(scr_act());
         img.set_src(img_src);
         img.align(LV_ALIGN_CENTER, 50, 50);
         img.set_pivot(0, 0);    /*Rotate around the top left corner*/
 
-        Animation a1, a2;
+        static Animation a1, a2;
         a1.set_var(img);
         auto set_angle = [](Image & img, int32_t v) {
             img.set_angle(v);

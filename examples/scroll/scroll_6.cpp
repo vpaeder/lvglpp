@@ -46,7 +46,7 @@ namespace lvgl::examples {
     }
 
     void scroll_6() {
-        auto cont = Container(scr_act());
+        static auto cont = Container(scr_act());
         cont.set_size(200, 200);
         cont.center();
         cont.set_flex_flow(LV_FLEX_FLOW_COLUMN);

@@ -27,7 +27,7 @@ namespace lvgl::examples {
     void textarea_2() {
         auto root = scr_act();
         /*Create the password box*/
-        auto pwd_ta = TextArea(root);
+        static auto pwd_ta = TextArea(root);
         pwd_ta.set_text("");
         pwd_ta.set_password_mode(true);
         pwd_ta.set_one_line(true);
@@ -36,12 +36,12 @@ namespace lvgl::examples {
         pwd_ta.add_event_cb(ta_event_cb, LV_EVENT_ALL);
 
         /*Create a label and position it above the text box*/
-        auto pwd_label = Label(root);
+        static auto pwd_label = Label(root);
         pwd_label.set_text("Password:");
         pwd_label.align_to(pwd_ta, LV_ALIGN_OUT_TOP_LEFT, 0, 0);
 
         /*Create the one-line mode text area*/
-        auto text_ta = TextArea(root);
+        static auto text_ta = TextArea(root);
         text_ta.set_one_line(true);
         text_ta.set_password_mode(false);
         text_ta.set_width(lv_pct(40));
@@ -50,7 +50,7 @@ namespace lvgl::examples {
 
 
         /*Create a label and position it above the text box*/
-        auto oneline_label = Label(root);
+        static auto oneline_label = Label(root);
         oneline_label.set_text("Text:");
         oneline_label.align_to(text_ta, LV_ALIGN_OUT_TOP_LEFT, 0, 0);
 

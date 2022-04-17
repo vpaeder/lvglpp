@@ -1,0 +1,25 @@
+var classlvgl_1_1widgets_1_1_arc =
+[
+    [ "get_angle_end", "classlvgl_1_1widgets_1_1_arc.html#a4815e9bb5edde43fc705de0f74b3e267", null ],
+    [ "get_angle_start", "classlvgl_1_1widgets_1_1_arc.html#afd80b2c3c4d90c8326dc2d86a6218cd0", null ],
+    [ "get_bg_angle_end", "classlvgl_1_1widgets_1_1_arc.html#a471e901901824ce1e0d269920950ee69", null ],
+    [ "get_bg_angle_start", "classlvgl_1_1widgets_1_1_arc.html#ac7fb073440e85a651d37c3a5a40e17c1", null ],
+    [ "get_max_value", "classlvgl_1_1widgets_1_1_arc.html#a1a8508a5a1c53ef2cfd450d30c224e36", null ],
+    [ "get_min_value", "classlvgl_1_1widgets_1_1_arc.html#a8c34290f9fd54085dc06b95b0e674922", null ],
+    [ "get_mode", "classlvgl_1_1widgets_1_1_arc.html#a2a304b8bef24a40701518ffb092bb615", null ],
+    [ "get_value", "classlvgl_1_1widgets_1_1_arc.html#a355cb45feed7cba6c3a12ccb7150679f", null ],
+    [ "set_angles", "classlvgl_1_1widgets_1_1_arc.html#a360f0147683c47fbc5a051ec38d08981", null ],
+    [ "set_bg_angles", "classlvgl_1_1widgets_1_1_arc.html#a0974d16515a2cb2a833c246c33961b50", null ],
+    [ "set_bg_end_angle", "classlvgl_1_1widgets_1_1_arc.html#a77b70309040c1f0110006d322e93305e", null ],
+    [ "set_bg_start_angle", "classlvgl_1_1widgets_1_1_arc.html#a1d6ef9f3a77e971aee12d1558b3668b7", null ],
+    [ "set_change_rate", "classlvgl_1_1widgets_1_1_arc.html#a7617dd8e4bc6a420b8ca1e18be344131", null ],
+    [ "set_end_angle", "classlvgl_1_1widgets_1_1_arc.html#abca33cfb1e57ccacd8a9de0c63567f28", null ],
+    [ "set_mode", "classlvgl_1_1widgets_1_1_arc.html#a7e1a42f6297e2e410d959485912576be", null ],
+    [ "set_range", "classlvgl_1_1widgets_1_1_arc.html#aa4822fdfeea0d9b18d1537ba539be661", null ],
+    [ "set_rotation", "classlvgl_1_1widgets_1_1_arc.html#a26f959efcf8f1180ba074737354fc693", null ],
+    [ "set_start_angle", "classlvgl_1_1widgets_1_1_arc.html#aecff6f1e384adba9791b362cd16baf22", null ],
+    [ "set_value", "classlvgl_1_1widgets_1_1_arc.html#a7d64ce2235573018c15d24663fe20528", null ],
+    [ "Widget", "classlvgl_1_1widgets_1_1_arc.html#a73d09fe7fcf13b343629fb1641455682", null ],
+    [ "Widget", "classlvgl_1_1widgets_1_1_arc.html#a0158d59f2ee6c4ad3379c6562f13cad6", null ],
+    [ "Widget", "classlvgl_1_1widgets_1_1_arc.html#ac8954d407bdb29e1d490fad9a6f25e50", null ]
+];

@@ -7,8 +7,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void bar_1() {
-        auto root = scr_act();
-        auto bar = Bar(root);
+        static auto bar = Bar(scr_act());
         bar.set_size(200, 20);
         bar.center();
         bar.set_value(70, LV_ANIM_OFF);

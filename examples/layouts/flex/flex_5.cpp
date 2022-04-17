@@ -11,7 +11,7 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void flex_5() {
-        auto cont = Container(scr_act());
+        static auto cont = Container(scr_act());
         cont.set_size(300, 220);
         cont.center();
         cont.set_flex_flow(LV_FLEX_FLOW_ROW_WRAP);
@@ -32,7 +32,7 @@ namespace lvgl::examples {
         auto column_gap_anim = [](Container & obj, int32_t v) {
             obj.set_style_pad_column(v, 0);
         };
-        Animation a1, a2;
+        static Animation a1, a2;
         a1.set_var(cont);
         a1.set_values(0, 10);
         a1.set_repeat_count(LV_ANIM_REPEAT_INFINITE);

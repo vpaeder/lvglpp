@@ -8,8 +8,7 @@ namespace lvgl::examples {
     using namespace lvgl::core;
     using namespace lvgl::widgets;
 
-    using KeyboardPtr = std::shared_ptr<Keyboard>;
-    KeyboardPtr kb;
+    std::shared_ptr<Keyboard> kb;
 
     static void ta_event_cb(Event & e) {
         auto code = e.get_code();
@@ -30,13 +29,13 @@ namespace lvgl::examples {
         /*Create a keyboard to use it with an of the text areas*/
         kb = std::make_shared<Keyboard>(root);
 
-        auto ta1 = TextArea(root);
+        static auto ta1 = TextArea(root);
         ta1.align(LV_ALIGN_TOP_LEFT, 10, 10);
         ta1.add_event_cb(ta_event_cb, LV_EVENT_ALL);
         ta1.set_placeholder_text("Hello");
         ta1.set_size(140, 80);
 
-        auto ta2 = TextArea(root);
+        static auto ta2 = TextArea(root);
         ta2.align(LV_ALIGN_TOP_RIGHT, -10, 10);
         ta2.add_event_cb(ta_event_cb, LV_EVENT_ALL);
         ta2.set_size(140, 80);

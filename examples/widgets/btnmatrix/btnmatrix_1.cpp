@@ -10,12 +10,11 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void btnmatrix_1() {
-        auto root = scr_act();
-        auto btnm = ButtonMatrix(root);
+        static auto btnm = ButtonMatrix(scr_act());
 
-        std::vector<std::string> btnm_map = {"1", "2", "3", "4", "5", "\n",
-                                             "6", "7", "8", "9", "0", "\n",
-                                             "Action1", "Action2", ""};
+        static std::vector<std::string> btnm_map = {"1", "2", "3", "4", "5", "\n",
+                                                    "6", "7", "8", "9", "0", "\n",
+                                                    "Action1", "Action2", ""};
 
         btnm.set_map(btnm_map);
         btnm.set_btn_width(10, 2); /*Make "Action1" twice as wide as "Action2"*/

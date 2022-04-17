@@ -9,13 +9,12 @@ namespace lvgl::examples {
     using namespace lvgl::misc;
 
     void style_12() {
-        Style style;
+        static Style style;
         style.set_bg_color(palette::main(Color::Green));
         style.set_border_color(palette::light(Color::Green, 3));
         style.set_border_width(3);
         
-        auto root = scr_act();
-        auto obj = Container(root);
+        static auto obj = Container(scr_act());
         obj.add_style(style, LV_STATE_DEFAULT);
         obj.align(LV_ALIGN_LEFT_MID, 20, 0);
         obj.center();

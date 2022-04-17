@@ -37,9 +37,7 @@ namespace lvgl::examples {
     }
 
     void table_1() {
-        auto root = scr_act();
-        
-        auto table = Table(root);
+        static auto table = Table(scr_act());
 
         /*Fill the first column*/
         table.set_cell_value(0, 0, "Name");

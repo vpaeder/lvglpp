@@ -20,7 +20,7 @@ namespace lvgl::examples {
     void dropdown_3() {
         auto root = scr_act();
 
-        auto dd = Dropdown(root);
+        static auto dd = Dropdown(root);
         dd.align(LV_ALIGN_TOP_LEFT, 10, 10);
         dd.set_options("New project\n"
                        "New file\n"
@@ -35,7 +35,8 @@ namespace lvgl::examples {
         dd.set_text("Menu");
 
         /*Use a custom image as down icon and flip it when the list is opened*/
-        auto img = ImageDescriptor(&img_caret_down);
+        static auto img = ImageDescriptor();
+        img.set_src(img_caret_down_map, 13, 8, LV_IMG_CF_TRUE_COLOR_ALPHA);
         dd.set_symbol(img);
         dd.set_style_transform_angle(1800, LV_PART_INDICATOR | LV_STATE_CHECKED);
 

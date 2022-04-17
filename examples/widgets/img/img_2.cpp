@@ -55,7 +55,7 @@ namespace lvgl::examples {
         intense_slider->align_to(*blue_slider, LV_ALIGN_OUT_RIGHT_MID, 25, 0);
 
         /*Now create the actual image*/
-        auto img = ImageDescriptor();
+        static auto img = ImageDescriptor();
         img.set_src(img_cogwheel_argb_map, 100, 100, LV_IMG_CF_TRUE_COLOR_ALPHA);
         img1 = std::make_unique<Image>(root);
         img1->set_src(img);

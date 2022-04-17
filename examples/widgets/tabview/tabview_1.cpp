@@ -8,8 +8,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void tabview_1() {
-        auto root = scr_act();
-        auto tabview = Tabview(root, LV_DIR_TOP, 50);
+        static auto tabview = Tabview(scr_act(), LV_DIR_TOP, 50);
 
         /*Add 3 tabs (the tabs are page (lv_page) and can be scrolled*/
         auto tab1 = tabview.add_tab("Tab 1");
@@ -17,7 +16,7 @@ namespace lvgl::examples {
         auto tab3 = tabview.add_tab("Tab 3");
 
         /*Add content to the tabs*/
-        auto label1 = Label(tab1);
+        static auto label1 = Label(tab1);
         label1.set_text("This the first tab\n\n"
                         "If the content\n"
                         "of a tab\n"
@@ -34,10 +33,10 @@ namespace lvgl::examples {
                         "\n"
                         "Can you see it?");
 
-        auto label2 = Label(tab2);
+        static auto label2 = Label(tab2);
         label2.set_text("Second tab");
 
-        auto label3 = Label(tab3);
+        static auto label3 = Label(tab3);
         label3.set_text("Third tab");
 
         label3.scroll_to_view_recursive(LV_ANIM_ON);

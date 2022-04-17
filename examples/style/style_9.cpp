@@ -11,15 +11,14 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void style_9() {
-        Style style;
+        static Style style;
         style.set_line_color(palette::main(Color::Grey));
         style.set_line_width(6);
         style.set_line_rounded(true);
         /*Create an object with the new style*/
-        auto root = scr_act();
-        auto obj = Line(root);
+        static auto obj = Line(scr_act());
         obj.add_style(style, LV_STATE_DEFAULT);
-        std::vector<lv_point_t> points = {{10, 30}, {30, 50}, {100, 0}};
+        static std::vector<lv_point_t> points = {{10, 30}, {30, 50}, {100, 0}};
         obj.set_points(points);
         obj.center();
     }

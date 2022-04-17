@@ -11,8 +11,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
     using namespace lvgl::misc;
 
-    using TabviewPtr = std::unique_ptr<Tabview>;
-    TabviewPtr tabview;
+    std::unique_ptr<Tabview> tabview;
 
     static void scroll_begin_event(Event & e) {
         /*Disable the scroll animations. Triggered when a tab button is clicked */
@@ -23,8 +22,7 @@ namespace lvgl::examples {
     }
 
     void tabview_2() {
-        auto root = scr_act();
-        tabview = std::make_unique<Tabview>(root, LV_DIR_LEFT, 80);
+        tabview = std::make_unique<Tabview>(scr_act(), LV_DIR_LEFT, 80);
 
         tabview->get_content().add_event_cb(scroll_begin_event, LV_EVENT_SCROLL_BEGIN);
 
@@ -47,19 +45,19 @@ namespace lvgl::examples {
         tab2.set_style_bg_opa(LV_OPA_COVER, 0);
 
         /*Add content to the tabs*/
-        auto label1 = Label(tab1);
+        static auto label1 = Label(tab1);
         label1.set_text("First tab");
 
-        auto label2 = Label(tab2);
+        static auto label2 = Label(tab2);
         label2.set_text("Second tab");
 
-        auto label3 = Label(tab3);
+        static auto label3 = Label(tab3);
         label3.set_text("Third tab");
 
-        auto label4 = Label(tab4);
+        static auto label4 = Label(tab4);
         label4.set_text("Forth tab");
 
-        auto label5 = Label(tab5);
+        static auto label5 = Label(tab5);
         label5.set_text("Fifth tab");
 
         tabview->get_content().clear_flag(LV_OBJ_FLAG_SCROLLABLE);

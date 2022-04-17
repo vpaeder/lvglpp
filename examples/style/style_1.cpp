@@ -9,7 +9,7 @@ namespace lvgl::examples {
     using namespace lvgl::widgets;
 
     void style_1() {
-        Style style;
+        static Style style;
         style.set_radius(5);
 
         style.set_width(150);
@@ -22,11 +22,9 @@ namespace lvgl::examples {
         style.set_y(80);
 
         /*Create an object with the new style*/
-        auto root = scr_act();
-        auto obj = Container(root);
+        static auto obj = Container(scr_act());
         obj.add_style(style, LV_STATE_DEFAULT);
-
-        auto label = Label(obj);
+        static auto label = Label(obj);
         label.set_text("Hello");
     }
 }

@@ -13,8 +13,7 @@ namespace lvgl::examples {
     static MeterPtr meter;
 
     void meter_2() {
-        auto root = scr_act();
-        meter = std::make_unique<Meter>(root);
+        meter = std::make_unique<Meter>(scr_act());
         meter->center();
         meter->set_size(200, 200);
 
@@ -33,7 +32,7 @@ namespace lvgl::examples {
         auto indic3 = meter->add_arc(scale, 10, palette::main(Color::Blue), -20);
 
         /*Create an animation to set the value*/
-        Animation a1, a2, a3, a4;
+        static Animation a1, a2, a3, a4;
         auto set_value = [](lv_meter_indicator_t *& indic, int32_t v) {
             meter->set_indicator_end_value(indic, v);
         };

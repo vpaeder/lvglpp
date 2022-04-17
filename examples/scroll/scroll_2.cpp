@@ -50,10 +50,10 @@ namespace lvgl::examples {
 
     #if LV_USE_SWITCH
         /*Switch between "One scroll" and "Normal scroll" mode*/
-        auto sw = Switch(root);
+        static auto sw = Switch(root);
         sw.align(LV_ALIGN_TOP_RIGHT, -20, 10);
         sw.add_event_cb(sw_event_cb, LV_EVENT_ALL);
-        auto label = Label(root);
+        static auto label = Label(root);
         label.set_text("One scroll");
         label.align_to(sw, LV_ALIGN_OUT_BOTTOM_MID, 0, 5);
     #endif

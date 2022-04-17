@@ -1,0 +1,26 @@
+var classlvgl_1_1_pointer_wrapper =
+[
+    [ "lv_cls", "classlvgl_1_1_pointer_wrapper.html#a12aabee9366234b81deca8da990d6876", null ],
+    [ "lv_cls_ptr", "classlvgl_1_1_pointer_wrapper.html#a7c628dedb6f89cb89c5f5bacc4b6e4f6", null ],
+    [ "LvPointerType", "classlvgl_1_1_pointer_wrapper.html#a88067c6e46cab4aa9aa958aad0e9ab66", null ],
+    [ "LvWrapperType", "classlvgl_1_1_pointer_wrapper.html#a30f64da1a54faebedc6127ec9324e6ad", null ],
+    [ "PointerWrapper", "classlvgl_1_1_pointer_wrapper.html#a8b4863dd34c75c85647a53e2371a5177", null ],
+    [ "~PointerWrapper", "classlvgl_1_1_pointer_wrapper.html#a565d8cd8685a7b1805310f9e1bcc9103", null ],
+    [ "PointerWrapper", "classlvgl_1_1_pointer_wrapper.html#ae233dad442e5f622f36d1098197df1e3", null ],
+    [ "PointerWrapper", "classlvgl_1_1_pointer_wrapper.html#a0aac9e97e927e5345b1e6c690dedd738", null ],
+    [ "PointerWrapper", "classlvgl_1_1_pointer_wrapper.html#ad4af7f5f6e5834d2aa8f1d016e6a220a", null ],
+    [ "get_shared", "classlvgl_1_1_pointer_wrapper.html#a8ee56dc578239a5e59f577c150e659b4", null ],
+    [ "operator*", "classlvgl_1_1_pointer_wrapper.html#a459285bf418dd41781ac22a04b3813cc", null ],
+    [ "operator*", "classlvgl_1_1_pointer_wrapper.html#a4b7344df5d3b2ea4740431c41a49d09b", null ],
+    [ "operator->", "classlvgl_1_1_pointer_wrapper.html#a0ad00b95a003302ece705d1ef2cc53e2", null ],
+    [ "operator->", "classlvgl_1_1_pointer_wrapper.html#add3e054e0a23af51525b8cac715bbdfa", null ],
+    [ "operator=", "classlvgl_1_1_pointer_wrapper.html#a9d70c512eb694ebc5e5a92718f9be1f9", null ],
+    [ "operator==", "classlvgl_1_1_pointer_wrapper.html#abd0a70642e5b2345b140412a32cbe16c", null ],
+    [ "raw", "classlvgl_1_1_pointer_wrapper.html#abe223a598c0f5a3f8112418ea93422d1", null ],
+    [ "raw", "classlvgl_1_1_pointer_wrapper.html#a7745090cda93a00e80721d2b584b389f", null ],
+    [ "raw_ptr", "classlvgl_1_1_pointer_wrapper.html#a88e52b7942e5f04ec803c28d385d46ce", null ],
+    [ "raw_ptr", "classlvgl_1_1_pointer_wrapper.html#a5ccf8828057dfce610cbb9586309a05f", null ],
+    [ "release_ptr", "classlvgl_1_1_pointer_wrapper.html#a9f650d3ab2b377d248aaff5cef928024", null ],
+    [ "lv_obj", "classlvgl_1_1_pointer_wrapper.html#a86ebfda6c5f0d964b0cfec7b95b3f193", null ],
+    [ "owns_ptr", "classlvgl_1_1_pointer_wrapper.html#ae700a40afff8268a1d140397c53a9b7a", null ]
+];

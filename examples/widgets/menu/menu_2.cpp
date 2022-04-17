@@ -28,9 +28,7 @@ namespace lvgl::examples {
     }
 
     void menu_2() {
-        auto root = scr_act();
-        
-        menu = std::make_unique<Menu>(root);
+        menu = std::make_unique<Menu>(scr_act());
 
         menu->set_mode_root_back_btn(LV_MENU_ROOT_BACK_BTN_ENABLED);
         menu->add_event_cb(back_event_handler, LV_EVENT_CLICKED);
