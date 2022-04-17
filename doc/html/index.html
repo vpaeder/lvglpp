@@ -287,7 +287,10 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line"> </div>
 <div class="line">    // main loop</div>
 <div class="line">    for (;;) {</div>
-<div class="line">        // I didn&#39;t implement ticks yet -&gt; use base LVGL ones</div>
+<div class="line">        // I didn&#39;t implement ticks yet -&gt; use base LVGL ones;</div>
+<div class="line">        // you need to call both of these to get LVGL to work, but</div>
+<div class="line">        // you should put them in two different threads, with lv_tick_inc</div>
+<div class="line">        // in a higher priority thread.</div>
 <div class="line">        lv_tick_inc(10);</div>
 <div class="line">        lv_task_handler();</div>
 <div class="line">        // add here a function to wait for 10ms</div>

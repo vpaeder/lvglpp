@@ -123,7 +123,10 @@ void main() {
 
     // main loop
     for (;;) {
-        // I didn't implement ticks yet -> use base LVGL ones
+        // I didn't implement ticks yet -> use base LVGL ones;
+        // you need to call both of these to get LVGL to work, but
+        // you should put them in two different threads, with lv_tick_inc
+        // in a higher priority thread.
         lv_tick_inc(10);
         lv_task_handler();
         // add here a function to wait for 10ms
