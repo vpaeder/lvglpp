@@ -97,6 +97,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="textblock"><p ><a class="anchor" id="md_README"></a> This package contains a rather bushy wrapper for LVGL. I originally needed to program a simple user interface, but I didn't want to write a GUI framework from scratch, and found LVGL rather nice. Only that it's written in C. So I started writing C++ classes for the part of the code I wanted to use, and then it got out of control. Now most of the library has some kind of wrapper class provided. I've tested nearly all examples on an ESP32 with a touch screen interface.</p>
 <p >This is a work in progress. I will likely improve things as I use it, which will take between one day and forever. I of course welcome any contribution.</p>
 <p >Note that I'm not part of the LVGL team. If you have requests related to LVGL itself, please ask them.</p>
+<h1>TL;DR</h1>
+<p >See examples [here](examples) and docs in the <em>doc</em> folder (you need to clone the repository for that).</p>
 <h1>Structure</h1>
 <p >I tried to mirror the directory structure of LVGL to some degree (with exceptions with <em>extra</em> and <em>hal</em> directories). A number of types that are defined in multiple files are compiled together as one (e.g. style, image, draw). I've put all the widgets (including extra ones) in the <em>widgets</em> directory.</p>
 <p >My point was to provide functions that take a certain LVGL object type as first argument as a class method. For instance, all functions taking a <code>lv_obj_t*</code> as first argument end up as methods of the <code>Object</code> class. I tried to replace raw pointer args either with a C++ class instance passed by reference or a smart pointer.</p>
@@ -307,7 +309,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <h1>API documentation</h1>
 <p >There is a documentation generated from docstrings in the <em>doc</em> folder. See <a href="doc/html/index.html">here</a>.</p>
 <h2>Examples</h2>
-<p >I adapted most of the examples provided with LVGL. You'll find them in the <em>examples</em> folder. For examples that involve images, you need to include the appropriate files from LVGL examples. Don't forget to initialize LVGL and define a screen and an input device.</p>
+<p >I adapted most of the examples provided with LVGL. You'll find them in the <em>examples</em> folder [here](examples). For examples that involve images, you need to include the appropriate files from LVGL examples. Don't forget to initialize LVGL and define a screen and an input device.</p>
 <h2>Tests</h2>
 <p >Time to write some... err... </p>
 </div></div><!-- PageDoc -->

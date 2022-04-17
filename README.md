@@ -6,6 +6,10 @@ This is a work in progress. I will likely improve things as I use it, which will
 
 Note that I'm not part of the LVGL team. If you have requests related to LVGL itself, please ask them.
 
+## TL;DR
+
+See examples [here](examples) and docs in the *doc* folder (you need to clone the repository for that).
+
 ## Structure
 
 I tried to mirror the directory structure of LVGL to some degree (with exceptions with *extra* and *hal* directories). A number of types that are defined in multiple files are compiled together as one (e.g. style, image, draw). I've put all the widgets (including extra ones) in the *widgets* directory.
@@ -153,7 +157,7 @@ There is a documentation generated from docstrings in the *doc* folder. See [her
 
 ## Examples
 
-I adapted most of the examples provided with LVGL. You'll find them in the *examples* folder. For examples that involve images, you need to include the appropriate files from LVGL examples. Don't forget to initialize LVGL and define a screen and an input device.
+I adapted most of the examples provided with LVGL. You'll find them in the *examples* folder [here](examples). For examples that involve images, you need to include the appropriate files from LVGL examples. Don't forget to initialize LVGL and define a screen and an input device.
 
 ## Tests
 
