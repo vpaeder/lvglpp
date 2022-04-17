@@ -8,7 +8,7 @@ Note that I'm not part of the LVGL team. If you have requests related to LVGL it
 
 ## TL;DR
 
-See examples [here](examples) and docs in the *doc* folder (you need to clone the repository for that).
+See examples [here](examples/) and docs in the *doc* folder (you need to clone the repository for that).
 
 ## Structure
 
@@ -157,7 +157,7 @@ There is a documentation generated from docstrings in the *doc* folder. See [her
 
 ## Examples
 
-I adapted most of the examples provided with LVGL. You'll find them in the *examples* folder [here](examples). For examples that involve images, you need to include the appropriate files from LVGL examples. Don't forget to initialize LVGL and define a screen and an input device.
+I adapted most of the examples provided with LVGL. You'll find them in the *examples* folder [here](examples/). For examples that involve images, you need to include the appropriate files from LVGL examples. Don't forget to initialize LVGL and define a screen and an input device.
 
 ## Tests
 
