@@ -2,6 +2,7 @@
 #include "lvglpp/widgets/roller.h" // for Roller
 #include "lvglpp/core/event.h" // for Event
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 #include "lvglpp/draw/mask.h" // for FadeMask
 
 namespace lvgl::examples {
@@ -49,8 +50,8 @@ namespace lvgl::examples {
         auto root = scr_act();
 
         Style style;
-        style.set_bg_color(lv_color_black());
-        style.set_text_color(lv_color_white());
+        style.set_bg_color(palette::black());
+        style.set_text_color(palette::white());
         style.set_border_width(0);
         style.set_pad_all(0);
         root.add_style(style, LV_PART_MAIN);

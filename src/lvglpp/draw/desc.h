@@ -21,7 +21,7 @@ namespace lvgl::draw {
     /** \class RectangleDrawDescriptor
      *  \brief Wraps a lv_draw_rect_dsc_t object.
      */
-    class RectangleDrawDescriptor : public ThinPointerWrapper<lv_draw_rect_dsc_t, lv_mem_free> {
+    class RectangleDrawDescriptor : public PointerWrapper<lv_draw_rect_dsc_t, lv_mem_free> {
     public:
         /** \fn RectangleDrawDescriptor()
          *  \brief Default constructor.
@@ -41,7 +41,7 @@ namespace lvgl::draw {
     /** \class LabelDrawDescriptor
      *  \brief Wraps a lv_draw_label_dsc_t object.
      */
-    class LabelDrawDescriptor : public ThinPointerWrapper<lv_draw_label_dsc_t, lv_mem_free> {
+    class LabelDrawDescriptor : public PointerWrapper<lv_draw_label_dsc_t, lv_mem_free> {
     public:
         /** \fn LabelDrawDescriptor()
          *  \brief Default constructor.
@@ -72,7 +72,7 @@ namespace lvgl::draw {
     /** \class ImageDrawDescriptor
      *  \brief Wraps a lv_draw_img_dsc_t object.
      */
-    class ImageDrawDescriptor : public ThinPointerWrapper<lv_draw_img_dsc_t, lv_mem_free> {
+    class ImageDrawDescriptor : public PointerWrapper<lv_draw_img_dsc_t, lv_mem_free> {
     public:
         ImageDrawDescriptor();
 
@@ -89,7 +89,7 @@ namespace lvgl::draw {
     /** \class LineDrawDescriptor
      *  \brief Wraps a lv_draw_line_dsc_t object.
      */
-    class LineDrawDescriptor : public ThinPointerWrapper<lv_draw_line_dsc_t, lv_mem_free> {
+    class LineDrawDescriptor : public PointerWrapper<lv_draw_line_dsc_t, lv_mem_free> {
     public:
         /** \fn LineDrawDescriptor()
          *  \brief Default constructor.
@@ -108,7 +108,7 @@ namespace lvgl::draw {
     /** \class ArcDrawDescriptor
      *  \brief Wraps a lv_draw_arc_dsc_t object.
      */
-    class ArcDrawDescriptor : public ThinPointerWrapper<lv_draw_arc_dsc_t, lv_mem_free> {
+    class ArcDrawDescriptor : public PointerWrapper<lv_draw_arc_dsc_t, lv_mem_free> {
     public:
         /** \fn ArcDrawDescriptor()
          *  \brief Default constructor.

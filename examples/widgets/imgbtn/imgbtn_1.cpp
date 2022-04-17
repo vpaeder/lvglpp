@@ -2,6 +2,7 @@
 #include "lvglpp/widgets/imgbtn.h" // for ImageButton
 #include "lvglpp/widgets/label.h" // for Label
 #include "lvglpp/misc/style.h" // for Style, LinearStyleTransition
+#include "lvglpp/misc/color.h" // for colors
 #include <vector>
 
 namespace lvgl::examples {
@@ -19,19 +20,16 @@ namespace lvgl::examples {
         auto root = scr_act();
         /*Create a transition animation on width transformation and recolor.*/
         std::vector<lv_style_prop_t> tr_prop = {LV_STYLE_TRANSFORM_WIDTH, LV_STYLE_IMG_RECOLOR_OPA, LV_STYLE_PROP_INV};
-        LinearStyleTransition tr;
-        tr.set_props(tr_prop);
-        tr.set_time(200);
-        tr.set_delay(0);
+        LinearStyleTransition tr(tr_prop, 200, 0);
 
         Style style_def;
-        style_def.set_text_color(lv_color_white());
+        style_def.set_text_color(palette::white());
         style_def.set_transition(tr);
 
         /*Darken the button when pressed and make it wider*/
         Style style_pr;
         style_pr.set_img_recolor_opa(LV_OPA_30);
-        style_pr.set_img_recolor(lv_color_black());
+        style_pr.set_img_recolor(palette::black());
         style_pr.set_transform_width(20);
 
         /*Create an image button*/

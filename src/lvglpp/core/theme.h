@@ -5,7 +5,7 @@
  *  License: MIT
  */
 
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 
 namespace lvgl::core {
 
@@ -14,9 +14,9 @@ namespace lvgl::core {
     /** \class Theme
      *  \brief Wraps a lv_theme_t object.
      */
-    class Theme : public ThinPointerWrapper<lv_theme_t, lv_mem_free> {
+    class Theme : public PointerWrapper<lv_theme_t, lv_mem_free> {
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
 
         /** \typedef ThemeApplyCb
          *  \brief Type of function for theme apply callback.

@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/core/object.h" // for Container
 #include "lvglpp/misc/anim.h" // for Animation
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -11,7 +12,7 @@ namespace lvgl::examples {
         auto root = scr_act();
         auto obj = Container(root);
 
-        obj.set_style_bg_color(lv_palette_main(LV_PALETTE_RED), 0);
+        obj.set_style_bg_color(palette::main(Color::Red), 0);
         obj.set_style_radius(LV_RADIUS_CIRCLE, 0);
 
         obj.align(LV_ALIGN_LEFT_MID, 10, 0);

@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/meter.h" // for Meter
 #include "lvglpp/misc/anim.h" // for Animation
+#include "lvglpp/misc/color.h" // for colors
 #include "lvglpp/draw/image.h" // for ImageDescriptor
 
 namespace lvgl::examples {
@@ -20,13 +21,13 @@ namespace lvgl::examples {
         /*Create a scale for the minutes*/
         /*61 ticks in a 360 degrees range (the last and the first line overlaps)*/
         auto scale_min = meter->add_scale();
-        meter->set_scale_ticks(scale_min, 61, 1, 10, lv_palette_main(LV_PALETTE_GREY));
+        meter->set_scale_ticks(scale_min, 61, 1, 10, palette::main(Color::Grey));
         meter->set_scale_range(scale_min, 0, 60, 360, 270);
 
         /*Create another scale for the hours. It's only visual and contains only major ticks*/
         auto scale_hour = meter->add_scale();
-        meter->set_scale_ticks(scale_hour, 12, 0, 0, lv_palette_main(LV_PALETTE_GREY));               /*12 ticks*/
-        meter->set_scale_major_ticks(scale_hour, 1, 2, 20, lv_color_black(), 10);    /*Every tick is major*/
+        meter->set_scale_ticks(scale_hour, 12, 0, 0, palette::main(Color::Grey));               /*12 ticks*/
+        meter->set_scale_major_ticks(scale_hour, 1, 2, 20, palette::black(), 10);    /*Every tick is major*/
         meter->set_scale_range(scale_hour, 1, 12, 330, 300);       /*[1..12] values in an almost full circle*/
 
         ImageDescriptor img_hand;

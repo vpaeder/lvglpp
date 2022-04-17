@@ -5,7 +5,7 @@
  *  License: MIT
  */
 
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 #include "../misc/anim.h"
 #include "../misc/area.h"
 

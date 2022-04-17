@@ -14,23 +14,17 @@ namespace lvgl::examples {
         auto root = scr_act();
 
         /*Properties to transition*/
-        static std::vector<lv_style_prop_t> props = {
+        std::vector<lv_style_prop_t> props = {
             LV_STYLE_TRANSFORM_WIDTH, LV_STYLE_TRANSFORM_HEIGHT, LV_STYLE_TEXT_LETTER_SPACE, LV_STYLE_PROP_INV
         };
 
         /*Transition descriptor when going back to the default state.
         *Add some delay to be sure the press transition is visible even if the press was very short*/
-        OvershootStyleTransition transition_def;
-        transition_def.set_props(props);
-        transition_def.set_time(250);
-        transition_def.set_delay(100);
+        OvershootStyleTransition transition_def(props, 250, 100);
 
         /*Transition descriptor when going to pressed state.
         *No delay, go to presses state immediately*/
-        EaseInOutStyleTransition transition_pr;
-        transition_pr.set_props(props);
-        transition_pr.set_time(250);
-        transition_pr.set_delay(0);
+        EaseInOutStyleTransition transition_pr(props, 250, 0);
 
         /*Add only the new transition to he default state*/
         Style style_def;

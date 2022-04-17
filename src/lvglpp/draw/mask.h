@@ -5,7 +5,7 @@
  *  License: MIT
  */
 #pragma once
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 #include <vector>
 
 namespace lvgl::misc {
@@ -17,7 +17,7 @@ namespace lvgl::draw {
     /** \brief Base class for mask parts.
      *  \tparam LvClass: LVGL class of mask part.
      */
-    template <typename LvClass> class Mask : public ThinPointerWrapper<LvClass, lv_mem_buf_release> {
+    template <typename LvClass> class Mask : public PointerWrapper<LvClass, lv_mem_buf_release> {
     protected:
         /** \property int16_t id
          *  \brief Mask part index (-1 if not active, >=0 if active).
@@ -30,7 +30,7 @@ namespace lvgl::draw {
         void * custom_id;
     
     public:
-        using ThinPointerWrapper<LvClass,lv_mem_buf_release>::ThinPointerWrapper;
+        using PointerWrapper<LvClass,lv_mem_buf_release>::PointerWrapper;
 
         /** \property Mask()
          *  \brief Default constructor.
@@ -308,7 +308,7 @@ namespace lvgl::draw {
     };
 
 
-    /** \namespace mask
+    /** \namespace lvgl::draw::mask
      *  \brief Contains general mask functions.
      */
     namespace mask {

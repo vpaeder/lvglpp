@@ -5,16 +5,16 @@
  *  License: MIT
  */
 #pragma once
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 
 namespace lvgl::misc {
 
     /** \class Area
      *  \brief Wraps a lv_area_t object. This represents a surface area.
      */
-    class Area : public ThinPointerWrapper<lv_area_t, lv_mem_free> {
+    class Area : public PointerWrapper<lv_area_t, lv_mem_free> {
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
 
         /** \fn Area()
          *  \brief Default constructor.

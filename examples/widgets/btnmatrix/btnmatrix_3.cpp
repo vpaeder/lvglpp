@@ -2,6 +2,7 @@
 #include "lvglpp/widgets/btnmatrix.h" // for ButtonMatrix
 #include "lvglpp/core/event.h" // for Event
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 #include <vector>
 #include <string>
 
@@ -46,7 +47,7 @@ namespace lvgl::examples {
         style_btn.set_radius(0);
         style_btn.set_border_width(1);
         style_btn.set_border_opa(LV_OPA_50);
-        style_btn.set_border_color(lv_palette_main(LV_PALETTE_GREY));
+        style_btn.set_border_color(palette::main(Color::Grey));
         style_btn.set_border_side(LV_BORDER_SIDE_INTERNAL);
         style_btn.set_radius(0);
 

@@ -1,21 +1,20 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/slider.h" // for Slider
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
     using namespace lvgl::core;
     using namespace lvgl::widgets;
+    using namespace lvgl::misc;
 
     void slider_2() {
         auto root = scr_act();
         
         /*Create a transition*/
         auto props = std::vector<lv_style_prop_t>{LV_STYLE_BG_COLOR, LV_STYLE_PROP_INV};
-        auto transition_dsc = LinearStyleTransition();
-        transition_dsc.set_props(props);
-        transition_dsc.set_time(300);
-        transition_dsc.set_delay(0);
+        auto transition_dsc = LinearStyleTransition(props, 300, 0);
 
         Style style_main;
         Style style_indicator;
@@ -27,19 +26,19 @@ namespace lvgl::examples {
         style_main.set_pad_ver(-2); /*Makes the indicator larger*/
 
         style_indicator.set_bg_opa(LV_OPA_COVER);
-        style_indicator.set_bg_color(lv_palette_main(LV_PALETTE_CYAN));
+        style_indicator.set_bg_color(palette::main(Color::Cyan));
         style_indicator.set_radius(LV_RADIUS_CIRCLE);
         style_indicator.set_transition(transition_dsc);
 
         style_knob.set_bg_opa(LV_OPA_COVER);
-        style_knob.set_bg_color(lv_palette_main(LV_PALETTE_CYAN));
-        style_knob.set_border_color(lv_palette_darken(LV_PALETTE_CYAN, 3));
+        style_knob.set_bg_color(palette::main(Color::Cyan));
+        style_knob.set_border_color(palette::dark(Color::Cyan, 3));
         style_knob.set_border_width(2);
         style_knob.set_radius(LV_RADIUS_CIRCLE);
         style_knob.set_pad_all(6); /*Makes the knob larger*/
         style_knob.set_transition(transition_dsc);
 
-        style_pressed_color.set_bg_color(lv_palette_darken(LV_PALETTE_CYAN, 2));
+        style_pressed_color.set_bg_color(palette::dark(Color::Cyan, 2));
 
         /*Create a slider and add the style*/
         auto slider = Slider(root);

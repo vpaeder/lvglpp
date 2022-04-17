@@ -11,41 +11,33 @@
 
 namespace lvgl::misc {
     StyleTransition::StyleTransition() {
-        this->lv_obj.user_data = static_cast<void*>(this);
-        this->lv_obj.props = nullptr;
-        this->lv_obj.path_xcb = [](const lv_anim_t * anim) -> int32_t {
+        this->initialize({}, 0, 0);
+    }
+
+    StyleTransition::StyleTransition(const std::vector<lv_style_prop_t> & props, uint32_t time, uint32_t delay) {
+        this->initialize(props, time, delay);
+    }
+
+    void StyleTransition::initialize(const std::vector<lv_style_prop_t> & props, uint32_t time, uint32_t delay) {
+        this->lv_obj = LvPointerType(lv_cls_alloc<lv_cls>());
+        auto path_xcb = [](const lv_anim_t * anim) -> int32_t {
             auto obj = reinterpret_cast<StyleTransition*>(anim->user_data);
             return obj->callback(anim);
         };
-    }
-
-    StyleTransition::~StyleTransition() {
-        if (this->lv_obj.props != nullptr)
-            free(const_cast<lv_style_prop_t*>(this->lv_obj.props));
+        lv_style_transition_dsc_init(this->raw_ptr(), props.data(), path_xcb, time, delay, static_cast<void*>(this));
     }
 
     void StyleTransition::set_props(const std::vector<lv_style_prop_t> & props) {
-        if (this->lv_obj.props != nullptr)
-            free(const_cast<lv_style_prop_t*>(this->lv_obj.props));
-        lv_style_prop_t * lv_props = static_cast<lv_style_prop_t*>(malloc(sizeof(lv_style_prop_t)*(props.size()+1)));
-        std::copy(props.begin(), props.end(), lv_props);
-        lv_props[props.size()] = static_cast<lv_style_prop_t>(0);
-        this->lv_obj.props = const_cast<lv_style_prop_t*>(lv_props);
+        this->lv_obj->props = props.data();
     }
 
     void StyleTransition::set_time(uint32_t time) {
-        this->lv_obj.time = time;
+        this->lv_obj->time = time;
     }
 
     void StyleTransition::set_delay(uint32_t delay) {
-        this->lv_obj.delay = delay;
+        this->lv_obj->delay = delay;
     }
-
-    #if LV_USE_USER_DATA
-    void StyleTransition::set_user_data(const void * arg) {
-        this->lv_obj.user_data = const_cast<void*>(arg);
-    }
-    #endif // LV_USE_USER_DATA
 
 
     int32_t LinearStyleTransition::callback(const struct _lv_anim_t * anim) {
@@ -90,6 +82,7 @@ namespace lvgl::misc {
 
     Style::Style() {
         this->lv_obj = LvPointerType(lv_cls_alloc<lv_cls>());
+        lv_style_init(this->raw_ptr());
     }
 
     Style::~Style() {
@@ -232,16 +225,16 @@ namespace lvgl::misc {
         lv_style_set_pad_column(this->raw_ptr(), value);
     }
 
-    void Style::set_bg_color(const Color & value) {
-        lv_style_set_bg_color(this->raw_ptr(), value.raw());
+    void Style::set_bg_color(lv_color_t value) {
+        lv_style_set_bg_color(this->raw_ptr(), value);
     }
 
     void Style::set_bg_opa(lv_opa_t value) {
         lv_style_set_bg_opa(this->raw_ptr(), value);
     }
 
-    void Style::set_bg_grad_color(const Color & value) {
-        lv_style_set_bg_grad_color(this->raw_ptr(), value.raw());
+    void Style::set_bg_grad_color(lv_color_t value) {
+        lv_style_set_bg_grad_color(this->raw_ptr(), value);
     }
 
     void Style::set_bg_grad_dir(lv_grad_dir_t value) {
@@ -268,8 +261,8 @@ namespace lvgl::misc {
         lv_style_set_bg_img_opa(this->raw_ptr(), value);
     }
 
-    void Style::set_bg_img_recolor(const Color & value) {
-        lv_style_set_bg_img_recolor(this->raw_ptr(), value.raw());
+    void Style::set_bg_img_recolor(lv_color_t value) {
+        lv_style_set_bg_img_recolor(this->raw_ptr(), value);
     }
 
     void Style::set_bg_img_recolor_opa(lv_opa_t value) {
@@ -280,8 +273,8 @@ namespace lvgl::misc {
         lv_style_set_bg_img_tiled(this->raw_ptr(), value);
     }
 
-    void Style::set_border_color(const Color & value) {
-        lv_style_set_border_color(this->raw_ptr(), value.raw());
+    void Style::set_border_color(lv_color_t value) {
+        lv_style_set_border_color(this->raw_ptr(), value);
     }
 
     void Style::set_border_opa(lv_opa_t value) {
@@ -304,8 +297,8 @@ namespace lvgl::misc {
         lv_style_set_outline_width(this->raw_ptr(), value);
     }
 
-    void Style::set_outline_color(const Color & value) {
-        lv_style_set_outline_color(this->raw_ptr(), value.raw());
+    void Style::set_outline_color(lv_color_t value) {
+        lv_style_set_outline_color(this->raw_ptr(), value);
     }
 
     void Style::set_outline_opa(lv_opa_t value) {
@@ -332,8 +325,8 @@ namespace lvgl::misc {
         lv_style_set_shadow_spread(this->raw_ptr(), value);
     }
 
-    void Style::set_shadow_color(const Color & value) {
-        lv_style_set_shadow_color(this->raw_ptr(), value.raw());
+    void Style::set_shadow_color(lv_color_t value) {
+        lv_style_set_shadow_color(this->raw_ptr(), value);
     }
 
     void Style::set_shadow_opa(lv_opa_t value) {
@@ -344,8 +337,8 @@ namespace lvgl::misc {
         lv_style_set_img_opa(this->raw_ptr(), value);
     }
 
-    void Style::set_img_recolor(const Color & value) {
-        lv_style_set_img_recolor(this->raw_ptr(), value.raw());
+    void Style::set_img_recolor(lv_color_t value) {
+        lv_style_set_img_recolor(this->raw_ptr(), value);
     }
 
     void Style::set_img_recolor_opa(lv_opa_t value) {
@@ -368,8 +361,8 @@ namespace lvgl::misc {
         lv_style_set_line_rounded(this->raw_ptr(), value);
     }
 
-    void Style::set_line_color(const Color & value) {
-        lv_style_set_line_color(this->raw_ptr(), value.raw());
+    void Style::set_line_color(lv_color_t value) {
+        lv_style_set_line_color(this->raw_ptr(), value);
     }
 
     void Style::set_line_opa(lv_opa_t value) {
@@ -384,8 +377,8 @@ namespace lvgl::misc {
         lv_style_set_arc_rounded(this->raw_ptr(), value);
     }
 
-    void Style::set_arc_color(const Color & value) {
-        lv_style_set_arc_color(this->raw_ptr(), value.raw());
+    void Style::set_arc_color(lv_color_t value) {
+        lv_style_set_arc_color(this->raw_ptr(), value);
     }
 
     void Style::set_arc_opa(lv_opa_t value) {
@@ -396,8 +389,8 @@ namespace lvgl::misc {
         lv_style_set_arc_img_src(this->raw_ptr(), static_cast<const void*>(img.raw_ptr()));
     }
 
-    void Style::set_text_color(const Color & value) {
-        lv_style_set_text_color(this->raw_ptr(), value.raw());
+    void Style::set_text_color(lv_color_t value) {
+        lv_style_set_text_color(this->raw_ptr(), value);
     }
 
     void Style::set_text_opa(lv_opa_t value) {

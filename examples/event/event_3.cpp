@@ -36,7 +36,7 @@ namespace lvgl::examples {
             /*If container was clicked do nothing*/
             if(target == cont) return;
             /*Make the clicked buttons red*/
-            target.set_style_bg_color(lv_palette_main(LV_PALETTE_RED), LV_PART_MAIN);
+            target.set_style_bg_color(palette::main(Color::Red), LV_PART_MAIN);
         };
         cont.add_event_cb(event_cb, LV_EVENT_CLICKED);
     }

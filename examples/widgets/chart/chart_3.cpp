@@ -1,11 +1,13 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/chart.h" // for Chart
 #include "lvglpp/core/event.h" // for Event
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
     using namespace lvgl::core;
     using namespace lvgl::widgets;
+    using namespace lvgl::misc;
 
     static void draw_event_cb(Event & e) {
         auto dsc = e.get_draw_part_dsc();
@@ -39,8 +41,8 @@ namespace lvgl::examples {
         chart.set_zoom_x(800);
 
         /*Add two data series*/
-        auto ser1 = chart.add_series(lv_palette_lighten(LV_PALETTE_GREEN, 2), LV_CHART_AXIS_PRIMARY_Y);
-        auto ser2 = chart.add_series(lv_palette_darken(LV_PALETTE_GREEN, 2), LV_CHART_AXIS_SECONDARY_Y);
+        auto ser1 = chart.add_series(palette::light(Color::Green, 2), LV_CHART_AXIS_PRIMARY_Y);
+        auto ser2 = chart.add_series(palette::dark(Color::Green, 2), LV_CHART_AXIS_SECONDARY_Y);
 
         /*Set the next points on 'ser1'*/
         chart.set_next_y_value(ser1, 31);

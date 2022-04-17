@@ -5,7 +5,7 @@
  *  License: MIT
  */
 #pragma once
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 
 namespace lvgl::misc {
     class Animation;
@@ -41,7 +41,7 @@ namespace lvgl::core {
     /** \class Object
      *  \brief Wraps a lv_obj_t object. This is the generic LVGL object type.
      */
-    class Object : public ThinPointerWrapper<lv_obj_t, lv_obj_del> {
+    class Object : public PointerWrapper<lv_obj_t, lv_obj_del> {
     private:
         /** \typedef EventCb
          *  \brief Type for event callback function.
@@ -49,7 +49,7 @@ namespace lvgl::core {
         using EventCb = void(*)(Event & e);
 
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
 
         /** \fn ~Object()
          *  \brief Destructor.
@@ -2585,6 +2585,15 @@ namespace lvgl::core {
             this->lv_obj = LvPointerType(lv_allocator(parent.raw_ptr()));
         }
     
+        /** \fn void initialize(const Object & parent)
+         *  \brief Initialize object and assign parent object.
+         *  \param parent: parent LVGL object.
+         */
+        virtual void initialize(const Object & parent) {
+            this->lv_obj = LvPointerType(
+                lv_allocator(const_cast<lv_cls_ptr>(parent.raw_ptr())));
+        }
+
     public:
         using Object::Object;
 
@@ -2602,6 +2611,13 @@ namespace lvgl::core {
             this->initialize(parent);
         }
 
+        /** \fn Widget(const Object & parent)
+         *  \brief Constructor with parent object.
+         */
+        Widget(const Object & parent) {
+            this->initialize(parent);
+        }
+
     };
 
 
@@ -2614,7 +2630,7 @@ namespace lvgl::core {
     };
 
 
-    /** \namespace obj
+    /** \namespace lvgl::core::obj
      *  \brief General functions involving objects.
      */
     namespace obj {

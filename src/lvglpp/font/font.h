@@ -5,7 +5,7 @@
  *  License: MIT
  */
 #pragma once
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 
 /** \namespace lvgl::font
  *  \brief LVGL fonts and font-handling routines.
@@ -15,7 +15,7 @@ namespace lvgl::font {
     /** \class Font
      *  \brief Wraps a lv_font_t object.
      */
-    class Font : public ThinPointerWrapper<lv_font_t, lv_font_free> {
+    class Font : public PointerWrapper<lv_font_t, lv_font_free> {
     public:
         /** \fn Font(std::string & font_name)
          *  \brief Constructor with font name.

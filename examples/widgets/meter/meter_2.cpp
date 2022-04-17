@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/meter.h" // for Meter
 #include "lvglpp/misc/anim.h" // for Animation
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -22,14 +23,14 @@ namespace lvgl::examples {
 
         /*Add a scale first*/
         auto scale = meter->add_scale();
-        meter->set_scale_ticks(scale, 11, 2, 10, lv_palette_main(LV_PALETTE_GREY));
+        meter->set_scale_ticks(scale, 11, 2, 10, palette::main(Color::Grey));
         meter->set_scale_major_ticks(scale, 1, 2, 30, lv_color_hex3(0xeee), 15);
         meter->set_scale_range(scale, 0, 100, 270, 90);
 
         /*Add a three arc indicator*/
-        auto indic1 = meter->add_arc(scale, 10, lv_palette_main(LV_PALETTE_RED), 0);
-        auto indic2 = meter->add_arc(scale, 10, lv_palette_main(LV_PALETTE_GREEN), -10);
-        auto indic3 = meter->add_arc(scale, 10, lv_palette_main(LV_PALETTE_BLUE), -20);
+        auto indic1 = meter->add_arc(scale, 10, palette::main(Color::Red), 0);
+        auto indic2 = meter->add_arc(scale, 10, palette::main(Color::Green), -10);
+        auto indic3 = meter->add_arc(scale, 10, palette::main(Color::Blue), -20);
 
         /*Create an animation to set the value*/
         Animation a1, a2, a3, a4;

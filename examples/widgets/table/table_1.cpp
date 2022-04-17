@@ -1,11 +1,13 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/table.h" // for Table
 #include "lvglpp/core/event.h" // for Event
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
     using namespace lvgl::core;
     using namespace lvgl::widgets;
+    using namespace lvgl::misc;
 
     static void draw_part_event_cb(Event & e) {
         auto obj = e.get_target<Table>();
@@ -18,7 +20,7 @@ namespace lvgl::examples {
             /*Make the texts in the first cell center aligned*/
             if(row == 0) {
                 dsc->label_dsc->align = LV_TEXT_ALIGN_CENTER;
-                dsc->rect_dsc->bg_color = lv_color_mix(lv_palette_main(LV_PALETTE_BLUE), dsc->rect_dsc->bg_color, LV_OPA_20);
+                dsc->rect_dsc->bg_color = color::mix(palette::main(Color::Blue), dsc->rect_dsc->bg_color, LV_OPA_20);
                 dsc->rect_dsc->bg_opa = LV_OPA_COVER;
             }
             /*In the first column align the texts to the right*/
@@ -28,7 +30,7 @@ namespace lvgl::examples {
 
             /*MAke every 2nd row grayish*/
             if((row != 0 && row % 2) == 0) {
-                dsc->rect_dsc->bg_color = lv_color_mix(lv_palette_main(LV_PALETTE_GREY), dsc->rect_dsc->bg_color, LV_OPA_10);
+                dsc->rect_dsc->bg_color = color::mix(palette::main(Color::Grey), dsc->rect_dsc->bg_color, LV_OPA_10);
                 dsc->rect_dsc->bg_opa = LV_OPA_COVER;
             }
         }

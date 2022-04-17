@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/core/object.h" // for Container
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -18,7 +19,7 @@ namespace lvgl::examples {
         Style style_shadow;
         style_shadow.set_shadow_width(10);
         style_shadow.set_shadow_spread(5);
-        style_shadow.set_shadow_color(lv_palette_main(LV_PALETTE_BLUE));
+        style_shadow.set_shadow_color(palette::main(Color::Blue));
 
         auto obj2 = Container(root);
         obj2.add_style(style_shadow, LV_PART_MAIN);

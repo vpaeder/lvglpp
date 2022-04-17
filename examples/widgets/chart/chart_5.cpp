@@ -2,11 +2,13 @@
 #include "lvglpp/widgets/chart.h" // for Chart
 #include "lvglpp/widgets/slider.h" // for Slider
 #include "lvglpp/core/event.h" // for Event
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
     using namespace lvgl::core;
     using namespace lvgl::widgets;
+    using namespace lvgl::misc;
 
     using ChartPtr = std::shared_ptr<Chart>;
     ChartPtr chart;
@@ -78,7 +80,7 @@ namespace lvgl::examples {
         /*set symbol size on points to 0 (no symbol)*/
         chart->set_style_size(0, LV_PART_INDICATOR);
 
-        auto ser = chart->add_series(lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
+        auto ser = chart->add_series(palette::main(Color::Red), LV_CHART_AXIS_PRIMARY_Y);
 
         chart->set_point_count(ecg_sample.size());
         chart->set_ext_y_array(ser, ecg_sample);

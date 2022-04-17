@@ -1,5 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 #include "lvglpp/widgets/line.h" // for Line
 #include <vector>
 
@@ -11,7 +12,7 @@ namespace lvgl::examples {
 
     void style_9() {
         Style style;
-        style.set_line_color(lv_palette_main(LV_PALETTE_GREY));
+        style.set_line_color(palette::main(Color::Grey));
         style.set_line_width(6);
         style.set_line_rounded(true);
         /*Create an object with the new style*/

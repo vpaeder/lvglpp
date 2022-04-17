@@ -57,24 +57,24 @@ namespace lvgl::draw {
         this->lv_obj = LvPointer<lv_img_dsc_t, lv_img_buf_free>(lv_img_buf_alloc(w, h, cf));
     }
 
-    Color ImageDescriptor::get_px_color(lv_coord_t x, lv_coord_t y, const Color & bg_color) const {
-        return Color(lv_img_buf_get_px_color(const_cast<lv_cls_ptr>(this->raw_ptr()), x, y, bg_color.raw()));
+    lv_color_t ImageDescriptor::get_px_color(lv_coord_t x, lv_coord_t y, lv_color_t bg_color) const {
+        return lv_img_buf_get_px_color(const_cast<lv_cls_ptr>(this->raw_ptr()), x, y, bg_color);
     }
 
     lv_opa_t ImageDescriptor::get_px_alpha(lv_coord_t x, lv_coord_t y) const {
         return lv_img_buf_get_px_alpha(const_cast<lv_cls_ptr>(this->raw_ptr()), x, y);
     }
 
-    void ImageDescriptor::set_px_color(lv_coord_t x, lv_coord_t y, const Color & c) {
-        lv_img_buf_set_px_color(this->raw_ptr(), x, y, c.raw());
+    void ImageDescriptor::set_px_color(lv_coord_t x, lv_coord_t y, lv_color_t c) {
+        lv_img_buf_set_px_color(this->raw_ptr(), x, y, c);
     }
     
     void ImageDescriptor::set_px_alpha(lv_coord_t x, lv_coord_t y, lv_opa_t opa) {
         lv_img_buf_set_px_alpha(this->raw_ptr(), x, y, opa);
     }
 
-    void ImageDescriptor::set_palette(uint8_t id, const Color & c) {
-        lv_img_buf_set_palette(this->raw_ptr(), id, c.raw());
+    void ImageDescriptor::set_palette(uint8_t id, lv_color_t c) {
+        lv_img_buf_set_palette(this->raw_ptr(), id, c);
     }
 
     uint32_t ImageDescriptor::get_img_size(lv_coord_t w, lv_coord_t h, lv_img_cf_t cf) const {

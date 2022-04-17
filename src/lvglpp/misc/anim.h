@@ -5,7 +5,7 @@
  *  License: MIT
  */
 #pragma once
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 
 /** \namespace lvgl::misc
  *  \brief LVGL miscellaneous components.
@@ -15,9 +15,9 @@ namespace lvgl::misc {
     /** \class Animation
      *  \brief Wraps a lv_anim_t object.
      */
-    class Animation : public ThinPointerWrapper<lv_anim_t, lv_mem_free> {
+    class Animation : public PointerWrapper<lv_anim_t, lv_mem_free> {
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
 
         /** \typedef template <class T> using ExecCb
          *  \brief Type of callback function used to animate variable.
@@ -331,7 +331,7 @@ namespace lvgl::misc {
     /** \class AnimationTimeline
      *  \brief Wraps a lv_anim_timeline_t object.
      */
-    class AnimationTimeline : public ThinPointerWrapper<lv_anim_timeline_t, lv_anim_timeline_del> {
+    class AnimationTimeline : public PointerWrapper<lv_anim_timeline_t, lv_anim_timeline_del> {
     public:
         /** \fn AnimationTimeline()
          *  \brief Constructor.

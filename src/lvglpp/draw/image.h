@@ -8,7 +8,7 @@
 #pragma once
 #include "../misc/color.h"
 #include "../misc/area.h"
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 #include <vector>
 
 namespace lvgl::draw {
@@ -22,7 +22,7 @@ namespace lvgl::draw {
      *  \brief Wraps a lv_img_decoder_dsc_t object. This is a base class to decode
      *  an image format.
      */
-    class ImageDecoder : public ThinPointerWrapper<lv_img_decoder_dsc_t, lv_img_decoder_close> {
+    class ImageDecoder : public PointerWrapper<lv_img_decoder_dsc_t, lv_img_decoder_close> {
     protected:
         /** \fn virtual lv_res_t info_callback(struct _lv_img_decoder_t * decoder, const void * src, lv_img_header_t * header)
          *  \brief Callback to read image info.
@@ -62,7 +62,7 @@ namespace lvgl::draw {
         virtual lv_res_t close_callback(struct _lv_img_decoder_t * decoder, struct _lv_img_decoder_dsc_t * dsc) = 0;
 
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
         /** \fn ImageDecoder(const ImageDescriptor & src, lv_color_t color, int32_t frame_id)
          *  \brief Constructor with image source.
          *  \param src: image descriptor.
@@ -129,7 +129,7 @@ namespace lvgl::draw {
     /** \class ImageHeader
      *  \brief Wraps a lv_img_header_t object.
      */
-    class ImageHeader : public ThinPointerWrapper<lv_img_header_t, lv_mem_free> {
+    class ImageHeader : public PointerWrapper<lv_img_header_t, lv_mem_free> {
     private:
         /** \fn bool valid
          *  \brief True if header contains valid data, false otherwise.
@@ -137,7 +137,7 @@ namespace lvgl::draw {
         bool valid = false;
 
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
 
         /** \fn bool is_valid() const
          *  \brief Tells if header contains valid data.
@@ -156,9 +156,9 @@ namespace lvgl::draw {
     /** \class ImageDescriptor
      *  \brief Wraps a lv_img_dsc_t object.
      */
-    class ImageDescriptor : public ThinPointerWrapper<lv_img_dsc_t, lv_img_buf_free> {
+    class ImageDescriptor : public PointerWrapper<lv_img_dsc_t, lv_img_buf_free> {
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
 
         ImageDescriptor();
 
@@ -170,14 +170,14 @@ namespace lvgl::draw {
          */
         ImageDescriptor(lv_coord_t w, lv_coord_t h, lv_img_cf_t cf);
 
-        /** \fn Color get_px_color(lv_coord_t x, lv_coord_t y, const Color & bg_color) const
+        /** \fn lv_color_t get_px_color(lv_coord_t x, lv_coord_t y, lv_color_t bg_color) const
          *  \brief Gets pixel color.
          *  \param x: horizontal coordinate.
          *  \param y: vertical coordinate.
          *  \param bg_color: background color.
          *  \returns pixel color blended with background color.
          */
-        Color get_px_color(lv_coord_t x, lv_coord_t y, const Color & bg_color) const;
+        lv_color_t get_px_color(lv_coord_t x, lv_coord_t y, lv_color_t bg_color) const;
 
         /** \fn lv_opa_t get_px_alpha(lv_coord_t x, lv_coord_t y) const
          *  \brief Gets pixel opacity.
@@ -187,13 +187,13 @@ namespace lvgl::draw {
          */
         lv_opa_t get_px_alpha(lv_coord_t x, lv_coord_t y) const;
 
-        /** \fn void set_px_color(lv_coord_t x, lv_coord_t y, const Color & c)
+        /** \fn void set_px_color(lv_coord_t x, lv_coord_t y, lv_color_t c)
          *  \brief Sets pixel color.
          *  \param x: horizontal coordinate.
          *  \param y: vertical coordinate.
          *  \param c: color.
          */
-        void set_px_color(lv_coord_t x, lv_coord_t y, const Color & c);
+        void set_px_color(lv_coord_t x, lv_coord_t y, lv_color_t c);
 
         /** \fn void set_px_alpha(lv_coord_t x, lv_coord_t y, lv_opa_t opa)
          *  \brief Sets pixel opacity.
@@ -203,12 +203,12 @@ namespace lvgl::draw {
          */
         void set_px_alpha(lv_coord_t x, lv_coord_t y, lv_opa_t opa);
 
-        /** \fn void set_palette(uint8_t id, const Color & c)
+        /** \fn void set_palette(uint8_t id, lv_color_t c)
          *  \brief Sets palette color.
          *  \param id: color index.
          *  \param c: color.
          */
-        void set_palette(uint8_t id, const Color & c);
+        void set_palette(uint8_t id, lv_color_t c);
         
         /** \fn uint32_t get_img_size(lv_coord_t w, lv_coord_t h, lv_img_cf_t cf) const
          *  \brief Computes image size in bytes.

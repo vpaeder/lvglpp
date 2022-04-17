@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/chart.h" // for Chart
 #include "lvglpp/misc/timer.h" // for Timer
+#include "lvglpp/misc/color.h" // for colors
 #include "lvglpp/core/event.h" // for Event
 #include "lvglpp/draw/mask.h" // for mask functions
 
@@ -45,7 +46,7 @@ namespace lvgl::examples {
 
             /*Vertical line*/
             if(dsc->p1->x == dsc->p2->x) {
-                dsc->line_dsc->color  = lv_palette_lighten(LV_PALETTE_GREY, 1);
+                dsc->line_dsc->color  = palette::light(Color::Grey, 1);
                 if(dsc->id == 3) {
                     dsc->line_dsc->width  = 2;
                     dsc->line_dsc->dash_gap  = 0;
@@ -71,10 +72,10 @@ namespace lvgl::examples {
                 }
 
                 if(dsc->id == 1  || dsc->id == 3) {
-                    dsc->line_dsc->color  = lv_palette_main(LV_PALETTE_GREEN);
+                    dsc->line_dsc->color  = palette::main(Color::Green);
                 }
                 else {
-                    dsc->line_dsc->color  = lv_palette_lighten(LV_PALETTE_GREY, 1);
+                    dsc->line_dsc->color  = palette::light(Color::Grey, 1);
                 }
             }
         }
@@ -114,8 +115,8 @@ namespace lvgl::examples {
         chart->set_update_mode(LV_CHART_UPDATE_MODE_CIRCULAR);
 
         /*Add two data series*/
-        auto ser1 = chart->add_series(lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
-        auto ser2 = chart->add_series(lv_palette_main(LV_PALETTE_BLUE), LV_CHART_AXIS_SECONDARY_Y);
+        auto ser1 = chart->add_series(palette::main(Color::Red), LV_CHART_AXIS_PRIMARY_Y);
+        auto ser2 = chart->add_series(palette::main(Color::Blue), LV_CHART_AXIS_SECONDARY_Y);
 
         uint32_t i;
         for(i = 0; i < 10; i++) {

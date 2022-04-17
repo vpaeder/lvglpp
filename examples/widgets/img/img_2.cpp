@@ -2,11 +2,13 @@
 #include "lvglpp/widgets/image.h" // for Image
 #include "lvglpp/widgets/slider.h" // for Slider
 #include "lvglpp/core/event.h" // for Event
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
     using namespace lvgl::core;
     using namespace lvgl::widgets;
+    using namespace lvgl::misc;
 
     using SliderPtr = std::unique_ptr<Slider>;
     using ImagePtr = std::unique_ptr<Image>;
@@ -37,10 +39,10 @@ namespace lvgl::examples {
         auto root = scr_act();
         
         /*Create 4 sliders to adjust RGB color and re-color intensity*/
-        red_slider = create_slider(root, lv_palette_main(LV_PALETTE_RED));
-        green_slider = create_slider(root, lv_palette_main(LV_PALETTE_GREEN));
-        blue_slider = create_slider(root, lv_palette_main(LV_PALETTE_BLUE));
-        intense_slider = create_slider(root, lv_palette_main(LV_PALETTE_GREY));
+        red_slider = create_slider(root, palette::main(Color::Red));
+        green_slider = create_slider(root, palette::main(Color::Green));
+        blue_slider = create_slider(root, palette::main(Color::Blue));
+        intense_slider = create_slider(root, palette::main(Color::Grey));
 
         red_slider->set_value(LV_OPA_20, LV_ANIM_OFF);
         green_slider->set_value(LV_OPA_90, LV_ANIM_OFF);

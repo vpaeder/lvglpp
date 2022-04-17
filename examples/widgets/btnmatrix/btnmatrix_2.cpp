@@ -2,6 +2,7 @@
 #include "lvglpp/widgets/btnmatrix.h" // for ButtonMatrix
 #include "lvglpp/core/event.h" // for Event
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 #include <vector>
 #include <string>
 
@@ -9,6 +10,7 @@ namespace lvgl::examples {
     
     using namespace lvgl::core;
     using namespace lvgl::widgets;
+    using namespace lvgl::misc;
 
     static void event_cb(Event & e) {
         auto code = e.get_code();
@@ -20,21 +22,21 @@ namespace lvgl::examples {
             /*Change the draw descriptor the 2nd button*/
             if(dsc->id == 1) {
                 dsc->rect_dsc->radius = 0;
-                if(obj.get_selected_btn() == dsc->id)  dsc->rect_dsc->bg_color = lv_palette_darken(LV_PALETTE_BLUE, 3);
-                else dsc->rect_dsc->bg_color = lv_palette_main(LV_PALETTE_BLUE);
+                if(obj.get_selected_btn() == dsc->id)  dsc->rect_dsc->bg_color = palette::dark(Color::Blue, 3);
+                else dsc->rect_dsc->bg_color = palette::main(Color::Blue);
 
                 dsc->rect_dsc->shadow_width = 6;
                 dsc->rect_dsc->shadow_ofs_x = 3;
                 dsc->rect_dsc->shadow_ofs_y = 3;
-                dsc->label_dsc->color = lv_color_white();
+                dsc->label_dsc->color = palette::white();
             }
             /*Change the draw descriptor the 3rd button*/
             else if(dsc->id == 2) {
                 dsc->rect_dsc->radius = LV_RADIUS_CIRCLE;
-                if(obj.get_selected_btn() == dsc->id)  dsc->rect_dsc->bg_color = lv_palette_darken(LV_PALETTE_RED, 3);
-                else dsc->rect_dsc->bg_color = lv_palette_main(LV_PALETTE_RED);
+                if(obj.get_selected_btn() == dsc->id)  dsc->rect_dsc->bg_color = palette::dark(Color::Red, 3);
+                else dsc->rect_dsc->bg_color = palette::main(Color::Red);
 
-                dsc->label_dsc->color = lv_color_white();
+                dsc->label_dsc->color = palette::white();
             }
             else if(dsc->id == 3) {
                 dsc->label_dsc->opa = LV_OPA_TRANSP; /*Hide the text if any*/
@@ -58,7 +60,7 @@ namespace lvgl::examples {
                 a->y2 = a->y1 + hdr->h - 1;
 
                 ImageDrawDescriptor img_draw_dsc;
-                img_draw_dsc->recolor = lv_color_black();
+                img_draw_dsc->recolor = palette::black();
                 if (obj.get_selected_btn() == dsc->id)
                     img_draw_dsc->recolor_opa = LV_OPA_30;
                 

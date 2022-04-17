@@ -12,7 +12,7 @@ I tried to mirror the directory structure of LVGL to some degree (with exception
 
 My point was to provide functions that take a certain LVGL object type as first argument as a class method. For instance, all functions taking a `lv_obj_t*` as first argument end up as methods of the `Object` class. I tried to replace raw pointer args either with a C++ class instance passed by reference or a smart pointer.
 
-There are two template classes in *lv_thin_wrapper.h* to facilitate encapsulation. The 1st one, `ThinWrapper<lv_class>`, stores an instance of type `lv_class`. The other one, `ThinPointerWrapper<lv_class, lv_deleter>` stores a `unique_ptr` of type `lv_class` with custom deleter function `lv_deleter`. A number of LVGL types have an associated deleter function, which can be provided there. For widgets, there's a template class called `Widget<lv_allocator>` that provides a constructor to nest objects.
+There is a template class in *lv_wrapper.h*, `PointerWrapper<lv_class, lv_deleter>`, to facilitate encapsulation. It stores a `unique_ptr` of type `lv_class` with custom deleter function `lv_deleter`. A number of LVGL types have an associated deleter function, which can be provided there. For widgets, there's a template class called `Widget<lv_allocator>` that provides a constructor to nest objects.
 
 Here is a list of classes with the corresponding link to LVGL:
 | Class | File | Wrapped type | LVGL file(s) |

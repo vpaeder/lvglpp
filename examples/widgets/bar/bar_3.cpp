@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/bar.h" // for Bar
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 #include "lvglpp/misc/anim.h" // for Animation
 
 namespace lvgl::examples {
@@ -13,8 +14,8 @@ namespace lvgl::examples {
         Style style_indic;
 
         style_indic.set_bg_opa(LV_OPA_COVER);
-        style_indic.set_bg_color(lv_palette_main(LV_PALETTE_RED));
-        style_indic.set_bg_grad_color(lv_palette_main(LV_PALETTE_BLUE));
+        style_indic.set_bg_color(palette::main(Color::Red));
+        style_indic.set_bg_grad_color(palette::main(Color::Blue));
         style_indic.set_bg_grad_dir(LV_GRAD_DIR_VER);
 
         auto root = scr_act();

@@ -1,11 +1,13 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/chart.h" // for Chart
 #include "lvglpp/core/event.h" // for Event
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
     using namespace lvgl::core;
     using namespace lvgl::widgets;
+    using namespace lvgl::misc;
 
     static void event_cb(Event & e) {
         auto code = e.get_code();
@@ -31,11 +33,11 @@ namespace lvgl::examples {
                 std::string txt = LV_SYMBOL_DUMMY + "$" + std::to_string(y_array[id]);
 
                 RectangleDrawDescriptor draw_rect_dsc;
-                draw_rect_dsc->bg_color = lv_color_black();
+                draw_rect_dsc->bg_color = palette::black();
                 draw_rect_dsc->bg_opa = LV_OPA_50;
                 draw_rect_dsc->radius = 3;
                 draw_rect_dsc->bg_img_src = txt.c_str();
-                draw_rect_dsc->bg_img_recolor = lv_color_white();
+                draw_rect_dsc->bg_img_recolor = palette::white();
 
                 Area a;
                 a->x1 = chart->coords.x1 + p.x - 20;
@@ -68,8 +70,8 @@ namespace lvgl::examples {
         chart.set_zoom_x(800);
 
         /*Add two data series*/
-        auto ser1 = chart.add_series(lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
-        auto ser2 = chart.add_series(lv_palette_main(LV_PALETTE_GREEN), LV_CHART_AXIS_PRIMARY_Y);
+        auto ser1 = chart.add_series(palette::main(Color::Red), LV_CHART_AXIS_PRIMARY_Y);
+        auto ser2 = chart.add_series(palette::main(Color::Green), LV_CHART_AXIS_PRIMARY_Y);
         uint32_t i;
         for(i = 0; i < 10; i++) {
             chart.set_next_y_value(ser1, lv_rand(60, 90));

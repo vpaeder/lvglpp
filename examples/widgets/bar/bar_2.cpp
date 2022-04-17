@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/bar.h" // for Bar
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -11,14 +12,14 @@ namespace lvgl::examples {
     void bar_2() {
         Style style_bg, style_indic;
 
-        style_bg.set_border_color(lv_palette_main(LV_PALETTE_BLUE));
+        style_bg.set_border_color(palette::main(Color::Blue));
         style_bg.set_border_width(2);
         style_bg.set_pad_all(6);
         style_bg.set_radius(6);
         style_bg.set_anim_time(1000);
 
         style_indic.set_bg_opa(LV_OPA_COVER);
-        style_indic.set_bg_color(lv_palette_main(LV_PALETTE_BLUE));
+        style_indic.set_bg_color(palette::main(Color::Blue));
         style_indic.set_radius(3);
 
         auto root = scr_act();

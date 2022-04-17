@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/chart.h" // for Chart
 #include "lvglpp/misc/timer.h" // for Timer
+#include "lvglpp/misc/color.h" // for colors
 #include "lvglpp/core/event.h" // for Event
 
 namespace lvgl::examples {
@@ -29,9 +30,9 @@ namespace lvgl::examples {
             lv_opa_t x_opa = (x_array[p_act] * LV_OPA_50) / 200;
             lv_opa_t y_opa = (y_array[p_act] * LV_OPA_50) / 1000;
 
-            dsc->rect_dsc->bg_color = lv_color_mix(lv_palette_main(LV_PALETTE_RED),
-                                                lv_palette_main(LV_PALETTE_BLUE),
-                                                x_opa + y_opa);
+            dsc->rect_dsc->bg_color = color::mix(palette::main(Color::Red),
+                                                 palette::main(Color::Blue),
+                                                 x_opa + y_opa);
         }
 
     }
@@ -69,7 +70,7 @@ namespace lvgl::examples {
 
         chart->set_point_count(50);
 
-        lv_chart_series_t * ser = chart->add_series(lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
+        lv_chart_series_t * ser = chart->add_series(palette::main(Color::Red), LV_CHART_AXIS_PRIMARY_Y);
         uint32_t i;
         for(i = 0; i < 50; i++) {
             chart->set_next_xy_values(ser, lv_rand(0, 200), lv_rand(0, 1000));

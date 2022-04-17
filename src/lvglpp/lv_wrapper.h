@@ -1,4 +1,4 @@
-/** \file lv_thin_wrapper.h
+/** \file lv_wrapper.h
  *  \brief Thin C++ wrapper template classes around LVGL objects.
  *
  *  Author: Vincent Paeder
@@ -7,6 +7,7 @@
 #pragma once
 #include <memory>
 #include <functional>
+#include <unordered_map>
 #include "lvgl.h"
 
 /** \namespace lvgl
@@ -88,100 +89,6 @@ namespace lvgl {
         return static_cast<LvClass*>(lv_mem_alloc(sizeof(LvClass)));
     }
 
-    /** \brief Template class meant to wrap C LVGL objects for C++.
-     * 
-     *  This wrapper holds an instance as a class member.
-     * 
-     *  \tparam LvClass: LVGL object type.
-     */
-    template <typename LvClass> class ThinWrapper {
-    protected:
-        /** \property LvClass lv_obj
-         *  \brief Wrapped object.
-         */
-        LvClass lv_obj;
-
-        /** \typedef LvWrapperType
-         *  \brief A short hand for the wrapper class type ThinWrapper<LvClass>
-         */
-        using LvWrapperType = ThinWrapper<LvClass>;
-
-    public:
-
-        /** \fn ThinWrapper()
-         *  \brief Default constructor.
-         */
-        ThinWrapper() = default;
-
-        /** \fn ThinWrapper(const LvClass & obj)
-         *  \brief Copy conversion function with LvClass argument
-         */
-        ThinWrapper(const LvClass & obj) {
-            this->lv_obj = obj;
-        }
-
-        /** \fn ThinWrapper(const ThinWrapper<LvClass> & obj)
-         *  \brief Copy constructor
-         */
-        ThinWrapper(const ThinWrapper<LvClass> & obj) = default;
-
-        /** \fn ThinWrapper & operator=(const ThinWrapper<LvClass> & obj)
-         *  \brief Copy assignment operator
-         */
-        ThinWrapper & operator=(const ThinWrapper<LvClass> & obj) = default;
-
-        /** \fn ThinWrapper(LvClass && obj)
-         *  \brief Move conversion function with LvClass argument (take ownership of obj)
-         */
-        ThinWrapper(LvClass && obj) {
-            this->lv_obj = std::forward<LvClass>(obj);
-            obj = LvClass();
-        }
-
-        /** \fn ThinWrapper(ThinWrapper<LvClass> && obj)
-         *  \brief Move constructor
-         */
-        ThinWrapper(ThinWrapper<LvClass> && obj) = default;
-
-        /** \fn ThinWrapper & operator=(ThinWrapper<LvClass> && obj)
-         *  \brief Move assignment operator
-         */
-        ThinWrapper & operator=(ThinWrapper<LvClass> && obj) = default;
-
-        /** \fn LvClass & raw()
-         *  \brief Access to owned raw LvClass object.
-         *  \returns a reference to the owned LvClass object.
-         */
-        LvClass & raw() {
-            return this->lv_obj;
-        }
-
-        /** \fn const LvClass & raw() const
-         *  \brief Access to owned raw LvClass object (const version).
-         *  \returns a const reference to the owned LvClass object.
-         */
-        const LvClass & raw() const {
-            return this->lv_obj;
-        }
-
-        /** \fn LvClass & raw_ptr()
-         *  \brief Access to owned raw LvClass object (pointer version).
-         *  \returns a pointer to the managed LvClass object.
-         */
-        LvClass * raw_ptr() {
-            return &(this->lv_obj);
-        }
-
-        /** \fn const LvClass & raw_ptr() const
-         *  \brief Access to owned raw LvClass object (const pointer version).
-         *  \returns a const pointer to the managed LvClass object.
-         */
-        const LvClass * raw_ptr() const {
-            return &(this->lv_obj);
-        }
-
-    };
-    
 
     /** \brief Template class meant to wrap C LVGL objects for C++.
      *  
@@ -192,7 +99,7 @@ namespace lvgl {
      *  \tparam LvClass: LVGL type.
      *  \tparam lv_deleter: deleter function.
      */
-    template <typename LvClass, auto lv_deleter> class ThinPointerWrapper {
+    template <typename LvClass, auto lv_deleter> class PointerWrapper {
     protected:
         /** \typedef LvPointerType
          *  \brief A shorthand for the wrapped object pointer type LvPointer<LvClass, lv_deleter>
@@ -200,9 +107,9 @@ namespace lvgl {
         using LvPointerType = LvPointer<LvClass, lv_deleter>;
 
         /** \typedef LvWrapperType
-         *  \brief A shorthand for the wrapper class type ThinPointerWrapper<LvClass, lv_deleter>
+         *  \brief A shorthand for the wrapper class type PointerWrapper<LvClass, lv_deleter>
          */
-        using LvWrapperType = ThinPointerWrapper<LvClass, lv_deleter>;
+        using LvWrapperType = PointerWrapper<LvClass, lv_deleter>;
 
         /** \typedef lv_cls
          *  \brief A shorthand for LvClass available within class members.
@@ -228,55 +135,55 @@ namespace lvgl {
         bool owns_ptr = true;
 
     public:
-        /** \fn ThinPointerWrapper()
+        /** \fn PointerWrapper()
          *  \brief Default constructor.
          */
-        ThinPointerWrapper() = default;
+        PointerWrapper() = default;
 
-       /** \fn ~ThinPointerWrapper()
+       /** \fn ~PointerWrapper()
         *  \brief Destructor.
         */
-        ~ThinPointerWrapper() {
+        ~PointerWrapper() {
             if (!this->owns_ptr)
                 this->release_ptr();
         }
 
         // no copy constructor and copy assignment operator
-        ThinPointerWrapper(const LvPointerType & obj) = delete;
-        ThinPointerWrapper & operator=(const LvPointerType & obj) = delete;
+        PointerWrapper(const LvPointerType & obj) = delete;
+        PointerWrapper & operator=(const LvPointerType & obj) = delete;
 
-        /** \fn ThinPointerWrapper(LvClass * obj, bool owns_ptr=true)
+        /** \fn PointerWrapper(LvClass * obj, bool owns_ptr=true)
          *  \brief Wrapping function with LvClass* argument.
          *  \param obj: raw pointer to wrap.
          *  \param owns_ptr: if true, takes pointer ownership.
          */
-        ThinPointerWrapper(LvClass * obj, bool owns_ptr=true) {
+        PointerWrapper(LvClass * obj, bool owns_ptr=true) {
             this->lv_obj = LvPointerType(obj);
             this->owns_ptr = owns_ptr;
         }
 
-        /** \fn ThinPointerWrapper(LvPointerType && obj)
+        /** \fn PointerWrapper(LvPointerType && obj)
          *  \brief Move-wrapping function with LvPointerType argument.
          *  \param obj: object to move.
          */
-        ThinPointerWrapper(LvPointerType && obj) {
+        PointerWrapper(LvPointerType && obj) {
             this->lv_obj = std::move(obj);
             obj = nullptr;
         }
 
-        /** \fn ThinPointerWrapper(LvWrapperType && obj)
+        /** \fn PointerWrapper(LvWrapperType && obj)
          *  \brief Move constructor.
          *  \param obj: object to move.
          */
-        ThinPointerWrapper(LvWrapperType && obj) = default;
+        PointerWrapper(LvWrapperType && obj) : lv_obj(std::exchange(obj.lv_obj, nullptr)), owns_ptr(obj.owns_ptr) {}
 
-        /** \fn ThinPointerWrapper & operator=(LvWrapperType && obj)
+        /** \fn PointerWrapper & operator=(LvWrapperType && obj)
          *  \brief Move assignment operator.
          *  \param obj: object to move.
          */
-        ThinPointerWrapper & operator=(LvWrapperType && obj) {
-            this->lv_obj = LvPointerType(obj.raw_ptr());
-            obj.lv_obj = nullptr;
+        PointerWrapper & operator=(LvWrapperType && obj) {
+            this->lv_obj = std::swap(this->lv_obj, obj.lv_obj);
+            this->owns_ptr = obj.owns_ptr;
             return *this;
         }
 
@@ -324,6 +231,19 @@ namespace lvgl {
         /** \fn template <class T> std::shared_ptr<T> get_shared()
          *  \brief Creates an image of the managed object wrapped in a shared
          *  pointer of the given class.
+         * 
+         *  This is a convenience function for situations where we stored objects
+         *  of type T in shared_ptr and need to store or compare temporary
+         *  copies of them. This can happen in callbacks such as events. Instead of
+         *  storing copies of C++ wrapper objects, I prefer to create temporary
+         *  objects storing the C instance. For things like animations, it is always
+         *  possible to use bare C functions if speed is required.
+         *  I want to stress here that creating a unique_ptr encapsulating a raw pointer
+         *  that exists already and releasing raw pointer before destruction makes little
+         *  sense otherwise. It's a design issue, but the other option would have been
+         *  to create a program-wide storage for C++ objects to be able to reverse-map
+         *  them with their content.
+         * 
          *  \tparam T: type of shared pointer to create.
          *  \returns shared pointer of wrapped managed object.
          */
@@ -331,12 +251,12 @@ namespace lvgl {
             return std::make_shared<T>(this->raw_ptr(), false);
         }
 
-        /** \fn bool operator==(const ThinPointerWrapper & obj) const
+        /** \fn bool operator==(const PointerWrapper & obj) const
          *  \brief Comparison operator.
          *  \param obj: object to compare with.
          *  \returns true if managed objects are equal.
          */
-        bool operator==(const ThinPointerWrapper & obj) const {
+        bool operator==(const PointerWrapper & obj) const {
             return obj.raw_ptr() == this->raw_ptr();
         }
 

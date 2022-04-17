@@ -1,5 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 #include "lvglpp/widgets/label.h" // for Label
 
 namespace lvgl::examples {
@@ -12,11 +13,11 @@ namespace lvgl::examples {
         Style style;
         style.set_radius(5);
         style.set_bg_opa(LV_OPA_COVER);
-        style.set_bg_color(lv_palette_lighten(LV_PALETTE_GREY, 2));
+        style.set_bg_color(palette::light(Color::Grey, 2));
         style.set_border_width(2);
-        style.set_border_color(lv_palette_main(LV_PALETTE_BLUE));
+        style.set_border_color(palette::main(Color::Blue));
         style.set_pad_all(10);
-        style.set_text_color(lv_palette_main(LV_PALETTE_BLUE));
+        style.set_text_color(palette::main(Color::Blue));
         style.set_text_letter_space(5);
         style.set_text_line_space(20);
         style.set_text_decor(LV_TEXT_DECOR_UNDERLINE);        

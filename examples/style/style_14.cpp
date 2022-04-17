@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/core/theme.h" // for Theme
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 #include "lvglpp/widgets/button.h" // for Button
 #include "lvglpp/widgets/label.h" // for Label
 
@@ -13,8 +14,8 @@ namespace lvgl::examples {
     static Style style_btn;
 
     static void new_theme_init_and_set() {
-        style_btn.set_bg_color(lv_palette_main(LV_PALETTE_GREEN));
-        style_btn.set_border_color(lv_palette_darken(LV_PALETTE_GREEN, 3));
+        style_btn.set_bg_color(palette::main(Color::Green));
+        style_btn.set_border_color(palette::dark(Color::Green, 3));
         style_btn.set_border_width(3);
         /*Initialize the new theme from the current theme*/
         auto th_act = get_active_theme();

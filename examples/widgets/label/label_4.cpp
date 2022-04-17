@@ -4,12 +4,14 @@
 #include "lvglpp/widgets/canvas.h" // for Canvas
 #include "lvglpp/draw/mask.h" // for MapMask
 #include "lvglpp/draw/desc.h" // for LabelDrawDescriptor
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
     using namespace lvgl::core;
     using namespace lvgl::widgets;
     using namespace lvgl::draw;
+    using namespace lvgl::misc;
 
     #define MASK_WIDTH 100
     #define MASK_HEIGHT 45
@@ -39,11 +41,11 @@ namespace lvgl::examples {
         /*Create a "8 bit alpha" canvas and clear it*/
         auto canvas = std::make_unique<Canvas>(root);
         canvas->set_buffer<lv_opa_t>(mask_map, MASK_WIDTH, MASK_HEIGHT, LV_IMG_CF_ALPHA_8BIT);
-        canvas->fill_bg(lv_color_black(), LV_OPA_TRANSP);
+        canvas->fill_bg(palette::black(), LV_OPA_TRANSP);
         
         /*Draw a label to the canvas. The result "image" will be used as mask*/
         LabelDrawDescriptor label_dsc;
-        label_dsc->color = lv_color_white();
+        label_dsc->color = palette::white();
         label_dsc->align = LV_TEXT_ALIGN_CENTER;
         canvas->draw_text(5, 5, MASK_WIDTH, label_dsc, "Text with gradient");
 

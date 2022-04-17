@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/span.h" // for Span
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -18,7 +19,7 @@ namespace lvgl::examples {
 
         Style style;
         style.set_border_width(1);
-        style.set_border_color(lv_palette_main(LV_PALETTE_ORANGE));
+        style.set_border_color(palette::main(Color::Orange));
         style.set_pad_all(2);
 
         spangrp.add_style(style, 0);
@@ -31,7 +32,7 @@ namespace lvgl::examples {
         auto span1 = spangrp.new_span();
         span1.set_text("China is a beautiful country.");
         auto span1_style = span1.get_style();
-        span1_style.set_text_color(lv_palette_main(LV_PALETTE_RED));
+        span1_style.set_text_color(palette::main(Color::Red));
         span1_style.set_text_decor(LV_TEXT_DECOR_STRIKETHROUGH | LV_TEXT_DECOR_UNDERLINE);
         span1_style.set_text_opa(LV_OPA_50);
 
@@ -41,16 +42,16 @@ namespace lvgl::examples {
     #if LV_FONT_MONTSERRAT_24
         span2_style.set_text_font(&lv_font_montserrat_24);
     #endif
-        span2_style.set_text_color(lv_palette_main(LV_PALETTE_GREEN));
+        span2_style.set_text_color(palette::main(Color::Green));
 
         auto span3 = spangrp.new_span();
         span3.set_text_static("LVGL is an open-source graphics library.");
-        span3.get_style().set_text_color(lv_palette_main(LV_PALETTE_BLUE));
+        span3.get_style().set_text_color(palette::main(Color::Blue));
 
         auto span4 = spangrp.new_span();
         span4.set_text_static("the boy no name.");
         auto span4_style = span4.get_style();
-        span4_style.set_text_color(lv_palette_main(LV_PALETTE_GREEN));
+        span4_style.set_text_color(palette::main(Color::Green));
     #if LV_FONT_MONTSERRAT_20
         span4_style.set_text_font(&lv_font_montserrat_20);
     #endif

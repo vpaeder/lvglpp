@@ -1,5 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 #include "lvglpp/widgets/label.h" // for Label
 
 namespace lvgl::examples {
@@ -11,22 +12,22 @@ namespace lvgl::examples {
     void style_11() {
         /*A base style*/
         Style style_base;
-        style_base.set_bg_color(lv_palette_main(LV_PALETTE_LIGHT_BLUE));
-        style_base.set_border_color(lv_palette_darken(LV_PALETTE_LIGHT_BLUE, 3));
+        style_base.set_bg_color(palette::main(Color::LightBlue));
+        style_base.set_border_color(palette::dark(Color::LightBlue, 3));
         style_base.set_border_width(2);
         style_base.set_radius(10);
         style_base.set_shadow_width(10);
         style_base.set_shadow_ofs_y(5);
         style_base.set_shadow_opa(LV_OPA_50);
-        style_base.set_text_color(lv_color_white());
+        style_base.set_text_color(palette::white());
         style_base.set_width(100);
         style_base.set_height(LV_SIZE_CONTENT);
 
         /*Set only the properties that should be different*/
         Style style_warning;
-        style_warning.set_bg_color(lv_palette_main(LV_PALETTE_YELLOW));
-        style_warning.set_border_color(lv_palette_darken(LV_PALETTE_YELLOW, 3));
-        style_warning.set_text_color(lv_palette_darken(LV_PALETTE_YELLOW, 4));
+        style_warning.set_bg_color(palette::main(Color::Yellow));
+        style_warning.set_border_color(palette::dark(Color::Yellow, 3));
+        style_warning.set_text_color(palette::dark(Color::Yellow, 4));
 
         /*Create an object with the base style only*/
         auto root = scr_act();

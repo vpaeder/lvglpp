@@ -1,5 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 #include "lvglpp/widgets/image.h" // for Image
 
 namespace lvgl::examples {
@@ -13,11 +14,11 @@ namespace lvgl::examples {
         /*Set a background color and a radius*/
         style.set_radius(5);
         style.set_bg_opa(LV_OPA_COVER);
-        style.set_bg_color(lv_palette_lighten(LV_PALETTE_GREY, 3));
+        style.set_bg_color(palette::light(Color::Grey, 3));
         style.set_border_width(2);
-        style.set_border_color(lv_palette_main(LV_PALETTE_BLUE));
+        style.set_border_color(palette::main(Color::Blue));
 
-        style.set_img_recolor(lv_palette_main(LV_PALETTE_BLUE));
+        style.set_img_recolor(palette::main(Color::Blue));
         style.set_img_recolor_opa(LV_OPA_50);
         style.set_transform_angle(300);
         

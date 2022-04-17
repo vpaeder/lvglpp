@@ -29,7 +29,7 @@ namespace lvgl::widgets {
     }
 
     void ColorWheel::initialize(Object & parent) {
-        this->initialize(parent, false);
+        this->initialize(parent);
     }
 
     void ColorWheel::initialize(bool knob_recolor) {

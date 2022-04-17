@@ -7,56 +7,78 @@
 #include "color.h"
 
 namespace lvgl::misc {
-        Color::Color(uint8_t r, uint8_t g, uint8_t b) {
-            this->lv_obj = lv_color_make(r, g, b);
+
+        namespace color {
+            lv_color_t from_rgb(uint8_t r, uint8_t g, uint8_t b) {
+                return lv_color_make(r, g, b);
+            }
+
+            lv_color_t from_hex(uint32_t c) {
+                return lv_color_hex(c);
+            }
+
+            lv_color_t from_hex3(uint16_t c) {
+                return lv_color_hex3(c);
+            }
+
+            lv_color_t from_hsv(uint16_t h, uint8_t s, uint8_t v) {
+                return lv_color_hsv_to_rgb(h, s, v);
+            }
+
+            lv_color_t from_hsv(lv_color_hsv_t color_hsv) {
+                return lv_color_hsv_to_rgb(color_hsv.h, color_hsv.s, color_hsv.v);
+            }
+
+            inline uint8_t to1(lv_color_t color) {
+                return lv_color_to1(color);
+            }
+
+            inline uint8_t to8(lv_color_t color) {
+                return lv_color_to8(color);
+            }
+
+            inline uint16_t to16(lv_color_t color) {
+                return lv_color_to16(color);
+            }
+
+            inline uint32_t to32(lv_color_t color) {
+                return lv_color_to32(color);
+            }
+
+            uint8_t brightness(lv_color_t color) {
+                return lv_color_brightness(color);
+            }
+
+            lv_color_hsv_t to_hsv(lv_color_t color) {
+                return lv_color_to_hsv(color);
+            }
+
+            lv_color_t mix(lv_color_t c1, lv_color_t c2, uint8_t ratio) {
+                return lv_color_mix(c1, c2, ratio);
+            }
         }
 
-        Color::Color(uint32_t c) {
-            this->lv_obj = lv_color_hex(c);
-        }
+        namespace palette {
+            lv_color_t main(Color p) {
+                return lv_palette_main(static_cast<lv_palette_t>(p));
+            }
 
-        Color::Color(uint16_t c) {
-            this->lv_obj = lv_color_hex3(c);
-        }
+            lv_color_t light(Color p, uint8_t lvl) {
+                return lv_palette_lighten(static_cast<lv_palette_t>(p), lvl);
+            }
 
-        void Color::from_hsv(uint16_t h, uint8_t s, uint8_t v) {
-            this->lv_obj = lv_color_hsv_to_rgb(h, s, v);
-        }
+            lv_color_t dark(Color p, uint8_t lvl) {
+                return lv_palette_darken(static_cast<lv_palette_t>(p), lvl);
+            }
 
-        void Color::from_hsv(lv_color_hsv_t color_hsv) {
-            this->lv_obj = lv_color_hsv_to_rgb(color_hsv.h, color_hsv.s, color_hsv.v);
+            lv_color_t white() {
+                return lv_color_white();
+            }
+            
+            lv_color_t black() {
+                return lv_color_black();
+            }
         }
-
-        uint8_t Color::to1() const {
-            return lv_color_to1(this->raw());
-        }
-
-        uint8_t Color::to8() const {
-            return lv_color_to8(this->raw());
-        }
-
-        uint16_t Color::to16() const {
-            return lv_color_to16(this->raw());
-        }
-
-        uint32_t Color::to32() const {
-            return lv_color_to32(this->raw());
-        }
-
-        uint8_t Color::brightness() const {
-            return lv_color_brightness(this->raw());
-        }
-
-        lv_color_hsv_t Color::to_hsv() const {
-            return lv_color_to_hsv(this->raw());
-        }
-
-        Color Color::mix(Color & c, uint8_t ratio) const {
-            lv_color_t c2 = c.raw();
-            lv_color_t res = lv_color_mix(this->lv_obj, c2, ratio);
-            return Color(std::move(res));
-        }
-
 
         ColorFilter::ColorFilter() {
             this->lv_obj = LvPointerType(lv_cls_alloc<lv_cls>());

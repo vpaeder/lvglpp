@@ -3,6 +3,7 @@
 #include "lvglpp/core/event.h" // for Event
 #include "lvglpp/misc/anim.h" // for Animation
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -17,10 +18,10 @@ namespace lvgl::examples {
         img_src.set_src(img_skew_strip_map, 80, 20, LV_IMG_CF_TRUE_COLOR_ALPHA);
 
         Style style;
-        style.set_bg_color(lv_palette_main(LV_PALETTE_YELLOW));
+        style.set_bg_color(palette::main(Color::Yellow));
         style.set_bg_opa(LV_OPA_COVER);
         style.set_img_recolor_opa(LV_OPA_COVER);
-        style.set_img_recolor(lv_color_black());
+        style.set_img_recolor(palette::black());
 
         /*Now create the actual image*/
         auto img = Image(root);

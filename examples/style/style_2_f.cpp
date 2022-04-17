@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/misc/style.h" // for Style
 #include "lvglpp/core/object.h" // for Container
+#include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -16,8 +17,8 @@ namespace lvgl::examples {
         lv_grad_dsc_t grad;
         grad.dir = LV_GRAD_DIR_VER;
         grad.stops_count = 2;
-        grad.stops[0].color = lv_palette_lighten(LV_PALETTE_GREY, 1);
-        grad.stops[1].color = lv_palette_main(LV_PALETTE_BLUE);
+        grad.stops[0].color = palette::light(Color::Grey, 1);
+        grad.stops[1].color = palette::main(Color::Blue);
 
         /*Shift the gradient to the bottom*/
         grad.stops[0].frac  = 128;

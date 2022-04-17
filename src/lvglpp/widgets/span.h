@@ -16,7 +16,7 @@ namespace lvgl::widgets {
     /** \class Span
      *  \brief Wraps a lv_spangroup_t object.
      */
-    class Span : public ThinPointerWrapper<lv_span_t, lv_mem_free> {
+    class Span : public PointerWrapper<lv_span_t, lv_mem_free> {
     public:
         /** \fn Span(lv_span_t* span)
          *  \brief Constructor with C object.

@@ -1,10 +1,12 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/chart.h" // for Chart
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
     using namespace lvgl::core;
     using namespace lvgl::widgets;
+    using namespace lvgl::misc;
 
     void chart_1() {
         auto root = scr_act();
@@ -14,8 +16,8 @@ namespace lvgl::examples {
         chart.set_type(LV_CHART_TYPE_LINE);   /*Show lines and points too*/
 
         /*Add two data series*/
-        auto ser1 = chart.add_series(lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
-        auto ser2 = chart.add_series(lv_palette_main(LV_PALETTE_GREEN), LV_CHART_AXIS_SECONDARY_Y);
+        auto ser1 = chart.add_series(palette::main(Color::Red), LV_CHART_AXIS_PRIMARY_Y);
+        auto ser2 = chart.add_series(palette::main(Color::Green), LV_CHART_AXIS_SECONDARY_Y);
 
         /*Set the next points on 'ser1'*/
         chart.set_next_y_value(ser1, 10);

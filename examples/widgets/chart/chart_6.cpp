@@ -3,6 +3,7 @@
 #include "lvglpp/widgets/label.h" // for Label
 #include "lvglpp/core/event.h" // for Event
 #include "lvglpp/misc/txt.h" // for text functions
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -38,12 +39,12 @@ namespace lvgl::examples {
             a->x2 = a.x1 + size.x + 10;
 
             RectangleDrawDescriptor draw_rect_dsc;
-            draw_rect_dsc->bg_color = lv_palette_main(LV_PALETTE_BLUE);
+            draw_rect_dsc->bg_color = palette::main(Color::Blue);
             draw_rect_dsc->radius = 3;
             draw_rect_dsc.draw(dsc->draw_ctx, a);
 
             LabelDrawDescriptor draw_label_dsc;
-            draw_label_dsc->color = lv_color_white();
+            draw_label_dsc->color = palette::white();
             a->x1 += 5;
             a->x2 -= 5;
             a->y1 += 5;
@@ -65,9 +66,9 @@ namespace lvgl::examples {
         chart.add_event_cb(event_cb, LV_EVENT_ALL);
         chart.refresh_ext_draw_size();
 
-        cursor = chart.add_cursor(lv_palette_main(LV_PALETTE_BLUE), LV_DIR_LEFT | LV_DIR_BOTTOM);
+        cursor = chart.add_cursor(palette::main(Color::Blue), LV_DIR_LEFT | LV_DIR_BOTTOM);
 
-        ser = chart.add_series(lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
+        ser = chart.add_series(palette::main(Color::Red), LV_CHART_AXIS_PRIMARY_Y);
         uint32_t i;
         for(i = 0; i < 10; i++) {
             chart.set_next_y_value(ser, lv_rand(10, 90));

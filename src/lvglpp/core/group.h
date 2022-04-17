@@ -5,7 +5,7 @@
  *  License: MIT
  */
 
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 
 namespace lvgl::core {
 
@@ -14,9 +14,9 @@ namespace lvgl::core {
     /** \class Group
      *  \brief Wraps a lv_group_t object.
      */
-    class Group : public ThinPointerWrapper<lv_group_t, lv_group_del> {
+    class Group : public PointerWrapper<lv_group_t, lv_group_del> {
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
         
         /** \fn void set_default()
          *  \brief Sets group as default group for new objects.

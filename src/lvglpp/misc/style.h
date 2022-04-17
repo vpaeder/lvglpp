@@ -11,7 +11,7 @@
 #include "anim.h"
 #include "../font/font.h"
 #include "../draw/image.h"
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 
 namespace lvgl::misc {
     
@@ -22,8 +22,16 @@ namespace lvgl::misc {
      *  \brief Wraps a lv_style_transition_dsc_t object. This is a base class
      *  to define style transition.
      */
-    class StyleTransition : public ThinWrapper<lv_style_transition_dsc_t> {
+    class StyleTransition : public PointerWrapper<lv_style_transition_dsc_t, lv_mem_free> {
     protected:
+        /** \fn void initialize(const std::vector<lv_style_prop_t> & props, uint32_t time, uint32_t delay)
+         *  \brief Initializes style transition.
+         *  \param props: a list of style properties.
+         *  \param time: transition duration.
+         *  \param delay: transition delay.
+         */
+        void initialize(const std::vector<lv_style_prop_t> & props, uint32_t time, uint32_t delay);
+
         /** \fn virtual int32_t callback(const struct _lv_anim_t * anim)
          *  \brief Callback function called on style transition.
          *  \param anim: pointer to an animation descriptor.
@@ -31,15 +39,20 @@ namespace lvgl::misc {
         virtual int32_t callback(const struct _lv_anim_t * anim) = 0;
 
     public:
+        using PointerWrapper::PointerWrapper;
+
         /** \fn StyleTransition()
          *  \brief Default constructor.
          */
         StyleTransition();
 
-        /** \fn ~StyleTransition()
-         *  \brief Default destructor.
+        /** \fn StyleTransition(const std::vector<lv_style_prop_t> & props, uint32_t time, uint32_t delay)
+         *  \brief Constructor with parameters.
+         *  \param props: a list of style properties.
+         *  \param time: transition duration.
+         *  \param delay: transition delay.
          */
-        ~StyleTransition();
+        StyleTransition(const std::vector<lv_style_prop_t> & props, uint32_t time, uint32_t delay);
 
         /** \fn void set_props(const std::vector<lv_style_prop_t> & props)
          *  \brief Sets style properties affected by transition.
@@ -58,23 +71,6 @@ namespace lvgl::misc {
          *  \param delay: transition delay.
          */
         void set_delay(uint32_t delay);
-
-        #if LV_USE_USER_DATA
-        /** \fn template<class T> void set_user_data(const T & arg)
-         *  \brief Sets user data passed to callback.
-         *  \param T: user data type.
-         *  \param arg: user data.
-         */
-        template<class T> void set_user_data(const T & arg) {
-            this->lv_obj.user_data = static_cast<void*>(&arg);
-        }
-        /** \fn void set_user_data(const void * arg)
-         *  \brief Sets user data passed to callback.
-         *  \param arg: user data.
-         */
-        void set_user_data(const void * arg);
-        #endif // LV_USE_USER_DATA
-
     };
     
     
@@ -82,6 +78,9 @@ namespace lvgl::misc {
      *  \brief This is a style transition with a linear animation.
      */
     class LinearStyleTransition : public StyleTransition {
+        public:
+            using StyleTransition::StyleTransition;
+
         protected:
         /** \fn int32_t callback(const struct _lv_anim_t * anim)
          *  \brief Callback function called on style transition.
@@ -95,6 +94,9 @@ namespace lvgl::misc {
      *  \brief This is a style transition with an easing-in animation.
      */
     class EaseInStyleTransition : public StyleTransition {
+        public:
+            using StyleTransition::StyleTransition;
+            
         protected:
         /** \fn int32_t callback(const struct _lv_anim_t * anim)
          *  \brief Callback function called on style transition.
@@ -108,6 +110,9 @@ namespace lvgl::misc {
      *  \brief This is a style transition with an easing-out animation.
      */
     class EaseOutStyleTransition : public StyleTransition {
+        public:
+            using StyleTransition::StyleTransition;
+            
         protected:
         /** \fn int32_t callback(const struct _lv_anim_t * anim)
          *  \brief Callback function called on style transition.
@@ -121,6 +126,9 @@ namespace lvgl::misc {
      *  \brief This is a style transition with a easing-in and easing-out animation.
      */
     class EaseInOutStyleTransition : public StyleTransition {
+        public:
+            using StyleTransition::StyleTransition;
+            
         protected:
         /** \fn int32_t callback(const struct _lv_anim_t * anim)
          *  \brief Callback function called on style transition.
@@ -134,6 +142,9 @@ namespace lvgl::misc {
      *  \brief This is a style transition with an animation overshooting on the end.
      */
     class OvershootStyleTransition : public StyleTransition {
+        public:
+            using StyleTransition::StyleTransition;
+            
         protected:
         /** \fn int32_t callback(const struct _lv_anim_t * anim)
          *  \brief Callback function called on style transition.
@@ -147,6 +158,9 @@ namespace lvgl::misc {
      *  \brief This is a style transition with an animation with 3 bounces.
      */
     class BounceStyleTransition : public StyleTransition {
+        public:
+            using StyleTransition::StyleTransition;
+            
         protected:
         /** \fn int32_t callback(const struct _lv_anim_t * anim)
          *  \brief Callback function called on style transition.
@@ -160,6 +174,9 @@ namespace lvgl::misc {
      *  \brief This is a style transition with a step animation.
      */
     class StepStyleTransition : public StyleTransition {
+        public:
+            using StyleTransition::StyleTransition;
+            
         protected:
         /** \fn int32_t callback(const struct _lv_anim_t * anim)
          *  \brief Callback function called on style transition.
@@ -173,6 +190,9 @@ namespace lvgl::misc {
      *  \brief This is a style transition with blinking (turns on then off).
      */
     class BlinkStyleTransition : public StyleTransition {
+        public:
+            using StyleTransition::StyleTransition;
+            
         protected:
         /** \fn int32_t callback(const struct _lv_anim_t * anim)
          *  \brief Callback function called on style transition.
@@ -185,9 +205,9 @@ namespace lvgl::misc {
     /** \class Style
      *  \brief Wraps a lv_style_t object.
      */
-    class Style : public ThinPointerWrapper<lv_style_t, lv_mem_free> {
+    class Style : public PointerWrapper<lv_style_t, lv_mem_free> {
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
         
         /** \fn Style()
          *  \brief Default constructor.
@@ -407,11 +427,11 @@ namespace lvgl::misc {
          */
         void set_pad_column(lv_coord_t value);
 
-        /** \fn void set_bg_color(const Color & value)
+        /** \fn void set_bg_color(lv_color_t value)
          *  \brief Sets background color property.
          *  \param value: color value.
          */
-        void set_bg_color(const Color & value);
+        void set_bg_color(lv_color_t value);
 
         /** \fn void set_bg_opa(lv_opa_t value)
          *  \brief Sets background opacity property.
@@ -419,11 +439,11 @@ namespace lvgl::misc {
          */
         void set_bg_opa(lv_opa_t value);
 
-        /** \fn void set_bg_grad_color(const Color & value)
+        /** \fn void set_bg_grad_color(lv_color_t value)
          *  \brief Sets background gradient color property.
          *  \param value: color value.
          */
-        void set_bg_grad_color(const Color & value);
+        void set_bg_grad_color(lv_color_t value);
 
         /** \fn void set_bg_grad_dir(lv_grad_dir_t value)
          *  \brief Sets background gradient direction property.
@@ -465,11 +485,11 @@ namespace lvgl::misc {
          */
         void set_bg_img_opa(lv_opa_t value);
 
-        /** \fn void set_bg_img_recolor(const Color & value)
+        /** \fn void set_bg_img_recolor(lv_color_t value)
          *  \brief Sets the color used to recolor the background image.
          *  \param value: color value.
          */
-        void set_bg_img_recolor(const Color & value);
+        void set_bg_img_recolor(lv_color_t value);
 
         /** \fn void set_bg_img_recolor_opa(lv_opa_t value)
          *  \brief Sets the opacity of background image recoloring.
@@ -483,11 +503,11 @@ namespace lvgl::misc {
          */
         void set_bg_img_tiled(bool value);
 
-        /** \fn void set_border_color(const Color & value)
+        /** \fn void set_border_color(lv_color_t value)
          *  \brief Sets border color property.
          *  \param value: color value.
          */
-        void set_border_color(const Color & value);
+        void set_border_color(lv_color_t value);
 
         /** \fn void set_border_opa(lv_opa_t value)
          *  \brief Sets border opacity property.
@@ -519,11 +539,11 @@ namespace lvgl::misc {
          */
         void set_outline_width(lv_coord_t value);
 
-        /** \fn void set_outline_color(const Color & value)
+        /** \fn void set_outline_color(lv_color_t value)
          *  \brief Sets outline color property.
          *  \param value: color value.
          */
-        void set_outline_color(const Color & value);
+        void set_outline_color(lv_color_t value);
 
         /** \fn void set_outline_opa(lv_opa_t value)
          *  \brief Sets outline opacity property.
@@ -561,11 +581,11 @@ namespace lvgl::misc {
          */
         void set_shadow_spread(lv_coord_t value);
 
-        /** \fn void set_shadow_color(const Color & value)
+        /** \fn void set_shadow_color(lv_color_t value)
          *  \brief Sets shadow color property.
          *  \param value: color value.
          */
-        void set_shadow_color(const Color & value);
+        void set_shadow_color(lv_color_t value);
 
         /** \fn void set_shadow_opa(lv_opa_t value)
          *  \brief Sets shadow opacity property.
@@ -579,11 +599,11 @@ namespace lvgl::misc {
          */
         void set_img_opa(lv_opa_t value);
 
-        /** \fn void set_img_recolor(const Color & value)
+        /** \fn void set_img_recolor(lv_color_t value)
          *  \brief Sets the color used to recolor the image.
          *  \param value: color value.
          */
-        void set_img_recolor(const Color & value);
+        void set_img_recolor(lv_color_t value);
 
         /** \fn void set_img_recolor_opa(lv_opa_t value)
          *  \brief Sets the opacity of image recoloring.
@@ -615,11 +635,11 @@ namespace lvgl::misc {
          */
         void set_line_rounded(bool value);
 
-        /** \fn void set_line_color(const Color & value)
+        /** \fn void set_line_color(lv_color_t value)
          *  \brief Sets line color property.
          *  \param value: color value.
          */
-        void set_line_color(const Color & value);
+        void set_line_color(lv_color_t value);
 
         /** \fn void set_line_opa(lv_opa_t value)
          *  \brief Sets line opacity property.
@@ -639,11 +659,11 @@ namespace lvgl::misc {
          */
         void set_arc_rounded(bool value);
 
-        /** \fn void set_arc_color(const Color & value)
+        /** \fn void set_arc_color(lv_color_t value)
          *  \brief Sets arc color property.
          *  \param value: color value.
          */
-        void set_arc_color(const Color & value);
+        void set_arc_color(lv_color_t value);
 
         /** \fn void set_arc_opa(lv_opa_t value)
          *  \brief Sets arc opacity property.
@@ -657,11 +677,11 @@ namespace lvgl::misc {
          */
         void set_arc_img_src(const ImageDescriptor & img);
 
-        /** \fn void set_text_color(const Color & value)
+        /** \fn void set_text_color(lv_color_t value)
          *  \brief Sets text color property.
          *  \param value: color value.
          */
-        void set_text_color(const Color & value);
+        void set_text_color(lv_color_t value);
 
         /** \fn void set_text_opa(lv_opa_t value)
          *  \brief Sets text opacity property.

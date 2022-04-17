@@ -1,10 +1,12 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/led.h" // for Led
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
     using namespace lvgl::core;
     using namespace lvgl::widgets;
+    using namespace lvgl::misc;
 
     void led_1() {
         auto root = scr_act();
@@ -18,7 +20,7 @@ namespace lvgl::examples {
         auto led2  = Led(root);
         led2.align(LV_ALIGN_CENTER, 0, 0);
         led2.set_brightness(150);
-        led2.set_color(lv_palette_main(LV_PALETTE_RED));
+        led2.set_color(palette::main(Color::Red));
 
         /*Copy the previous LED and switch it ON*/
         auto led3  = Led(root);

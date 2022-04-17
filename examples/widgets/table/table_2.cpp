@@ -2,11 +2,13 @@
 #include "lvglpp/widgets/table.h" // for Table
 #include "lvglpp/widgets/label.h" // for Label
 #include "lvglpp/core/event.h" // for Event
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
     using namespace lvgl::core;
     using namespace lvgl::widgets;
+    using namespace lvgl::misc;
 
     #define ITEM_CNT 200
 
@@ -18,7 +20,7 @@ namespace lvgl::examples {
             bool chk = obj.has_cell_ctrl(dsc->id, 0, LV_TABLE_CELL_CTRL_CUSTOM_1);
             
             RectangleDrawDescriptor rect_dsc;
-            rect_dsc->bg_color = chk ? obj.get_color_primary() : lv_palette_lighten(LV_PALETTE_GREY, 2);
+            rect_dsc->bg_color = chk ? obj.get_color_primary() : palette::light(Color::Grey, 2);
             rect_dsc->radius = LV_RADIUS_CIRCLE;
 
             Area sw_area;
@@ -28,7 +30,7 @@ namespace lvgl::examples {
             sw_area->y2 = sw_area->y1 + 20;
             rect_dsc.draw(dsc->draw_ctx, sw_area);
 
-            rect_dsc.bg_color = lv_color_white();
+            rect_dsc.bg_color = palette::white();
             if(chk) {
                 sw_area->x2 -= 2;
                 sw_area->x1 = sw_area->x2 - 16;

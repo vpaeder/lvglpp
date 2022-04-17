@@ -7,7 +7,7 @@
 #pragma once
 #include "display.h"
 #include "../misc/timer.h"
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 
 namespace lvgl::core {
 
@@ -18,7 +18,7 @@ namespace lvgl::core {
      *  \brief Wraps a lv_indev_t object. This is a base class to define
      *  specialized input devices.
      */
-    class InputDevice : public ThinPointerWrapper<lv_indev_t, lv_indev_delete> {
+    class InputDevice : public PointerWrapper<lv_indev_t, lv_indev_delete> {
     protected:
         /** \property lv_indev_drv_t indev_drv
          *  \brief Input device driver instance.
@@ -39,7 +39,7 @@ namespace lvgl::core {
         void set_type(lv_indev_type_t type);
 
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
 
         /** \fn InputDevice()
          *  \brief Default constructor.

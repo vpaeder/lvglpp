@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/label.h" // for Label
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -14,7 +15,7 @@ namespace lvgl::examples {
         /*Create a style for the shadow*/
         Style style_shadow;
         style_shadow.set_text_opa(LV_OPA_30);
-        style_shadow.set_text_color(lv_color_black());
+        style_shadow.set_text_color(palette::black());
 
         /*Create a label for the shadow first (it's in the background)*/
         auto shadow_label = Label(root);

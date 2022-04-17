@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/meter.h" // for Meter
 #include "lvglpp/misc/anim.h" // for Animation
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -19,36 +20,36 @@ namespace lvgl::examples {
 
         /*Add a scale first*/
         auto scale = meter->add_scale();
-        meter->set_scale_ticks(scale, 41, 2, 10, lv_palette_main(LV_PALETTE_GREY));
-        meter->set_scale_major_ticks(scale, 8, 4, 15, lv_color_black(), 10);
+        meter->set_scale_ticks(scale, 41, 2, 10, palette::main(Color::Grey));
+        meter->set_scale_major_ticks(scale, 8, 4, 15, palette::black(), 10);
 
         /*Add a blue arc to the start*/
         {
-            auto indic = meter->add_arc(scale, 3, lv_palette_main(LV_PALETTE_BLUE), 0);
+            auto indic = meter->add_arc(scale, 3, palette::main(Color::Blue), 0);
             meter->set_indicator_start_value(indic, 0);
             meter->set_indicator_end_value(indic, 20);
         }
         /*Make the tick lines blue at the start of the scale*/
         {
-            auto indic = meter->add_scale_lines(scale, lv_palette_main(LV_PALETTE_BLUE), lv_palette_main(LV_PALETTE_BLUE),
+            auto indic = meter->add_scale_lines(scale, palette::main(Color::Blue), palette::main(Color::Blue),
                                                false, 0);
             meter->set_indicator_start_value(indic, 0);
             meter->set_indicator_end_value(indic, 20);
         }
         /*Add a red arc to the end*/
         {
-            auto indic = meter->add_arc(scale, 3, lv_palette_main(LV_PALETTE_RED), 0);
+            auto indic = meter->add_arc(scale, 3, palette::main(Color::Red), 0);
             meter->set_indicator_start_value(indic, 80);
             meter->set_indicator_end_value(indic, 100);
         }
         /*Make the tick lines red at the end of the scale*/
         {
-            auto indic = meter->add_scale_lines(scale, lv_palette_main(LV_PALETTE_RED), lv_palette_main(LV_PALETTE_RED), false, 0);
+            auto indic = meter->add_scale_lines(scale, palette::main(Color::Red), palette::main(Color::Red), false, 0);
             meter->set_indicator_start_value(indic, 80);
             meter->set_indicator_end_value(indic, 100);
         }
         /*Add a needle line indicator*/
-        auto indic = meter->add_needle_line(scale, 4, lv_palette_main(LV_PALETTE_GREY), -10);
+        auto indic = meter->add_needle_line(scale, 4, palette::main(Color::Grey), -10);
 
         /*Create an animation to set the value*/
         Animation anim;

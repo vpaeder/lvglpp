@@ -3,6 +3,7 @@
 #include "lvglpp/widgets/label.h" // for Label
 #include "lvglpp/core/event.h" // for Event
 #include "lvglpp/misc/anim.h" // for Animation
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -27,11 +28,11 @@ namespace lvgl::examples {
 
         tabview->get_content().add_event_cb(scroll_begin_event, LV_EVENT_SCROLL_BEGIN);
 
-        tabview->set_style_bg_color(lv_palette_lighten(LV_PALETTE_RED, 2), 0);
+        tabview->set_style_bg_color(palette::light(Color::Red, 2), 0);
 
         auto tab_btns = tabview->get_tab_btns();
-        tab_btns.set_style_bg_color(lv_palette_darken(LV_PALETTE_GREY, 3), 0);
-        tab_btns.set_style_text_color(lv_palette_lighten(LV_PALETTE_GREY, 5), 0);
+        tab_btns.set_style_bg_color(palette::dark(Color::Grey, 3), 0);
+        tab_btns.set_style_text_color(palette::light(Color::Grey, 5), 0);
         tab_btns.set_style_border_side(LV_BORDER_SIDE_RIGHT, LV_PART_ITEMS | LV_STATE_CHECKED);
 
 
@@ -42,7 +43,7 @@ namespace lvgl::examples {
         auto tab4 = tabview->add_tab("Tab 4");
         auto tab5 = tabview->add_tab("Tab 5");
 
-        tab2.set_style_bg_color(lv_palette_lighten(LV_PALETTE_AMBER, 3), 0);
+        tab2.set_style_bg_color(palette::light(Color::Amber, 3), 0);
         tab2.set_style_bg_opa(LV_OPA_COVER, 0);
 
         /*Add content to the tabs*/

@@ -5,7 +5,7 @@
  *  License: MIT
  */
 #pragma once
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 
 namespace lvgl::misc {
 
@@ -16,7 +16,7 @@ namespace lvgl::misc {
      *  \brief Wraps a lv_fs_drv_t object. This is a base class to construct
      *  file system drivers for LVGL.
      */
-    class FileSystem : public ThinPointerWrapper<lv_fs_drv_t, lv_mem_free> {
+    class FileSystem : public PointerWrapper<lv_fs_drv_t, lv_mem_free> {
     protected:
         /** \fn virtual void initialize(char letter)
          *  \brief Initializes file system driver.
@@ -149,9 +149,9 @@ namespace lvgl::misc {
     /** \class File
      *  \brief Wraps a lv_fs_file_t object.
      */
-    class File : public ThinPointerWrapper<lv_fs_file_t, lv_mem_free> {
+    class File : public PointerWrapper<lv_fs_file_t, lv_mem_free> {
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
 
         /** \fn File()
          *  \brief Constructor.
@@ -201,9 +201,9 @@ namespace lvgl::misc {
     /** \class Directory
      *  \brief Wraps a lv_fs_dir_t object.
      */
-    class Directory : public ThinPointerWrapper<lv_fs_dir_t, lv_mem_free> {
+    class Directory : public PointerWrapper<lv_fs_dir_t, lv_mem_free> {
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
 
         /** \fn Directory()
          *  \brief Constructor.

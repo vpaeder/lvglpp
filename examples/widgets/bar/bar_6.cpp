@@ -29,13 +29,13 @@ namespace lvgl::examples {
         if(Area(dsc->draw_area).get_width() > txt_size.x + 20) {
             txt_area->x2 = dsc->draw_area->x2 - 5;
             txt_area->x1 = txt_area->x2 - txt_size.x + 1;
-            label_dsc->color = lv_color_white();
+            label_dsc->color = palette::white();
         }
         /*If the indicator is too short put the text out of it on the right*/
         else {
             txt_area->x1 = dsc->draw_area->x2 + 5;
             txt_area->x2 = txt_area->x1 + txt_size.x - 1;
-            label_dsc->color = lv_color_black();
+            label_dsc->color = palette::black();
         }
         txt_area->y1 = dsc->draw_area->y1 + (Area(dsc->draw_area).get_height() - txt_size.y) / 2;
         txt_area->y2 = txt_area->y1 + txt_size.y - 1;

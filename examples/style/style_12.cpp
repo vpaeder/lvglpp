@@ -1,5 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/misc/style.h" // for Style
+#include "lvglpp/misc/color.h" // for colors
 #include "lvglpp/core/object.h" // for Container
 
 namespace lvgl::examples {
@@ -9,8 +10,8 @@ namespace lvgl::examples {
 
     void style_12() {
         Style style;
-        style.set_bg_color(lv_palette_main(LV_PALETTE_GREEN));
-        style.set_border_color(lv_palette_lighten(LV_PALETTE_GREEN, 3));
+        style.set_bg_color(palette::main(Color::Green));
+        style.set_border_color(palette::light(Color::Green, 3));
         style.set_border_width(3);
         
         auto root = scr_act();
@@ -20,6 +21,6 @@ namespace lvgl::examples {
         obj.center();
 
         /*Overwrite the background color locally*/
-        obj.set_style_bg_color(lv_palette_main(LV_PALETTE_ORANGE), LV_PART_MAIN);
+        obj.set_style_bg_color(palette::main(Color::Orange), LV_PART_MAIN);
     }
 }

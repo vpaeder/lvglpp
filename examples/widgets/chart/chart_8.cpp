@@ -1,6 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/widgets/chart.h" // for Chart
 #include "lvglpp/core/event.h" // for Event
+#include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {
     
@@ -76,9 +77,9 @@ namespace lvgl::examples {
         chart.set_style_size(0, LV_PART_INDICATOR);
 
         /*Add some data series*/
-        chart.series_list[0] = chart.add_series(lv_palette_main(LV_PALETTE_RED), LV_CHART_AXIS_PRIMARY_Y);
-        chart.series_list[1] = chart.add_series(lv_palette_main(LV_PALETTE_BLUE), LV_CHART_AXIS_PRIMARY_Y);
-        chart.series_list[2] = chart.add_series(lv_palette_main(LV_PALETTE_GREEN), LV_CHART_AXIS_PRIMARY_Y);
+        chart.series_list[0] = chart.add_series(palette::main(Color::Red), LV_CHART_AXIS_PRIMARY_Y);
+        chart.series_list[1] = chart.add_series(palette::main(Color::Blue), LV_CHART_AXIS_PRIMARY_Y);
+        chart.series_list[2] = chart.add_series(palette::main(Color::Green), LV_CHART_AXIS_PRIMARY_Y);
 
         for(int point = 0; point < 10; point++) {
             /* Make some random data */

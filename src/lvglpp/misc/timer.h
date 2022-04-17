@@ -5,7 +5,7 @@
  *  License: MIT
  */
 #pragma once
-#include "../lv_thin_wrapper.h"
+#include "../lv_wrapper.h"
 
 namespace lvgl::misc {
 
@@ -14,9 +14,9 @@ namespace lvgl::misc {
      *  timers for LVGL. Create a derived class and override the callback function
      *  to define the timer behaviour.
      */
-    class Timer : public ThinPointerWrapper<lv_timer_t, lv_timer_del> {
+    class Timer : public PointerWrapper<lv_timer_t, lv_timer_del> {
     public:
-        using ThinPointerWrapper::ThinPointerWrapper;
+        using PointerWrapper::PointerWrapper;
 
         /** \typedef TimerCb
          *  \brief Function called on timer tick.
