@@ -114,7 +114,7 @@ void main() {
     // initialize LVGL
     lvgl::init();
     // place here display and input device initialization;
-    // For now I didn't write an example for that, but I will.
+    // read examples in examples/lvglpp directory to see how.
 
     // create button on active display
     auto btn = Button(scr_act());

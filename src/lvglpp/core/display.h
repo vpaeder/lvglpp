@@ -61,20 +61,33 @@ namespace lvgl::core {
          */
         lv_coord_t ver_res;
 
-        /** \fn virtual void flush(lv_disp_drv_t * drv, const lv_area_t * area,  lv_color_t * color_map)
+        /** \fn virtual void flush(const lv_area_t * area,  lv_color_t * color_map)
          *  \brief Callback to draw data on display.
-         *  \param drv: pointer to underlying display driver.
          *  \param area: target draw area.
          *  \param color_map: data to draw.
          */
-        virtual void flush(lv_disp_drv_t * drv, const lv_area_t * area,  lv_color_t * color_map) = 0;
+        virtual void flush(const lv_area_t * area,  lv_color_t * color_map) {}
 
-        /** \fn virtual void initialize()
-         *  \brief Initializes display driver.
+        /** \fn void update_driver()
+         *  \brief Updates driver with stored values.
          */
-        virtual void initialize();
+        void update_driver();
+
+        /** \fn void flush_ready()
+         *  \brief Tells LVGL that flush operation is over. This must be called
+         *  at the end of the flush method.
+         */
+        void flush_ready();
     
     public:
+        /** \fn Display(lv_coord_t hor_res, lv_coord_t ver_res, uint32_t fb_size)
+         *  \brief Constructor.
+         *  \param hor_res: horizontal resolution.
+         *  \param ver_res: vertical resolution.
+         *  \param fb_size: frame buffer size.
+         */
+        Display(lv_coord_t hor_res, lv_coord_t ver_res, uint32_t fb_size);
+
         /** \fn ~Display()
          *  \brief Destructor.
          */

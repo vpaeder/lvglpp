@@ -25,18 +25,22 @@ namespace lvgl::core {
          */
         lv_indev_drv_t indev_drv;
 
-        /** \property virtual void read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data)
+        /** \property virtual void read(lv_indev_data_t * data)
          *  \brief Callback to read touchpad data.
-         *  \param indev_drv: a pointer to the underlying input device driver.
          *  \param data: a pointer to the target data structure.
          */
-        virtual void read(lv_indev_drv_t * indev_drv, lv_indev_data_t * data) {}
+        virtual void read(lv_indev_data_t * data) {}
     
         /** \fn void set_type(lv_indev_type_t type)
          *  \brief Sets the device type.
          *  \param type: code for device type (LV_INDEV_TYPE_POINTER/KEYPAD/BUTTON/ENCODER).
          */
         void set_type(lv_indev_type_t type);
+
+        /** \fn void update_driver()
+         *  \brief Updates driver with stored values.
+         */
+        void update_driver();
 
     public:
         using PointerWrapper::PointerWrapper;

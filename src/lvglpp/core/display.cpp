@@ -12,18 +12,32 @@
 
 namespace lvgl::core {
 
-    void Display::initialize() {
-        this->lv_buf_1 = std::vector<lv_color_t>(this->fb_size);
+    Display::Display(lv_coord_t hor_res, lv_coord_t ver_res, uint32_t fb_size) {
+        this->lv_buf_1 = std::vector<lv_color_t>(fb_size);
 
         lv_disp_draw_buf_init(&(this->lv_disp_buf), this->lv_buf_1.data(), nullptr, fb_size);
         lv_disp_drv_init(&(this->lv_disp_drv));
         this->lv_disp_drv.draw_buf = &(this->lv_disp_buf);
-        this->lv_disp_drv.hor_res = this->hor_res;
-        this->lv_disp_drv.ver_res = this->ver_res;
+        this->lv_disp_drv.hor_res = hor_res;
+        this->lv_disp_drv.ver_res = ver_res;
+        this->lv_disp_drv.user_data = static_cast<void*>(this);
+        auto f = [](lv_disp_drv_t* drv, const lv_area_t* area, lv_color_t* color_map) {
+            auto obj = reinterpret_cast<Display*>(drv->user_data);
+            obj->flush(area, color_map);
+        };
+        this->lv_disp_drv.flush_cb = f;
 
         this->lv_disp = std::unique_ptr<lv_disp_t>(lv_disp_drv_register(&(this->lv_disp_drv)));
     }
     
+    void Display::update_driver() {
+        lv_disp_drv_update(this->raw_ptr(), &this->lv_disp_drv);
+    }
+
+    void Display::flush_ready() {
+        lv_disp_flush_ready(&this->lv_disp_drv);
+    }
+
     Display::~Display() {
         lv_disp_remove(this->raw_ptr());
     }

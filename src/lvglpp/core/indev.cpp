@@ -12,12 +12,21 @@ namespace lvgl::core {
 
     InputDevice::InputDevice() {
         lv_indev_drv_init(&(this->indev_drv));
+        this->indev_drv.user_data = static_cast<void*>(this);
+        this->indev_drv.read_cb = [](lv_indev_drv_t * indev_drv, lv_indev_data_t * data) {
+            auto obj = reinterpret_cast<InputDevice*>(indev_drv->user_data);
+            obj->read(data);
+        };
         this->lv_obj = LvPointerType(lv_indev_drv_register(&(this->indev_drv)));
+    }
+
+    void InputDevice::update_driver() {
+        lv_indev_drv_update(this->raw_ptr(), &this->indev_drv);
     }
 
     void InputDevice::set_display(lv_disp_t * disp) {
         this->indev_drv.disp = disp;
-        lv_indev_drv_update(this->raw_ptr(), &this->indev_drv);
+        this->update_driver();
     }
 
     void InputDevice::set_display(Display & disp) {
@@ -26,7 +35,7 @@ namespace lvgl::core {
 
     void InputDevice::set_type(lv_indev_type_t type) {
         this->indev_drv.type = type;
-        lv_indev_drv_update(this->raw_ptr(), &this->indev_drv);
+        this->update_driver();
     }
 
     void InputDevice::enable(bool en) {
