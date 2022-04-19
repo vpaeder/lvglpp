@@ -65,13 +65,13 @@ var NAVTREEINDEX =
 "classlvgl_1_1core_1_1_object.html#adc4c3daa031b898382a13cdf7a3856d4",
 "classlvgl_1_1draw_1_1_line_draw_descriptor.html#a7532a44c316ff9a8f4b8f43cad502256",
 "classlvgl_1_1misc_1_1_area.html#ae233dad442e5f622f36d1098197df1e3",
-"classlvgl_1_1misc_1_1_style.html#a5b4a75af7b4d9b1da9cbe80a81b9e6e1",
-"classlvgl_1_1widgets_1_1_arc.html#ac7fb073440e85a651d37c3a5a40e17c1",
-"classlvgl_1_1widgets_1_1_checkbox.html#a73d09fe7fcf13b343629fb1641455682",
-"classlvgl_1_1widgets_1_1_label.html#ae9c331c9be6990d88863aaaf7ea6be24",
-"classlvgl_1_1widgets_1_1_span_group.html#aa9ea25104b2aa3d281f635a24b5c6ce3",
-"color_8h.html#a1ecddc342f570b5763107bd761645be8",
-"namespacelvgl_1_1misc.html#aefca0b2109a7b71b1b981ed943f6221fafc1cebf02dc2ee68655f3e7bf1b84230"
+"classlvgl_1_1misc_1_1_style.html#a6138550faee744e1af7924faee3d2f99",
+"classlvgl_1_1widgets_1_1_arc.html#aecff6f1e384adba9791b362cd16baf22",
+"classlvgl_1_1widgets_1_1_checkbox.html#ae25f282e3a4202b06f4ce8a6159ff7f7",
+"classlvgl_1_1widgets_1_1_label.html#af902a1744a3e94cf7c413f77d61d46a7",
+"classlvgl_1_1widgets_1_1_span_group.html#aac0d8721f7c9a28340cc9333ebdebb03",
+"color_8h.html#a498bff2f8fb76f96a817148379e54731",
+"namespacelvgl_1_1misc_1_1color.html#a1ecddc342f570b5763107bd761645be8"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

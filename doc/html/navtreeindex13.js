@@ -1,9 +1,5 @@
 var NAVTREEINDEX13 =
 {
-"namespacelvgl_1_1misc.html#aefca0b2109a7b71b1b981ed943f6221fafc1cebf02dc2ee68655f3e7bf1b84230":[1,0,0,3,21,11],
-"namespacelvgl_1_1misc.html#af181299d544cba336ba16eb593bcbf19":[1,0,0,3,22],
-"namespacelvgl_1_1misc_1_1color.html":[1,0,0,3,0],
-"namespacelvgl_1_1misc_1_1color.html#a0f6ac38db7451b2846973e6e5c160e57":[1,0,0,3,0,1],
 "namespacelvgl_1_1misc_1_1color.html#a1ecddc342f570b5763107bd761645be8":[1,0,0,3,0,8],
 "namespacelvgl_1_1misc_1_1color.html#a32b4caa94999edb8257c3f445dd14683":[1,0,0,3,0,10],
 "namespacelvgl_1_1misc_1_1color.html#a477ee154635d8ac7343aff5d5338c9c1":[1,0,0,3,0,12],

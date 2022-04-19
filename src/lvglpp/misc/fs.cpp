@@ -7,7 +7,7 @@
 #include "fs.h"
 
 namespace lvgl::misc {
-    void FileSystem::initialize(char letter) {
+    FileSystem::FileSystem(char letter) {
         LV_LOG_INFO("initializing file system for letter %c", letter);
         this->lv_obj = LvPointerType(lv_cls_alloc<lv_cls>());
         lv_fs_drv_init(this->raw_ptr());
@@ -77,10 +77,6 @@ namespace lvgl::misc {
         this->lv_obj->dir_close_cb = f_dir_close;
 
         lv_fs_drv_register(this->raw_ptr());
-    }
-
-    FileSystem::FileSystem(char letter) {
-        this->initialize(letter);
     }
 
     File FileSystem::open(const std::string & path, lv_fs_mode_t mode) {

@@ -1,12 +1,10 @@
 var classlvgl_1_1misc_1_1_file_system =
 [
-    [ "FileSystem", "classlvgl_1_1misc_1_1_file_system.html#ae045d602d4355a89522ecbcb5ff07c18", null ],
     [ "FileSystem", "classlvgl_1_1misc_1_1_file_system.html#a62c4609a53a492003f0aaaf59980f88f", null ],
     [ "close_cb", "classlvgl_1_1misc_1_1_file_system.html#ac7d938d60b33ff2029516395e1882da9", null ],
     [ "dir_close_cb", "classlvgl_1_1misc_1_1_file_system.html#a980c9f56df3595b9882e6d7f10a17744", null ],
     [ "dir_open_cb", "classlvgl_1_1misc_1_1_file_system.html#a9b35e4a67863732b4c334cb2e03a2493", null ],
     [ "dir_read_cb", "classlvgl_1_1misc_1_1_file_system.html#a7f9daf2597bba239aa337efb83f36ad9", null ],
-    [ "initialize", "classlvgl_1_1misc_1_1_file_system.html#a822aedf4cdf7025fb1e292ce618fb0cd", null ],
     [ "is_ready", "classlvgl_1_1misc_1_1_file_system.html#a592a0bda9a1f0ee3f6d50c70306d73b9", null ],
     [ "open", "classlvgl_1_1misc_1_1_file_system.html#ac60bcfc77970222a930dbad60677037a", null ],
     [ "open_cb", "classlvgl_1_1misc_1_1_file_system.html#a705d617e1b9b5dbd79b812986304a312", null ],

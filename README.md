@@ -134,7 +134,7 @@ void main() {
 }
 ```
 
-### Displays and input devices
+### Displays, input devices, filesystems
 
 I've included some basic examples in *examples/lvglpp*. Since I only tested my code with a rather basic display, I didn't write classes that make uses of callbacks for monochrome or special displays. However, it's possible to do it yourself in a simple way:
 ```cpp
@@ -161,6 +161,8 @@ public:
 
 For input devices, I included specialized classes for each type of input device available. I didn't implement the `feedback_cb` callback though. If you need it, you can write a derived class following the same scheme as for displays.
 
+There's also a commented example for a custom filesystem driver. It'd be possible to port the available drivers to C++ using this template. Note that this only makes sense if you need to access files directly (for images, you can just as well register a C driver that will be used under the hood).
+
 ## Accessing managed object
 
 Through the `PointerWrapper` class, I provide several ways to access the managed LVGL object:
@@ -182,6 +184,11 @@ Because of the way wrappers are implemented, it is important to remember to stor
 LVGL stores the relationship of objects and takes care of deleting children of objects getting deleted. This means that you can safely use `release_ptr` on sub-widgets. Conversely, nothing is stored about instances of other types, like styles, animations, timers, ... Therefore, you **must not** `release_ptr` one of those, of you won't have any possibility to free it up afterwards. For those, you should either provide some kind of storage (`std::vector`, class member variable, ...) or make them static. 
 
 For C++-style callbacks, it is important to remember that any object obtained from within the callback by calling an accessor function (such as `Event::get_target`) creates a temporary object wrapping a raw pointer. This means that you cannot create derived classes that would carry data along. Every call to the callback gets fed with a newly created temporary object with, other than the raw pointer, default values. Moreover, you cannot pass data using the `user_data` field, as it is used internally to pass the C++-style callback. For such cases, you need to define a global variable to transfer data to or from the callback.
+
+## Footprint
+
+As lvglpp is essentially a layer over LVGL, it of course increases the memory footprint. However, most wrapper classes have only two member variables: a pointer to the wrapped object and a bool. This makes an overhead of 12 bytes per wrapped object. Several items need to store more content (e.g. Animation and ButtonMatrix) and will therefore need a little more space. Naturally, the binary size will also increase depending on the number of functions that are in use. I'll try to quantify these values at some point.
+If you're hunting for free bytes, I'd rather recommend to use the original library instead.
 
 # API documentation
 

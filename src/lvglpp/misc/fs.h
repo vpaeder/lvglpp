@@ -18,12 +18,6 @@ namespace lvgl::misc {
      */
     class FileSystem : public PointerWrapper<lv_fs_drv_t, lv_mem_free> {
     protected:
-        /** \fn virtual void initialize(char letter)
-         *  \brief Initializes file system driver.
-         *  \param letter: registration letter for LVGL.
-         */
-        virtual void initialize(char letter);
-
         /** \fn virtual bool ready_cb()
          *  \brief Tells if the file system is ready to use.
          *  \returns true if file system is ready, false otherwise.
@@ -106,11 +100,8 @@ namespace lvgl::misc {
         virtual lv_fs_res_t dir_close_cb(void * rddir_p) = 0;
 
     public:
-        /** \fn FileSystem()
-         *  \brief Default constructor.
-         */
         FileSystem() = default;
-
+        
         /** \fn FileSystem(char letter)
          *  \brief Constructor.
          *  \param letter: registration letter for LVGL.
