@@ -343,7 +343,28 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <p >Because of the way wrappers are implemented, it is important to remember to store the elements that are displayed. If any instance of a C++ object gets out of scope, the wrapped element gets deleted too (unless you use <code>release_ptr</code> or it's a child element created with an ad-hoc function).</p>
 <p >LVGL stores the relationship of objects and takes care of deleting children of objects getting deleted. This means that you can safely use <code>release_ptr</code> on sub-widgets. Conversely, nothing is stored about instances of other types, like styles, animations, timers, ... Therefore, you <b>must not</b> <code>release_ptr</code> one of those, of you won't have any possibility to free it up afterwards. For those, you should either provide some kind of storage (<code>std::vector</code>, class member variable, ...) or make them static.</p>
 <p >For C++-style callbacks, it is important to remember that any object obtained from within the callback by calling an accessor function (such as <code>Event::get_target</code>) creates a temporary object wrapping a raw pointer. This means that you cannot create derived classes that would carry data along. Every call to the callback gets fed with a newly created temporary object with, other than the raw pointer, default values. Moreover, you cannot pass data using the <code>user_data</code> field, as it is used internally to pass the C++-style callback. For such cases, you need to define a global variable to transfer data to or from the callback.</p>
-<h1>Footprint</h1>
+<p >Just like LVGL, lvglpp is NOT thread-safe. Therefore, as for LVGL, it is necessary to prevent concurrent execution of <code>lv_task_handler()</code> and other functions (with the exception of callbacks called from within task handler, like events or timers). This is typically done with a mutex, like: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line">std::mutex mtx;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> task_handler_thread() {</div>
+<div class="line">    <span class="keywordflow">for</span> (;;) {</div>
+<div class="line">        {</div>
+<div class="line">            <span class="keyword">const</span> std::lock_guard&lt;std::mutex&gt; lock(mtx);</div>
+<div class="line">            lv_task_handler();</div>
+<div class="line">        }</div>
+<div class="line">        std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">void</span> another_thread() {</div>
+<div class="line">    <span class="keywordflow">for</span> (;;) {</div>
+<div class="line">        mtx.lock();</div>
+<div class="line">        <span class="comment">// place code calling LVGL functions here</span></div>
+<div class="line">        mtx.unlock();</div>
+<div class="line">    }</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1>Footprint</h1>
 <p >As lvglpp is essentially a layer over LVGL, it of course increases the memory footprint. However, most wrapper classes have only two member variables: a pointer to the wrapped object and a bool. This makes an overhead of 12 bytes per wrapped object. Several items need to store more content (e.g. Animation and ButtonMatrix) and will therefore need a little more space. Naturally, the binary size will also increase depending on the number of functions that are in use. I'll try to quantify these values at some point. If you're hunting for free bytes, I'd rather recommend to use the original library instead.</p>
 <h1>API documentation</h1>
 <p >There is a documentation generated from docstrings in the <em>doc</em> folder. See <a href="doc/html/index.html">here</a>. You can re-generate the doc using doxygen in the project folder.</p>

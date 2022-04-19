@@ -185,6 +185,31 @@ LVGL stores the relationship of objects and takes care of deleting children of o
 
 For C++-style callbacks, it is important to remember that any object obtained from within the callback by calling an accessor function (such as `Event::get_target`) creates a temporary object wrapping a raw pointer. This means that you cannot create derived classes that would carry data along. Every call to the callback gets fed with a newly created temporary object with, other than the raw pointer, default values. Moreover, you cannot pass data using the `user_data` field, as it is used internally to pass the C++-style callback. For such cases, you need to define a global variable to transfer data to or from the callback.
 
+Just like LVGL, lvglpp is NOT thread-safe. Therefore, as for LVGL, it is necessary to prevent concurrent execution of `lv_task_handler()` and other functions (with the exception of callbacks called from within task handler, like events or timers). This is typically done with a mutex, like:
+```cpp
+#include <mutex>
+#include <thread>
+std::mutex mtx;
+
+void task_handler_thread() {
+    for (;;) {
+        {
+            const std::lock_guard<std::mutex> lock(mtx);
+            lv_task_handler();
+        }
+        std::this_thread::sleep_for(std::chrono::milliseconds(10));
+    }
+}
+
+void another_thread() {
+    for (;;) {
+        mtx.lock();
+        // place code calling LVGL functions here
+        mtx.unlock();
+    }
+}
+```
+
 ## Footprint
 
 As lvglpp is essentially a layer over LVGL, it of course increases the memory footprint. However, most wrapper classes have only two member variables: a pointer to the wrapped object and a bool. This makes an overhead of 12 bytes per wrapped object. Several items need to store more content (e.g. Animation and ButtonMatrix) and will therefore need a little more space. Naturally, the binary size will also increase depending on the number of functions that are in use. I'll try to quantify these values at some point.
