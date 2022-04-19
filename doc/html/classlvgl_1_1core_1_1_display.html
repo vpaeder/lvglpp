@@ -96,7 +96,7 @@ $(document).ready(function(){initNavTree('classlvgl_1_1core_1_1_display.html',''
 <a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classlvgl_1_1core_1_1_display-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">lvgl::core::Display Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
+  <div class="headertitle"><div class="title">lvgl::core::Display Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -107,6 +107,9 @@ $(document).ready(function(){initNavTree('classlvgl_1_1core_1_1_display.html',''
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a0ad035dab3f96a7cb517b2eaa7f0c768"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_display.html#a0ad035dab3f96a7cb517b2eaa7f0c768">Display</a> (lv_coord_t <a class="el" href="classlvgl_1_1core_1_1_display.html#a618be39784fb8948e062ffbfbf8834e5">hor_res</a>, lv_coord_t <a class="el" href="classlvgl_1_1core_1_1_display.html#a5682365bf9cb4b05ec021fdbf9daa715">ver_res</a>, uint32_t <a class="el" href="classlvgl_1_1core_1_1_display.html#ac8c9db707dc9ec5c05d991795f09f7c2">fb_size</a>)</td></tr>
+<tr class="memdesc:a0ad035dab3f96a7cb517b2eaa7f0c768"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classlvgl_1_1core_1_1_display.html#a0ad035dab3f96a7cb517b2eaa7f0c768">More...</a><br /></td></tr>
+<tr class="separator:a0ad035dab3f96a7cb517b2eaa7f0c768"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8528998ba146c73a039d5c2b904ae379"><td class="memItemLeft" align="right" valign="top"><a id="a8528998ba146c73a039d5c2b904ae379" name="a8528998ba146c73a039d5c2b904ae379"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~Display</b> ()</td></tr>
 <tr class="memdesc:a8528998ba146c73a039d5c2b904ae379"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
@@ -198,13 +201,17 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clean_dcache</b> ()</
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a17596660de4d07a02a7bd08d5ff6445f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_display.html#a17596660de4d07a02a7bd08d5ff6445f">flush</a> (lv_disp_drv_t *drv, const lv_area_t *area, lv_color_t *color_map)=0</td></tr>
-<tr class="memdesc:a17596660de4d07a02a7bd08d5ff6445f"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classlvgl_1_1_callback.html" title="This is a callback container that can be stored as GenericCallback.">Callback</a> to draw data on display.  <a href="classlvgl_1_1core_1_1_display.html#a17596660de4d07a02a7bd08d5ff6445f">More...</a><br /></td></tr>
-<tr class="separator:a17596660de4d07a02a7bd08d5ff6445f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9600d2bcd025cc1298f8695762781dc6"><td class="memItemLeft" align="right" valign="top"><a id="a9600d2bcd025cc1298f8695762781dc6" name="a9600d2bcd025cc1298f8695762781dc6"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>initialize</b> ()</td></tr>
-<tr class="memdesc:a9600d2bcd025cc1298f8695762781dc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes display driver. <br /></td></tr>
-<tr class="separator:a9600d2bcd025cc1298f8695762781dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af886f8a7cdb931646e71a3d6172e37ce"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_display.html#af886f8a7cdb931646e71a3d6172e37ce">flush</a> (const lv_area_t *area, lv_color_t *color_map)</td></tr>
+<tr class="memdesc:af886f8a7cdb931646e71a3d6172e37ce"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classlvgl_1_1_callback.html" title="This is a callback container that can be stored as GenericCallback.">Callback</a> to draw data on display.  <a href="classlvgl_1_1core_1_1_display.html#af886f8a7cdb931646e71a3d6172e37ce">More...</a><br /></td></tr>
+<tr class="separator:af886f8a7cdb931646e71a3d6172e37ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a132302f486cab073931fe04c39eea58a"><td class="memItemLeft" align="right" valign="top"><a id="a132302f486cab073931fe04c39eea58a" name="a132302f486cab073931fe04c39eea58a"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update_driver</b> ()</td></tr>
+<tr class="memdesc:a132302f486cab073931fe04c39eea58a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates driver with stored values. <br /></td></tr>
+<tr class="separator:a132302f486cab073931fe04c39eea58a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ac9f69a41a6f5b3d160adacf256c7d4"><td class="memItemLeft" align="right" valign="top"><a id="a3ac9f69a41a6f5b3d160adacf256c7d4" name="a3ac9f69a41a6f5b3d160adacf256c7d4"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>flush_ready</b> ()</td></tr>
+<tr class="memdesc:a3ac9f69a41a6f5b3d160adacf256c7d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells LVGL that flush operation is over. This must be called at the end of the flush method. <br /></td></tr>
+<tr class="separator:a3ac9f69a41a6f5b3d160adacf256c7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -239,9 +246,54 @@ lv_coord_t&#160;</td><td class="memItemRight" valign="bottom"><b>ver_res</b></td
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Wraps a lv_disp_t object. This is a base class to connect a screen driver with LVGL. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a17596660de4d07a02a7bd08d5ff6445f" name="a17596660de4d07a02a7bd08d5ff6445f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a17596660de4d07a02a7bd08d5ff6445f">&#9670;&nbsp;</a></span>flush()</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a0ad035dab3f96a7cb517b2eaa7f0c768" name="a0ad035dab3f96a7cb517b2eaa7f0c768"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ad035dab3f96a7cb517b2eaa7f0c768">&#9670;&nbsp;</a></span>Display()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lvgl::core::Display::Display </td>
+          <td>(</td>
+          <td class="paramtype">lv_coord_t&#160;</td>
+          <td class="paramname"><em>hor_res</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">lv_coord_t&#160;</td>
+          <td class="paramname"><em>ver_res</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>fb_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">hor_res</td><td>horizontal resolution. </td></tr>
+    <tr><td class="paramname">ver_res</td><td>vertical resolution. </td></tr>
+    <tr><td class="paramname">fb_size</td><td>frame buffer size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="af886f8a7cdb931646e71a3d6172e37ce" name="af886f8a7cdb931646e71a3d6172e37ce"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af886f8a7cdb931646e71a3d6172e37ce">&#9670;&nbsp;</a></span>flush()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -252,12 +304,6 @@ lv_coord_t&#160;</td><td class="memItemRight" valign="bottom"><b>ver_res</b></td
         <tr>
           <td class="memname">void lvgl::core::Display::flush </td>
           <td>(</td>
-          <td class="paramtype">lv_disp_drv_t *&#160;</td>
-          <td class="paramname"><em>drv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">const lv_area_t *&#160;</td>
           <td class="paramname"><em>area</em>, </td>
         </tr>
@@ -275,7 +321,7 @@ lv_coord_t&#160;</td><td class="memItemRight" valign="bottom"><b>ver_res</b></td
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -283,7 +329,6 @@ lv_coord_t&#160;</td><td class="memItemRight" valign="bottom"><b>ver_res</b></td
 <p><a class="el" href="classlvgl_1_1_callback.html" title="This is a callback container that can be stored as GenericCallback.">Callback</a> to draw data on display. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">drv</td><td>pointer to underlying display driver. </td></tr>
     <tr><td class="paramname">area</td><td>target draw area. </td></tr>
     <tr><td class="paramname">color_map</td><td>data to draw. </td></tr>
   </table>

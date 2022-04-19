@@ -253,8 +253,8 @@ namespace lvgl::core {
         void clean_dcache();
 
     };
+
     // TODO: void lv_scr_load_anim(lv_obj_t * scr, lv_scr_load_anim_t anim_type, uint32_t time, uint32_t delay, bool auto_del);
-        
 
     /** \fn void load_scr(Object & scr)
      *  \brief Sets active screen.

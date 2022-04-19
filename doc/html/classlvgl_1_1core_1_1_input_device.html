@@ -229,12 +229,16 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>wait_release</b> ()</
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:a376018c87a2a2b93a853f86cee3a0a7d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_input_device.html#a376018c87a2a2b93a853f86cee3a0a7d">read</a> (lv_indev_drv_t *<a class="el" href="classlvgl_1_1core_1_1_input_device.html#a8e1325f23e45c549f48e71d075987773">indev_drv</a>, lv_indev_data_t *data)</td></tr>
-<tr class="memdesc:a376018c87a2a2b93a853f86cee3a0a7d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classlvgl_1_1_callback.html" title="This is a callback container that can be stored as GenericCallback.">Callback</a> to read touchpad data.  <a href="classlvgl_1_1core_1_1_input_device.html#a376018c87a2a2b93a853f86cee3a0a7d">More...</a><br /></td></tr>
-<tr class="separator:a376018c87a2a2b93a853f86cee3a0a7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc891aac327feeae6d243d79a850600d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_input_device.html#acc891aac327feeae6d243d79a850600d">read</a> (lv_indev_data_t *data)</td></tr>
+<tr class="memdesc:acc891aac327feeae6d243d79a850600d"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classlvgl_1_1_callback.html" title="This is a callback container that can be stored as GenericCallback.">Callback</a> to read touchpad data.  <a href="classlvgl_1_1core_1_1_input_device.html#acc891aac327feeae6d243d79a850600d">More...</a><br /></td></tr>
+<tr class="separator:acc891aac327feeae6d243d79a850600d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a469c6dadac9ee9eee461ac773178a3b3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_input_device.html#a469c6dadac9ee9eee461ac773178a3b3">set_type</a> (lv_indev_type_t type)</td></tr>
 <tr class="memdesc:a469c6dadac9ee9eee461ac773178a3b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the device type.  <a href="classlvgl_1_1core_1_1_input_device.html#a469c6dadac9ee9eee461ac773178a3b3">More...</a><br /></td></tr>
 <tr class="separator:a469c6dadac9ee9eee461ac773178a3b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3df1f20e8a2ca15d17ba62f845fadb7"><td class="memItemLeft" align="right" valign="top"><a id="ad3df1f20e8a2ca15d17ba62f845fadb7" name="ad3df1f20e8a2ca15d17ba62f845fadb7"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>update_driver</b> ()</td></tr>
+<tr class="memdesc:ad3df1f20e8a2ca15d17ba62f845fadb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates driver with stored values. <br /></td></tr>
+<tr class="separator:ad3df1f20e8a2ca15d17ba62f845fadb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
@@ -453,8 +457,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>lv_cls_ptr</b> = lv_
 
 </div>
 </div>
-<a id="a376018c87a2a2b93a853f86cee3a0a7d" name="a376018c87a2a2b93a853f86cee3a0a7d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a376018c87a2a2b93a853f86cee3a0a7d">&#9670;&nbsp;</a></span>read()</h2>
+<a id="acc891aac327feeae6d243d79a850600d" name="acc891aac327feeae6d243d79a850600d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc891aac327feeae6d243d79a850600d">&#9670;&nbsp;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -465,19 +469,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>lv_cls_ptr</b> = lv_
         <tr>
           <td class="memname">void lvgl::core::InputDevice::read </td>
           <td>(</td>
-          <td class="paramtype">lv_indev_drv_t *&#160;</td>
-          <td class="paramname"><em>indev_drv</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">lv_indev_data_t *&#160;</td>
-          <td class="paramname"><em>data</em>&#160;</td>
-        </tr>
-        <tr>
+          <td class="paramname"><em>data</em></td><td>)</td>
           <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -490,7 +484,6 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>lv_cls_ptr</b> = lv_
 <p><a class="el" href="classlvgl_1_1_callback.html" title="This is a callback container that can be stored as GenericCallback.">Callback</a> to read touchpad data. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">indev_drv</td><td>a pointer to the underlying input device driver. </td></tr>
     <tr><td class="paramname">data</td><td>a pointer to the target data structure. </td></tr>
   </table>
   </dd>

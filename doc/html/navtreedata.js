@@ -59,19 +59,19 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "anim_8cpp.html",
-"classlvgl_1_1core_1_1_event.html#af8aae18c2b5d4ae4076bf1e6fb787003",
-"classlvgl_1_1core_1_1_object.html#a36db121cc8af1a49af85bc705591c5b8",
-"classlvgl_1_1core_1_1_object.html#a8d1ad7e63ca4dbe246439c8af0aa269e",
-"classlvgl_1_1core_1_1_object.html#ae17919bddaa3c864de111cac2527a5ee",
-"classlvgl_1_1draw_1_1_line_mask.html#a47d409ff69b83c6945598538ce939b20",
-"classlvgl_1_1misc_1_1_blink_style_transition.html",
-"classlvgl_1_1misc_1_1_style.html#a629de74e202c2391aa41baab605a8695",
-"classlvgl_1_1widgets_1_1_arc.html#afd80b2c3c4d90c8326dc2d86a6218cd0",
-"classlvgl_1_1widgets_1_1_checkbox.html#aec8c3d24da8fe76f40a3cba3ad744173",
-"classlvgl_1_1widgets_1_1_label.html#afc41686398effdc33cdb5c7ad8177d7b",
-"classlvgl_1_1widgets_1_1_span_group.html#abdb24ea321fe71e8d360614fdc481ffa",
-"color_8h.html#a55b40caac65ce3e63beeb7227e49f866",
-"namespacelvgl_1_1misc_1_1color.html#a477ee154635d8ac7343aff5d5338c9c1"
+"classlvgl_1_1core_1_1_event.html#aebdad8af977f7194927d80dde914dcfa",
+"classlvgl_1_1core_1_1_object.html#a365a052f4378919317fff73c1f0ec06a",
+"classlvgl_1_1core_1_1_object.html#a8b990f2a8c48c99f8d3bde37537e0a2c",
+"classlvgl_1_1core_1_1_object.html#adc4c3daa031b898382a13cdf7a3856d4",
+"classlvgl_1_1draw_1_1_line_draw_descriptor.html#a7532a44c316ff9a8f4b8f43cad502256",
+"classlvgl_1_1misc_1_1_area.html#ae233dad442e5f622f36d1098197df1e3",
+"classlvgl_1_1misc_1_1_style.html#a5b4a75af7b4d9b1da9cbe80a81b9e6e1",
+"classlvgl_1_1widgets_1_1_arc.html#ac7fb073440e85a651d37c3a5a40e17c1",
+"classlvgl_1_1widgets_1_1_checkbox.html#a73d09fe7fcf13b343629fb1641455682",
+"classlvgl_1_1widgets_1_1_label.html#ae9c331c9be6990d88863aaaf7ea6be24",
+"classlvgl_1_1widgets_1_1_span_group.html#aa9ea25104b2aa3d281f635a24b5c6ce3",
+"color_8h.html#a1ecddc342f570b5763107bd761645be8",
+"namespacelvgl_1_1misc.html#aefca0b2109a7b71b1b981ed943f6221fafc1cebf02dc2ee68655f3e7bf1b84230"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -96,8 +96,8 @@ I've included some useful functions that don't take a specific LVGL type as argu
 
 ## How to use
 
-Unlike with LVGL, you need to include the headers that correspond to what you want to use. A typical program would be:
-```
+First of all, you need LVGL in the include paths. As for lvglpp, unlike with LVGL, you need to include each header that corresponds to what you want to use. To illustrate what I mean, a typical program would be:
+```cpp
 #include "lvglpp/lvglpp.h" // for init
 #include "lvglpp/core/display.h" // for Display
 #include "lvglpp/core/indev.h" // for InputDevice
@@ -133,6 +133,33 @@ void main() {
     }
 }
 ```
+
+### Displays and input devices
+
+I've included some basic examples in *examples/lvglpp*. Since I only tested my code with a rather basic display, I didn't write classes that make uses of callbacks for monochrome or special displays. However, it's possible to do it yourself in a simple way:
+```cpp
+class CustomDisplay : public Display {
+private:
+    // arguments should be the arguments of the callback without the 1st one (lv_disp_drv_t* drv)
+    void callback_to_implement(arguments) {
+        // Put here what your callback does.
+    }
+
+public:
+    CustomDisplay(lv_coord_t hor_res, lv_coord_t ver_res, uint32_t fb_size)
+        : Display(hor_res, ver_res, fb_size) {
+        // you need to link the callback with the display driver here
+        auto cb = [](lv_disp_drv_t* drv, other arguments) {
+            auto obj = reinterpret_cast<CustomDisplay*>(drv->user_data);
+            obj->callback_to_implement(other arguments);
+        };
+        this->lv_disp_drv.callback_to_implement = cb;
+        this->update_driver();
+    }
+};
+```
+
+For input devices, I included specialized classes for each type of input device available. I didn't implement the `feedback_cb` callback though. If you need it, you can write a derived class following the same scheme as for displays.
 
 ## Accessing managed object
 

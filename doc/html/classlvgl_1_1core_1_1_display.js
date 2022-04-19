@@ -1,8 +1,10 @@
 var classlvgl_1_1core_1_1_display =
 [
+    [ "Display", "classlvgl_1_1core_1_1_display.html#a0ad035dab3f96a7cb517b2eaa7f0c768", null ],
     [ "~Display", "classlvgl_1_1core_1_1_display.html#a8528998ba146c73a039d5c2b904ae379", null ],
     [ "clean_dcache", "classlvgl_1_1core_1_1_display.html#ad3c4faddc6b413b347a8ce82fa27145d", null ],
-    [ "flush", "classlvgl_1_1core_1_1_display.html#a17596660de4d07a02a7bd08d5ff6445f", null ],
+    [ "flush", "classlvgl_1_1core_1_1_display.html#af886f8a7cdb931646e71a3d6172e37ce", null ],
+    [ "flush_ready", "classlvgl_1_1core_1_1_display.html#a3ac9f69a41a6f5b3d160adacf256c7d4", null ],
     [ "get_antialiasing", "classlvgl_1_1core_1_1_display.html#a7ba79628ffa657b50f7604c953ef7261", null ],
     [ "get_dpi", "classlvgl_1_1core_1_1_display.html#a0e6025e166e66d9b3bbcbb23299c2357", null ],
     [ "get_hor_res", "classlvgl_1_1core_1_1_display.html#a8c9b8121b6a315b8853daad81c815684", null ],
@@ -18,7 +20,6 @@ var classlvgl_1_1core_1_1_display =
     [ "get_scr_prev", "classlvgl_1_1core_1_1_display.html#a1eb0cfad3ca8d1dc4077e1da4b4a9fb5", null ],
     [ "get_theme", "classlvgl_1_1core_1_1_display.html#aedf23cd7d078d3010ada3239d52a3382", null ],
     [ "get_ver_res", "classlvgl_1_1core_1_1_display.html#ad78d155c5dace73f523de5e56ebf7042", null ],
-    [ "initialize", "classlvgl_1_1core_1_1_display.html#a9600d2bcd025cc1298f8695762781dc6", null ],
     [ "is_default", "classlvgl_1_1core_1_1_display.html#aeccca14e56c2114cf46570af47eb9519", null ],
     [ "raw_ptr", "classlvgl_1_1core_1_1_display.html#a510593be4e00488400de7d6aa69764e4", null ],
     [ "raw_ptr", "classlvgl_1_1core_1_1_display.html#ab9bbc6acf89cd5046616df037f8815b7", null ],
@@ -30,6 +31,7 @@ var classlvgl_1_1core_1_1_display =
     [ "set_rotation", "classlvgl_1_1core_1_1_display.html#a0c33563edd544ebe6686eff315e473a7", null ],
     [ "set_theme", "classlvgl_1_1core_1_1_display.html#af98d7ec2ec5592d19c3cc63a90b6e89c", null ],
     [ "trig_activity", "classlvgl_1_1core_1_1_display.html#a2c9d04646eb49060aff575469fffd3f6", null ],
+    [ "update_driver", "classlvgl_1_1core_1_1_display.html#a132302f486cab073931fe04c39eea58a", null ],
     [ "fb_size", "classlvgl_1_1core_1_1_display.html#ac8c9db707dc9ec5c05d991795f09f7c2", null ],
     [ "hor_res", "classlvgl_1_1core_1_1_display.html#a618be39784fb8948e062ffbfbf8834e5", null ],
     [ "lv_buf_1", "classlvgl_1_1core_1_1_display.html#a9b0b7937e01f5d773f37a07e026f1d89", null ],

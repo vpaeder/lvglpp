@@ -262,41 +262,73 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <td class="markdownTableBodyNone"><code><a class="el" href="namespacelvgl_1_1misc_1_1txt.html" title="LVGL text functions.">lvgl::misc::txt</a></code>   </td><td class="markdownTableBodyNone">This contains some of the text functions found in <code>lv_txt.h</code>.   </td></tr>
 </table>
 <h1>How to use</h1>
-<p >Unlike with LVGL, you need to include the headers that correspond to what you want to use. A typical program would be: </p><div class="fragment"><div class="line">#include &quot;lvglpp/lvglpp.h&quot; // for init</div>
-<div class="line">#include &quot;lvglpp/core/display.h&quot; // for Display</div>
-<div class="line">#include &quot;lvglpp/core/indev.h&quot; // for InputDevice</div>
-<div class="line">#include &quot;lvglpp/widgets/button.h&quot; // for Button</div>
-<div class="line">// ... add includes for widgets your want to use here</div>
-<div class="line">#include &quot;lvglpp/misc/style.h&quot; // for Style</div>
-<div class="line">// .. add includes for other classes you want to use (Animation, Timer, ...)</div>
+<p >First of all, you need LVGL in the include paths. As for lvglpp, unlike with LVGL, you need to include each header that corresponds to what you want to use. To illustrate what I mean, a typical program would be: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lvglpp_8h.html">lvglpp/lvglpp.h</a>&quot;</span> <span class="comment">// for init</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="display_8h.html">lvglpp/core/display.h</a>&quot;</span> <span class="comment">// for Display</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="indev_8h.html">lvglpp/core/indev.h</a>&quot;</span> <span class="comment">// for InputDevice</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="button_8h.html">lvglpp/widgets/button.h</a>&quot;</span> <span class="comment">// for Button</span></div>
+<div class="line"><span class="comment">// ... add includes for widgets your want to use here</span></div>
+<div class="line"><span class="preprocessor">#include &quot;<a class="code" href="style_8h.html">lvglpp/misc/style.h</a>&quot;</span> <span class="comment">// for Style</span></div>
+<div class="line"><span class="comment">// .. add includes for other classes you want to use (Animation, Timer, ...)</span></div>
 <div class="line"> </div>
-<div class="line">using namespace lvgl::core;</div>
-<div class="line">using namespace lvgl::misc;</div>
-<div class="line">using namespace lvgl::widgets;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1core.html">lvgl::core</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1misc.html">lvgl::misc</a>;</div>
+<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1widgets.html">lvgl::widgets</a>;</div>
 <div class="line"> </div>
-<div class="line">void main() {</div>
-<div class="line">    // initialize LVGL</div>
-<div class="line">    lvgl::init();</div>
-<div class="line">    // place here display and input device initialization;</div>
-<div class="line">    // For now I didn&#39;t write an example for that, but I will.</div>
+<div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="namespacelvgl_1_1misc_1_1palette.html#a53a968204c2b1dc74e4a443b8fe46850">main</a>() {</div>
+<div class="line">    <span class="comment">// initialize LVGL</span></div>
+<div class="line">    <a class="code hl_function" href="namespacelvgl.html#a15f3580a898142dd337d0ea6ecf65af7">lvgl::init</a>();</div>
+<div class="line">    <span class="comment">// place here display and input device initialization;</span></div>
+<div class="line">    <span class="comment">// read examples in examples/lvglpp directory to see how.</span></div>
 <div class="line"> </div>
-<div class="line">    // create button on active display</div>
-<div class="line">    auto btn = Button(scr_act());</div>
+<div class="line">    <span class="comment">// create button on active display</span></div>
+<div class="line">    <span class="keyword">auto</span> btn = Button(<a class="code hl_function" href="namespacelvgl_1_1core.html#a9e246bdd2feda88a0a2336a9b5075a62">scr_act</a>());</div>
 <div class="line">    btn.center();</div>
-<div class="line">    // ... initialize more things ...</div>
+<div class="line">    <span class="comment">// ... initialize more things ...</span></div>
 <div class="line"> </div>
-<div class="line">    // main loop</div>
-<div class="line">    for (;;) {</div>
-<div class="line">        // I didn&#39;t implement ticks yet -&gt; use base LVGL ones;</div>
-<div class="line">        // you need to call both of these to get LVGL to work, but</div>
-<div class="line">        // you should put them in two different threads, with lv_tick_inc</div>
-<div class="line">        // in a higher priority thread.</div>
+<div class="line">    <span class="comment">// main loop</span></div>
+<div class="line">    <span class="keywordflow">for</span> (;;) {</div>
+<div class="line">        <span class="comment">// I didn&#39;t implement ticks yet -&gt; use base LVGL ones;</span></div>
+<div class="line">        <span class="comment">// you need to call both of these to get LVGL to work, but</span></div>
+<div class="line">        <span class="comment">// you should put them in two different threads, with lv_tick_inc</span></div>
+<div class="line">        <span class="comment">// in a higher priority thread.</span></div>
 <div class="line">        lv_tick_inc(10);</div>
 <div class="line">        lv_task_handler();</div>
-<div class="line">        // add here a function to wait for 10ms</div>
+<div class="line">        <span class="comment">// add here a function to wait for 10ms</span></div>
 <div class="line">    }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1>Accessing managed object</h1>
+<div class="ttc" id="abutton_8h_html"><div class="ttname"><a href="button_8h.html">button.h</a></div><div class="ttdoc">Header file for C++ wrapper for lv_btn_t objects.</div></div>
+<div class="ttc" id="adisplay_8h_html"><div class="ttname"><a href="display_8h.html">display.h</a></div><div class="ttdoc">Header file for C++ wrapper for LVGL display driver. This is a base class made to connect a screen dr...</div></div>
+<div class="ttc" id="aindev_8h_html"><div class="ttname"><a href="indev_8h.html">indev.h</a></div><div class="ttdoc">Implementation file for C++ wrapper for lv_indev_t objects.</div></div>
+<div class="ttc" id="alvglpp_8h_html"><div class="ttname"><a href="lvglpp_8h.html">lvglpp.h</a></div><div class="ttdoc">Base header for LVGL C++ wrapper.</div></div>
+<div class="ttc" id="anamespacelvgl_1_1core_html"><div class="ttname"><a href="namespacelvgl_1_1core.html">lvgl::core</a></div><div class="ttdoc">LVGL core components.</div><div class="ttdef"><b>Definition:</b> display.cpp:13</div></div>
+<div class="ttc" id="anamespacelvgl_1_1core_html_a9e246bdd2feda88a0a2336a9b5075a62"><div class="ttname"><a href="namespacelvgl_1_1core.html#a9e246bdd2feda88a0a2336a9b5075a62">lvgl::core::scr_act</a></div><div class="ttdeci">Object scr_act()</div><div class="ttdoc">Gets the currently active screen.</div><div class="ttdef"><b>Definition:</b> display.cpp:150</div></div>
+<div class="ttc" id="anamespacelvgl_1_1misc_1_1palette_html_a53a968204c2b1dc74e4a443b8fe46850"><div class="ttname"><a href="namespacelvgl_1_1misc_1_1palette.html#a53a968204c2b1dc74e4a443b8fe46850">lvgl::misc::palette::main</a></div><div class="ttdeci">lv_color_t main(Color p)</div><div class="ttdoc">Retrieves color from main palette.</div><div class="ttdef"><b>Definition:</b> color.cpp:74</div></div>
+<div class="ttc" id="anamespacelvgl_1_1misc_html"><div class="ttname"><a href="namespacelvgl_1_1misc.html">lvgl::misc</a></div><div class="ttdoc">LVGL miscellaneous components.</div><div class="ttdef"><b>Definition:</b> object.h:10</div></div>
+<div class="ttc" id="anamespacelvgl_1_1widgets_html"><div class="ttname"><a href="namespacelvgl_1_1widgets.html">lvgl::widgets</a></div><div class="ttdoc">LVGL widgets.</div><div class="ttdef"><b>Definition:</b> animimg.cpp:9</div></div>
+<div class="ttc" id="anamespacelvgl_html_a15f3580a898142dd337d0ea6ecf65af7"><div class="ttname"><a href="namespacelvgl.html#a15f3580a898142dd337d0ea6ecf65af7">lvgl::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Initializes LVGL.</div><div class="ttdef"><b>Definition:</b> lvglpp.h:18</div></div>
+<div class="ttc" id="astyle_8h_html"><div class="ttname"><a href="style_8h.html">style.h</a></div><div class="ttdoc">Header file for C++ wrapper for lv_style_t objects.</div></div>
+</div><!-- fragment --><h2>Displays and input devices</h2>
+<p >I've included some basic examples in <em>examples/lvglpp</em>. Since I only tested my code with a rather basic display, I didn't write classes that make uses of callbacks for monochrome or special displays. However, it's possible to do it yourself in a simple way: </p><div class="fragment"><div class="line"><span class="keyword">class </span>CustomDisplay : <span class="keyword">public</span> Display {</div>
+<div class="line"><span class="keyword">private</span>:</div>
+<div class="line">    <span class="comment">// arguments should be the arguments of the callback without the 1st one (lv_disp_drv_t* drv)</span></div>
+<div class="line">    <span class="keywordtype">void</span> callback_to_implement(arguments) {</div>
+<div class="line">        <span class="comment">// Put here what your callback does.</span></div>
+<div class="line">    }</div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">public</span>:</div>
+<div class="line">    CustomDisplay(lv_coord_t hor_res, lv_coord_t ver_res, uint32_t fb_size)</div>
+<div class="line">        : Display(hor_res, ver_res, fb_size) {</div>
+<div class="line">        <span class="comment">// you need to link the callback with the display driver here</span></div>
+<div class="line">        <span class="keyword">auto</span> cb = [](lv_disp_drv_t* drv, other arguments) {</div>
+<div class="line">            <span class="keyword">auto</span> obj = <span class="keyword">reinterpret_cast&lt;</span>CustomDisplay*<span class="keyword">&gt;</span>(drv-&gt;user_data);</div>
+<div class="line">            obj-&gt;callback_to_implement(other arguments);</div>
+<div class="line">        };</div>
+<div class="line">        this-&gt;lv_disp_drv.callback_to_implement = cb;</div>
+<div class="line">        this-&gt;update_driver();</div>
+<div class="line">    }</div>
+<div class="line">};</div>
+</div><!-- fragment --><p >For input devices, I included specialized classes for each type of input device available. I didn't implement the <code>feedback_cb</code> callback though. If you need it, you can write a derived class following the same scheme as for displays.</p>
+<h1>Accessing managed object</h1>
 <p >Through the <code>PointerWrapper</code> class, I provide several ways to access the managed LVGL object:</p><ul>
 <li><code>raw()</code> returns a reference to the object;</li>
 <li><code>raw_ptr()</code> returns a pointer to the object;</li>

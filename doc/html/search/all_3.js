@@ -14,7 +14,7 @@ var searchData=
   ['dir_5fopen_5fcb_11',['dir_open_cb',['../classlvgl_1_1misc_1_1_file_system.html#a9b35e4a67863732b4c334cb2e03a2493',1,'lvgl::misc::FileSystem']]],
   ['dir_5fread_5fcb_12',['dir_read_cb',['../classlvgl_1_1misc_1_1_file_system.html#a7f9daf2597bba239aa337efb83f36ad9',1,'lvgl::misc::FileSystem']]],
   ['directory_13',['Directory',['../classlvgl_1_1misc_1_1_directory.html#a2fd15471ba1f1dca90b073a97018346e',1,'lvgl::misc::Directory::Directory()'],['../classlvgl_1_1misc_1_1_directory.html',1,'lvgl::misc::Directory']]],
-  ['display_14',['Display',['../classlvgl_1_1core_1_1_display.html',1,'lvgl::core']]],
+  ['display_14',['Display',['../classlvgl_1_1core_1_1_display.html#a0ad035dab3f96a7cb517b2eaa7f0c768',1,'lvgl::core::Display::Display()'],['../classlvgl_1_1core_1_1_display.html',1,'lvgl::core::Display']]],
   ['display_2ecpp_15',['display.cpp',['../display_8cpp.html',1,'']]],
   ['display_2eh_16',['display.h',['../display_8h.html',1,'']]],
   ['dpx_17',['dpx',['../classlvgl_1_1core_1_1_object.html#afee6cf355ba5f5dd0600de0350ac483d',1,'lvgl::core::Object']]],
