@@ -2624,6 +2624,9 @@ namespace lvgl::core {
          *  This is for cases when parent is of the same type.
          *  Compiler otherwise wants to use base class
          *  copy constructor, which doesn't exist.
+         *  Note that we could define an explicit copy constructor
+         *  in the Object class, but this leaves the default
+         *  constructor out.
          * 
          */
         Widget(Widget & parent) {
