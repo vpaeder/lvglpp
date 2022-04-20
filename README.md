@@ -1,6 +1,6 @@
 # lvglpp: a C++ wrapper for LVGL
 
-This package contains a rather bushy wrapper for [LVGL](https://github.com/lvgl/lvgl). I originally needed to program a simple user interface, but I didn't want to write a GUI framework from scratch, and found LVGL rather nice. Only that it's written in C. So I started writing C++ classes for the part of the code I wanted to use, and then it got out of control. Now most of the library has some kind of wrapper class provided. I've tested nearly all examples on an ESP32 with a touch screen interface.
+This package contains a rather bushy wrapper for [LVGL](https://github.com/lvgl/lvgl). I originally needed to program a simple user interface, but I didn't want to write a GUI framework from scratch, and found LVGL rather nice. Only that it's written in C. So I started writing C++ classes for the part of the code I wanted to use, and then it got out of control. Now most of the library has some kind of wrapper class provided. I've tested nearly all examples on an ESP32 with a touch screen interface. You can find a working application [here](https://github.com/vpaeder/esp_obs_commander).
 
 This is a work in progress. I will likely improve things as I use it, which will take between one day and forever. I of course welcome contributions.
 
