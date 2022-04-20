@@ -2,7 +2,7 @@
 
 This package contains a rather bushy wrapper for [LVGL](https://github.com/lvgl/lvgl). I originally needed to program a simple user interface, but I didn't want to write a GUI framework from scratch, and found LVGL rather nice. Only that it's written in C. So I started writing C++ classes for the part of the code I wanted to use, and then it got out of control. Now most of the library has some kind of wrapper class provided. I've tested nearly all examples on an ESP32 with a touch screen interface.
 
-This is a work in progress. I will likely improve things as I use it, which will take between one day and forever. I of course welcome any contribution.
+This is a work in progress. I will likely improve things as I use it, which will take between one day and forever. I of course welcome contributions.
 
 At the time of writing, I use LVGL version 8.3.0-dev (available [here](https://github.com/lvgl/lvgl)).
 
@@ -207,6 +207,25 @@ void another_thread() {
         // place code calling LVGL functions here
         mtx.unlock();
     }
+}
+```
+Be aware that objects that get deleted because they go out of scope must also be treated. The easiest way, if possible, is to create a `lock_guard` in the beginning of the scope. If you cannot do that, I suggest using the following method:
+```cpp
+void a_function(const Object & parent) {
+    mtx.lock();
+    auto cnt = std::make_unique<Container>(parent);
+    cnt->remove_style_all();
+    cnt->set_size(parent.get_width(), parent.get_height());
+    // ... code that creates objects ...
+    auto obj = AnyObjectType(*cnt);
+    // ... 
+    mtx.unlock();
+    // a bit of safe code ...
+    // ... time to terminate function
+    // we remove cnt and its content in a safe way
+    mtx.lock();
+    cnt = nullptr;
+    mtx.unlock();
 }
 ```
 

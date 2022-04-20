@@ -2618,6 +2618,30 @@ namespace lvgl::core {
             this->initialize(parent);
         }
 
+        /** \fn Widget(Widget & parent)
+         *  \brief Constructor with parent widget object.
+         *  
+         *  This is for cases when parent is of the same type.
+         *  Compiler otherwise wants to use base class
+         *  copy constructor, which doesn't exist.
+         * 
+         */
+        Widget(Widget & parent) {
+            this->initialize(parent);
+        }
+
+        /** \fn Widget(const Widget & parent)
+         *  \brief Constructor with parent widget object.
+         *  
+         *  This is for cases when parent is of the same type.
+         *  Compiler otherwise wants to use base class
+         *  copy constructor, which doesn't exist.
+         * 
+         */
+        Widget(const Widget & parent) {
+            this->initialize(parent);
+        }
+
     };
 
 
