@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "table.h"
+#if LV_USE_TABLE != 0
 
 namespace lvgl::widgets {
 
@@ -60,3 +61,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_TABLE

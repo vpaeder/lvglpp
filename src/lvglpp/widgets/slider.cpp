@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "slider.h"
+#if LV_USE_SLIDER != 0
 
 namespace lvgl::widgets {
 
@@ -49,3 +50,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_SLIDER

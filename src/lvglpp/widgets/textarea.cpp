@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "textarea.h"
+#if LV_USE_TEXTAREA != 0
 
 namespace lvgl::widgets {
 
@@ -144,6 +145,5 @@ namespace lvgl::widgets {
         lv_textarea_cursor_up(this->raw_ptr());
     }
 
-
-
 }
+#endif // LV_USE_TEXTAREA

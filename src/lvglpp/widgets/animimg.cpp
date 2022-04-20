@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "animimg.h"
+#if LV_USE_ANIMIMG != 0
 
 namespace lvgl::widgets {
 
@@ -30,3 +31,4 @@ namespace lvgl::widgets {
         lv_animimg_set_repeat_count(this->raw_ptr(), count);
     }
 }
+#endif // LV_USE_ANIMIMG

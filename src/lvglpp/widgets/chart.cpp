@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "chart.h"
+#if LV_USE_CHART != 0
 
 namespace lvgl::widgets {
 
@@ -171,3 +172,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_CHART

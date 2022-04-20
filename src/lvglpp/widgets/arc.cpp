@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "arc.h"
+#if LV_USE_ARC != 0
 
 namespace lvgl::widgets {
 
@@ -85,3 +86,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_ARC

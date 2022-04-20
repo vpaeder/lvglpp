@@ -5,6 +5,9 @@
  *  License: MIT
  */
 #pragma once
+
+#if LV_USE_MSGBOX
+
 #include "../core/object.h"
 #include <string>
 #include <vector>
@@ -135,3 +138,4 @@ namespace lvgl::widgets {
     };
 
 }
+#endif // LV_USE_MSGBOX

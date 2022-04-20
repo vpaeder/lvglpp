@@ -6,6 +6,8 @@
  */
 #include "btnmatrix.h"
 
+#if LV_USE_BTNMATRIX != 0
+
 namespace lvgl::widgets {
 
     void ButtonMatrix::set_map(const std::vector<std::string> & map) {
@@ -70,5 +72,5 @@ namespace lvgl::widgets {
         return lv_btnmatrix_get_one_checked(this->raw_ptr());
     }
 
-
 }
+#endif // LV_USE_BTNMATRIX

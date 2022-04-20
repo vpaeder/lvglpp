@@ -5,6 +5,9 @@
  *  License: MIT
  */
 #pragma once
+
+#if LV_USE_SWITCH != 0
+
 #include "../core/object.h"
 
 namespace lvgl::widgets {
@@ -17,3 +20,4 @@ namespace lvgl::widgets {
     using Switch = Widget<lv_switch_create>;
 
 }
+#endif // LV_USE_SWITCH

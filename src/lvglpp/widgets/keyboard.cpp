@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "keyboard.h"
+#if LV_USE_KEYBOARD
 
 namespace lvgl::widgets {
 
@@ -65,3 +66,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_KEYBOARD

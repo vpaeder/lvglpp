@@ -5,6 +5,8 @@
  *  License: MIT
  */
 #include "win.h"
+#if LV_USE_WIN
+
 #include "../draw/image.h"
 
 namespace lvgl::widgets {
@@ -45,3 +47,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_WIN

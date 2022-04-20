@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "calendar.h"
+#if LV_USE_CALENDAR
 
 namespace lvgl::widgets {
  
@@ -64,3 +65,4 @@ namespace lvgl::widgets {
     }
  
 }
+#endif // LV_USE_CALENDAR

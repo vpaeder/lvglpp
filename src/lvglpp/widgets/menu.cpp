@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "menu.h"
+#if LV_USE_MENU
 
 namespace lvgl::widgets {
 
@@ -90,3 +91,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_MENU

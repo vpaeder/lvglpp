@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "tileview.h"
+#if LV_USE_TILEVIEW
 
 namespace lvgl::widgets {
 
@@ -25,3 +26,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_TILEVIEW

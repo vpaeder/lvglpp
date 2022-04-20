@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "spinner.h"
+#if LV_USE_SPINNER
 
 namespace lvgl::widgets {
 
@@ -24,5 +25,5 @@ namespace lvgl::widgets {
         this->lv_obj = LvPointer<lv_obj_t, lv_obj_del>(lv_spinner_create(parent.raw_ptr(), time, arc_length));
     }
 
-
 }
+#endif // LV_USE_SPINNER

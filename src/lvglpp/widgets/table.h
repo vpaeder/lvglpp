@@ -5,6 +5,9 @@
  *  License: MIT
  */
 #pragma once
+
+#if LV_USE_TABLE != 0
+
 #include "../core/object.h"
 #include <tuple>
 
@@ -119,3 +122,4 @@ namespace lvgl::widgets {
     };
 
 }
+#endif // LV_USE_TABLE

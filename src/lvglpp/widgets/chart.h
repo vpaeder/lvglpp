@@ -5,6 +5,9 @@
  *  License: MIT
  */
 #pragma once
+
+#if LV_USE_CHART != 0
+
 #include "../core/object.h"
 
 namespace lvgl::widgets {
@@ -296,3 +299,4 @@ namespace lvgl::widgets {
     };
 
 }
+#endif // LV_USE_CHART

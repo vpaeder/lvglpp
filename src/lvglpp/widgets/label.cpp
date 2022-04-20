@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "label.h"
+#if LV_USE_LABEL != 0
 
 namespace lvgl::widgets {
 
@@ -75,3 +76,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_LABEL

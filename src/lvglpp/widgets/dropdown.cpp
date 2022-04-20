@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "dropdown.h"
+#if LV_USE_DROPDOWN != 0
 
 namespace lvgl::widgets {
 
@@ -103,5 +104,5 @@ namespace lvgl::widgets {
         return lv_dropdown_is_open(const_cast<lv_cls_ptr>(this->raw_ptr()));
     }
 
-
 }
+#endif // LV_USE_DROPDOWN

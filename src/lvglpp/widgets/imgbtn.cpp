@@ -5,6 +5,8 @@
  *  License: MIT
  */
 #include "imgbtn.h"
+#if LV_USE_IMGBTN != 0
+
 #include "../draw/image.h"
 
 namespace lvgl::widgets {
@@ -110,3 +112,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_IMGBTN

@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "colorwheel.h"
+#if LV_USE_COLORWHEEL
 
 namespace lvgl::widgets {
 
@@ -73,3 +74,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_COLORWHEEL

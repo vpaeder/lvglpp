@@ -5,6 +5,8 @@
  *  License: MIT
  */
 #include "span.h"
+#if LV_USE_SPAN != 0
+
 #include "../misc/style.h"
 
 namespace lvgl::widgets {
@@ -95,5 +97,5 @@ namespace lvgl::widgets {
         lv_spangroup_refr_mode(this->raw_ptr());
     }
 
-
 }
+#endif // LV_USE_SPAN

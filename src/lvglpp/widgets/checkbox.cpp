@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "checkbox.h"
+#if LV_USE_CHECKBOX != 0
 
 namespace lvgl::widgets {
 
@@ -21,3 +22,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_CHECKBOX

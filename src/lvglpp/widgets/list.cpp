@@ -5,6 +5,8 @@
  *  License: MIT
  */
 #include "list.h"
+#if LV_USE_LIST
+
 #include "label.h"
 #include "button.h"
 
@@ -28,3 +30,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_LIST

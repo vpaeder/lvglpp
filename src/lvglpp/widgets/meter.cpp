@@ -5,6 +5,8 @@
  *  License: MIT
  */
 #include "meter.h"
+#if LV_USE_METER != 0
+
 #include "../draw/image.h"
 
 namespace lvgl::widgets {
@@ -71,3 +73,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_METER

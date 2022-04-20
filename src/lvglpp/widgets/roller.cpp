@@ -5,6 +5,7 @@
  *  License: MIT
  */
 #include "roller.h"
+#if LV_USE_ROLLER != 0
 
 namespace lvgl::widgets {
 
@@ -39,3 +40,4 @@ namespace lvgl::widgets {
     }
 
 }
+#endif // LV_USE_ROLLER
