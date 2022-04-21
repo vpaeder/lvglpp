@@ -6,10 +6,10 @@
  */
 #pragma once
 
-#if LV_USE_TABLE != 0
-
 #include "../core/object.h"
 #include <tuple>
+
+#if LV_USE_TABLE != 0
 
 namespace lvgl::widgets {
 

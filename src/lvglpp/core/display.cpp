@@ -10,6 +10,10 @@
 #include "theme.h"
 #include "../draw/image.h"
 
+// we need user_data to store pointer to C++ object, otherwise we cannot
+// access callbacks defined as class members.
+#if LV_USE_USER_DATA
+
 namespace lvgl::core {
 
     Display::Display(lv_coord_t hor_res, lv_coord_t ver_res, uint32_t fb_size) {
@@ -159,3 +163,5 @@ namespace lvgl::core {
         return Object(lv_layer_sys(), false);
     }
 }
+
+#endif // LV_USE_USER_DATA

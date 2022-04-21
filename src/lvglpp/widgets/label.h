@@ -5,8 +5,9 @@
  *  License: MIT
  */
 #pragma once
-#if LV_USE_LABEL != 0
 #include "../core/object.h"
+
+#if LV_USE_LABEL != 0
 
 namespace lvgl::widgets {
 

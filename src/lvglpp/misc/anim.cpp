@@ -44,8 +44,8 @@ namespace lvgl::misc {
     void Animation::set_custom_exec_cb(CustomExecCb exec_cb) {
         using CustomCbType = Callback<void, Animation&, int32_t>;
         this->custom_exec_cb = std::make_shared<CustomCbType>(exec_cb);
-        auto f = [](lv_cls_ptr lv_obj, int32_t val) {
-            auto anim = reinterpret_cast<Animation*>(lv_anim_get_user_data(lv_obj));
+        auto f = [](lv_anim_t * lv_obj, int32_t val) {
+            auto anim = reinterpret_cast<Animation*>(lv_obj->var);
             if (anim->custom_exec_cb != nullptr) {
                 auto cb = *std::dynamic_pointer_cast<CustomCbType>(anim->custom_exec_cb);
                 cb(*anim, val);
@@ -62,7 +62,7 @@ namespace lvgl::misc {
         using PathCbType = Callback<int32_t, const Animation&>;
         this->path_cb = std::make_shared<PathCbType>(path_cb);
         auto f = [](const lv_anim_t * lv_obj) -> int32_t {
-            auto anim = reinterpret_cast<Animation*>(lv_obj->user_data);
+            auto anim = reinterpret_cast<Animation*>(lv_obj->var);
             if (anim->path_cb != nullptr) {
                 auto cb = *std::dynamic_pointer_cast<PathCbType>(anim->path_cb);
                 return cb(*anim);
@@ -80,7 +80,7 @@ namespace lvgl::misc {
         using StartCbType = Callback<void, Animation&>;
         this->start_cb = std::make_shared<StartCbType>(start_cb);
         auto f = [](lv_anim_t * lv_obj) {
-            auto anim = reinterpret_cast<Animation*>(lv_obj->user_data);
+            auto anim = reinterpret_cast<Animation*>(lv_obj->var);
             if (anim->start_cb != nullptr) {
                 auto cb = *std::dynamic_pointer_cast<StartCbType>(anim->start_cb);
                 cb(*anim);
@@ -97,7 +97,7 @@ namespace lvgl::misc {
         using GetValueCbType = Callback<int32_t, Animation&>;
         this->get_value_cb = std::make_shared<GetValueCbType>(get_value_cb);
         auto f = [](lv_anim_t * lv_obj) -> int32_t {
-            auto anim = reinterpret_cast<Animation*>(lv_obj->user_data);
+            auto anim = reinterpret_cast<Animation*>(lv_obj->var);
             if (anim->get_value_cb != nullptr) {
                 auto cb = *std::dynamic_pointer_cast<GetValueCbType>(anim->get_value_cb);
                 return cb(*anim);
@@ -115,7 +115,7 @@ namespace lvgl::misc {
         using ReadyCbType = Callback<void, Animation&>;
         this->ready_cb = std::make_shared<ReadyCbType>(ready_cb);
         auto f = [](lv_anim_t * lv_obj) {
-            auto anim = reinterpret_cast<Animation*>(lv_obj->user_data);
+            auto anim = reinterpret_cast<Animation*>(lv_obj->var);
             if (anim->ready_cb != nullptr) {
                 auto cb = *std::dynamic_pointer_cast<ReadyCbType>(anim->ready_cb);
                 cb(*anim);
@@ -152,9 +152,15 @@ namespace lvgl::misc {
         lv_anim_set_early_apply(this->raw_ptr(), en);
     }
 
+#if LV_USE_USER_DATA
     void Animation::set_user_data(void * user_data) {
         lv_anim_set_user_data(this->raw_ptr(), user_data);
     }
+
+    void * Animation::get_user_data() const {
+        return lv_anim_get_user_data(const_cast<lv_cls_ptr>(this->raw_ptr()));
+    }
+#endif // LV_USE_USER_DATA
 
     void Animation::start() {
         lv_anim_start(this->raw_ptr());
@@ -168,10 +174,6 @@ namespace lvgl::misc {
         return lv_anim_get_playtime(const_cast<lv_cls_ptr>(this->raw_ptr()));
     }
 
-    void * Animation::get_user_data() const {
-        return lv_anim_get_user_data(const_cast<lv_cls_ptr>(this->raw_ptr()));
-    }
-    
     AnimationTimeline::AnimationTimeline() {
         this->lv_obj = LvPointerType(lv_anim_timeline_create());
     }

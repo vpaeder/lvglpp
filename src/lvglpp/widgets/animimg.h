@@ -6,10 +6,10 @@
  */
 #pragma once
 
-#if LV_USE_ANIMIMG != 0
-
 #include "../draw/image.h"
 #include "../core/object.h"
+
+#if LV_USE_ANIMIMG != 0
 
 /** \namespace lvgl::widgets
  *  \brief LVGL widgets.

@@ -6,9 +6,9 @@
  */
 #pragma once
 
-#if LV_USE_COLORWHEEL
-
 #include "../core/object.h"
+
+#if LV_USE_COLORWHEEL
 
 namespace lvgl::widgets {
 

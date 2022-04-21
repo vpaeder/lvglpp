@@ -18,6 +18,9 @@ namespace lvgl::misc {
     using namespace lvgl::font;
     using namespace lvgl::draw;
 
+    // we need user_data to store pointer to C++ object, otherwise we cannot
+    // access callbacks defined as class members.
+    #if LV_USE_USER_DATA
     /** \class StyleTransition
      *  \brief Wraps a lv_style_transition_dsc_t object. This is a base class
      *  to define style transition.
@@ -72,7 +75,7 @@ namespace lvgl::misc {
          */
         void set_delay(uint32_t delay);
     };
-    
+
     
     /** \class LinearStyleTransition
      *  \brief This is a style transition with a linear animation.
@@ -200,7 +203,7 @@ namespace lvgl::misc {
          */
             int32_t callback(const struct _lv_anim_t * anim) override;
     };
-
+    #endif // LV_USE_USER_DATA
 
     /** \class Style
      *  \brief Wraps a lv_style_t object.
@@ -743,11 +746,19 @@ namespace lvgl::misc {
          */
         void set_opa(lv_opa_t value);
 
+#if LV_USE_USER_DATA
         /** \fn void set_color_filter_dsc(const ColorFilter & value)
          *  \brief Sets color filter property.
          *  \param value: color filter descriptor.
          */
         void set_color_filter_dsc(const ColorFilter & value);
+#endif //LV_USE_USER_DATA
+
+        /** \fn void set_color_filter_dsc(const lv_color_filter_dsc_t * value)
+         *  \brief Sets color filter property.
+         *  \param value: color filter descriptor.
+         */
+        void set_color_filter_dsc(const lv_color_filter_dsc_t * value);
 
         /** \fn void set_color_filter_opa(lv_opa_t value)
          *  \brief Sets color filter opacity property.
@@ -773,11 +784,19 @@ namespace lvgl::misc {
          */
         void set_anim_speed(uint32_t value);
 
+#if LV_USE_USER_DATA
         /** \fn void set_transition(const StyleTransition & value)
          *  \brief Sets style transition property.
          *  \param value: style transition descriptor.
          */
         void set_transition(const StyleTransition & value);
+#endif // LV_USE_USER_DATA
+
+        /** \fn void set_transition(const lv_style_transition_dsc_t * value)
+         *  \brief Sets style transition property.
+         *  \param value: style transition descriptor.
+         */
+        void set_transition(const lv_style_transition_dsc_t * value);
 
         /** \fn void set_blend_mode(lv_blend_mode_t value)
          *  \brief Sets blend mode property.

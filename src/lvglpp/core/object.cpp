@@ -58,7 +58,7 @@ namespace lvgl::core {
         return lv_obj_has_state(this->raw_ptr(), state);
     }
 
-    #if LV_USE_USER_DATA
+#if LV_USE_USER_DATA
     void Object::set_user_data(const void * arg) {
         lv_obj_set_user_data(this->raw_ptr(), const_cast<void*>(arg));
     }
@@ -66,7 +66,7 @@ namespace lvgl::core {
     void * Object::get_user_data() const {
         return lv_obj_get_user_data(const_cast<lv_cls_ptr>(this->raw_ptr()));
     }
-    #endif // LV_USE_USER_DATA
+#endif // LV_USE_USER_DATA
 
     Group Object::get_group() const {
         auto group = lv_obj_get_group(this->raw_ptr());
@@ -154,17 +154,21 @@ namespace lvgl::core {
         lv_obj_add_event_cb(this->raw_ptr(), f, filter, reinterpret_cast<void*>(event_cb));
     }
 
+#if LV_USE_USER_DATA
     void Object::add_event_cb(lv_event_cb_t event_cb, lv_event_code_t filter, void * user_data) {
         lv_obj_add_event_cb(this->raw_ptr(), event_cb, filter, user_data);
     }
+#endif // LV_USE_USER_DATA
 
     bool Object::remove_event_cb(lv_event_cb_t event_cb) {
         return lv_obj_remove_event_cb_with_user_data(this->raw_ptr(), event_cb, static_cast<void*>(this));
     }
 
+#if LV_USE_USER_DATA
     bool Object::remove_event_cb(lv_event_cb_t event_cb, const void * user_data) {
         return lv_obj_remove_event_cb_with_user_data(this->raw_ptr(), event_cb, user_data);
     }
+#endif // LV_USE_USER_DATA
 
     bool Object::remove_event_cb(EventCb event_cb) {
         return lv_obj_remove_event_cb_with_user_data(this->raw_ptr(), nullptr, static_cast<void*>(&event_cb));
@@ -548,9 +552,12 @@ namespace lvgl::core {
         return lv_obj_get_index(this->raw_ptr());
     }
 
+#if LV_USE_USER_DATA
     void Object::tree_walk(lv_obj_tree_walk_cb_t cb, void * user_data) const {
         lv_obj_tree_walk(const_cast<lv_cls_ptr>(this->raw_ptr()), cb, user_data);
     }
+#endif // LV_USE_USER_DATA
+
     void Object::tree_walk(lv_obj_tree_walk_cb_t cb) const {
         this->tree_walk(cb, nullptr);
     }
@@ -807,9 +814,11 @@ namespace lvgl::core {
     void Object::set_style_color_filter_dsc(const lv_color_filter_dsc_t * value, lv_style_selector_t selector) {
       lv_obj_set_style_color_filter_dsc(this->raw_ptr(), value, selector);
     }
+#if LV_USE_USER_DATA
     void Object::set_style_color_filter_dsc(const ColorFilter & value, lv_style_selector_t selector) {
       this->set_style_color_filter_dsc(value.raw_ptr(), selector);
     }
+#endif // LV_USE_USER_DATA
     void Object::set_style_color_filter_opa(lv_opa_t value, lv_style_selector_t selector) {
       lv_obj_set_style_color_filter_opa(this->raw_ptr(), value, selector);
     }
@@ -828,9 +837,11 @@ namespace lvgl::core {
     void Object::set_style_transition(const lv_style_transition_dsc_t * value, lv_style_selector_t selector) {
       lv_obj_set_style_transition(this->raw_ptr(), value, selector);
     }
+#if LV_USE_USER_DATA
     void Object::set_style_transition(const StyleTransition & value, lv_style_selector_t selector) {
         this->set_style_transition(value.raw_ptr(), selector);
     }
+#endif // LV_USE_USER_DATA
     void Object::set_style_blend_mode(lv_blend_mode_t value, lv_style_selector_t selector) {
       lv_obj_set_style_blend_mode(this->raw_ptr(), value, selector);
     }

@@ -7,6 +7,10 @@
 #pragma once
 #include "../lv_wrapper.h"
 
+// we need user_data to store pointer to C++ object, otherwise we cannot
+// access callbacks defined as class members.
+#if LV_USE_USER_DATA
+
 namespace lvgl::misc {
 
     /** \class Timer
@@ -41,7 +45,7 @@ namespace lvgl::misc {
         virtual void callback(Timer & timer) {}
 
         /** \fn void set_callback()
-         *  \brief Sets callback function defined in class as timer callback.
+         *  \brief Sets callback function defined in class as class member callback.
          */
         void set_callback();
 
@@ -86,3 +90,4 @@ namespace lvgl::misc {
     };
 
 }
+#endif // LV_USE_USER_DATA

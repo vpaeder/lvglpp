@@ -94,6 +94,7 @@ namespace lvgl::core {
             return reinterpret_cast<T*>(this->lv_obj->param);
         }
 
+#if LV_USE_USER_DATA
         /** \fn template <class T> T & get_user_data() const;
          *  \brief Gets user data passed when event was registered with the object.
          *  \tparam T: parameter class.
@@ -106,6 +107,7 @@ namespace lvgl::core {
          *  \returns pointer to user data.
          */
         void * get_user_data() const;
+#endif // LV_USE_USER_DATA
 
         /** \fn void stop_bubbling()
          *  \brief Stops event bubbling.
@@ -123,11 +125,19 @@ namespace lvgl::core {
          */
         static uint32_t register_id();
 
+#if LV_USE_USER_DATA
         /** \fn InputDevice get_indev() const
+         *  \brief Gets input device associated with event, if any.
+         *  \returns input device object.
+         */
+        InputDevice get_indev() const;
+#else
+        /** \fn lv_indev_t * get_indev() const
          *  \brief Gets input device associated with event, if any.
          *  \returns pointer to input device instance, or nullptr if none.
          */
-        InputDevice get_indev() const;
+        lv_indev_t * get_indev() const;
+#endif // LV_USE_USER_DATA
 
         /** \fn lv_obj_draw_part_dsc_t* get_draw_part_dsc() const
          *  \brief Gets draw part descriptor associated with event, if any.

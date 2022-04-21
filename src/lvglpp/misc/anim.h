@@ -139,7 +139,7 @@ namespace lvgl::misc {
             // For this one, this is trickier. My approach is to provide a callback
             // container that also stores the variable that would normally be passed
             // to exec_cb. Then we change the variable in the lv_anim_t object to
-            // the a pointer to the callback container. We can then access the callback
+            // a pointer to the callback container. We can then access the callback
             // and the variable upon which it acts.
             lv_anim_set_var(this->raw_ptr(), static_cast<void*>(this));
             using ExecCbType = Callback<void, T&, int32_t>;
@@ -280,6 +280,7 @@ namespace lvgl::misc {
          */
         void set_early_apply(bool en);
 
+#if LV_USE_USER_DATA
         /** \fn template <class T> void set_user_data(T & user_data)
          *  \brief Sets user data.
          *  \tparam T: user data type.
@@ -294,7 +295,8 @@ namespace lvgl::misc {
          *  \param user_data: pointer to user data.
          */
         void set_user_data(void * user_data);
-        
+#endif // LV_USE_USER_DATA
+
         /** \fn void start()
          *  \brief Starts animation.
          */
@@ -312,6 +314,7 @@ namespace lvgl::misc {
          */
         uint32_t get_playtime() const;
 
+#if LV_USE_USER_DATA
         /** \fn template <class T> T get_user_data() const
          *  \brief Gets user data.
          *  \tparam T: user data type.
@@ -325,6 +328,7 @@ namespace lvgl::misc {
          *  \returns pointer to user data.
          */
         void * get_user_data() const;
+#endif // LV_USE_USER_DATA
         
     };
 

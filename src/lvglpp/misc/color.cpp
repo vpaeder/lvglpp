@@ -92,6 +92,7 @@ namespace lvgl::misc {
             }
         }
 
+#if LV_USE_USER_DATA
         ColorFilter::ColorFilter() {
             this->lv_obj = LvPointerType(lv_cls_alloc<lv_cls>());
             // color_filter_t has a user_data field => store 'this' pointer in it
@@ -103,4 +104,5 @@ namespace lvgl::misc {
                 return obj->callback(color, opa);
             };
         }
+#endif // LV_USE_USER_DATA        
 }

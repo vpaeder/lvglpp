@@ -6,9 +6,9 @@
  */
 #pragma once
 
-#if LV_USE_ARC != 0
-
 #include "../core/object.h"
+
+#if LV_USE_ARC != 0
 
 /** \namespace lvgl::widgets
  *  \brief LVGL widget C++ wrappers.

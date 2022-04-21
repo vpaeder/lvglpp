@@ -6,10 +6,10 @@
  */
 #pragma once
 
-#if LV_USE_DROPDOWN != 0
-
 #include "../core/object.h"
 #include "../draw/image.h"
+
+#if LV_USE_DROPDOWN != 0
 
 namespace lvgl::widgets {
 

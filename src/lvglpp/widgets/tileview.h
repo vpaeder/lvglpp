@@ -6,9 +6,9 @@
  */
 #pragma once
 
-#if LV_USE_TILEVIEW
-
 #include "../core/object.h"
+
+#if LV_USE_TILEVIEW
 
 namespace lvgl::widgets {
 

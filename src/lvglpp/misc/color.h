@@ -179,6 +179,7 @@ namespace lvgl::misc {
         lv_color_t black();
     }
 
+#if LV_USE_USER_DATA
     /** \class ColorFilter
      *  \brief Wraps a lv_color_filter_dsc_t object. This is a base class
      *  used to define color filters.
@@ -200,4 +201,5 @@ namespace lvgl::misc {
         ColorFilter();
 
     };
+#endif // LV_USE_USER_DATA
 }

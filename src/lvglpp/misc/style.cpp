@@ -10,6 +10,11 @@
 #define LV_ANIM_RES_SHIFT 10 ///< bits to shift in computation of animation value (should be log2(LV_ANIM_RESOLUTION))
 
 namespace lvgl::misc {
+    
+    // we need user_data to store pointer to C++ object, otherwise we cannot
+    // access callbacks defined as class members.
+    #if LV_USE_USER_DATA
+
     StyleTransition::StyleTransition() {
         this->initialize({}, 0, 0);
     }
@@ -79,6 +84,7 @@ namespace lvgl::misc {
         return new_value;
     }
 
+    #endif // LV_USE_USER_DATA
 
     Style::Style() {
         this->lv_obj = LvPointerType(lv_cls_alloc<lv_cls>());
@@ -433,8 +439,14 @@ namespace lvgl::misc {
         lv_style_set_opa(this->raw_ptr(), value);
     }
 
+#if LV_USE_USER_DATA
     void Style::set_color_filter_dsc(const ColorFilter & value) {
         lv_style_set_color_filter_dsc(this->raw_ptr(), value.raw_ptr());
+    }
+#endif // LV_USE_USER_DATA
+
+    void Style::set_color_filter_dsc(const lv_color_filter_dsc_t * value) {
+        lv_style_set_color_filter_dsc(this->raw_ptr(), value);
     }
 
     void Style::set_color_filter_opa(lv_opa_t value) {
@@ -453,8 +465,14 @@ namespace lvgl::misc {
         lv_style_set_anim_speed(this->raw_ptr(), value);
     }
 
+#if LV_USE_USER_DATA
     void Style::set_transition(const StyleTransition & value) {
         lv_style_set_transition(this->raw_ptr(), value.raw_ptr());
+    }
+#endif // LV_USE_USER_DATA
+
+    void Style::set_transition(const lv_style_transition_dsc_t * value) {
+        lv_style_set_transition(this->raw_ptr(), value);
     }
 
     void Style::set_blend_mode(lv_blend_mode_t value) {

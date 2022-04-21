@@ -6,6 +6,10 @@
  */
 #include "fs.h"
 
+// we need user_data to store pointer to C++ object, otherwise we cannot
+// access callbacks defined as class members.
+#if LV_USE_USER_DATA
+
 namespace lvgl::misc {
     FileSystem::FileSystem(char letter) {
         LV_LOG_INFO("initializing file system for letter %c", letter);
@@ -168,3 +172,4 @@ namespace lvgl::misc {
     }
 
 }
+#endif // LV_USE_USER_DATA

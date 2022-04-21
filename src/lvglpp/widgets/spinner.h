@@ -6,9 +6,9 @@
  */
 #pragma once
 
-#if LV_USE_SPINNER
-
 #include "../core/object.h"
+
+#if LV_USE_SPINNER
 
 namespace lvgl::widgets {
 

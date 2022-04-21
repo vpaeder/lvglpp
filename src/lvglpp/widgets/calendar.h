@@ -6,9 +6,9 @@
  */
 #pragma once
 
-#if LV_USE_CALENDAR
-
 #include "../core/object.h"
+
+#if LV_USE_CALENDAR
 
 namespace lvgl::widgets {
 

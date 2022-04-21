@@ -15,9 +15,11 @@ namespace lvgl::core {
         return lv_event_get_code(const_cast<lv_event_t*>(this->raw_ptr()));
     }
 
+#if LV_USE_USER_DATA
     void * Event::get_user_data() const {
         return lv_event_get_user_data(const_cast<lv_event_t*>(this->raw_ptr()));
     }
+#endif // LV_USE_USER_DATA
 
     void Event::stop_bubbling() {
         lv_event_stop_bubbling(this->raw_ptr());
@@ -31,9 +33,15 @@ namespace lvgl::core {
         return lv_event_register_id();
     }
 
+#if LV_USE_USER_DATA
     InputDevice Event::get_indev() const {
         return InputDevice(lv_event_get_indev(const_cast<lv_event_t*>(this->raw_ptr())), false);
     }
+#else
+    lv_indev_t * Event::get_indev() const {
+        return lv_event_get_indev(const_cast<lv_event_t*>(this->raw_ptr()));
+    }
+#endif // LV_USE_USER_DATA
 
     lv_obj_draw_part_dsc_t* Event::get_draw_part_dsc() const {
         return lv_event_get_draw_part_dsc(const_cast<lv_event_t*>(this->raw_ptr()));

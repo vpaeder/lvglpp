@@ -6,9 +6,9 @@
  */
 #pragma once
 
-#if LV_USE_TABVIEW
-
 #include "../core/object.h"
+
+#if LV_USE_TABVIEW
 
 namespace lvgl::widgets {
 

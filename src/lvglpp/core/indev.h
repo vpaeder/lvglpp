@@ -9,6 +9,10 @@
 #include "../misc/timer.h"
 #include "../lv_wrapper.h"
 
+// we need user_data to store pointer to C++ object, otherwise we cannot
+// access callbacks defined as class members.
+#if LV_USE_USER_DATA
+
 namespace lvgl::core {
 
     class Group;
@@ -215,3 +219,4 @@ namespace lvgl::core {
     };
 
 }
+#endif // LV_USE_USER_DATA

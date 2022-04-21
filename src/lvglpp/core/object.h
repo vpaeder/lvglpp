@@ -107,7 +107,7 @@ namespace lvgl::core {
          */
         bool has_state(lv_state_t state) const;
 
-        #if LV_USE_USER_DATA
+#if LV_USE_USER_DATA
         /** \fn template<class T> void set_user_data(const T & arg)
          *  \brief Sets user data.
          *  \tparam T: class of user data object.
@@ -134,7 +134,7 @@ namespace lvgl::core {
          *  \returns a pointer to user data.
          */
         void * get_user_data() const;
-        #endif // LV_USE_USER_DATA
+#endif // LV_USE_USER_DATA
 
         /** \fn Group get_group() const
          *  \brief Gets object group.
@@ -1577,12 +1577,15 @@ namespace lvgl::core {
          *  \param selector: OR-ed combination of parts and states to apply the style to.
          */
         void set_style_transition(const lv_style_transition_dsc_t * value, lv_style_selector_t selector);
+
+#if LV_USE_USER_DATA
         /** \fn void set_style_transition(const StyleTransition & value, lv_style_selector_t selector)
          *  \brief Sets transition descriptor.
          *  \param value: property value.
          *  \param selector: OR-ed combination of parts and states to apply the style to.
          */
         void set_style_transition(const StyleTransition & value, lv_style_selector_t selector);
+#endif // LV_USE_USER_DATA
 
         /** \fn void set_style_blend_mode(lv_blend_mode_t value, lv_style_selector_t selector);
          *  \brief Sets blending mode.

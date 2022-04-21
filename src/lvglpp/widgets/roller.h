@@ -6,9 +6,9 @@
  */
 #pragma once
 
-#if LV_USE_ROLLER != 0
-
 #include "../core/object.h"
+
+#if LV_USE_ROLLER != 0
 
 namespace lvgl::widgets {
 

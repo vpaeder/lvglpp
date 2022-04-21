@@ -10,6 +10,10 @@
 #include <memory>
 #include "lvgl.h"
 
+// we need user_data to store pointer to C++ object, otherwise we cannot
+// access callbacks defined as class members.
+#if LV_USE_USER_DATA
+
 namespace lvgl::draw { class ImageDescriptor; }
 
 /** \namespace lvgl::core
@@ -281,3 +285,5 @@ namespace lvgl::core {
     Object layer_sys();
 
 }
+
+#endif // LV_USE_USER_DATA

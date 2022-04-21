@@ -6,9 +6,9 @@
  */
 #pragma once
 
-#if LV_USE_LED
-
 #include "../core/object.h"
+
+#if LV_USE_LED
 
 namespace lvgl::widgets {
 
