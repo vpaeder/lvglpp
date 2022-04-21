@@ -1129,6 +1129,7 @@ namespace lvgl::core {
         return lv_obj_get_style_base_dir(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }    
 
+#if LV_USE_FLEX
     void Object::set_flex_flow(lv_flex_flow_t flow) {
         lv_obj_set_flex_flow(this->raw_ptr(), flow);
     }
@@ -1169,7 +1170,9 @@ namespace lvgl::core {
     uint8_t Object::get_style_flex_grow(uint32_t part) const {
         return lv_obj_get_style_flex_grow(this->raw_ptr(), part);
     }
+#endif // LV_USE_FLEX
 
+#if LV_USE_GRID
     /* grid layout */
     void Object::set_grid_dsc_array(const std::vector<lv_coord_t> & col_dsc, const std::vector<lv_coord_t> & row_dsc) {
         lv_obj_set_grid_dsc_array(this->raw_ptr(), col_dsc.data(), row_dsc.data());
@@ -1241,6 +1244,7 @@ namespace lvgl::core {
     lv_coord_t Object::get_style_grid_cell_y_align(uint32_t part) const {
         return lv_obj_get_style_grid_cell_y_align(this->raw_ptr(), part);
     }
+#endif // LV_USE_GRID
 
     /* theme */
     const lv_font_t * Object::get_font_small() const {

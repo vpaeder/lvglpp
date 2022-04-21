@@ -491,6 +491,7 @@ namespace lvgl::misc {
         return lv_style_is_empty(this->raw_ptr());
     }
 
+#if LV_USE_FLEX
     void Style::set_flex_flow(lv_flex_flow_t value) {
         lv_style_set_flex_flow(this->raw_ptr(), value);
     }
@@ -506,7 +507,9 @@ namespace lvgl::misc {
     void Style::set_flex_grow(uint8_t value) {
         lv_style_set_flex_grow(this->raw_ptr(), value);
     }
+#endif // LV_USE_FLEX
 
+#if LV_USE_GRID
     void Style::set_grid_row_dsc_array(const std::vector<lv_coord_t> & value) {
         lv_style_set_grid_row_dsc_array(this->raw_ptr(), value.data());
     }
@@ -537,5 +540,5 @@ namespace lvgl::misc {
     void Style::set_grid_cell_y_align(lv_coord_t value) {
         lv_style_set_grid_cell_y_align(this->raw_ptr(), value);
     }
-
+#endif // LV_USE_GRID
 }

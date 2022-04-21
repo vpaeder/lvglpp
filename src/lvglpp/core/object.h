@@ -2252,6 +2252,7 @@ namespace lvgl::core {
          */
         lv_base_dir_t get_style_base_dir(uint32_t part) const;
 
+#if LV_USE_FLEX
         /* flex layout */
         /** \fn void set_flex_flow(lv_flex_flow_t flow)
          *  \brief Sets flex flow.
@@ -2342,7 +2343,9 @@ namespace lvgl::core {
          *  \returns property value.
          */
         uint8_t get_style_flex_grow(uint32_t part) const;
+#endif // LV_USE_FLEX
 
+#if LV_USE_GRID
         /* grid layout */
         /** \fn void set_grid_dsc_array(const std::vector<lv_coord_t> & col_dsc, const std::vector<lv_coord_t> & row_dsc)
          *  \brief Sets grid layout properties.
@@ -2510,6 +2513,7 @@ namespace lvgl::core {
          *  \returns property value.
          */
         lv_coord_t get_style_grid_cell_y_align(uint32_t part) const;
+#endif // LV_USE_GRID
 
         /* theme */
         /** \fn const lv_font_t * get_font_small() const

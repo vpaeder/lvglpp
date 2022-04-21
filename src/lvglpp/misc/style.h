@@ -816,6 +816,7 @@ namespace lvgl::misc {
          */
         void set_base_dir(lv_base_dir_t value);
 
+#if LV_USE_FLEX
         /* flex layout */
         /** \fn void set_flex_flow(lv_flex_flow_t value)
          *  \brief Sets flex flow.
@@ -846,7 +847,9 @@ namespace lvgl::misc {
          *  \param value: relative grow value.
          */
         void set_flex_grow(uint8_t value);
+#endif // LV_USE_FLEX
 
+#if LV_USE_GRID
         /* grid layout */
         /** \fn void set_grid_row_dsc_array(const std::vector<lv_coord_t> & value)
          *  \brief Sets grid row heights.
@@ -907,6 +910,7 @@ namespace lvgl::misc {
          *  \param value: vertical offset value.
          */
         void set_grid_cell_y_align(lv_coord_t value);
+#endif // LV_USE_GRID
     };
 
 }
