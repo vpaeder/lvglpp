@@ -38,6 +38,7 @@ namespace lvgl::misc {
     }
 
     void Animation::set_custom_exec_cb(lv_anim_custom_exec_cb_t exec_cb) {
+        assert(this != this->raw_ptr()->var);
         lv_anim_set_custom_exec_cb(this->raw_ptr(), exec_cb);
     }
 
@@ -51,10 +52,12 @@ namespace lvgl::misc {
                 cb(*anim, val);
             }
         };
+        lv_anim_set_var(this->raw_ptr(), static_cast<void*>(this));
         lv_anim_set_custom_exec_cb(this->raw_ptr(), f);
     }
 
     void Animation::set_path_cb(lv_anim_path_cb_t path_cb) {
+        assert(this != this->raw_ptr()->var);
         lv_anim_set_path_cb(this->raw_ptr(), path_cb);
     }
 
@@ -69,10 +72,12 @@ namespace lvgl::misc {
             }
             return 0;
         };
+        lv_anim_set_var(this->raw_ptr(), static_cast<void*>(this));
         lv_anim_set_path_cb(this->raw_ptr(), f);
     }
 
     void Animation::set_start_cb(lv_anim_start_cb_t start_cb) {
+        assert(this != this->raw_ptr()->var);
         lv_anim_set_start_cb(this->raw_ptr(), start_cb);
     }
 
@@ -86,10 +91,12 @@ namespace lvgl::misc {
                 cb(*anim);
             }
         };
+        lv_anim_set_var(this->raw_ptr(), static_cast<void*>(this));
         lv_anim_set_start_cb(this->raw_ptr(), f);
     }
 
     void Animation::set_get_value_cb(lv_anim_get_value_cb_t get_value_cb) {
+        assert(this != this->raw_ptr()->var);
         lv_anim_set_get_value_cb(this->raw_ptr(), get_value_cb);
     }
 
@@ -104,10 +111,12 @@ namespace lvgl::misc {
             }
             return 0;
         };
+        lv_anim_set_var(this->raw_ptr(), static_cast<void*>(this));
         lv_anim_set_get_value_cb(this->raw_ptr(), f);
     }
 
     void Animation::set_ready_cb(lv_anim_ready_cb_t ready_cb) {
+        assert(this != this->raw_ptr()->var);
         lv_anim_set_ready_cb(this->raw_ptr(), ready_cb);
     }
 
@@ -121,6 +130,7 @@ namespace lvgl::misc {
                 cb(*anim);
             }
         };
+        lv_anim_set_var(this->raw_ptr(), static_cast<void*>(this));
         lv_anim_set_ready_cb(this->raw_ptr(), f);
     }
 
