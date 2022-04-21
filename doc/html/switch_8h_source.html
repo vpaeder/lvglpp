@@ -96,18 +96,20 @@ $(document).ready(function(){initNavTree('switch_8h_source.html',''); initResiza
 <div class="contents">
 <a href="switch_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../core/object.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1widgets.html">lvgl::widgets</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1core.html">lvgl::core</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="namespacelvgl_1_1widgets.html#a17103af6febda383d5e9412eafeed2dd">   17</a></span>    <span class="keyword">using</span> <a class="code hl_class" href="classlvgl_1_1core_1_1_widget.html">Switch</a> = <a class="code hl_class" href="classlvgl_1_1core_1_1_widget.html">Widget&lt;lv_switch_create&gt;</a>;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>}</div>
-<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html">lvgl::core::Widget</a></div><div class="ttdoc">Wraps a lv_obj_t object created with the given allocator.</div><div class="ttdef"><b>Definition:</b> object.h:2571</div></div>
-<div class="ttc" id="anamespacelvgl_1_1core_html"><div class="ttname"><a href="namespacelvgl_1_1core.html">lvgl::core</a></div><div class="ttdoc">LVGL core components.</div><div class="ttdef"><b>Definition:</b> display.cpp:13</div></div>
-<div class="ttc" id="anamespacelvgl_1_1widgets_html"><div class="ttname"><a href="namespacelvgl_1_1widgets.html">lvgl::widgets</a></div><div class="ttdoc">LVGL widgets.</div><div class="ttdef"><b>Definition:</b> animimg.cpp:9</div></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../core/object.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#if LV_USE_SWITCH != 0</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>lvgl::widgets {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">using namespace </span>lvgl::core;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">using</span> Switch = <a class="code hl_class" href="classlvgl_1_1core_1_1_widget.html">Widget&lt;lv_switch_create&gt;</a>;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>}</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif </span><span class="comment">// LV_USE_SWITCH</span></div>
+<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html">lvgl::core::Widget</a></div><div class="ttdoc">Wraps a lv_obj_t object created with the given allocator.</div><div class="ttdef"><b>Definition:</b> object.h:2574</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,6 +1,5 @@
 var color_8h =
 [
-    [ "lvgl::misc::ColorFilter", "classlvgl_1_1misc_1_1_color_filter.html", "classlvgl_1_1misc_1_1_color_filter" ],
     [ "Color", "color_8h.html#aefca0b2109a7b71b1b981ed943f6221f", [
       [ "Red", "color_8h.html#aefca0b2109a7b71b1b981ed943f6221faee38e4d5dd68c4e440825018d549cb47", null ],
       [ "Pink", "color_8h.html#aefca0b2109a7b71b1b981ed943f6221fa8dc5344bc0746e1cc5abf896ca03bbdf", null ],

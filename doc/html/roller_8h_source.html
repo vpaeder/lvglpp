@@ -96,45 +96,38 @@ $(document).ready(function(){initNavTree('roller_8h_source.html',''); initResiza
 <div class="contents">
 <a href="roller_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../core/object.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1widgets.html">lvgl::widgets</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1core.html">lvgl::core</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classlvgl_1_1widgets_1_1_roller.html">   18</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classlvgl_1_1widgets_1_1_roller.html">Roller</a> : <span class="keyword">public</span> <a class="code hl_class" href="classlvgl_1_1core_1_1_widget.html">Widget</a>&lt;lv_roller_create&gt; {</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">using</span> <a class="code hl_function" href="classlvgl_1_1core_1_1_widget.html#a73d09fe7fcf13b343629fb1641455682">Widget::Widget</a>;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classlvgl_1_1widgets_1_1_roller.html#a4b24d5650b62cd7a36aad6ea3e836259">set_options</a>(<span class="keyword">const</span> std::string &amp; options, lv_roller_mode_t mode);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classlvgl_1_1widgets_1_1_roller.html#a6143a09673a6a654e40ee9f5feb2dbac">set_selected</a>(uint16_t sel_opt, lv_anim_enable_t anim);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classlvgl_1_1widgets_1_1_roller.html#ab9f43eb35ccec67e0cbb3ece8b32d09f">set_visible_row_count</a>(uint8_t row_cnt);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        uint16_t <a class="code hl_function" href="classlvgl_1_1widgets_1_1_roller.html#a189527f38dc3c2378b15aa0c5b730bd3">get_selected</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        std::string <a class="code hl_function" href="classlvgl_1_1widgets_1_1_roller.html#a9aef0c5bf60cb130d941730e6431f41e">get_selected_str</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keyword">const</span> <span class="keywordtype">char</span> * <a class="code hl_function" href="classlvgl_1_1widgets_1_1_roller.html#a13669722dfa189843473e20a284af37d">get_options</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>        uint16_t <a class="code hl_function" href="classlvgl_1_1widgets_1_1_roller.html#a11f6e2fd9d32034897c4c423aba801cc">get_option_cnt</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    };</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
-<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html">lvgl::core::Widget</a></div><div class="ttdoc">Wraps a lv_obj_t object created with the given allocator.</div><div class="ttdef"><b>Definition:</b> object.h:2571</div></div>
-<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html_a73d09fe7fcf13b343629fb1641455682"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html#a73d09fe7fcf13b343629fb1641455682">lvgl::core::Widget::Widget</a></div><div class="ttdeci">Widget()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> object.h:2603</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_roller_html"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_roller.html">lvgl::widgets::Roller</a></div><div class="ttdoc">Wraps a lv_roller_t object. This is a widget that lets you scroll through different options by gestur...</div><div class="ttdef"><b>Definition:</b> roller.h:18</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_roller_html_a11f6e2fd9d32034897c4c423aba801cc"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_roller.html#a11f6e2fd9d32034897c4c423aba801cc">lvgl::widgets::Roller::get_option_cnt</a></div><div class="ttdeci">uint16_t get_option_cnt() const</div><div class="ttdoc">Gets the number of options.</div><div class="ttdef"><b>Definition:</b> roller.cpp:37</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_roller_html_a13669722dfa189843473e20a284af37d"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_roller.html#a13669722dfa189843473e20a284af37d">lvgl::widgets::Roller::get_options</a></div><div class="ttdeci">const char * get_options() const</div><div class="ttdoc">Gets the list of options.</div><div class="ttdef"><b>Definition:</b> roller.cpp:33</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_roller_html_a189527f38dc3c2378b15aa0c5b730bd3"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_roller.html#a189527f38dc3c2378b15aa0c5b730bd3">lvgl::widgets::Roller::get_selected</a></div><div class="ttdeci">uint16_t get_selected() const</div><div class="ttdoc">Gets the selected option.</div><div class="ttdef"><b>Definition:</b> roller.cpp:23</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_roller_html_a4b24d5650b62cd7a36aad6ea3e836259"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_roller.html#a4b24d5650b62cd7a36aad6ea3e836259">lvgl::widgets::Roller::set_options</a></div><div class="ttdeci">void set_options(const std::string &amp;options, lv_roller_mode_t mode)</div><div class="ttdoc">Sets roller options.</div><div class="ttdef"><b>Definition:</b> roller.cpp:11</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_roller_html_a6143a09673a6a654e40ee9f5feb2dbac"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_roller.html#a6143a09673a6a654e40ee9f5feb2dbac">lvgl::widgets::Roller::set_selected</a></div><div class="ttdeci">void set_selected(uint16_t sel_opt, lv_anim_enable_t anim)</div><div class="ttdoc">Sets the selected option.</div><div class="ttdef"><b>Definition:</b> roller.cpp:15</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_roller_html_a9aef0c5bf60cb130d941730e6431f41e"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_roller.html#a9aef0c5bf60cb130d941730e6431f41e">lvgl::widgets::Roller::get_selected_str</a></div><div class="ttdeci">std::string get_selected_str() const</div><div class="ttdoc">Gets the text of the selected option.</div><div class="ttdef"><b>Definition:</b> roller.cpp:27</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_roller_html_ab9f43eb35ccec67e0cbb3ece8b32d09f"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_roller.html#ab9f43eb35ccec67e0cbb3ece8b32d09f">lvgl::widgets::Roller::set_visible_row_count</a></div><div class="ttdeci">void set_visible_row_count(uint8_t row_cnt)</div><div class="ttdoc">Sets the number of visible rows.</div><div class="ttdef"><b>Definition:</b> roller.cpp:19</div></div>
-<div class="ttc" id="anamespacelvgl_1_1core_html"><div class="ttname"><a href="namespacelvgl_1_1core.html">lvgl::core</a></div><div class="ttdoc">LVGL core components.</div><div class="ttdef"><b>Definition:</b> display.cpp:13</div></div>
-<div class="ttc" id="anamespacelvgl_1_1widgets_html"><div class="ttname"><a href="namespacelvgl_1_1widgets.html">lvgl::widgets</a></div><div class="ttdoc">LVGL widgets.</div><div class="ttdef"><b>Definition:</b> animimg.cpp:9</div></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../core/object.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#if LV_USE_ROLLER != 0</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>lvgl::widgets {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">using namespace </span>lvgl::core;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">class </span>Roller : <span class="keyword">public</span> <a class="code hl_class" href="classlvgl_1_1core_1_1_widget.html">Widget</a>&lt;lv_roller_create&gt; {</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keyword">using</span> Widget::Widget;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> set_options(<span class="keyword">const</span> std::string &amp; options, lv_roller_mode_t mode);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">void</span> set_selected(uint16_t sel_opt, lv_anim_enable_t anim);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        <span class="keywordtype">void</span> set_visible_row_count(uint8_t row_cnt);</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        uint16_t get_selected() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        std::string get_selected_str() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        <span class="keyword">const</span> <span class="keywordtype">char</span> * get_options() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        uint16_t get_option_cnt() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    };</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#endif </span><span class="comment">// LV_USE_ROLLER</span></div>
+<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html">lvgl::core::Widget</a></div><div class="ttdoc">Wraps a lv_obj_t object created with the given allocator.</div><div class="ttdef"><b>Definition:</b> object.h:2574</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -25,7 +25,17 @@
 var NAVTREE =
 [
   [ "C++ wrapper for LVGL", "index.html", [
-    [ "lvglpp: a C++ wrapper for LVGL", "index.html", null ],
+    [ "lvglpp: a C++ wrapper for LVGL", "index.html", [
+      [ "TL;DR", "index.html#autotoc_md1", null ],
+      [ "Structure", "index.html#autotoc_md2", null ],
+      [ "How to use", "index.html#autotoc_md3", null ],
+      [ "Accessing managed object", "index.html#autotoc_md4", null ],
+      [ "A note on callbacks and child objects", "index.html#autotoc_md5", null ],
+      [ "Caveats", "index.html#autotoc_md6", null ],
+      [ "Footprint", "index.html#autotoc_md7", null ],
+      [ "API documentation", "index.html#autotoc_md8", null ],
+      [ "Examples", "index.html#autotoc_md9", null ]
+    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -59,19 +69,13 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "anim_8cpp.html",
-"classlvgl_1_1core_1_1_event.html#aebdad8af977f7194927d80dde914dcfa",
-"classlvgl_1_1core_1_1_object.html#a365a052f4378919317fff73c1f0ec06a",
-"classlvgl_1_1core_1_1_object.html#a8b990f2a8c48c99f8d3bde37537e0a2c",
-"classlvgl_1_1core_1_1_object.html#adc4c3daa031b898382a13cdf7a3856d4",
-"classlvgl_1_1draw_1_1_line_draw_descriptor.html#a7532a44c316ff9a8f4b8f43cad502256",
-"classlvgl_1_1misc_1_1_area.html#ae233dad442e5f622f36d1098197df1e3",
-"classlvgl_1_1misc_1_1_style.html#a6138550faee744e1af7924faee3d2f99",
-"classlvgl_1_1widgets_1_1_arc.html#aecff6f1e384adba9791b362cd16baf22",
-"classlvgl_1_1widgets_1_1_checkbox.html#ae25f282e3a4202b06f4ce8a6159ff7f7",
-"classlvgl_1_1widgets_1_1_label.html#af902a1744a3e94cf7c413f77d61d46a7",
-"classlvgl_1_1widgets_1_1_span_group.html#aac0d8721f7c9a28340cc9333ebdebb03",
-"color_8h.html#a498bff2f8fb76f96a817148379e54731",
-"namespacelvgl_1_1misc_1_1color.html#a1ecddc342f570b5763107bd761645be8"
+"classlvgl_1_1core_1_1_object.html#a1223230ddb9ee7058ba74b9e85fc18c6",
+"classlvgl_1_1core_1_1_object.html#a6591647d7bffd3408eadabc41538866a",
+"classlvgl_1_1core_1_1_object.html#abbe692cb177684c4c3e86e370c569a51",
+"classlvgl_1_1draw_1_1_fade_mask.html#aea7872008db5cdae108bfb81361f936d",
+"classlvgl_1_1misc_1_1_animation.html#ac7c282b55b958125707b49fe9bcd9548",
+"classlvgl_1_1misc_1_1_style.html#a905c579a4337096824465bc375a9fb3a",
+"label_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -1,12 +1,13 @@
 var searchData=
 [
-  ['labeldrawdescriptor_0',['LabelDrawDescriptor',['../classlvgl_1_1draw_1_1_label_draw_descriptor.html#ac6c29c828cc27a873f9925f327f3b2d6',1,'lvgl::draw::LabelDrawDescriptor']]],
-  ['layer_5fsys_1',['layer_sys',['../namespacelvgl_1_1core.html#ad333f00a91c501b2ab0ce5c172b1e094',1,'lvgl::core']]],
-  ['layer_5ftop_2',['layer_top',['../namespacelvgl_1_1core.html#a004ddc1b8bc2f9fa6a3ebee878639a4e',1,'lvgl::core']]],
-  ['light_3',['light',['../namespacelvgl_1_1misc_1_1palette.html#a23d3d0bdcd780c51d13fc6de04966482',1,'lvgl::misc::palette']]],
-  ['lighten_4',['lighten',['../namespacelvgl_1_1misc_1_1color.html#a1ecddc342f570b5763107bd761645be8',1,'lvgl::misc::color']]],
-  ['linedrawdescriptor_5',['LineDrawDescriptor',['../classlvgl_1_1draw_1_1_line_draw_descriptor.html#a77bab52e3dd2bb09a07d1f7f94990b82',1,'lvgl::draw::LineDrawDescriptor']]],
-  ['linemask_6',['LineMask',['../classlvgl_1_1draw_1_1_line_mask.html#aaed8427bacd2edecd2370d71bd1be7a4',1,'lvgl::draw::LineMask::LineMask(lv_coord_t p1x, lv_coord_t p1y, lv_coord_t p2x, lv_coord_t p2y, lv_draw_mask_line_side_t side)'],['../classlvgl_1_1draw_1_1_line_mask.html#ac5e4c1c8871e998599f82c1ceb7b8b9d',1,'lvgl::draw::LineMask::LineMask(lv_coord_t px, lv_coord_t py, int16_t angle, lv_draw_mask_line_side_t side)']]],
-  ['load_5fscr_7',['load_scr',['../namespacelvgl_1_1core.html#a25bc0ef008f59565bcb1c3873cadf7ab',1,'lvgl::core']]],
-  ['lv_5fcls_5falloc_8',['lv_cls_alloc',['../namespacelvgl.html#ac3d9b0db9901cde09055eb0fcfdefc7d',1,'lvgl']]]
+  ['main_0',['main',['../namespacelvgl_1_1misc_1_1palette.html#a53a968204c2b1dc74e4a443b8fe46850',1,'lvgl::misc::palette']]],
+  ['make_5fdouble_5farray_1',['make_double_array',['../namespacelvgl.html#ae7b01c9a13b68457a88cfcb04994b793',1,'lvgl']]],
+  ['mapmask_2',['MapMask',['../classlvgl_1_1draw_1_1_map_mask.html#afc93151a770e2caf248b8624e1261392',1,'lvgl::draw::MapMask::MapMask(const misc::Area &amp;coords, const std::vector&lt; lv_opa_t &gt; &amp;map)'],['../classlvgl_1_1draw_1_1_map_mask.html#a97c9c21dc88ad1ca10942b084162e6c5',1,'lvgl::draw::MapMask::MapMask(const lv_area_t &amp;coords, const std::vector&lt; lv_opa_t &gt; &amp;map)']]],
+  ['mark_5flayout_5fas_5fdirty_3',['mark_layout_as_dirty',['../classlvgl_1_1core_1_1_object.html#a1eb791d87f68817bcf0645bd73c03644',1,'lvgl::core::Object']]],
+  ['mask_4',['Mask',['../classlvgl_1_1draw_1_1_mask.html#a740e153162bd7c6d939fe3fb0be07889',1,'lvgl::draw::Mask::Mask()'],['../classlvgl_1_1draw_1_1_line_mask.html#a740e153162bd7c6d939fe3fb0be07889',1,'lvgl::draw::LineMask::Mask()'],['../classlvgl_1_1draw_1_1_angle_mask.html#a740e153162bd7c6d939fe3fb0be07889',1,'lvgl::draw::AngleMask::Mask()'],['../classlvgl_1_1draw_1_1_radius_mask.html#a740e153162bd7c6d939fe3fb0be07889',1,'lvgl::draw::RadiusMask::Mask()'],['../classlvgl_1_1draw_1_1_fade_mask.html#a740e153162bd7c6d939fe3fb0be07889',1,'lvgl::draw::FadeMask::Mask()'],['../classlvgl_1_1draw_1_1_map_mask.html#a740e153162bd7c6d939fe3fb0be07889',1,'lvgl::draw::MapMask::Mask()'],['../classlvgl_1_1draw_1_1_polygon_mask.html#a740e153162bd7c6d939fe3fb0be07889',1,'lvgl::draw::PolygonMask::Mask()']]],
+  ['mix_5',['mix',['../namespacelvgl_1_1misc_1_1color.html#ad9697589ce412ee41f82fa15a667177e',1,'lvgl::misc::color']]],
+  ['move_6',['move',['../classlvgl_1_1misc_1_1_area.html#a373fc6046d8b3c09f4d7f13746eea3cf',1,'lvgl::misc::Area']]],
+  ['move_5fchildren_5fby_7',['move_children_by',['../classlvgl_1_1core_1_1_object.html#ae5028eff107fde8dd56ebcc742d33f1c',1,'lvgl::core::Object']]],
+  ['move_5fto_8',['move_to',['../classlvgl_1_1core_1_1_object.html#a277bf2c28afa2cad97137f4fd48ace27',1,'lvgl::core::Object']]],
+  ['move_5fto_5findex_9',['move_to_index',['../classlvgl_1_1core_1_1_object.html#ad8adfa7a6eda9092243fc8a6e61d4bdb',1,'lvgl::core::Object']]]
 ];

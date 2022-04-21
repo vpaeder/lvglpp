@@ -95,32 +95,30 @@ $(document).ready(function(){initNavTree('checkbox_8h_source.html',''); initResi
 </div><!--header-->
 <div class="contents">
 <a href="checkbox_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &quot;../core/object.h&quot;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1widgets.html">lvgl::widgets</a> {</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../core/object.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1core.html">lvgl::core</a>;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    </div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classlvgl_1_1widgets_1_1_checkbox.html">   16</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classlvgl_1_1widgets_1_1_checkbox.html">Checkbox</a> : <span class="keyword">public</span> <a class="code hl_class" href="classlvgl_1_1core_1_1_widget.html">Widget</a>&lt;lv_checkbox_create&gt; {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="keyword">using</span> <a class="code hl_function" href="classlvgl_1_1core_1_1_widget.html#a73d09fe7fcf13b343629fb1641455682">Widget::Widget</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classlvgl_1_1widgets_1_1_checkbox.html#ae25f282e3a4202b06f4ce8a6159ff7f7">set_text</a>(<span class="keyword">const</span> std::string &amp; txt);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classlvgl_1_1widgets_1_1_checkbox.html#a13ee758297bc9566fc2fed0f76807601">set_text_static</a>(<span class="keyword">const</span> std::string &amp; txt);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* <a class="code hl_function" href="classlvgl_1_1widgets_1_1_checkbox.html#aec8c3d24da8fe76f40a3cba3ad744173">get_text</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    };</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>}</div>
-<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html">lvgl::core::Widget</a></div><div class="ttdoc">Wraps a lv_obj_t object created with the given allocator.</div><div class="ttdef"><b>Definition:</b> object.h:2571</div></div>
-<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html_a73d09fe7fcf13b343629fb1641455682"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html#a73d09fe7fcf13b343629fb1641455682">lvgl::core::Widget::Widget</a></div><div class="ttdeci">Widget()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> object.h:2603</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_checkbox_html"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_checkbox.html">lvgl::widgets::Checkbox</a></div><div class="ttdoc">Wraps a lv_checkbox_t object.</div><div class="ttdef"><b>Definition:</b> checkbox.h:16</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_checkbox_html_a13ee758297bc9566fc2fed0f76807601"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_checkbox.html#a13ee758297bc9566fc2fed0f76807601">lvgl::widgets::Checkbox::set_text_static</a></div><div class="ttdeci">void set_text_static(const std::string &amp;txt)</div><div class="ttdoc">Sets checkbox text.</div><div class="ttdef"><b>Definition:</b> checkbox.cpp:15</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_checkbox_html_ae25f282e3a4202b06f4ce8a6159ff7f7"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_checkbox.html#ae25f282e3a4202b06f4ce8a6159ff7f7">lvgl::widgets::Checkbox::set_text</a></div><div class="ttdeci">void set_text(const std::string &amp;txt)</div><div class="ttdoc">Sets checkbox text.</div><div class="ttdef"><b>Definition:</b> checkbox.cpp:11</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_checkbox_html_aec8c3d24da8fe76f40a3cba3ad744173"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_checkbox.html#aec8c3d24da8fe76f40a3cba3ad744173">lvgl::widgets::Checkbox::get_text</a></div><div class="ttdeci">const char * get_text() const</div><div class="ttdoc">Gets checkbox text.</div><div class="ttdef"><b>Definition:</b> checkbox.cpp:19</div></div>
-<div class="ttc" id="anamespacelvgl_1_1core_html"><div class="ttname"><a href="namespacelvgl_1_1core.html">lvgl::core</a></div><div class="ttdoc">LVGL core components.</div><div class="ttdef"><b>Definition:</b> display.cpp:13</div></div>
-<div class="ttc" id="anamespacelvgl_1_1widgets_html"><div class="ttname"><a href="namespacelvgl_1_1widgets.html">lvgl::widgets</a></div><div class="ttdoc">LVGL widgets.</div><div class="ttdef"><b>Definition:</b> animimg.cpp:9</div></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#if LV_USE_CHECKBOX != 0</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>lvgl::widgets {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">using namespace </span>lvgl::core;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">class </span>Checkbox : <span class="keyword">public</span> <a class="code hl_class" href="classlvgl_1_1core_1_1_widget.html">Widget</a>&lt;lv_checkbox_create&gt; {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">using</span> Widget::Widget;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">void</span> set_text(<span class="keyword">const</span> std::string &amp; txt);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">void</span> set_text_static(<span class="keyword">const</span> std::string &amp; txt);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keyword">const</span> <span class="keywordtype">char</span>* get_text() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    };</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// LV_USE_CHECKBOX</span></div>
+<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html">lvgl::core::Widget</a></div><div class="ttdoc">Wraps a lv_obj_t object created with the given allocator.</div><div class="ttdef"><b>Definition:</b> object.h:2574</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

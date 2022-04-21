@@ -353,7 +353,6 @@ var classlvgl_1_1core_1_1_object =
     [ "set_style_transform_width", "classlvgl_1_1core_1_1_object.html#a25477dd2006a6392f4c0155395fa29dd", null ],
     [ "set_style_transform_zoom", "classlvgl_1_1core_1_1_object.html#abbe692cb177684c4c3e86e370c569a51", null ],
     [ "set_style_transition", "classlvgl_1_1core_1_1_object.html#a6b7f39bf7a80da4ace36ca07ecb5f243", null ],
-    [ "set_style_transition", "classlvgl_1_1core_1_1_object.html#ab27b0d98636b5884d1783855b06af947", null ],
     [ "set_style_translate_x", "classlvgl_1_1core_1_1_object.html#ad792ba25f2da1ee12ba2fbcee6ef23e1", null ],
     [ "set_style_translate_y", "classlvgl_1_1core_1_1_object.html#a0b7a504b63d6fe3c89b3677ad3ae07f6", null ],
     [ "set_style_width", "classlvgl_1_1core_1_1_object.html#a932f10834b3653aa8b66bd179eadc7e6", null ],

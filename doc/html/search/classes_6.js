@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['genericcallback_0',['GenericCallback',['../structlvgl_1_1_generic_callback.html',1,'lvgl']]],
-  ['genericvariable_1',['GenericVariable',['../structlvgl_1_1_generic_variable.html',1,'lvgl']]],
-  ['group_2',['Group',['../classlvgl_1_1core_1_1_group.html',1,'lvgl::core']]]
+  ['labeldrawdescriptor_0',['LabelDrawDescriptor',['../classlvgl_1_1draw_1_1_label_draw_descriptor.html',1,'lvgl::draw']]],
+  ['linedrawdescriptor_1',['LineDrawDescriptor',['../classlvgl_1_1draw_1_1_line_draw_descriptor.html',1,'lvgl::draw']]],
+  ['linemask_2',['LineMask',['../classlvgl_1_1draw_1_1_line_mask.html',1,'lvgl::draw']]]
 ];

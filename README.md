@@ -241,11 +241,7 @@ If you're hunting for free bytes, I'd rather recommend to use the original libra
 There is a documentation generated from docstrings in the *doc* folder. See [here](doc/html/index.html).
 You can re-generate the doc using doxygen in the project folder.
 
-## Examples
+# Examples
 
 I adapted most of the examples provided with LVGL. You'll find them in the *examples* folder [here](examples/). For examples that involve images, you need to include the appropriate files from LVGL examples. Don't forget to initialize LVGL and define a screen and an input device.
-
-## Tests
-
-Time to write some... err...
 

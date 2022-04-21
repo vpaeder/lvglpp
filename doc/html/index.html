@@ -94,13 +94,15 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
   <div class="headertitle"><div class="title">lvglpp: a C++ wrapper for LVGL </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p ><a class="anchor" id="md_README"></a> This package contains a rather bushy wrapper for <a href="https://github.com/lvgl/lvgl">LVGL</a>. I originally needed to program a simple user interface, but I didn't want to write a GUI framework from scratch, and found LVGL rather nice. Only that it's written in C. So I started writing C++ classes for the part of the code I wanted to use, and then it got out of control. Now most of the library has some kind of wrapper class provided. I've tested nearly all examples on an ESP32 with a touch screen interface.</p>
-<p >This is a work in progress. I will likely improve things as I use it, which will take between one day and forever. I of course welcome any contribution.</p>
-<p >At the time of writing, I use LVGL version 8.3.0-dev (available <a href="https://github.com/lvgl/lvgl">here</a>).</p>
+<div class="textblock"><p ><a class="anchor" id="md_README"></a> This package contains a rather bushy wrapper for <a href="https://github.com/lvgl/lvgl">LVGL</a>. I originally needed to program a simple user interface, but I didn't want to write a GUI framework from scratch, and found LVGL rather nice. Only that it's written in C. So I started writing C++ classes for the part of the code I wanted to use, and then it got out of control. Now most of the library has some kind of wrapper class provided. I've tested nearly all examples on an ESP32 with a touch screen interface. You can find a working application <a href="https://github.com/vpaeder/esp_obs_commander">here</a>.</p>
+<p >This is a work in progress. I will likely improve things as I use it, which will take between one day and forever. I of course welcome contributions.</p>
+<p >At the time of writing, I use LVGL version 8.3.0-dev (available <a href="https://github.com/lvgl/lvgl">here</a>). Your C++ compiler must support C++17 or newer.</p>
 <p >Note that I'm not part of the LVGL team. If you have requests related to LVGL itself, please ask them.</p>
-<h1>TL;DR</h1>
+<h1><a class="anchor" id="autotoc_md1"></a>
+TL;DR</h1>
 <p >See examples <a href="examples/">here</a> and docs in the <em>doc</em> folder (you need to clone the repository for that).</p>
-<h1>Structure</h1>
+<h1><a class="anchor" id="autotoc_md2"></a>
+Structure</h1>
 <p >I tried to mirror the directory structure of LVGL to some degree (with exceptions with <em>extra</em> and <em>hal</em> directories). A number of types that are defined in multiple files are compiled together as one (e.g. style, image, draw). I've put all the widgets (including extra ones) in the <em>widgets</em> directory.</p>
 <p >My point was to provide functions that take a certain LVGL object type as first argument as a class method. For instance, all functions taking a <code>lv_obj_t*</code> as first argument end up as methods of the <code>Object</code> class. I tried to replace raw pointer args either with a C++ class instance passed by reference or a smart pointer.</p>
 <p >There is a template class in <em><a class="el" href="lv__wrapper_8h.html" title="Thin C++ wrapper template classes around LVGL objects.">lv_wrapper.h</a></em>, <code>PointerWrapper&lt;lv_class, lv_deleter&gt;</code>, to facilitate encapsulation. It stores a <code>unique_ptr</code> of type <code>lv_class</code> with custom deleter function <code>lv_deleter</code>. A number of LVGL types have an associated deleter function, which can be provided there. For widgets, there's a template class called <code>Widget&lt;lv_allocator&gt;</code> that provides a constructor to nest objects.</p>
@@ -261,7 +263,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone"><code><a class="el" href="namespacelvgl_1_1misc_1_1txt.html" title="LVGL text functions.">lvgl::misc::txt</a></code>   </td><td class="markdownTableBodyNone">This contains some of the text functions found in <code>lv_txt.h</code>.   </td></tr>
 </table>
-<h1>How to use</h1>
+<h1><a class="anchor" id="autotoc_md3"></a>
+How to use</h1>
 <p >First of all, you need LVGL in the include paths. As for lvglpp, unlike with LVGL, you need to include each header that corresponds to what you want to use. To illustrate what I mean, a typical program would be: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &quot;<a class="code" href="lvglpp_8h.html">lvglpp/lvglpp.h</a>&quot;</span> <span class="comment">// for init</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="display_8h.html">lvglpp/core/display.h</a>&quot;</span> <span class="comment">// for Display</span></div>
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="indev_8h.html">lvglpp/core/indev.h</a>&quot;</span> <span class="comment">// for InputDevice</span></div>
@@ -270,9 +273,9 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line"><span class="preprocessor">#include &quot;<a class="code" href="style_8h.html">lvglpp/misc/style.h</a>&quot;</span> <span class="comment">// for Style</span></div>
 <div class="line"><span class="comment">// .. add includes for other classes you want to use (Animation, Timer, ...)</span></div>
 <div class="line"> </div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1core.html">lvgl::core</a>;</div>
+<div class="line"><span class="keyword">using namespace </span>lvgl::core;</div>
 <div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1misc.html">lvgl::misc</a>;</div>
-<div class="line"><span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1widgets.html">lvgl::widgets</a>;</div>
+<div class="line"><span class="keyword">using namespace </span>lvgl::widgets;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordtype">void</span> <a class="code hl_function" href="namespacelvgl_1_1misc_1_1palette.html#a53a968204c2b1dc74e4a443b8fe46850">main</a>() {</div>
 <div class="line">    <span class="comment">// initialize LVGL</span></div>
@@ -281,7 +284,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line">    <span class="comment">// read examples in examples/lvglpp directory to see how.</span></div>
 <div class="line"> </div>
 <div class="line">    <span class="comment">// create button on active display</span></div>
-<div class="line">    <span class="keyword">auto</span> btn = Button(<a class="code hl_function" href="namespacelvgl_1_1core.html#a9e246bdd2feda88a0a2336a9b5075a62">scr_act</a>());</div>
+<div class="line">    <span class="keyword">auto</span> btn = Button(scr_act());</div>
 <div class="line">    btn.center();</div>
 <div class="line">    <span class="comment">// ... initialize more things ...</span></div>
 <div class="line"> </div>
@@ -300,11 +303,8 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="ttc" id="adisplay_8h_html"><div class="ttname"><a href="display_8h.html">display.h</a></div><div class="ttdoc">Header file for C++ wrapper for LVGL display driver. This is a base class made to connect a screen dr...</div></div>
 <div class="ttc" id="aindev_8h_html"><div class="ttname"><a href="indev_8h.html">indev.h</a></div><div class="ttdoc">Implementation file for C++ wrapper for lv_indev_t objects.</div></div>
 <div class="ttc" id="alvglpp_8h_html"><div class="ttname"><a href="lvglpp_8h.html">lvglpp.h</a></div><div class="ttdoc">Base header for LVGL C++ wrapper.</div></div>
-<div class="ttc" id="anamespacelvgl_1_1core_html"><div class="ttname"><a href="namespacelvgl_1_1core.html">lvgl::core</a></div><div class="ttdoc">LVGL core components.</div><div class="ttdef"><b>Definition:</b> display.cpp:13</div></div>
-<div class="ttc" id="anamespacelvgl_1_1core_html_a9e246bdd2feda88a0a2336a9b5075a62"><div class="ttname"><a href="namespacelvgl_1_1core.html#a9e246bdd2feda88a0a2336a9b5075a62">lvgl::core::scr_act</a></div><div class="ttdeci">Object scr_act()</div><div class="ttdoc">Gets the currently active screen.</div><div class="ttdef"><b>Definition:</b> display.cpp:150</div></div>
 <div class="ttc" id="anamespacelvgl_1_1misc_1_1palette_html_a53a968204c2b1dc74e4a443b8fe46850"><div class="ttname"><a href="namespacelvgl_1_1misc_1_1palette.html#a53a968204c2b1dc74e4a443b8fe46850">lvgl::misc::palette::main</a></div><div class="ttdeci">lv_color_t main(Color p)</div><div class="ttdoc">Retrieves color from main palette.</div><div class="ttdef"><b>Definition:</b> color.cpp:74</div></div>
 <div class="ttc" id="anamespacelvgl_1_1misc_html"><div class="ttname"><a href="namespacelvgl_1_1misc.html">lvgl::misc</a></div><div class="ttdoc">LVGL miscellaneous components.</div><div class="ttdef"><b>Definition:</b> object.h:10</div></div>
-<div class="ttc" id="anamespacelvgl_1_1widgets_html"><div class="ttname"><a href="namespacelvgl_1_1widgets.html">lvgl::widgets</a></div><div class="ttdoc">LVGL widgets.</div><div class="ttdef"><b>Definition:</b> animimg.cpp:9</div></div>
 <div class="ttc" id="anamespacelvgl_html_a15f3580a898142dd337d0ea6ecf65af7"><div class="ttname"><a href="namespacelvgl.html#a15f3580a898142dd337d0ea6ecf65af7">lvgl::init</a></div><div class="ttdeci">void init()</div><div class="ttdoc">Initializes LVGL.</div><div class="ttdef"><b>Definition:</b> lvglpp.h:18</div></div>
 <div class="ttc" id="astyle_8h_html"><div class="ttname"><a href="style_8h.html">style.h</a></div><div class="ttdoc">Header file for C++ wrapper for lv_style_t objects.</div></div>
 </div><!-- fragment --><h2>Displays, input devices, filesystems</h2>
@@ -329,19 +329,23 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line">};</div>
 </div><!-- fragment --><p >For input devices, I included specialized classes for each type of input device available. I didn't implement the <code>feedback_cb</code> callback though. If you need it, you can write a derived class following the same scheme as for displays.</p>
 <p >There's also a commented example for a custom filesystem driver. It'd be possible to port the available drivers to C++ using this template. Note that this only makes sense if you need to access files directly (for images, you can just as well register a C driver that will be used under the hood).</p>
-<h1>Accessing managed object</h1>
+<h1><a class="anchor" id="autotoc_md4"></a>
+Accessing managed object</h1>
 <p >Through the <code>PointerWrapper</code> class, I provide several ways to access the managed LVGL object:</p><ul>
 <li><code>raw()</code> returns a reference to the object;</li>
 <li><code>raw_ptr()</code> returns a pointer to the object;</li>
 <li>the dereference operator <code>*</code> (e.g. *obj) returns a reference to the object (equivalent to <code>raw()</code>);</li>
 <li>the pointer-to-member operator <code>-&gt;</code> gives access to the object's structure (e.g. obj-&gt;coords for a wrapped <code>lv_obj_t*</code> will yield <code>coords</code> field of type <code>lv_area_t</code>).</li>
 </ul>
-<h1>A note on callbacks and child objects</h1>
+<h1><a class="anchor" id="autotoc_md5"></a>
+A note on callbacks and child objects</h1>
 <p >A number of classes (e.g. objects, timers, animations) use callbacks for different purposes. To make them look C++-like, I used the <code>user_data</code> field, which (almost) every LVGL structure provides, to give access to the C++ callback (by storing a pointer to the class object containing the callback function, or a pointer to a structure containing the callback functions, or a pointer to the callback function itself). This avoids storing C++ objects in some kind of global storage, but comes with two limitations: 1) we cannot use the <code>user_data</code> field for anything else; 2) we need to re-instantiate a C++ object to feed the callback with, everytime the callback is called. In most cases, the additional complexity won't matter. Nonetheless, where speed matters, it's always possible to use raw C callbacks instead.</p>
 <p >Another caveat comes with child objects. Several widgets, especially, provide functions to create elements. For instance, the <code>Tabview</code> class has a function <code>add_tab</code> that returns an <code>Object</code> giving access to the created tab. The <code>Tabview</code> instance manages the new tab and deletes it when it gets deleted. Therefore, it's important not to delete it otherwise. Since <code>Object</code> instances wrap a raw C pointer in a <code>unique_ptr</code>, this would happen if the tab object gets out of scope. Therefore, I introduced a property, <code>owns_ptr</code>, that can be set on construction, and tells if the object owns the wrapped pointer. If it doesn't, the pointer gets released in the object's destructor. One can also force releasing the wrapped pointer with <code>release_ptr</code>. This can be useful when defining complex objects with lots of children that won't need to be accessed after creation. This way, the C++ object can be deleted without affecting the element it has created, freeing memory. You'll find several examples that make use of this.</p>
-<h1>Caveats</h1>
-<p >Because of the way wrappers are implemented, it is important to remember to store the elements that are displayed. If any instance of a C++ object gets out of scope, the wrapped element gets deleted too (unless you use <code>release_ptr</code> or it's a child element created with an ad-hoc function).</p>
+<h1><a class="anchor" id="autotoc_md6"></a>
+Caveats</h1>
+<p >Because of the way wrappers are implemented, it is important to remember to store the elements that are displayed. If any instance of a C++ object gets out of scope, the wrapped element gets deleted too (unless you use <code>release_ptr</code> or it's a child element generated by a widget).</p>
 <p >LVGL stores the relationship of objects and takes care of deleting children of objects getting deleted. This means that you can safely use <code>release_ptr</code> on sub-widgets. Conversely, nothing is stored about instances of other types, like styles, animations, timers, ... Therefore, you <b>must not</b> <code>release_ptr</code> one of those, of you won't have any possibility to free it up afterwards. For those, you should either provide some kind of storage (<code>std::vector</code>, class member variable, ...) or make them static.</p>
+<p >The equivalent of <code>lv_obj_create</code> is the <code>Container</code> class, and not the <code>Object</code> class, which stores a <code>lv_obj_t</code> but doesn't initialize one. The distinction is made as I wanted to avoid this: <code>Object(Object &amp; parent)</code>. This would be seen as the copy constructor by the compiler, which is unwise for a class as general as <code>Object</code>.</p>
 <p >For C++-style callbacks, it is important to remember that any object obtained from within the callback by calling an accessor function (such as <code>Event::get_target</code>) creates a temporary object wrapping a raw pointer. This means that you cannot create derived classes that would carry data along. Every call to the callback gets fed with a newly created temporary object with, other than the raw pointer, default values. Moreover, you cannot pass data using the <code>user_data</code> field, as it is used internally to pass the C++-style callback. For such cases, you need to define a global variable to transfer data to or from the callback.</p>
 <p >Just like LVGL, lvglpp is NOT thread-safe. Therefore, as for LVGL, it is necessary to prevent concurrent execution of <code>lv_task_handler()</code> and other functions (with the exception of callbacks called from within task handler, like events or timers). This is typically done with a mutex, like: </p><div class="fragment"><div class="line"><span class="preprocessor">#include &lt;mutex&gt;</span></div>
 <div class="line"><span class="preprocessor">#include &lt;thread&gt;</span></div>
@@ -364,14 +368,31 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <div class="line">        mtx.unlock();</div>
 <div class="line">    }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h1>Footprint</h1>
+</div><!-- fragment --><p> Be aware that objects that get deleted because they go out of scope must also be treated. The easiest way, if possible, is to create a <code>lock_guard</code> in the beginning of the scope. If you cannot do that, I suggest using the following method: </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> a_function(<span class="keyword">const</span> Object &amp; parent) {</div>
+<div class="line">    mtx.lock();</div>
+<div class="line">    <span class="keyword">auto</span> cnt = std::make_unique&lt;Container&gt;(parent);</div>
+<div class="line">    cnt-&gt;remove_style_all();</div>
+<div class="line">    cnt-&gt;set_size(parent.get_width(), parent.get_height());</div>
+<div class="line">    <span class="comment">// ... code that creates objects ...</span></div>
+<div class="line">    <span class="keyword">auto</span> obj = AnyObjectType(*cnt);</div>
+<div class="line">    <span class="comment">// ... </span></div>
+<div class="line">    mtx.unlock();</div>
+<div class="line">    <span class="comment">// a bit of safe code ...</span></div>
+<div class="line">    <span class="comment">// ... time to terminate function</span></div>
+<div class="line">    <span class="comment">// we remove cnt and its content in a safe way</span></div>
+<div class="line">    mtx.lock();</div>
+<div class="line">    cnt = <span class="keyword">nullptr</span>;</div>
+<div class="line">    mtx.unlock();</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
+Footprint</h1>
 <p >As lvglpp is essentially a layer over LVGL, it of course increases the memory footprint. However, most wrapper classes have only two member variables: a pointer to the wrapped object and a bool. This makes an overhead of 12 bytes per wrapped object. Several items need to store more content (e.g. Animation and ButtonMatrix) and will therefore need a little more space. Naturally, the binary size will also increase depending on the number of functions that are in use. I'll try to quantify these values at some point. If you're hunting for free bytes, I'd rather recommend to use the original library instead.</p>
-<h1>API documentation</h1>
+<h1><a class="anchor" id="autotoc_md8"></a>
+API documentation</h1>
 <p >There is a documentation generated from docstrings in the <em>doc</em> folder. See <a href="doc/html/index.html">here</a>. You can re-generate the doc using doxygen in the project folder.</p>
-<h2>Examples</h2>
-<p >I adapted most of the examples provided with LVGL. You'll find them in the <em>examples</em> folder <a href="examples/">here</a>. For examples that involve images, you need to include the appropriate files from LVGL examples. Don't forget to initialize LVGL and define a screen and an input device.</p>
-<h2>Tests</h2>
-<p >Time to write some... err... </p>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Examples</h1>
+<p >I adapted most of the examples provided with LVGL. You'll find them in the <em>examples</em> folder <a href="examples/">here</a>. For examples that involve images, you need to include the appropriate files from LVGL examples. Don't forget to initialize LVGL and define a screen and an input device. </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->

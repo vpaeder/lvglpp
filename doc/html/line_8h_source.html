@@ -96,32 +96,29 @@ $(document).ready(function(){initNavTree('line_8h_source.html',''); initResizabl
 <div class="contents">
 <a href="line_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../core/object.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1widgets.html">lvgl::widgets</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1core.html">lvgl::core</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classlvgl_1_1widgets_1_1_line.html">   17</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classlvgl_1_1widgets_1_1_line.html">Line</a> : <span class="keyword">public</span> <a class="code hl_class" href="classlvgl_1_1core_1_1_widget.html">Widget</a>&lt;lv_line_create&gt; {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">using</span> <a class="code hl_function" href="classlvgl_1_1core_1_1_widget.html#a73d09fe7fcf13b343629fb1641455682">Widget::Widget</a>;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classlvgl_1_1widgets_1_1_line.html#afb3f0885ff3bccf6b3ea4f306dc5e34a">set_points</a>(<span class="keyword">const</span> std::vector&lt;lv_point_t&gt; &amp; points);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordtype">void</span> <a class="code hl_function" href="classlvgl_1_1widgets_1_1_line.html#a48a9db303d8595d38ecda094b8f12f25">set_y_invert</a>(<span class="keywordtype">bool</span> en);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordtype">bool</span> <a class="code hl_function" href="classlvgl_1_1widgets_1_1_line.html#a53c25c2ac636bc336f311e2bb709a6cd">get_y_invert</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    };</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
-<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html">lvgl::core::Widget</a></div><div class="ttdoc">Wraps a lv_obj_t object created with the given allocator.</div><div class="ttdef"><b>Definition:</b> object.h:2571</div></div>
-<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html_a73d09fe7fcf13b343629fb1641455682"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html#a73d09fe7fcf13b343629fb1641455682">lvgl::core::Widget::Widget</a></div><div class="ttdeci">Widget()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> object.h:2603</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_line_html"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_line.html">lvgl::widgets::Line</a></div><div class="ttdoc">Wraps a lv_line_t object.</div><div class="ttdef"><b>Definition:</b> line.h:17</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_line_html_a48a9db303d8595d38ecda094b8f12f25"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_line.html#a48a9db303d8595d38ecda094b8f12f25">lvgl::widgets::Line::set_y_invert</a></div><div class="ttdeci">void set_y_invert(bool en)</div><div class="ttdoc">Sets vertical inversion.</div><div class="ttdef"><b>Definition:</b> line.cpp:15</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_line_html_a53c25c2ac636bc336f311e2bb709a6cd"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_line.html#a53c25c2ac636bc336f311e2bb709a6cd">lvgl::widgets::Line::get_y_invert</a></div><div class="ttdeci">bool get_y_invert() const</div><div class="ttdoc">Tells if vertical inversion is enabled.</div><div class="ttdef"><b>Definition:</b> line.cpp:19</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_line_html_afb3f0885ff3bccf6b3ea4f306dc5e34a"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_line.html#afb3f0885ff3bccf6b3ea4f306dc5e34a">lvgl::widgets::Line::set_points</a></div><div class="ttdeci">void set_points(const std::vector&lt; lv_point_t &gt; &amp;points)</div><div class="ttdoc">Sets line points. Points array must remain allocated.</div><div class="ttdef"><b>Definition:</b> line.cpp:11</div></div>
-<div class="ttc" id="anamespacelvgl_1_1core_html"><div class="ttname"><a href="namespacelvgl_1_1core.html">lvgl::core</a></div><div class="ttdoc">LVGL core components.</div><div class="ttdef"><b>Definition:</b> display.cpp:13</div></div>
-<div class="ttc" id="anamespacelvgl_1_1widgets_html"><div class="ttname"><a href="namespacelvgl_1_1widgets.html">lvgl::widgets</a></div><div class="ttdoc">LVGL widgets.</div><div class="ttdef"><b>Definition:</b> animimg.cpp:9</div></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../core/object.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#if LV_USE_LINE != 0</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>lvgl::widgets {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">using namespace </span>lvgl::core;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keyword">class </span>Line : <span class="keyword">public</span> <a class="code hl_class" href="classlvgl_1_1core_1_1_widget.html">Widget</a>&lt;lv_line_create&gt; {</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">using</span> Widget::Widget;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        <span class="keywordtype">void</span> set_points(<span class="keyword">const</span> std::vector&lt;lv_point_t&gt; &amp; points);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordtype">void</span> set_y_invert(<span class="keywordtype">bool</span> en);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        <span class="keywordtype">bool</span> get_y_invert() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    };</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="preprocessor">#endif </span><span class="comment">// LV_USE_LINE</span></div>
+<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html">lvgl::core::Widget</a></div><div class="ttdoc">Wraps a lv_obj_t object created with the given allocator.</div><div class="ttdef"><b>Definition:</b> object.h:2574</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

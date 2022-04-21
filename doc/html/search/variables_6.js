@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hor_5fres_0',['hor_res',['../classlvgl_1_1core_1_1_display.html#a618be39784fb8948e062ffbfbf8834e5',1,'lvgl::core::Display']]]
+  ['owns_5fptr_0',['owns_ptr',['../classlvgl_1_1_pointer_wrapper.html#ae700a40afff8268a1d140397c53a9b7a',1,'lvgl::PointerWrapper']]]
 ];

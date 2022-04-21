@@ -96,39 +96,34 @@ $(document).ready(function(){initNavTree('list_8h_source.html',''); initResizabl
 <div class="contents">
 <a href="list_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;../core/object.h&quot;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1widgets.html">lvgl::widgets</a> {</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keyword">using namespace </span><a class="code hl_namespace" href="namespacelvgl_1_1core.html">lvgl::core</a>;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">class </span>Button;</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">class </span>Label;</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classlvgl_1_1widgets_1_1_list.html">   20</a></span>    <span class="keyword">class </span><a class="code hl_class" href="classlvgl_1_1widgets_1_1_list.html">List</a> : <span class="keyword">public</span> <a class="code hl_class" href="classlvgl_1_1core_1_1_widget.html">Widget</a>&lt;lv_list_create&gt; {</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        <span class="keyword">using</span> <a class="code hl_function" href="classlvgl_1_1core_1_1_widget.html#a73d09fe7fcf13b343629fb1641455682">Widget::Widget</a>;</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        <a class="code hl_class" href="classlvgl_1_1widgets_1_1_label.html">Label</a> <a class="code hl_function" href="classlvgl_1_1widgets_1_1_list.html#a08cc8e548c6bc749b7a51f491ea3e441">add_text</a>(<span class="keyword">const</span> std::string &amp; txt);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <a class="code hl_class" href="classlvgl_1_1widgets_1_1_button.html">Button</a> <a class="code hl_function" href="classlvgl_1_1widgets_1_1_list.html#a3b8cf7c2d98c657d42148768c166bcf5">add_btn</a>(<span class="keyword">const</span> std::string &amp; icon, <span class="keyword">const</span> std::string &amp; txt);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        <a class="code hl_class" href="classlvgl_1_1widgets_1_1_button.html">Button</a> <a class="code hl_function" href="classlvgl_1_1widgets_1_1_list.html#a3b8cf7c2d98c657d42148768c166bcf5">add_btn</a>(<span class="keyword">const</span> std::string &amp; txt);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        std::string <a class="code hl_function" href="classlvgl_1_1widgets_1_1_list.html#aa00cc801ea5d1dbb9b1a166ee99830ec">get_btn_text</a>(<span class="keyword">const</span> <a class="code hl_class" href="classlvgl_1_1widgets_1_1_button.html">Button</a> &amp; btn) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    };</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
-<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html">lvgl::core::Widget</a></div><div class="ttdoc">Wraps a lv_obj_t object created with the given allocator.</div><div class="ttdef"><b>Definition:</b> object.h:2571</div></div>
-<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html_a73d09fe7fcf13b343629fb1641455682"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html#a73d09fe7fcf13b343629fb1641455682">lvgl::core::Widget::Widget</a></div><div class="ttdeci">Widget()</div><div class="ttdoc">Default constructor.</div><div class="ttdef"><b>Definition:</b> object.h:2603</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_button_html"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_button.html">lvgl::widgets::Button</a></div><div class="ttdoc">Wraps a lv_btn_t object.</div><div class="ttdef"><b>Definition:</b> button.h:17</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_label_html"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_label.html">lvgl::widgets::Label</a></div><div class="ttdoc">Wraps a lv_label_t object.</div><div class="ttdef"><b>Definition:</b> label.h:17</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_list_html"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_list.html">lvgl::widgets::List</a></div><div class="ttdoc">Wraps a lv_list_t object.</div><div class="ttdef"><b>Definition:</b> list.h:20</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_list_html_a08cc8e548c6bc749b7a51f491ea3e441"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_list.html#a08cc8e548c6bc749b7a51f491ea3e441">lvgl::widgets::List::add_text</a></div><div class="ttdeci">Label add_text(const std::string &amp;txt)</div><div class="ttdoc">Adds a text entry to the list.</div><div class="ttdef"><b>Definition:</b> list.cpp:13</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_list_html_a3b8cf7c2d98c657d42148768c166bcf5"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_list.html#a3b8cf7c2d98c657d42148768c166bcf5">lvgl::widgets::List::add_btn</a></div><div class="ttdeci">Button add_btn(const std::string &amp;icon, const std::string &amp;txt)</div><div class="ttdoc">Adds a button entry to the list.</div><div class="ttdef"><b>Definition:</b> list.cpp:17</div></div>
-<div class="ttc" id="aclasslvgl_1_1widgets_1_1_list_html_aa00cc801ea5d1dbb9b1a166ee99830ec"><div class="ttname"><a href="classlvgl_1_1widgets_1_1_list.html#aa00cc801ea5d1dbb9b1a166ee99830ec">lvgl::widgets::List::get_btn_text</a></div><div class="ttdeci">std::string get_btn_text(const Button &amp;btn) const</div><div class="ttdoc">Gets text of given button child.</div><div class="ttdef"><b>Definition:</b> list.cpp:25</div></div>
-<div class="ttc" id="anamespacelvgl_1_1core_html"><div class="ttname"><a href="namespacelvgl_1_1core.html">lvgl::core</a></div><div class="ttdoc">LVGL core components.</div><div class="ttdef"><b>Definition:</b> display.cpp:13</div></div>
-<div class="ttc" id="anamespacelvgl_1_1widgets_html"><div class="ttname"><a href="namespacelvgl_1_1widgets.html">lvgl::widgets</a></div><div class="ttdoc">LVGL widgets.</div><div class="ttdef"><b>Definition:</b> animimg.cpp:9</div></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;../core/object.h&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#if LV_USE_LIST</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>lvgl::widgets {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">using namespace </span>lvgl::core;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keyword">class </span>Button;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keyword">class </span>Label;</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">class </span>List : <span class="keyword">public</span> <a class="code hl_class" href="classlvgl_1_1core_1_1_widget.html">Widget</a>&lt;lv_list_create&gt; {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keyword">using</span> Widget::Widget;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        Label add_text(<span class="keyword">const</span> std::string &amp; txt);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>        Button add_btn(<span class="keyword">const</span> std::string &amp; icon, <span class="keyword">const</span> std::string &amp; txt);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        Button add_btn(<span class="keyword">const</span> std::string &amp; txt);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        std::string get_btn_text(<span class="keyword">const</span> Button &amp; btn) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    };</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif </span><span class="comment">// LV_USE_LIST</span></div>
+<div class="ttc" id="aclasslvgl_1_1core_1_1_widget_html"><div class="ttname"><a href="classlvgl_1_1core_1_1_widget.html">lvgl::core::Widget</a></div><div class="ttdoc">Wraps a lv_obj_t object created with the given allocator.</div><div class="ttdef"><b>Definition:</b> object.h:2574</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

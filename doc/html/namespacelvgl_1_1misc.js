@@ -33,21 +33,7 @@ var namespacelvgl_1_1misc =
     [ "Animation", "classlvgl_1_1misc_1_1_animation.html", "classlvgl_1_1misc_1_1_animation" ],
     [ "AnimationTimeline", "classlvgl_1_1misc_1_1_animation_timeline.html", "classlvgl_1_1misc_1_1_animation_timeline" ],
     [ "Area", "classlvgl_1_1misc_1_1_area.html", "classlvgl_1_1misc_1_1_area" ],
-    [ "BlinkStyleTransition", "classlvgl_1_1misc_1_1_blink_style_transition.html", "classlvgl_1_1misc_1_1_blink_style_transition" ],
-    [ "BounceStyleTransition", "classlvgl_1_1misc_1_1_bounce_style_transition.html", "classlvgl_1_1misc_1_1_bounce_style_transition" ],
-    [ "ColorFilter", "classlvgl_1_1misc_1_1_color_filter.html", "classlvgl_1_1misc_1_1_color_filter" ],
-    [ "Directory", "classlvgl_1_1misc_1_1_directory.html", "classlvgl_1_1misc_1_1_directory" ],
-    [ "EaseInOutStyleTransition", "classlvgl_1_1misc_1_1_ease_in_out_style_transition.html", "classlvgl_1_1misc_1_1_ease_in_out_style_transition" ],
-    [ "EaseInStyleTransition", "classlvgl_1_1misc_1_1_ease_in_style_transition.html", "classlvgl_1_1misc_1_1_ease_in_style_transition" ],
-    [ "EaseOutStyleTransition", "classlvgl_1_1misc_1_1_ease_out_style_transition.html", "classlvgl_1_1misc_1_1_ease_out_style_transition" ],
-    [ "File", "classlvgl_1_1misc_1_1_file.html", "classlvgl_1_1misc_1_1_file" ],
-    [ "FileSystem", "classlvgl_1_1misc_1_1_file_system.html", "classlvgl_1_1misc_1_1_file_system" ],
-    [ "LinearStyleTransition", "classlvgl_1_1misc_1_1_linear_style_transition.html", "classlvgl_1_1misc_1_1_linear_style_transition" ],
-    [ "OvershootStyleTransition", "classlvgl_1_1misc_1_1_overshoot_style_transition.html", "classlvgl_1_1misc_1_1_overshoot_style_transition" ],
-    [ "StepStyleTransition", "classlvgl_1_1misc_1_1_step_style_transition.html", "classlvgl_1_1misc_1_1_step_style_transition" ],
     [ "Style", "classlvgl_1_1misc_1_1_style.html", "classlvgl_1_1misc_1_1_style" ],
-    [ "StyleTransition", "classlvgl_1_1misc_1_1_style_transition.html", "classlvgl_1_1misc_1_1_style_transition" ],
-    [ "Timer", "classlvgl_1_1misc_1_1_timer.html", "classlvgl_1_1misc_1_1_timer" ],
     [ "Color", "namespacelvgl_1_1misc.html#aefca0b2109a7b71b1b981ed943f6221f", [
       [ "Red", "namespacelvgl_1_1misc.html#aefca0b2109a7b71b1b981ed943f6221faee38e4d5dd68c4e440825018d549cb47", null ],
       [ "Pink", "namespacelvgl_1_1misc.html#aefca0b2109a7b71b1b981ed943f6221fa8dc5344bc0746e1cc5abf896ca03bbdf", null ],
@@ -69,6 +55,5 @@ var namespacelvgl_1_1misc =
       [ "BlueGrey", "namespacelvgl_1_1misc.html#aefca0b2109a7b71b1b981ed943f6221fa936d609fb70b22f5d604a8d81795c6b8", null ],
       [ "Grey", "namespacelvgl_1_1misc.html#aefca0b2109a7b71b1b981ed943f6221facaf3a042a037c064b7513ed640c22f77", null ],
       [ "None", "namespacelvgl_1_1misc.html#aefca0b2109a7b71b1b981ed943f6221fa6adf97f83acf6453d4a6a4b1070f3754", null ]
-    ] ],
-    [ "get_filesystem_letters", "namespacelvgl_1_1misc.html#af181299d544cba336ba16eb593bcbf19", null ]
+    ] ]
 ];

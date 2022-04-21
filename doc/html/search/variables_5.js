@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['get_5fvalue_5fcb_0',['get_value_cb',['../classlvgl_1_1misc_1_1_animation.html#a463777a1eb7cc7b0d0c5cfdea682471c',1,'lvgl::misc::Animation']]]
+  ['lv_5fobj_0',['lv_obj',['../classlvgl_1_1core_1_1_event.html#af8aae18c2b5d4ae4076bf1e6fb787003',1,'lvgl::core::Event::lv_obj()'],['../classlvgl_1_1_pointer_wrapper.html#a86ebfda6c5f0d964b0cfec7b95b3f193',1,'lvgl::PointerWrapper::lv_obj()']]]
 ];
