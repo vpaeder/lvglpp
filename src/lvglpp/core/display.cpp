@@ -31,7 +31,7 @@ namespace lvgl::core {
         };
         this->lv_disp_drv.flush_cb = f;
 
-        this->lv_disp = std::unique_ptr<lv_disp_t>(lv_disp_drv_register(&(this->lv_disp_drv)));
+        this->lv_obj = LvPointerType(lv_disp_drv_register(&this->lv_disp_drv));
     }
     
     void Display::update_driver() {
@@ -40,10 +40,6 @@ namespace lvgl::core {
 
     void Display::flush_ready() {
         lv_disp_flush_ready(&this->lv_disp_drv);
-    }
-
-    Display::~Display() {
-        lv_disp_remove(this->raw_ptr());
     }
 
     void Display::set_default() {
@@ -162,6 +158,7 @@ namespace lvgl::core {
     Object layer_sys() {
         return Object(lv_layer_sys(), false);
     }
+
 }
 
 #endif // LV_USE_USER_DATA

@@ -6,9 +6,8 @@
  *  License: MIT
  */
 #pragma once
+#include "../lv_wrapper.h"
 #include <vector>
-#include <memory>
-#include "lvgl.h"
 
 // we need user_data to store pointer to C++ object, otherwise we cannot
 // access callbacks defined as class members.
@@ -28,7 +27,7 @@ namespace lvgl::core {
      *  \brief Wraps a lv_disp_t object. This is a base class to connect
      *  a screen driver with LVGL.
      */
-    class Display {
+    class Display : public PointerWrapper<lv_disp_t, lv_disp_remove> {
     protected:
         /** \property lv_disp_draw_buf_t lv_disp_buf
          *  \brief Display buffer descriptor.
@@ -39,11 +38,6 @@ namespace lvgl::core {
          *  \brief Display driver instance.
          */
         lv_disp_drv_t lv_disp_drv;
-
-        /** \property std::unique_ptr<lv_disp_t> lv_disp
-         *  \brief Pointer to the associated display instance.
-         */
-        std::unique_ptr<lv_disp_t> lv_disp;
 
         /** \property std::vector<lv_color_t> lv_buf_1
          *  \brief Display buffer.
@@ -91,23 +85,6 @@ namespace lvgl::core {
          *  \param fb_size: frame buffer size.
          */
         Display(lv_coord_t hor_res, lv_coord_t ver_res, uint32_t fb_size);
-
-        /** \fn ~Display()
-         *  \brief Destructor.
-         */
-        ~Display();
-
-        /** \fn lv_disp_t * raw_ptr()
-         *  \brief Gets a raw pointer to the associated display instance.
-         *  \returns a raw pointer to the associated display instance.
-         */
-        lv_disp_t * raw_ptr() { return this->lv_disp.get(); }
-
-        /** \fn const lv_disp_t * raw_ptr() const
-         *  \brief Gets a raw const pointer to the associated display instance.
-         *  \returns a raw const pointer to the associated display instance.
-         */
-        const lv_disp_t * raw_ptr() const { return this->lv_disp.get(); }
 
         /** \fn void set_default()
          *  \brief Sets display as default.
