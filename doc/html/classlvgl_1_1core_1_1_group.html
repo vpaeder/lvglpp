@@ -142,6 +142,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>focus_prev</b> ()</td
 <tr class="memitem:ac3c57dc5df30b35d7fe724ab61a7b80d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_group.html#ac3c57dc5df30b35d7fe724ab61a7b80d">set_focus_cb</a> (lv_group_focus_cb_t focus_cb)</td></tr>
 <tr class="memdesc:ac3c57dc5df30b35d7fe724ab61a7b80d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets callback for focus events.  <a href="classlvgl_1_1core_1_1_group.html#ac3c57dc5df30b35d7fe724ab61a7b80d">More...</a><br /></td></tr>
 <tr class="separator:ac3c57dc5df30b35d7fe724ab61a7b80d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a055f2173618eeb6a1de1053a61e80357"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_group.html#a055f2173618eeb6a1de1053a61e80357">set_edge_cb</a> (lv_group_edge_cb_t edge_cb)</td></tr>
+<tr class="memdesc:a055f2173618eeb6a1de1053a61e80357"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets callback to call when edge is reached.  <a href="classlvgl_1_1core_1_1_group.html#a055f2173618eeb6a1de1053a61e80357">More...</a><br /></td></tr>
+<tr class="separator:a055f2173618eeb6a1de1053a61e80357"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa58af680fe7b12f656a7df905f503536"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_group.html#aa58af680fe7b12f656a7df905f503536">set_refocus_policy</a> (lv_group_refocus_policy_t policy)</td></tr>
 <tr class="memdesc:aa58af680fe7b12f656a7df905f503536"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets policy when focused object is deleted.  <a href="classlvgl_1_1core_1_1_group.html#aa58af680fe7b12f656a7df905f503536">More...</a><br /></td></tr>
 <tr class="separator:aa58af680fe7b12f656a7df905f503536"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,6 +160,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>focus_prev</b> ()</td
 <tr class="memitem:ac4d45ff2f6afbc9c1032246eaf7f7abb"><td class="memItemLeft" align="right" valign="top">lv_group_focus_cb_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_group.html#ac4d45ff2f6afbc9c1032246eaf7f7abb">get_focus_cb</a> () const</td></tr>
 <tr class="memdesc:ac4d45ff2f6afbc9c1032246eaf7f7abb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets callback for focus events.  <a href="classlvgl_1_1core_1_1_group.html#ac4d45ff2f6afbc9c1032246eaf7f7abb">More...</a><br /></td></tr>
 <tr class="separator:ac4d45ff2f6afbc9c1032246eaf7f7abb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af79fea9ff6b44b720d4363691cf04fb3"><td class="memItemLeft" align="right" valign="top">lv_group_edge_cb_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_group.html#af79fea9ff6b44b720d4363691cf04fb3">get_edge_cb</a> () const</td></tr>
+<tr class="memdesc:af79fea9ff6b44b720d4363691cf04fb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets function called when edge is reached.  <a href="classlvgl_1_1core_1_1_group.html#af79fea9ff6b44b720d4363691cf04fb3">More...</a><br /></td></tr>
+<tr class="separator:af79fea9ff6b44b720d4363691cf04fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9f6c34eb7721a3b20d8a5092c68d3cc4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1core_1_1_group.html#a9f6c34eb7721a3b20d8a5092c68d3cc4">get_editing</a> () const</td></tr>
 <tr class="memdesc:a9f6c34eb7721a3b20d8a5092c68d3cc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets group mode.  <a href="classlvgl_1_1core_1_1_group.html#a9f6c34eb7721a3b20d8a5092c68d3cc4">More...</a><br /></td></tr>
 <tr class="separator:a9f6c34eb7721a3b20d8a5092c68d3cc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -323,6 +329,26 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>lv_cls_ptr</b> = lv_
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="af79fea9ff6b44b720d4363691cf04fb3" name="af79fea9ff6b44b720d4363691cf04fb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af79fea9ff6b44b720d4363691cf04fb3">&#9670;&nbsp;</a></span>get_edge_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">lv_group_edge_cb_t lvgl::core::Group::get_edge_cb </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gets function called when edge is reached. </p>
+<dl class="section return"><dt>Returns</dt><dd>callback function for edge events, or nullptr if none set. </dd></dl>
 
 </div>
 </div>
@@ -563,6 +589,32 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>lv_cls_ptr</b> = lv_
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>result code: LV_RES_OK if success, LV_RES_INV otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a055f2173618eeb6a1de1053a61e80357" name="a055f2173618eeb6a1de1053a61e80357"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a055f2173618eeb6a1de1053a61e80357">&#9670;&nbsp;</a></span>set_edge_cb()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lvgl::core::Group::set_edge_cb </td>
+          <td>(</td>
+          <td class="paramtype">lv_group_edge_cb_t&#160;</td>
+          <td class="paramname"><em>edge_cb</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets callback to call when edge is reached. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">edge_cb</td><td>callback function. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

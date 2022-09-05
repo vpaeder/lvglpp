@@ -93,6 +93,7 @@ $(document).ready(function(){initNavTree('classlvgl_1_1misc_1_1_style.html','');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classlvgl_1_1misc_1_1_style-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">lvgl::misc::Style Class Reference</div></div>
 </div><!--header-->
@@ -129,15 +130,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr
 <tr class="memitem:a0bb612e80507e1167cf4a648fb5eb64f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a0bb612e80507e1167cf4a648fb5eb64f">is_empty</a> () const</td></tr>
 <tr class="memdesc:a0bb612e80507e1167cf4a648fb5eb64f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tells if style is empty.  <a href="classlvgl_1_1misc_1_1_style.html#a0bb612e80507e1167cf4a648fb5eb64f">More...</a><br /></td></tr>
 <tr class="separator:a0bb612e80507e1167cf4a648fb5eb64f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d0b4283ff4103492c5a2fe74ad40baf"><td class="memItemLeft" align="right" valign="top">lv_style_prop_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a1d0b4283ff4103492c5a2fe74ad40baf">register_prop</a> (uint8_t flag)</td></tr>
-<tr class="memdesc:a1d0b4283ff4103492c5a2fe74ad40baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a new custom style property.  <a href="classlvgl_1_1misc_1_1_style.html#a1d0b4283ff4103492c5a2fe74ad40baf">More...</a><br /></td></tr>
-<tr class="separator:a1d0b4283ff4103492c5a2fe74ad40baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01b604348d69b90f530e1d8b31676a65"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a01b604348d69b90f530e1d8b31676a65">remove_prop</a> (lv_style_prop_t prop)</td></tr>
 <tr class="memdesc:a01b604348d69b90f530e1d8b31676a65"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a style property.  <a href="classlvgl_1_1misc_1_1_style.html#a01b604348d69b90f530e1d8b31676a65">More...</a><br /></td></tr>
 <tr class="separator:a01b604348d69b90f530e1d8b31676a65"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27140bc64172625e889b444e153f3493"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a27140bc64172625e889b444e153f3493">set_prop</a> (lv_style_prop_t prop, lv_style_value_t value)</td></tr>
 <tr class="memdesc:a27140bc64172625e889b444e153f3493"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of a style property.  <a href="classlvgl_1_1misc_1_1_style.html#a27140bc64172625e889b444e153f3493">More...</a><br /></td></tr>
 <tr class="separator:a27140bc64172625e889b444e153f3493"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:add998ab89f36617fdf3e27b532e26358"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#add998ab89f36617fdf3e27b532e26358">set_prop_meta</a> (lv_style_prop_t prop, uint16_t meta)</td></tr>
+<tr class="memdesc:add998ab89f36617fdf3e27b532e26358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the value of a meta state.  <a href="classlvgl_1_1misc_1_1_style.html#add998ab89f36617fdf3e27b532e26358">More...</a><br /></td></tr>
+<tr class="separator:add998ab89f36617fdf3e27b532e26358"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad6cb1c00908a4b7910f001b61cb6ce92"><td class="memItemLeft" align="right" valign="top">lv_style_value_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#ad6cb1c00908a4b7910f001b61cb6ce92">get_prop</a> (lv_style_prop_t prop) const</td></tr>
 <tr class="memdesc:ad6cb1c00908a4b7910f001b61cb6ce92"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the value of a style property.  <a href="classlvgl_1_1misc_1_1_style.html#ad6cb1c00908a4b7910f001b61cb6ce92">More...</a><br /></td></tr>
 <tr class="separator:ad6cb1c00908a4b7910f001b61cb6ce92"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -409,51 +410,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>report_style_change</
 <tr class="memitem:ad1f434871bc99134f52c23e260baf63a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#ad1f434871bc99134f52c23e260baf63a">set_base_dir</a> (lv_base_dir_t value)</td></tr>
 <tr class="memdesc:ad1f434871bc99134f52c23e260baf63a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets base direction property.  <a href="classlvgl_1_1misc_1_1_style.html#ad1f434871bc99134f52c23e260baf63a">More...</a><br /></td></tr>
 <tr class="separator:ad1f434871bc99134f52c23e260baf63a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00a389c69ff763b908c51ed02fa848ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a00a389c69ff763b908c51ed02fa848ba">set_flex_flow</a> (lv_flex_flow_t value)</td></tr>
-<tr class="memdesc:a00a389c69ff763b908c51ed02fa848ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets flex flow.  <a href="classlvgl_1_1misc_1_1_style.html#a00a389c69ff763b908c51ed02fa848ba">More...</a><br /></td></tr>
-<tr class="separator:a00a389c69ff763b908c51ed02fa848ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1dbf26d9391dab179976ee443b7663d9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a1dbf26d9391dab179976ee443b7663d9">set_flex_main_place</a> (lv_flex_align_t value)</td></tr>
-<tr class="memdesc:a1dbf26d9391dab179976ee443b7663d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets flex alignment in main direction.  <a href="classlvgl_1_1misc_1_1_style.html#a1dbf26d9391dab179976ee443b7663d9">More...</a><br /></td></tr>
-<tr class="separator:a1dbf26d9391dab179976ee443b7663d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e59b207523753dc5b557c2c474dcfe5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a8e59b207523753dc5b557c2c474dcfe5">set_flex_cross_place</a> (lv_flex_align_t value)</td></tr>
-<tr class="memdesc:a8e59b207523753dc5b557c2c474dcfe5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets flex alignment in alternate direction.  <a href="classlvgl_1_1misc_1_1_style.html#a8e59b207523753dc5b557c2c474dcfe5">More...</a><br /></td></tr>
-<tr class="separator:a8e59b207523753dc5b557c2c474dcfe5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3cbe44835b13ba4c64653568302f58d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a3cbe44835b13ba4c64653568302f58d3">set_flex_track_place</a> (lv_flex_align_t value)</td></tr>
-<tr class="memdesc:a3cbe44835b13ba4c64653568302f58d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets flex content alignment.  <a href="classlvgl_1_1misc_1_1_style.html#a3cbe44835b13ba4c64653568302f58d3">More...</a><br /></td></tr>
-<tr class="separator:a3cbe44835b13ba4c64653568302f58d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a905c579a4337096824465bc375a9fb3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a905c579a4337096824465bc375a9fb3a">set_flex_grow</a> (uint8_t value)</td></tr>
-<tr class="memdesc:a905c579a4337096824465bc375a9fb3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets flex grow.  <a href="classlvgl_1_1misc_1_1_style.html#a905c579a4337096824465bc375a9fb3a">More...</a><br /></td></tr>
-<tr class="separator:a905c579a4337096824465bc375a9fb3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a00c2336cde78d41a89b64b63f174ba61"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a00c2336cde78d41a89b64b63f174ba61">set_grid_row_dsc_array</a> (const std::vector&lt; lv_coord_t &gt; &amp;value)</td></tr>
-<tr class="memdesc:a00c2336cde78d41a89b64b63f174ba61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets grid row heights.  <a href="classlvgl_1_1misc_1_1_style.html#a00c2336cde78d41a89b64b63f174ba61">More...</a><br /></td></tr>
-<tr class="separator:a00c2336cde78d41a89b64b63f174ba61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a725811acefed54e3e2f883e764f80948"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a725811acefed54e3e2f883e764f80948">set_grid_column_dsc_array</a> (const std::vector&lt; lv_coord_t &gt; &amp;value)</td></tr>
-<tr class="memdesc:a725811acefed54e3e2f883e764f80948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets grid column widths.  <a href="classlvgl_1_1misc_1_1_style.html#a725811acefed54e3e2f883e764f80948">More...</a><br /></td></tr>
-<tr class="separator:a725811acefed54e3e2f883e764f80948"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e18984761914fc1b374d68a04be6588"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a2e18984761914fc1b374d68a04be6588">set_grid_row_align</a> (lv_grid_align_t value)</td></tr>
-<tr class="memdesc:a2e18984761914fc1b374d68a04be6588"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets grid content's vertical alignment.  <a href="classlvgl_1_1misc_1_1_style.html#a2e18984761914fc1b374d68a04be6588">More...</a><br /></td></tr>
-<tr class="separator:a2e18984761914fc1b374d68a04be6588"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e7111ea942d65d8750f46ecb8802a08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a0e7111ea942d65d8750f46ecb8802a08">set_grid_column_align</a> (lv_grid_align_t value)</td></tr>
-<tr class="memdesc:a0e7111ea942d65d8750f46ecb8802a08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets grid content's horizontal alignment.  <a href="classlvgl_1_1misc_1_1_style.html#a0e7111ea942d65d8750f46ecb8802a08">More...</a><br /></td></tr>
-<tr class="separator:a0e7111ea942d65d8750f46ecb8802a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a256e30d5329a14f4c7a8a810622a6c37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a256e30d5329a14f4c7a8a810622a6c37">set_grid_cell_column_pos</a> (lv_coord_t value)</td></tr>
-<tr class="memdesc:a256e30d5329a14f4c7a8a810622a6c37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets grid's active column index.  <a href="classlvgl_1_1misc_1_1_style.html#a256e30d5329a14f4c7a8a810622a6c37">More...</a><br /></td></tr>
-<tr class="separator:a256e30d5329a14f4c7a8a810622a6c37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad52c9a64e693e712d414bf3e39a806f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#ad52c9a64e693e712d414bf3e39a806f9">set_grid_cell_column_span</a> (lv_coord_t value)</td></tr>
-<tr class="memdesc:ad52c9a64e693e712d414bf3e39a806f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets grid's active column span.  <a href="classlvgl_1_1misc_1_1_style.html#ad52c9a64e693e712d414bf3e39a806f9">More...</a><br /></td></tr>
-<tr class="separator:ad52c9a64e693e712d414bf3e39a806f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc2ec4028f1fbdcf2e3ccb5718c98dd3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#acc2ec4028f1fbdcf2e3ccb5718c98dd3">set_grid_cell_row_pos</a> (lv_coord_t value)</td></tr>
-<tr class="memdesc:acc2ec4028f1fbdcf2e3ccb5718c98dd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets grid's active row index.  <a href="classlvgl_1_1misc_1_1_style.html#acc2ec4028f1fbdcf2e3ccb5718c98dd3">More...</a><br /></td></tr>
-<tr class="separator:acc2ec4028f1fbdcf2e3ccb5718c98dd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a32ad66b955b907ba1ba4b3180b68a871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a32ad66b955b907ba1ba4b3180b68a871">set_grid_cell_row_span</a> (lv_coord_t value)</td></tr>
-<tr class="memdesc:a32ad66b955b907ba1ba4b3180b68a871"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets grid's active row span.  <a href="classlvgl_1_1misc_1_1_style.html#a32ad66b955b907ba1ba4b3180b68a871">More...</a><br /></td></tr>
-<tr class="separator:a32ad66b955b907ba1ba4b3180b68a871"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aecc8a28b46ed67afff52df18655aaa14"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#aecc8a28b46ed67afff52df18655aaa14">set_grid_cell_x_align</a> (lv_coord_t value)</td></tr>
-<tr class="memdesc:aecc8a28b46ed67afff52df18655aaa14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets grid's active cell horizontal offset.  <a href="classlvgl_1_1misc_1_1_style.html#aecc8a28b46ed67afff52df18655aaa14">More...</a><br /></td></tr>
-<tr class="separator:aecc8a28b46ed67afff52df18655aaa14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6138550faee744e1af7924faee3d2f99"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a6138550faee744e1af7924faee3d2f99">set_grid_cell_y_align</a> (lv_coord_t value)</td></tr>
-<tr class="memdesc:a6138550faee744e1af7924faee3d2f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets grid's active cell vertical offset.  <a href="classlvgl_1_1misc_1_1_style.html#a6138550faee744e1af7924faee3d2f99">More...</a><br /></td></tr>
-<tr class="separator:a6138550faee744e1af7924faee3d2f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8b4863dd34c75c85647a53e2371a5177"><td class="memItemLeft" align="right" valign="top"><a id="a8b4863dd34c75c85647a53e2371a5177" name="a8b4863dd34c75c85647a53e2371a5177"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>PointerWrapper</b> ()=default</td></tr>
 <tr class="memdesc:a8b4863dd34c75c85647a53e2371a5177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
@@ -531,6 +487,18 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>report_style_change</
 <tr class="memdesc:add3e054e0a23af51525b8cac715bbdfa inherit pub_methods_classlvgl_1_1_pointer_wrapper"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structure dereference operator (const version).  <a href="classlvgl_1_1_pointer_wrapper.html#add3e054e0a23af51525b8cac715bbdfa">More...</a><br /></td></tr>
 <tr class="separator:add3e054e0a23af51525b8cac715bbdfa inherit pub_methods_classlvgl_1_1_pointer_wrapper"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a1d0b4283ff4103492c5a2fe74ad40baf"><td class="memItemLeft" align="right" valign="top">static lv_style_prop_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#a1d0b4283ff4103492c5a2fe74ad40baf">register_prop</a> (uint8_t flag)</td></tr>
+<tr class="memdesc:a1d0b4283ff4103492c5a2fe74ad40baf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a new custom style property.  <a href="classlvgl_1_1misc_1_1_style.html#a1d0b4283ff4103492c5a2fe74ad40baf">More...</a><br /></td></tr>
+<tr class="separator:a1d0b4283ff4103492c5a2fe74ad40baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af40cbaada4ce32da69ffa5c1123951bb"><td class="memItemLeft" align="right" valign="top">static lv_style_prop_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#af40cbaada4ce32da69ffa5c1123951bb">get_num_custom_props</a> () const</td></tr>
+<tr class="memdesc:af40cbaada4ce32da69ffa5c1123951bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of custom properties that have been registered thus far.  <a href="classlvgl_1_1misc_1_1_style.html#af40cbaada4ce32da69ffa5c1123951bb">More...</a><br /></td></tr>
+<tr class="separator:af40cbaada4ce32da69ffa5c1123951bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb88417ca3cfbfd1eeee0da0304b9ae9"><td class="memItemLeft" align="right" valign="top">static lv_style_value_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlvgl_1_1misc_1_1_style.html#abb88417ca3cfbfd1eeee0da0304b9ae9">get_prop_default</a> (lv_style_prop_t prop)</td></tr>
+<tr class="memdesc:abb88417ca3cfbfd1eeee0da0304b9ae9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the default value of a style property.  <a href="classlvgl_1_1misc_1_1_style.html#abb88417ca3cfbfd1eeee0da0304b9ae9">More...</a><br /></td></tr>
+<tr class="separator:abb88417ca3cfbfd1eeee0da0304b9ae9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_types_classlvgl_1_1_pointer_wrapper"><td colspan="2" onclick="javascript:toggleInherit('pro_types_classlvgl_1_1_pointer_wrapper')"><img src="closed.png" alt="-"/>&#160;Protected Types inherited from <a class="el" href="classlvgl_1_1_pointer_wrapper.html">lvgl::PointerWrapper&lt; lv_style_t, lv_mem_free &gt;</a></td></tr>
@@ -562,6 +530,34 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>lv_cls_ptr</b> = lv_
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Wraps a lv_style_t object. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="af40cbaada4ce32da69ffa5c1123951bb" name="af40cbaada4ce32da69ffa5c1123951bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af40cbaada4ce32da69ffa5c1123951bb">&#9670;&nbsp;</a></span>get_num_custom_props()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lv_style_prop_t lvgl::misc::Style::get_num_custom_props </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the number of custom properties that have been registered thus far. </p>
+<dl class="section return"><dt>Returns</dt><dd>number of custom properties. </dd></dl>
+
+</div>
+</div>
 <a id="ad6cb1c00908a4b7910f001b61cb6ce92" name="ad6cb1c00908a4b7910f001b61cb6ce92"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad6cb1c00908a4b7910f001b61cb6ce92">&#9670;&nbsp;</a></span>get_prop()</h2>
 
@@ -586,6 +582,41 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>lv_cls_ptr</b> = lv_
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the style property value. </dd></dl>
+
+</div>
+</div>
+<a id="abb88417ca3cfbfd1eeee0da0304b9ae9" name="abb88417ca3cfbfd1eeee0da0304b9ae9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abb88417ca3cfbfd1eeee0da0304b9ae9">&#9670;&nbsp;</a></span>get_prop_default()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">lv_style_value_t lvgl::misc::Style::get_prop_default </td>
+          <td>(</td>
+          <td class="paramtype">lv_style_prop_t&#160;</td>
+          <td class="paramname"><em>prop</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the default value of a style property. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prop</td><td>style property ID. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>the style property default value. </dd></dl>
 
 </div>
 </div>
@@ -754,6 +785,9 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>lv_cls_ptr</b> = lv_
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">lv_style_prop_t lvgl::misc::Style::register_prop </td>
@@ -763,6 +797,11 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>lv_cls_ptr</b> = lv_
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Registers a new custom style property. </p>
@@ -1609,396 +1648,6 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>lv_cls_ptr</b> = lv_
 
 </div>
 </div>
-<a id="a8e59b207523753dc5b557c2c474dcfe5" name="a8e59b207523753dc5b557c2c474dcfe5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e59b207523753dc5b557c2c474dcfe5">&#9670;&nbsp;</a></span>set_flex_cross_place()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_flex_cross_place </td>
-          <td>(</td>
-          <td class="paramtype">lv_flex_align_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets flex alignment in alternate direction. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>alignment code. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a00a389c69ff763b908c51ed02fa848ba" name="a00a389c69ff763b908c51ed02fa848ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00a389c69ff763b908c51ed02fa848ba">&#9670;&nbsp;</a></span>set_flex_flow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_flex_flow </td>
-          <td>(</td>
-          <td class="paramtype">lv_flex_flow_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets flex flow. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>code for flex flow (see lv_flex_flow_t for options). </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a905c579a4337096824465bc375a9fb3a" name="a905c579a4337096824465bc375a9fb3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a905c579a4337096824465bc375a9fb3a">&#9670;&nbsp;</a></span>set_flex_grow()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_flex_grow </td>
-          <td>(</td>
-          <td class="paramtype">uint8_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets flex grow. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>relative grow value. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a1dbf26d9391dab179976ee443b7663d9" name="a1dbf26d9391dab179976ee443b7663d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1dbf26d9391dab179976ee443b7663d9">&#9670;&nbsp;</a></span>set_flex_main_place()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_flex_main_place </td>
-          <td>(</td>
-          <td class="paramtype">lv_flex_align_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets flex alignment in main direction. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>alignment code. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3cbe44835b13ba4c64653568302f58d3" name="a3cbe44835b13ba4c64653568302f58d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3cbe44835b13ba4c64653568302f58d3">&#9670;&nbsp;</a></span>set_flex_track_place()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_flex_track_place </td>
-          <td>(</td>
-          <td class="paramtype">lv_flex_align_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets flex content alignment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>alignment code. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a256e30d5329a14f4c7a8a810622a6c37" name="a256e30d5329a14f4c7a8a810622a6c37"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a256e30d5329a14f4c7a8a810622a6c37">&#9670;&nbsp;</a></span>set_grid_cell_column_pos()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_grid_cell_column_pos </td>
-          <td>(</td>
-          <td class="paramtype">lv_coord_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets grid's active column index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>column index (zero-based). </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ad52c9a64e693e712d414bf3e39a806f9" name="ad52c9a64e693e712d414bf3e39a806f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad52c9a64e693e712d414bf3e39a806f9">&#9670;&nbsp;</a></span>set_grid_cell_column_span()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_grid_cell_column_span </td>
-          <td>(</td>
-          <td class="paramtype">lv_coord_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets grid's active column span. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>column span (1 or more). </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="acc2ec4028f1fbdcf2e3ccb5718c98dd3" name="acc2ec4028f1fbdcf2e3ccb5718c98dd3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acc2ec4028f1fbdcf2e3ccb5718c98dd3">&#9670;&nbsp;</a></span>set_grid_cell_row_pos()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_grid_cell_row_pos </td>
-          <td>(</td>
-          <td class="paramtype">lv_coord_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets grid's active row index. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>row index (zero-based). </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a32ad66b955b907ba1ba4b3180b68a871" name="a32ad66b955b907ba1ba4b3180b68a871"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a32ad66b955b907ba1ba4b3180b68a871">&#9670;&nbsp;</a></span>set_grid_cell_row_span()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_grid_cell_row_span </td>
-          <td>(</td>
-          <td class="paramtype">lv_coord_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets grid's active row span. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>row span (1 or more). </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="aecc8a28b46ed67afff52df18655aaa14" name="aecc8a28b46ed67afff52df18655aaa14"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aecc8a28b46ed67afff52df18655aaa14">&#9670;&nbsp;</a></span>set_grid_cell_x_align()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_grid_cell_x_align </td>
-          <td>(</td>
-          <td class="paramtype">lv_coord_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets grid's active cell horizontal offset. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>horizontal offset value. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a6138550faee744e1af7924faee3d2f99" name="a6138550faee744e1af7924faee3d2f99"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6138550faee744e1af7924faee3d2f99">&#9670;&nbsp;</a></span>set_grid_cell_y_align()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_grid_cell_y_align </td>
-          <td>(</td>
-          <td class="paramtype">lv_coord_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets grid's active cell vertical offset. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>vertical offset value. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a0e7111ea942d65d8750f46ecb8802a08" name="a0e7111ea942d65d8750f46ecb8802a08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e7111ea942d65d8750f46ecb8802a08">&#9670;&nbsp;</a></span>set_grid_column_align()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_grid_column_align </td>
-          <td>(</td>
-          <td class="paramtype">lv_grid_align_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets grid content's horizontal alignment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>array of column widths. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a725811acefed54e3e2f883e764f80948" name="a725811acefed54e3e2f883e764f80948"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a725811acefed54e3e2f883e764f80948">&#9670;&nbsp;</a></span>set_grid_column_dsc_array()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_grid_column_dsc_array </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; lv_coord_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets grid column widths. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>array of column widths. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a2e18984761914fc1b374d68a04be6588" name="a2e18984761914fc1b374d68a04be6588"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e18984761914fc1b374d68a04be6588">&#9670;&nbsp;</a></span>set_grid_row_align()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_grid_row_align </td>
-          <td>(</td>
-          <td class="paramtype">lv_grid_align_t&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets grid content's vertical alignment. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>array of column widths. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a00c2336cde78d41a89b64b63f174ba61" name="a00c2336cde78d41a89b64b63f174ba61"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a00c2336cde78d41a89b64b63f174ba61">&#9670;&nbsp;</a></span>set_grid_row_dsc_array()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void lvgl::misc::Style::set_grid_row_dsc_array </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; lv_coord_t &gt; &amp;&#160;</td>
-          <td class="paramname"><em>value</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Sets grid row heights. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">value</td><td>array of row heights. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a700d8e22b7b2bfb46e574dcc32caad7b" name="a700d8e22b7b2bfb46e574dcc32caad7b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a700d8e22b7b2bfb46e574dcc32caad7b">&#9670;&nbsp;</a></span>set_height()</h2>
 
@@ -2810,6 +2459,43 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>lv_cls_ptr</b> = lv_
   <table class="params">
     <tr><td class="paramname">prop</td><td>style property ID. </td></tr>
     <tr><td class="paramname">value</td><td>style property value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="add998ab89f36617fdf3e27b532e26358" name="add998ab89f36617fdf3e27b532e26358"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#add998ab89f36617fdf3e27b532e26358">&#9670;&nbsp;</a></span>set_prop_meta()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void lvgl::misc::Style::set_prop_meta </td>
+          <td>(</td>
+          <td class="paramtype">lv_style_prop_t&#160;</td>
+          <td class="paramname"><em>prop</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t&#160;</td>
+          <td class="paramname"><em>meta</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the value of a meta state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">prop</td><td>style property ID. </td></tr>
+    <tr><td class="paramname">meta</td><td>meta value. </td></tr>
   </table>
   </dd>
 </dl>

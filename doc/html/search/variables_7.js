@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['path_5fcb_0',['path_cb',['../classlvgl_1_1misc_1_1_animation.html#a7d9a1f3a20e9593139d3df16c51c61c1',1,'lvgl::misc::Animation']]]
+  ['owns_5fptr_0',['owns_ptr',['../classlvgl_1_1_pointer_wrapper.html#ae700a40afff8268a1d140397c53a9b7a',1,'lvgl::PointerWrapper']]]
 ];

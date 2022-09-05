@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['path_5fcb_0',['path_cb',['../classlvgl_1_1misc_1_1_animation.html#a7d9a1f3a20e9593139d3df16c51c61c1',1,'lvgl::misc::Animation']]],
-  ['points_1',['points',['../classlvgl_1_1core_1_1_button_input_device.html#aa9705b41c4b21a6b72bf1bcf76a93e6d',1,'lvgl::core::ButtonInputDevice']]]
+  ['valid_0',['valid',['../classlvgl_1_1draw_1_1_image_header.html#afef01716a509ea06e4fdf715766462bd',1,'lvgl::draw::ImageHeader']]],
+  ['var_1',['var',['../classlvgl_1_1_variable.html#a32114385edc8b0d0e8d97cf0b8003420',1,'lvgl::Variable::var()'],['../classlvgl_1_1misc_1_1_animation.html#ad26636d0b31e50ea28d560b50b5954b9',1,'lvgl::misc::Animation::var()']]]
 ];

@@ -1,6 +1,7 @@
 var classlvgl_1_1misc_1_1_animation =
 [
     [ "CustomExecCb", "classlvgl_1_1misc_1_1_animation.html#a9a68395f2e5950f5ff964712e81d4275", null ],
+    [ "DeletedCb", "classlvgl_1_1misc_1_1_animation.html#ad7ab91b522b30543f0cd5444dde9c836", null ],
     [ "ExecCb", "classlvgl_1_1misc_1_1_animation.html#ae120674cd1ea43729f32a7a6d2606a47", null ],
     [ "GetValueCb", "classlvgl_1_1misc_1_1_animation.html#a46b8333b3daa9c63033b9fdfd06cc009", null ],
     [ "PathCb", "classlvgl_1_1misc_1_1_animation.html#a4387b0ec6ce53b2752100fae4c6538ec", null ],
@@ -17,6 +18,8 @@ var classlvgl_1_1misc_1_1_animation =
     [ "set_custom_exec_cb", "classlvgl_1_1misc_1_1_animation.html#afd626c7b470d86e8f963c84d9474cc03", null ],
     [ "set_custom_exec_cb", "classlvgl_1_1misc_1_1_animation.html#aa97865d6c4c288df0df0441de37f762a", null ],
     [ "set_delay", "classlvgl_1_1misc_1_1_animation.html#a15d8c166b26c92b4cc6b8072fb44c895", null ],
+    [ "set_deleted_cb", "classlvgl_1_1misc_1_1_animation.html#a31f9c5be907a054c6f1023976275b46d", null ],
+    [ "set_deleted_cb", "classlvgl_1_1misc_1_1_animation.html#a9ceeb20648a1cfc5dda56cda79419068", null ],
     [ "set_early_apply", "classlvgl_1_1misc_1_1_animation.html#ac007d18e7b5525bd2de5f5ed67753899", null ],
     [ "set_exec_cb", "classlvgl_1_1misc_1_1_animation.html#ac7c282b55b958125707b49fe9bcd9548", null ],
     [ "set_exec_cb", "classlvgl_1_1misc_1_1_animation.html#a81e9d076531dc1f040f3adb182647f38", null ],
@@ -40,6 +43,7 @@ var classlvgl_1_1misc_1_1_animation =
     [ "set_var", "classlvgl_1_1misc_1_1_animation.html#ad37d52f1defa7e702d6ba7676778eae4", null ],
     [ "start", "classlvgl_1_1misc_1_1_animation.html#a99583fd6101779bba52cef965988f26b", null ],
     [ "custom_exec_cb", "classlvgl_1_1misc_1_1_animation.html#ac136bf73c284886eb0423ae2ee7a4d5b", null ],
+    [ "deleted_cb", "classlvgl_1_1misc_1_1_animation.html#ae9ae20e6bd3b288e13a19a2df622fe27", null ],
     [ "exec_cb", "classlvgl_1_1misc_1_1_animation.html#acc3f8820d340f32eb1116c1a7973fa72", null ],
     [ "get_value_cb", "classlvgl_1_1misc_1_1_animation.html#a463777a1eb7cc7b0d0c5cfdea682471c", null ],
     [ "path_cb", "classlvgl_1_1misc_1_1_animation.html#a7d9a1f3a20e9593139d3df16c51c61c1", null ],
