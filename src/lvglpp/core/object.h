@@ -1046,8 +1046,7 @@ namespace lvgl::core {
          */
         void set_style_size(lv_coord_t width, lv_coord_t height, lv_style_selector_t selector);
 
-        /** \fn void set_style_width(lv_coord_t value, lv_style_selector_t selector)
-         *  \brief Sets width.
+        /** \brief Sets width.
          *  \param width: property value.
          *  \param selector: OR-ed combination of parts and states to apply the style to.
          */
@@ -1067,8 +1066,7 @@ namespace lvgl::core {
          */
         void set_style_max_width(lv_coord_t value, lv_style_selector_t selector);
 
-        /** \fn void set_style_height(lv_coord_t value, lv_style_selector_t selector)
-         *  \brief Sets height.
+        /** \brief Sets height.
          *  \param height: property value.
          *  \param selector: OR-ed combination of parts and states to apply the style to.
          */
