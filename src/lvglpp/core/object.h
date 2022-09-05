@@ -580,6 +580,20 @@ namespace lvgl::core {
          */
         void move_children_by(lv_coord_t x_diff, lv_coord_t y_diff, bool ignore_floating);
 
+        /** \brief Transform a point using the angle and zoom style properties of an object.
+         *  \param p: point to transform (will be overwritten)
+         *  \param recursive: if true, apply transforms of parent objects as well
+         *  \param inv: if true, execute inverse transform (-angle and 1/zoom)
+         */
+        void transform_point(lv_point_t & p, bool recursive, bool inv);
+
+        /** \brief Transform an area using the angle and zoom style properties of an object.
+         *  \param area: area to transform (will be overwritten)
+         *  \param recursive: if true, apply transforms of parent objects as well
+         *  \param inv: if true, execute inverse transform (-angle and 1/zoom)
+         */
+        void get_transformed_area(Area & area, bool recursive, bool inv);
+
         /** \fn void invalidate_area(const Area & area)
          *  \brief Marks given area to be redrawn.
          *  \param area: area to mark.
@@ -670,6 +684,13 @@ namespace lvgl::core {
          *  \param selector: OR-ed combination of parts and states to apply the style to.
          */
         void set_local_style_prop(lv_style_prop_t prop, lv_style_value_t value, lv_style_selector_t selector);
+
+        /** \brief Sets the value of a local style meta state.
+         *  \param prop: style property.
+         *  \param meta: meta value.
+         *  \param selector: OR-ed combination of parts and states to apply the style to.
+         */
+        void set_local_style_prop_meta(lv_style_prop_t prop, uint16_t meta, lv_style_selector_t selector);
 
         /** \fn lv_style_value_t get_local_style_prop(lv_style_prop_t prop, lv_style_selector_t selector) const
          *  \brief Gets the value of a local style property.
@@ -1018,19 +1039,19 @@ namespace lvgl::core {
          */
         void set_style_pad_column(lv_coord_t value, lv_style_selector_t selector);
 
-        /** \fn void set_style_size(lv_coord_t value, lv_style_selector_t selector)
-         *  \brief Sets size.
-         *  \param value: property value.
+        /** \brief Sets size.
+         *  \param width: width.
+         *  \param height: height.
          *  \param selector: OR-ed combination of parts and states to apply the style to.
          */
-        void set_style_size(lv_coord_t value, lv_style_selector_t selector);
+        void set_style_size(lv_coord_t width, lv_coord_t height, lv_style_selector_t selector);
 
         /** \fn void set_style_width(lv_coord_t value, lv_style_selector_t selector)
          *  \brief Sets width.
-         *  \param value: property value.
+         *  \param width: property value.
          *  \param selector: OR-ed combination of parts and states to apply the style to.
          */
-        void set_style_width(lv_coord_t value, lv_style_selector_t selector);
+        void set_style_width(lv_coord_t width, lv_style_selector_t selector);
 
         /** \fn void set_style_min_width(lv_coord_t value, lv_style_selector_t selector)
          *  \brief Sets minimum width.
@@ -1048,10 +1069,10 @@ namespace lvgl::core {
 
         /** \fn void set_style_height(lv_coord_t value, lv_style_selector_t selector)
          *  \brief Sets height.
-         *  \param value: property value.
+         *  \param height: property value.
          *  \param selector: OR-ed combination of parts and states to apply the style to.
          */
-        void set_style_height(lv_coord_t value, lv_style_selector_t selector);
+        void set_style_height(lv_coord_t height, lv_style_selector_t selector);
 
         /** \fn void set_style_min_height(lv_coord_t value, lv_style_selector_t selector)
          *  \brief Sets minimum height.
@@ -1713,6 +1734,18 @@ namespace lvgl::core {
          */
         lv_coord_t get_style_transform_angle(uint32_t part) const;
 
+        /** \brief Gets transform pivot point x coordinate.
+         *  \param part: OR-ed combination of parts and states to get style from.
+         *  \returns property value.
+         */
+        lv_coord_t get_style_transform_pivot_x(uint32_t part) const;
+
+        /** \brief Gets transform pivot point y coordinate.
+         *  \param part: OR-ed combination of parts and states to get style from.
+         *  \returns property value.
+         */
+        lv_coord_t get_style_transform_pivot_y(uint32_t part) const;
+
         /** \fn lv_coord_t get_style_pad_top(uint32_t part) const
          *  \brief Gets top padding.
          *  \param part: OR-ed combination of parts and states to get style from.
@@ -1762,13 +1795,6 @@ namespace lvgl::core {
          */
         lv_color_t get_style_bg_color(uint32_t part) const;
 
-        /** \fn lv_color_t get_style_bg_color_filtered(uint32_t part) const
-         *  \brief Gets background color with color filter applied.
-         *  \param part: OR-ed combination of parts and states to get style from.
-         *  \returns property value.
-         */
-        lv_color_t get_style_bg_color_filtered(uint32_t part) const;
-
         /** \fn lv_opa_t get_style_bg_opa(uint32_t part) const
          *  \brief Gets background opacity.
          *  \param part: OR-ed combination of parts and states to get style from.
@@ -1782,13 +1808,6 @@ namespace lvgl::core {
          *  \returns property value.
          */
         lv_color_t get_style_bg_grad_color(uint32_t part) const;
-
-        /** \fn lv_color_t get_style_bg_grad_color_filtered(uint32_t part) const
-         *  \brief Gets background gradient second color with color filter applied.
-         *  \param part: OR-ed combination of parts and states to get style from.
-         *  \returns property value.
-         */
-        lv_color_t get_style_bg_grad_color_filtered(uint32_t part) const;
 
         /** \fn lv_grad_dir_t get_style_bg_grad_dir(uint32_t part) const
          *  \brief Gets background gradient direction.
@@ -1846,13 +1865,6 @@ namespace lvgl::core {
          */
         lv_color_t get_style_bg_img_recolor(uint32_t part) const;
 
-        /** \fn lv_color_t get_style_bg_img_recolor_filtered(uint32_t part) const
-         *  \brief Gets background image recoloring color with color filter applied.
-         *  \param part: OR-ed combination of parts and states to get style from.
-         *  \returns property value.
-         */
-        lv_color_t get_style_bg_img_recolor_filtered(uint32_t part) const;
-
         /** \fn lv_opa_t get_style_bg_img_recolor_opa(uint32_t part) const
          *  \brief Gets background image recoloring intensity.
          *  \param part: OR-ed combination of parts and states to get style from.
@@ -1873,13 +1885,6 @@ namespace lvgl::core {
          *  \returns property value.
          */
         lv_color_t get_style_border_color(uint32_t part) const;
-
-        /** \fn lv_color_t get_style_border_color_filtered(uint32_t part) const
-         *  \brief Gets border color with color filter applied.
-         *  \param part: OR-ed combination of parts and states to get style from.
-         *  \returns property value.
-         */
-        lv_color_t get_style_border_color_filtered(uint32_t part) const;
 
         /** \fn lv_opa_t get_style_border_opa(uint32_t part) const
          *  \brief Gets border opacity.
@@ -1923,13 +1928,6 @@ namespace lvgl::core {
          */
         lv_color_t get_style_outline_color(uint32_t part) const;
         
-        /** \fn lv_color_t get_style_outline_color_filtered(uint32_t part) const
-         *  \brief Gets outline color with color filter applied.
-         *  \param part: OR-ed combination of parts and states to get style from.
-         *  \returns property value.
-         */
-        lv_color_t get_style_outline_color_filtered(uint32_t part) const;
-
         /** \fn lv_opa_t get_style_outline_opa(uint32_t part) const
          *  \brief Gets outline opacity.
          *  \param part: OR-ed combination of parts and states to get style from.
@@ -1979,13 +1977,6 @@ namespace lvgl::core {
          */
         lv_color_t get_style_shadow_color(uint32_t part) const;
 
-        /** \fn lv_color_t get_style_shadow_color_filtered(uint32_t part) const
-         *  \brief Gets shadow color with color filter applied.
-         *  \param part: OR-ed combination of parts and states to get style from.
-         *  \returns property value.
-         */
-        lv_color_t get_style_shadow_color_filtered(uint32_t part) const;
-
         /** \fn lv_opa_t get_style_shadow_opa(uint32_t part) const
          *  \brief Gets shadow opacity.
          *  \param part: OR-ed combination of parts and states to get style from.
@@ -2006,13 +1997,6 @@ namespace lvgl::core {
          *  \returns property value.
          */
         lv_color_t get_style_img_recolor(uint32_t part) const;
-
-        /** \fn lv_color_t get_style_img_recolor_filtered(uint32_t part) const
-         *  \brief Gets image recoloring color with color filter applied.
-         *  \param part: OR-ed combination of parts and states to get style from.
-         *  \returns property value.
-         */
-        lv_color_t get_style_img_recolor_filtered(uint32_t part) const;
 
         /** \fn lv_opa_t get_style_img_recolor_opa(uint32_t part) const
          *  \brief Gets image recoloring intensity.
@@ -2056,13 +2040,6 @@ namespace lvgl::core {
          */
         lv_color_t get_style_line_color(uint32_t part) const;
 
-        /** \fn lv_color_t get_style_line_color_filtered(uint32_t part) const
-         *  \brief Gets line color with color filter applied.
-         *  \param part: OR-ed combination of parts and states to get style from.
-         *  \returns property value.
-         */
-        lv_color_t get_style_line_color_filtered(uint32_t part) const;
-
         /** \fn lv_opa_t get_style_line_opa(uint32_t part) const
          *  \brief Gets line opacity.
          *  \param part: OR-ed combination of parts and states to get style from.
@@ -2091,13 +2068,6 @@ namespace lvgl::core {
          */
         lv_color_t get_style_arc_color(uint32_t part) const;
 
-        /** \fn lv_color_t get_style_arc_color_filtered(uint32_t part) const
-         *  \brief Gets arc color with color filter applied.
-         *  \param part: OR-ed combination of parts and states to get style from.
-         *  \returns property value.
-         */
-        lv_color_t get_style_arc_color_filtered(uint32_t part) const;
-
         /** \fn lv_opa_t get_style_arc_opa(uint32_t part) const
          *  \brief Gets arc opacity.
          *  \param part: OR-ed combination of parts and states to get style from.
@@ -2118,13 +2088,6 @@ namespace lvgl::core {
          *  \returns property value.
          */
         lv_color_t get_style_text_color(uint32_t part) const;
-
-        /** \fn lv_color_t get_style_text_color_filtered(uint32_t part) const
-         *  \brief Gets text color with color filter applied.
-         *  \param part: OR-ed combination of parts and states to get style from.
-         *  \returns property value.
-         */
-        lv_color_t get_style_text_color_filtered(uint32_t part) const;
 
         /** \fn lv_opa_t get_style_text_opa(uint32_t part) const
          *  \brief Gets text opacity.

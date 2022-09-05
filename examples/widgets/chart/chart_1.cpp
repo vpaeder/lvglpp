@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/chart.h" // for Chart
+#include "lvglpp/widgets/chart/chart.h" // for Chart
 #include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {

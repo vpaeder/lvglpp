@@ -134,6 +134,25 @@ namespace lvgl::misc {
         lv_anim_set_ready_cb(this->raw_ptr(), f);
     }
 
+    void Animation::set_deleted_cb(lv_anim_deleted_cb_t deleted_cb) {
+        assert(this != this->raw_ptr()->var);
+        lv_anim_set_deleted_cb(this->raw_ptr(), deleted_cb);
+    }
+
+    void Animation::set_deleted_cb(DeletedCb deleted_cb) {
+        using DeletedCbType = Callback<void, Animation&>;
+        this->deleted_cb = std::make_shared<DeletedCbType>(deleted_cb);
+        auto f = [](lv_anim_t * lv_obj) {
+            auto anim = reinterpret_cast<Animation*>(lv_obj->var);
+            if (anim->deleted_cb != nullptr) {
+                auto cb = *std::dynamic_pointer_cast<DeletedCbType>(anim->deleted_cb);
+                cb(*anim);
+            }
+        };
+        lv_anim_set_var(this->raw_ptr(), static_cast<void*>(this));
+        lv_anim_set_deleted_cb(this->raw_ptr(), f);
+    }
+
     void Animation::set_playback_time(uint32_t time) {
         lv_anim_set_playback_time(this->raw_ptr(), time);
     }

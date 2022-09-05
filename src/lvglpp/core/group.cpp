@@ -42,6 +42,10 @@ namespace lvgl::core {
         lv_group_set_focus_cb(this->raw_ptr(), focus_cb);
     }
 
+    void Group::set_edge_cb(lv_group_edge_cb_t edge_cb) {
+        lv_group_set_edge_cb(this->raw_ptr(), edge_cb);
+    }
+
     void Group::set_refocus_policy(lv_group_refocus_policy_t policy) {
         lv_group_set_refocus_policy(this->raw_ptr(), policy);
     }
@@ -60,6 +64,10 @@ namespace lvgl::core {
 
     lv_group_focus_cb_t Group::get_focus_cb() const {
         return lv_group_get_focus_cb(this->raw_ptr());
+    }
+
+    lv_group_edge_cb_t Group::get_edge_cb() const {
+        return lv_group_get_edge_cb(this->raw_ptr());
     }
 
     bool Group::get_editing() const {

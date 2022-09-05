@@ -1,7 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/core/event.h" // for Event
-#include "lvglpp/widgets/label.h" // for Label
-#include "lvglpp/widgets/canvas.h" // for Canvas
+#include "lvglpp/widgets/label/label.h" // for Label
+#include "lvglpp/widgets/canvas/canvas.h" // for Canvas
 #include "lvglpp/draw/mask.h" // for MapMask
 #include "lvglpp/draw/desc.h" // for LabelDrawDescriptor
 #include "lvglpp/misc/color.h" // for colors

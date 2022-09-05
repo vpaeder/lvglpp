@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/spinner.h" // for Spinner
+#include "lvglpp/widgets/spinner/spinner.h" // for Spinner
 
 namespace lvgl::examples {
     

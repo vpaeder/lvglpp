@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/dropdown.h" // for Dropdown
+#include "lvglpp/widgets/dropdown/dropdown.h" // for Dropdown
 #include "lvglpp/core/event.h" // for Event
 #include "lvglpp/draw/image.h" // for ImageDescriptor
 

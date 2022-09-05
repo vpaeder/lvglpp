@@ -45,6 +45,11 @@ namespace lvgl::misc {
          */
         using GetValueCb = int32_t(*)(Animation &);
 
+        /** \typedef DeletedCb
+         *  \brief Type of callback function called when animation gets deleted.
+         */
+        using DeletedCb = void(*)(Animation &);
+
         /** \typedef ReadyCb
          *  \brief Type of callback function called when the animation ends.
          */
@@ -85,6 +90,11 @@ namespace lvgl::misc {
          *  \brief Function called when the animation ends.
          */
         std::shared_ptr<GenericCallback> ready_cb;
+
+        /** \property std::shared_ptr<GenericCallback> deleted_cb
+         *  \brief Function called when the animation gets deleted.
+         */
+        std::shared_ptr<GenericCallback> deleted_cb;
 
         /** \fn Animation()
          *  \brief Default constructor.
@@ -237,6 +247,16 @@ namespace lvgl::misc {
          *  \param ready_cb: callback function.
          */
         void set_ready_cb(ReadyCb ready_cb);
+
+        /** \brief Sets the function called when the animation gets deleted.
+         *  \param deleted_cb: callback function.
+         */
+        void set_deleted_cb(lv_anim_deleted_cb_t deleted_cb);
+
+        /** \brief Sets the function called when the animation gets deleted.
+         *  \param deleted_cb: callback function.
+         */
+        void set_deleted_cb(DeletedCb deleted_cb);
 
         /** \fn void set_playback_time(uint32_t time)
          *  \brief Sets the animation playback duration.

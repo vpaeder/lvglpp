@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/calendar.h" // for Calendar
+#include "lvglpp/widgets/calendar/calendar.h" // for Calendar
 #include "lvglpp/core/event.h" // for Event
 
 namespace lvgl::examples {

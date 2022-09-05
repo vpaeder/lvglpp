@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/arc.h" // for Arc
+#include "lvglpp/widgets/arc/arc.h" // for Arc
 #include "lvglpp/misc/anim.h" // for Animation
 
 namespace lvgl::examples {

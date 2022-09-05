@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/msgbox.h" // for MessageBox
+#include "lvglpp/widgets/msgbox/msgbox.h" // for MessageBox
 #include "lvglpp/core/event.h" // for Event
 #include <vector>
 #include <string>

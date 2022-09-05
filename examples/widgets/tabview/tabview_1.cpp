@@ -1,6 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/tabview.h" // for Tabview
-#include "lvglpp/widgets/label.h" // for Label
+#include "lvglpp/widgets/tabview/tabview.h" // for Tabview
+#include "lvglpp/widgets/label/label.h" // for Label
 
 namespace lvgl::examples {
     

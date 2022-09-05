@@ -1,0 +1,310 @@
+{
+    "classes": [
+        {"c":"lv_disp_t", "cpp":"Display"},
+        {"c":"lv_event_t", "cpp":"Event"},
+        {"c":"lv_group_t", "cpp":"Group"},
+        {"c":"lv_indev_t", "cpp":"InputDevice"},
+        {"c":"lv_obj_t", "cpp":"Object"},
+        {"c":"lv_theme_t", "cpp":"Theme"},
+        {"c":"lv_draw_rect_dsc_t", "cpp":"RectangleDrawDescriptor"},
+        {"c":"lv_draw_label_dsc_t", "cpp":"LabelDrawDescriptor"},
+        {"c":"lv_draw_img_dsc_t", "cpp":"ImageDrawDescriptor"},
+        {"c":"lv_draw_line_dsc_t", "cpp":"LineDrawDescriptor"},
+        {"c":"lv_draw_arc_dsc_t", "cpp":"ArcDrawDescriptor"},
+        {"c":"lv_img_decoder_t", "cpp":"ImageDecoder"},
+        {"c":"lv_img_header_t", "cpp":"ImageHeader"},
+        {"c":"lv_img_dsc_t", "cpp":"ImageDescriptor"},
+        {"c":"lv_draw_mask_line_param_t", "cpp":"LineMask"},
+        {"c":"lv_draw_mask_angle_param_t", "cpp":"AngleMask"},
+        {"c":"lv_draw_mask_radius_param_t", "cpp":"RadiusMask"},
+        {"c":"lv_draw_mask_fade_param_t", "cpp":"FadeMask"},
+        {"c":"lv_draw_mask_map_param_t", "cpp":"MapMask"},
+        {"c":"lv_draw_mask_polygon_param_t", "cpp":"PolygonMask"},
+        {"c":"lv_font_t", "cpp":"Font"},
+        {"c":"lv_anim_t", "cpp":"Animation"},
+        {"c":"lv_anim_timeline_t", "cpp":"AnimationTimeline"},
+        {"c":"lv_area_t", "cpp":"Area"},
+        {"c":"lv_color_filter_dsc_t", "cpp":"ColorFilter"},
+        {"c":"lv_fs_drv_t", "cpp":"FileSystem"},
+        {"c":"lv_fs_file_t", "cpp":"File"},
+        {"c":"lv_fs_dir_t", "cpp":"Directory"},
+        {"c":"lv_style_transition_dsc_t", "cpp":"StyleTransition"},
+        {"c":"lv_style_t", "cpp":"Style"},
+        {"c":"lv_timer_t", "cpp":"Timer"}
+    ],
+    "templates": [
+        {
+            "name":"core/display",
+            "classes":["Display"],
+            "file_h": "core/display.h",
+            "file_cpp": "core/display.cpp"
+        },
+        {
+            "name":"core/event",
+            "classes":["Event"],
+            "file_h": "core/event.h",
+            "file_cpp": "core/event.cpp"
+        },
+        {
+            "name":"core/group",
+            "classes":["Group"],
+            "file_h": "core/group.h",
+            "file_cpp": "core/group.cpp"
+        },
+        {
+            "name":"core/indev",
+            "classes":["InputDevice"],
+            "file_h": "core/indev.h",
+            "file_cpp": "core/indev.cpp"
+        },
+        {
+            "name":"core/object",
+            "classes":["Object"],
+            "file_h": "core/object.h",
+            "file_cpp": "core/object.cpp"
+        },
+        {
+            "name":"core/theme",
+            "classes":["Theme"],
+            "file_h": "core/theme.h",
+            "file_cpp": "core/theme.cpp"
+        },
+        {
+            "name":"draw/desc",
+            "classes":[
+                "RectangleDrawDescriptor",
+                "LabelDrawDescriptor",
+                "ImageDrawDescriptor",
+                "LineDrawDescriptor",
+                "ArcDrawDescriptor"
+            ],
+            "file_h": "draw/desc.h",
+            "file_cpp": "draw/desc.cpp"
+        },
+        {
+            "name":"draw/image",
+            "classes":[
+                "ImageDecoder",
+                "ImageHeader",
+                "ImageDescriptor"
+            ],
+            "file_h": "draw/image.h",
+            "file_cpp": "draw/image.cpp"
+        },
+        {
+            "name":"draw/mask",
+            "classes":[
+                "LineMask",
+                "AngleMask",
+                "RadiusMask",
+                "FadeMask",
+                "MapMask",
+                "PolygonMask"
+            ],
+            "file_h": "draw/mask.h",
+            "file_cpp": "draw/mask.cpp"
+        },
+        {
+            "name":"font/font",
+            "classes":["Font"],
+            "file_h": "font/font.h",
+            "file_cpp": "font/font.cpp"
+        },
+        {
+            "name":"misc/anim",
+            "classes":["Animation", "AnimationTimeline"],
+            "file_h": "misc/anim.h",
+            "file_cpp": "misc/anim.cpp"
+        },
+        {
+            "name":"misc/area",
+            "classes":["Area"],
+            "file_h": "misc/area.h",
+            "file_cpp": "misc/area.cpp"
+        },
+        {
+            "name":"misc/color",
+            "classes":["ColorFilter"],
+            "file_h": "misc/color.h",
+            "file_cpp": "misc/color.cpp"
+        },
+        {
+            "name":"misc/fs",
+            "classes":["FileSystem", "File", "Directory"],
+            "file_h": "misc/fs.h",
+            "file_cpp": "misc/fs.cpp"
+        },
+        {
+            "name":"misc/style",
+            "classes":["StyleTransition", "Style"],
+            "file_h": "misc/style.h",
+            "file_cpp": "misc/style.cpp"
+        },
+        {
+            "name":"misc/timer",
+            "classes":["Timer"],
+            "file_h": "misc/timer.h",
+            "file_cpp": "misc/timer.cpp"
+        },
+        {
+            "name":"misc/txt",
+            "classes":[],
+            "file_h": "misc/txt.h",
+            "file_cpp": ""
+        }
+    ],
+    "files":[
+        {
+            "path": "core/lv_disp.h",
+            "free_func_group": "core/display"
+        },
+        {
+            "path": "core/lv_event.h",
+            "free_func_group": "core/event"
+        },
+        {
+            "path": "core/lv_group.h",
+            "exclude": ["lv_group_del", "lv_group_init", "lv_group_create"],
+            "free_func_group": "core/group"
+        },
+        {
+            "path": "core/lv_indev.h",
+            "exclude": ["lv_indev_set_cursor", "lv_indev_get_point", "lv_indev_get_scroll_dir",
+                "lv_indev_get_scroll_obj", "lv_indev_get_vect", "lv_indev_set_button_points",
+                "lv_indev_set_group", "lv_indev_get_key", "lv_indev_read_timer_cb"],
+            "free_func_group": "core/indev"
+        },
+        {
+            "path": "core/lv_obj.h",
+            "exclude": ["lv_obj_create", "lv_obj_set_user_data", "lv_obj_get_user_data"],
+            "free_func_group": "core/object"
+        },
+        {
+            "path": "core/lv_obj_class.h",
+            "free_func_group": "core/object"
+        },
+        {
+            "path": "core/lv_obj_draw.h",
+            "free_func_group": "core/object"
+        },
+        {
+            "path": "core/lv_obj_pos.h",
+            "exclude": ["lv_obj_get_content_coords", "lv_obj_get_click_area"],
+            "free_func_group": "core/object"
+        },
+        {
+            "path": "core/lv_obj_scroll.h",
+            "exclude": ["lv_obj_get_scrollbar_area"],
+            "free_func_group": "core/object"
+        },
+        {
+            "path": "core/lv_obj_style.h",
+            "exclude": ["lv_obj_style_init"],
+            "free_func_group": "core/object"
+        },
+        {
+            "path": "core/lv_obj_style_gen.h",
+            "free_func_group": "core/object"
+        },
+        {
+            "path": "core/lv_obj_tree.h",
+            "free_func_group": "core/object"
+        },
+        {
+            "path": "core/lv_refr.h",
+            "exclude": ["lv_refr_init", "lv_disp_refr_timer"],
+            "free_func_group": "core/display"
+        },
+        {
+            "path": "core/lv_theme.h",
+            "free_func_group": "core/theme"
+        },
+        {
+            "path": "draw/lv_draw_arc.h",
+            "exclude": ["lv_draw_arc_dsc_init"],
+            "free_func_group": "draw/desc"
+        },
+        {
+            "path": "draw/lv_draw_img.h",
+            "exclude": ["lv_draw_img_dsc_init"],
+            "free_func_group": "draw/desc"
+        },
+        {
+            "path": "draw/lv_draw_label.h",
+            "exclude": ["lv_draw_label_dsc_init"],
+            "free_func_group": "draw/desc"
+        },
+        {
+            "path": "draw/lv_draw_line.h",
+            "exclude": ["lv_draw_line_dsc_init"],
+            "free_func_group": "draw/desc"
+        },
+        {
+            "path": "draw/lv_draw_mask.h",
+            "free_func_group": "draw/mask"
+        },
+        {
+            "path": "draw/lv_draw_rect.h",
+            "exclude": ["lv_draw_rect_dsc_init"],
+            "free_func_group": "draw/desc"
+        },
+        {
+            "path": "draw/lv_draw_triangle.h",
+            "free_func_group": "draw/desc"
+        },
+        {
+            "path": "draw/lv_img_buf.h",
+            "free_func_group": "draw/image"
+        },
+        {
+            "path": "draw/lv_img_cache.h",
+            "free_func_group": "draw/image"
+        },
+        {
+            "path": "draw/lv_img_decoder.h",
+            "free_func_group": "draw/image"
+        },
+        {
+            "path": "font/lv_font.h",
+            "free_func_group": "font/font"
+        },
+        {
+            "path": "misc/lv_anim.h",
+            "free_func_group": "misc/anim"
+        },
+        {
+            "path": "misc/lv_area.h",
+            "free_func_group": "misc/area"
+        },
+        {
+            "path": "misc/lv_color.h",
+            "free_func_group": "misc/color"
+        },
+        {
+            "path": "misc/lv_fs.h",
+            "free_func_group": "misc/fs"
+        },
+        {
+            "path": "misc/lv_style.h",
+            "free_func_group": "misc/style"
+        },
+        {
+            "path": "misc/lv_style_gen.h",
+            "free_func_group": "misc/style"
+        },
+        {
+            "path": "misc/lv_timer.h",
+            "free_func_group": "misc/timer",
+            "exclude":["lv_timer_core_init", "lv_timer_create_basic", "lv_timer_del",
+                "lv_timer_handler"]
+        },
+        {
+            "path": "misc/lv_txt.h",
+            "free_func_group": "misc/txt"
+        },
+        {
+            "path": "misc/lv_txt_ap.h",
+            "free_func_group": "misc/txt"
+        }
+    ]
+}

@@ -1,9 +1,9 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/core/object.h" // for Container
 #include "lvglpp/core/event.h" // for Event
-#include "lvglpp/widgets/button.h" // for Button
-#include "lvglpp/widgets/label.h" // for Label
-#include "lvglpp/widgets/switch.h" // for Switch
+#include "lvglpp/widgets/button/button.h" // for Button
+#include "lvglpp/widgets/label/label.h" // for Label
+#include "lvglpp/widgets/switch/switch.h" // for Switch
 
 namespace lvgl::examples {
     

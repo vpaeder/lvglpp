@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/colorwheel.h" // for ColorWheel
+#include "lvglpp/widgets/colorwheel/colorwheel.h" // for ColorWheel
 
 namespace lvgl::examples {
     

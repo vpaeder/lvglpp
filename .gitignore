@@ -1,2 +1,5 @@
 components
 .DS_Store
+autogen
+settings.json
+build

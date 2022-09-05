@@ -1,7 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/core/event.h" // for Event
-#include "lvglpp/widgets/label.h" // for Label
-#include "lvglpp/widgets/switch.h" // for Switch
+#include "lvglpp/widgets/label/label.h" // for Label
+#include "lvglpp/widgets/switch/switch.h" // for Switch
 #include "lvglpp/misc/anim.h" // for Animation
 
 namespace lvgl::examples {

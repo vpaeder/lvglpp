@@ -1,6 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/win.h" // for Window
-#include "lvglpp/widgets/label.h" // for Label
+#include "lvglpp/widgets/win/win.h" // for Window
+#include "lvglpp/widgets/label/label.h" // for Label
 #include "lvglpp/core/event.h" // for Event
 
 namespace lvgl::examples {

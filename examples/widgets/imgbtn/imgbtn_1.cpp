@@ -1,6 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/imgbtn.h" // for ImageButton
-#include "lvglpp/widgets/label.h" // for Label
+#include "lvglpp/widgets/imgbtn/imgbtn.h" // for ImageButton
+#include "lvglpp/widgets/label/label.h" // for Label
 #include "lvglpp/misc/style.h" // for Style, LinearStyleTransition
 #include "lvglpp/misc/color.h" // for colors
 #include <vector>

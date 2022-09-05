@@ -1,6 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/textarea.h" // for TextArea
-#include "lvglpp/widgets/btnmatrix.h" // for ButtonMatrix
+#include "lvglpp/widgets/textarea/textarea.h" // for TextArea
+#include "lvglpp/widgets/btnmatrix/btnmatrix.h" // for ButtonMatrix
 #include "lvglpp/core/event.h" // for Event
 #include <vector>
 #include <string>

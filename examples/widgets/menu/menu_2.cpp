@@ -1,7 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/menu.h" // for Menu
-#include "lvglpp/widgets/msgbox.h" // for MessageBox
-#include "lvglpp/widgets/label.h" // for Label
+#include "lvglpp/widgets/menu/menu.h" // for Menu
+#include "lvglpp/widgets/msgbox/msgbox.h" // for MessageBox
+#include "lvglpp/widgets/label/label.h" // for Label
 #include "lvglpp/core/event.h" // for Event
 #include <vector>
 #include <string>

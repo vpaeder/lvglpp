@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/table.h" // for Table
+#include "lvglpp/widgets/table/table.h" // for Table
 #include "lvglpp/core/event.h" // for Event
 #include "lvglpp/misc/color.h" // for colors
 

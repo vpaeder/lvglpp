@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/switch.h" // for Switch
+#include "lvglpp/widgets/switch/switch.h" // for Switch
 #include "lvglpp/core/event.h" // for Event
 
 namespace lvgl::examples {

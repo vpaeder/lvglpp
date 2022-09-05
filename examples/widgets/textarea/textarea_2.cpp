@@ -1,7 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/textarea.h" // for TextArea
-#include "lvglpp/widgets/label.h" // for Label
-#include "lvglpp/widgets/keyboard.h" // for Keyboard
+#include "lvglpp/widgets/textarea/textarea.h" // for TextArea
+#include "lvglpp/widgets/label/label.h" // for Label
+#include "lvglpp/widgets/keyboard/keyboard.h" // for Keyboard
 #include "lvglpp/core/event.h" // for Event
 
 namespace lvgl::examples {

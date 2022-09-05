@@ -1,6 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/tabview.h" // for Tabview
-#include "lvglpp/widgets/label.h" // for Label
+#include "lvglpp/widgets/tabview/tabview.h" // for Tabview
+#include "lvglpp/widgets/label/label.h" // for Label
 #include "lvglpp/core/event.h" // for Event
 #include "lvglpp/misc/anim.h" // for Animation
 #include "lvglpp/misc/color.h" // for colors

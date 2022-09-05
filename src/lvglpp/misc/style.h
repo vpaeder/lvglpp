@@ -238,7 +238,12 @@ namespace lvgl::misc {
          *  \param flag: default style property value.
          *  \returns a new property ID, or LV_STYLE_PROP_INV if none are available.
          */
-        lv_style_prop_t register_prop(uint8_t flag);
+        static lv_style_prop_t register_prop(uint8_t flag);
+
+        /** \brief Get the number of custom properties that have been registered thus far.
+         *  \returns number of custom properties.
+         */
+        static lv_style_prop_t get_num_custom_props() const;
 
         /** \fn bool remove_prop(lv_style_prop_t prop)
          *  \brief Removes a style property.
@@ -254,12 +259,24 @@ namespace lvgl::misc {
          */
         void set_prop(lv_style_prop_t prop, lv_style_value_t value);
 
+        /** \brief Sets the value of a meta state.
+         *  \param prop: style property ID.
+         *  \param meta: meta value.
+         */
+        void set_prop_meta(lv_style_prop_t prop, uint16_t meta);
+
         /** \fn lv_style_value_t get_prop(lv_style_prop_t prop) const
          *  \brief Gets the value of a style property.
          *  \param prop: style property ID.
          *  \returns the style property value.
          */
         lv_style_value_t get_prop(lv_style_prop_t prop) const;
+
+        /** \brief Gets the default value of a style property.
+         *  \param prop: style property ID.
+         *  \returns the style property default value.
+         */
+        static lv_style_value_t get_prop_default(lv_style_prop_t prop);
 
         /** \fn lv_style_value_t get_prop_inlined(lv_style_prop_t prop) const
          *  \brief Gets the value of a style property. This does the same as get_prop,

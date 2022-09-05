@@ -1,7 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/misc/style.h" // for Style
 #include "lvglpp/misc/color.h" // for colors
-#include "lvglpp/widgets/slider.h" // for Slider
+#include "lvglpp/widgets/slider/slider.h" // for Slider
 
 namespace lvgl::examples {
     

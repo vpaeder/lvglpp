@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/meter.h" // for Meter
+#include "lvglpp/widgets/meter/meter.h" // for Meter
 #include "lvglpp/misc/color.h" // for colors
 
 namespace lvgl::examples {

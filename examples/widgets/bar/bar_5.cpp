@@ -1,6 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/bar.h" // for Bar
-#include "lvglpp/widgets/label.h" // for Label
+#include "lvglpp/widgets/bar/bar.h" // for Bar
+#include "lvglpp/widgets/label/label.h" // for Label
 #include "lvglpp/misc/style.h" // for Style
 
 namespace lvgl::examples {

@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/btnmatrix.h" // for ButtonMatrix
+#include "lvglpp/widgets/btnmatrix/btnmatrix.h" // for ButtonMatrix
 #include "lvglpp/core/event.h" // for Event
 #include "lvglpp/misc/style.h" // for Style
 #include "lvglpp/misc/color.h" // for colors

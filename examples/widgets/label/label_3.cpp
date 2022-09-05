@@ -1,5 +1,5 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/label.h" // for Label
+#include "lvglpp/widgets/label/label.h" // for Label
 
 namespace lvgl::examples {
     

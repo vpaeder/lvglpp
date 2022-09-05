@@ -1,8 +1,8 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/core/event.h" // for Event
-#include "lvglpp/widgets/button.h" // for Button
-#include "lvglpp/widgets/label.h" // for Label
-#include "lvglpp/widgets/slider.h" // for Slider
+#include "lvglpp/widgets/button/button.h" // for Button
+#include "lvglpp/widgets/label/label.h" // for Label
+#include "lvglpp/widgets/slider/slider.h" // for Slider
 #include "lvglpp/misc/anim.h" // for Animation
 
 namespace lvgl::examples {

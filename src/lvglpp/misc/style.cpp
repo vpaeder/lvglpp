@@ -103,6 +103,10 @@ namespace lvgl::misc {
         return lv_style_register_prop(flag);
     }
 
+    lv_style_prop_t Style::get_num_custom_props() const {
+        return lv_style_get_num_custom_props();
+    }
+
     bool Style::remove_prop(lv_style_prop_t prop) {
         return lv_style_remove_prop(this->raw_ptr(), prop);
     }
@@ -111,10 +115,18 @@ namespace lvgl::misc {
         lv_style_set_prop(this->raw_ptr(), prop, value);
     }
 
+    void Style::set_prop_meta(lv_style_prop_t prop, uint16_t meta) {
+        lv_style_set_prop_meta(this->raw_ptr(), prop, meta);
+    }
+
     lv_style_value_t Style::get_prop(lv_style_prop_t prop) const {
         lv_style_value_t value;
         lv_style_get_prop(this->raw_ptr(), prop, &value);
         return value;
+    }
+
+    lv_style_value_t Style::get_prop_default(lv_style_prop_t prop) {
+        return lv_style_prop_get_default(prop);
     }
 
     lv_style_value_t Style::get_prop_inlined(lv_style_prop_t prop) const {

@@ -130,6 +130,23 @@ namespace lvgl::core {
         lv_disp_set_bg_opa(this->raw_ptr(), value);
     }
 
+    lv_color_t Display::get_chroma_key_color() {
+        return lv_disp_get_chroma_key_color(this->raw_ptr());
+    }
+
+    void Display::set_chroma_key_color(lv_color_t color) {
+        if (this->lv_disp_drv != nullptr)
+            this->lv_disp_drv->color_chroma_key = color;
+    }
+
+    void Display::enable_invalidation(bool en) {
+        lv_disp_enable_invalidation(this->raw_ptr(), en);
+    }
+
+    bool Display::is_invalidation_enabled() {
+        return lv_disp_is_invalidation_enabled(this->raw_ptr());
+    }
+
     uint32_t Display::get_inactive_time() const {
         return lv_disp_get_inactive_time(this->raw_ptr());
     }

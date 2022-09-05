@@ -1,6 +1,6 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/spinbox.h" // for Spinbox
-#include "lvglpp/widgets/button.h" // for Button
+#include "lvglpp/widgets/spinbox/spinbox.h" // for Spinbox
+#include "lvglpp/widgets/button/button.h" // for Button
 #include "lvglpp/core/event.h" // for Event
 
 namespace lvgl::examples {

@@ -1,7 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/misc/style.h" // for Style
 #include "lvglpp/misc/color.h" // for colors
-#include "lvglpp/widgets/arc.h" // for Arc
+#include "lvglpp/widgets/arc/arc.h" // for Arc
 
 namespace lvgl::examples {
     

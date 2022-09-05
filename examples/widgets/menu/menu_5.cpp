@@ -1,10 +1,10 @@
 #include "lvglpp/core/display.h" // for scr_act()
-#include "lvglpp/widgets/menu.h" // for Menu
-#include "lvglpp/widgets/label.h" // for Label
-#include "lvglpp/widgets/image.h" // for Image
-#include "lvglpp/widgets/slider.h" // for Slider
-#include "lvglpp/widgets/switch.h" // for Switch
-#include "lvglpp/widgets/msgbox.h" // for MessageBox
+#include "lvglpp/widgets/menu/menu.h" // for Menu
+#include "lvglpp/widgets/label/label.h" // for Label
+#include "lvglpp/widgets/image/image.h" // for Image
+#include "lvglpp/widgets/slider/slider.h" // for Slider
+#include "lvglpp/widgets/switch/switch.h" // for Switch
+#include "lvglpp/widgets/msgbox/msgbox.h" // for MessageBox
 #include "lvglpp/core/event.h" // for Event
 
 namespace lvgl::examples {

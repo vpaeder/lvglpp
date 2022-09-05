@@ -1,7 +1,7 @@
 #include "lvglpp/core/display.h" // for scr_act()
 #include "lvglpp/misc/style.h" // for Style
 #include "lvglpp/misc/color.h" // for colors
-#include "lvglpp/widgets/image.h" // for Image
+#include "lvglpp/widgets/image/image.h" // for Image
 
 namespace lvgl::examples {
     

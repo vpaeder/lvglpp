@@ -217,6 +217,26 @@ namespace lvgl::core {
          */
         void set_bg_opa(lv_opa_t value);
 
+        /** \brief Get display driver's chroma key color.
+         *  \returns display driver's chroma key color.
+         */
+        lv_color_t get_chroma_key_color();
+        
+        /** \brief Set display driver's chroma key color.
+         *  \param color: new chroma key color.
+         */
+        void set_chroma_key_color(lv_color_t color);
+
+        /** \brief Set state of display invalidation.
+         *  \param en: if true, invalidation is enabled; if false, disabled.
+         */
+        void enable_invalidation(bool en);
+
+        /** \brief Get state of display invalidation.
+         *  \returns true if invalidation is enabled, false otherwise.
+         */
+        bool is_invalidation_enabled();
+
         /** \fn uint32_t get_inactive_time() const
          *  \brief Gets elapsed time since last activity.
          *  \returns elapsed time in ms.

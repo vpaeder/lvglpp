@@ -63,6 +63,11 @@ namespace lvgl::core {
          */
         void set_focus_cb(lv_group_focus_cb_t focus_cb);
 
+        /** \brief Sets callback to call when edge is reached.
+         *  \param edge_cb: callback function.
+         */
+        void set_edge_cb(lv_group_edge_cb_t edge_cb);
+
         /** \fn void set_refocus_policy(lv_group_refocus_policy_t policy)
          *  \brief Sets policy when focused object is deleted.
          *  \param policy: policy code (LV_GROUP_REFOCUS_POLICY_NEXT/PREV).
@@ -92,6 +97,11 @@ namespace lvgl::core {
          *  \returns callback function for focus event, or nullptr if none set.
          */
         lv_group_focus_cb_t get_focus_cb() const;
+
+        /** \brief Gets function called when edge is reached.
+         *  \returns callback function for edge events, or nullptr if none set.
+         */
+        lv_group_edge_cb_t get_edge_cb() const;
 
         /** \fn bool get_editing() const
          *  \brief Gets group mode.

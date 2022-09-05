@@ -334,6 +334,14 @@ namespace lvgl::core {
         lv_obj_move_children_by(this->raw_ptr(), x_diff, y_diff, ignore_floating);
     }
 
+    void Object::transform_point(lv_point_t & p, bool recursive, bool inv) {
+        lv_obj_transform_point(this->raw_ptr(), &p, recursive, inv);
+    }
+
+    void Object::get_transformed_area(Area & area, bool recursive, bool inv) {
+        lv_obj_get_transformed_area(this->raw_ptr(), area.raw_ptr(), recursive, inv);
+    }
+
     void Object::invalidate_area(const Area & area) {
         lv_obj_invalidate_area(this->raw_ptr(), area.raw_ptr());
     }
@@ -366,7 +374,7 @@ namespace lvgl::core {
 
     /* style */
     void Object::add_style(const Style & style, lv_style_selector_t selector) {
-        lv_obj_add_style(this->raw_ptr(), const_cast<lv_style_t*>(style.raw_ptr()), selector);
+        lv_obj_add_style(this->raw_ptr(), style.raw_ptr(), selector);
     }
 
     void Object::remove_style(lv_style_selector_t selector) {
@@ -374,7 +382,7 @@ namespace lvgl::core {
     }
 
     void Object::remove_style(const Style & style, lv_style_selector_t selector) {
-        lv_obj_remove_style(this->raw_ptr(), const_cast<lv_style_t*>(style.raw_ptr()), selector);
+        lv_obj_remove_style(this->raw_ptr(), style.raw_ptr(), selector);
     }
 
     void Object::remove_style_all() {
@@ -391,6 +399,10 @@ namespace lvgl::core {
 
     void Object::set_local_style_prop(lv_style_prop_t prop, lv_style_value_t value, lv_style_selector_t selector) {
         lv_obj_set_local_style_prop(this->raw_ptr(), prop, value, selector);
+    }
+
+    void Object::set_local_style_prop_meta(lv_style_prop_t prop, uint16_t meta, lv_style_selector_t selector) {
+        lv_obj_set_local_style_prop_meta(this->raw_ptr(), prop, meta, selector);
     }
 
     lv_style_value_t Object::get_local_style_prop(lv_style_prop_t prop, lv_style_selector_t selector) const {
@@ -574,11 +586,11 @@ namespace lvgl::core {
     void Object::set_style_pad_gap(lv_coord_t value, lv_style_selector_t selector) {
       lv_obj_set_style_pad_gap(this->raw_ptr(), value, selector);
     }
-    void Object::set_style_size(lv_coord_t value, lv_style_selector_t selector) {
-      lv_obj_set_style_size(this->raw_ptr(), value, selector);
+    void Object::set_style_size(lv_coord_t width, lv_coord_t height, lv_style_selector_t selector) {
+      lv_obj_set_style_size(this->raw_ptr(), width, height, selector);
     }
-    void Object::set_style_width(lv_coord_t value, lv_style_selector_t selector) {
-      lv_obj_set_style_width(this->raw_ptr(), value, selector);
+    void Object::set_style_width(lv_coord_t width, lv_style_selector_t selector) {
+      lv_obj_set_style_width(this->raw_ptr(), width, selector);
     }
     void Object::set_style_min_width(lv_coord_t value, lv_style_selector_t selector) {
       lv_obj_set_style_min_width(this->raw_ptr(), value, selector);
@@ -586,8 +598,8 @@ namespace lvgl::core {
     void Object::set_style_max_width(lv_coord_t value, lv_style_selector_t selector) {
       lv_obj_set_style_max_width(this->raw_ptr(), value, selector);
     }
-    void Object::set_style_height(lv_coord_t value, lv_style_selector_t selector) {
-      lv_obj_set_style_height(this->raw_ptr(), value, selector);
+    void Object::set_style_height(lv_coord_t height, lv_style_selector_t selector) {
+      lv_obj_set_style_height(this->raw_ptr(), height, selector);
     }
     void Object::set_style_min_height(lv_coord_t value, lv_style_selector_t selector) {
       lv_obj_set_style_min_height(this->raw_ptr(), value, selector);
@@ -897,6 +909,12 @@ namespace lvgl::core {
     lv_coord_t Object::get_style_transform_angle(uint32_t part) const {
         return lv_obj_get_style_transform_angle(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
+    lv_coord_t Object::get_style_transform_pivot_x(uint32_t part) const {
+        return lv_obj_get_style_transform_pivot_x(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
+    }
+    lv_coord_t Object::get_style_transform_pivot_y(uint32_t part) const {
+        return lv_obj_get_style_transform_pivot_y(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
+    }
     lv_coord_t Object::get_style_pad_top(uint32_t part) const {
         return lv_obj_get_style_pad_top(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
@@ -918,17 +936,11 @@ namespace lvgl::core {
     lv_color_t Object::get_style_bg_color(uint32_t part) const {
         return lv_obj_get_style_bg_color(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
-    lv_color_t Object::get_style_bg_color_filtered(uint32_t part) const {
-        return lv_obj_get_style_bg_color_filtered(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
-    }
     lv_opa_t Object::get_style_bg_opa(uint32_t part) const {
         return lv_obj_get_style_bg_opa(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
     lv_color_t Object::get_style_bg_grad_color(uint32_t part) const {
         return lv_obj_get_style_bg_grad_color(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
-    }
-    lv_color_t Object::get_style_bg_grad_color_filtered(uint32_t part) const {
-        return lv_obj_get_style_bg_grad_color_filtered(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
     lv_grad_dir_t Object::get_style_bg_grad_dir(uint32_t part) const {
         return lv_obj_get_style_bg_grad_dir(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
@@ -954,9 +966,6 @@ namespace lvgl::core {
     lv_color_t Object::get_style_bg_img_recolor(uint32_t part) const {
         return lv_obj_get_style_bg_img_recolor(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
-    lv_color_t Object::get_style_bg_img_recolor_filtered(uint32_t part) const {
-        return lv_obj_get_style_bg_img_recolor_filtered(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
-    }
     lv_opa_t Object::get_style_bg_img_recolor_opa(uint32_t part) const {
         return lv_obj_get_style_bg_img_recolor_opa(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
@@ -965,9 +974,6 @@ namespace lvgl::core {
     }
     lv_color_t Object::get_style_border_color(uint32_t part) const {
         return lv_obj_get_style_border_color(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
-    }
-    lv_color_t Object::get_style_border_color_filtered(uint32_t part) const {
-        return lv_obj_get_style_border_color_filtered(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
     lv_opa_t Object::get_style_border_opa(uint32_t part) const {
         return lv_obj_get_style_border_opa(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
@@ -986,9 +992,6 @@ namespace lvgl::core {
     }
     lv_color_t Object::get_style_outline_color(uint32_t part) const {
         return lv_obj_get_style_outline_color(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
-    }
-    lv_color_t Object::get_style_outline_color_filtered(uint32_t part) const {
-        return lv_obj_get_style_outline_color_filtered(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
     lv_opa_t Object::get_style_outline_opa(uint32_t part) const {
         return lv_obj_get_style_outline_opa(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
@@ -1011,9 +1014,6 @@ namespace lvgl::core {
     lv_color_t Object::get_style_shadow_color(uint32_t part) const {
         return lv_obj_get_style_shadow_color(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
-    lv_color_t Object::get_style_shadow_color_filtered(uint32_t part) const {
-        return lv_obj_get_style_shadow_color_filtered(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
-    }
     lv_opa_t Object::get_style_shadow_opa(uint32_t part) const {
         return lv_obj_get_style_shadow_opa(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
@@ -1022,9 +1022,6 @@ namespace lvgl::core {
     }
     lv_color_t Object::get_style_img_recolor(uint32_t part) const {
         return lv_obj_get_style_img_recolor(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
-    }
-    lv_color_t Object::get_style_img_recolor_filtered(uint32_t part) const {
-        return lv_obj_get_style_img_recolor_filtered(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
     lv_opa_t Object::get_style_img_recolor_opa(uint32_t part) const {
         return lv_obj_get_style_img_recolor_opa(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
@@ -1044,9 +1041,6 @@ namespace lvgl::core {
     lv_color_t Object::get_style_line_color(uint32_t part) const {
         return lv_obj_get_style_line_color(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
-    lv_color_t Object::get_style_line_color_filtered(uint32_t part) const {
-        return lv_obj_get_style_line_color_filtered(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
-    }
     lv_opa_t Object::get_style_line_opa(uint32_t part) const {
         return lv_obj_get_style_line_opa(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
@@ -1059,9 +1053,6 @@ namespace lvgl::core {
     lv_color_t Object::get_style_arc_color(uint32_t part) const {
         return lv_obj_get_style_arc_color(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
-    lv_color_t Object::get_style_arc_color_filtered(uint32_t part) const {
-        return lv_obj_get_style_arc_color_filtered(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
-    }
     lv_opa_t Object::get_style_arc_opa(uint32_t part) const {
         return lv_obj_get_style_arc_opa(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
@@ -1070,9 +1061,6 @@ namespace lvgl::core {
     }
     lv_color_t Object::get_style_text_color(uint32_t part) const {
         return lv_obj_get_style_text_color(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
-    }
-    lv_color_t Object::get_style_text_color_filtered(uint32_t part) const {
-        return lv_obj_get_style_text_color_filtered(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
     }
     lv_opa_t Object::get_style_text_opa(uint32_t part) const {
         return lv_obj_get_style_text_opa(const_cast<lv_cls_ptr>(this->raw_ptr()), part);
