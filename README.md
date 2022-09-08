@@ -4,7 +4,7 @@ This package contains a rather bushy wrapper for [LVGL](https://github.com/lvgl/
 
 This is a work in progress. I will likely improve things as I use it, which will take between one day and forever. I of course welcome contributions.
 
-At the time of writing, I use LVGL version 8.3.1 (available [here](https://github.com/lvgl/lvgl)). Your C++ compiler must support C++17 or newer.
+At the time of writing, I use LVGL version 8.3 (available [here](https://github.com/lvgl/lvgl)). Your C++ compiler must support C++17 or newer.
 
 Note that I'm not part of the LVGL team. If you have requests related to LVGL itself, please ask them.
 
