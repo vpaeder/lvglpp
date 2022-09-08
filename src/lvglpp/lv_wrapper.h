@@ -85,7 +85,7 @@ namespace lvgl {
      *  \returns pointer to allocated memory.
      */
     template <typename LvClass> LvClass* lv_cls_alloc() {
-        return static_cast<LvClass*>(lv_mem_alloc(sizeof(LvClass)));
+        return static_cast<LvClass*>(lv_malloc(sizeof(LvClass)));
     }
 
 
