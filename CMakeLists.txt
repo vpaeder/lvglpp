@@ -20,8 +20,6 @@ idf_component_register(
     "src/lvglpp/misc/style.cpp"
     "src/lvglpp/misc/timer.cpp"
     
-    "src/lvglpp/others/file_explorer/file_explorer.cpp"
-
     "src/lvglpp/widgets/animimg/animimg.cpp"
     "src/lvglpp/widgets/arc/arc.cpp"
     "src/lvglpp/widgets/bar/bar.cpp"
