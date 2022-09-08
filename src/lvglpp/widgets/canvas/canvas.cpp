@@ -7,8 +7,8 @@
 #include "canvas.h"
 #if LV_USE_CANVAS != 0
 
-#include "../misc/area.h"
-#include "../draw/desc.h"
+#include "../../misc/area.h"
+#include "../../draw/desc.h"
 
 namespace lvgl::widgets {
 

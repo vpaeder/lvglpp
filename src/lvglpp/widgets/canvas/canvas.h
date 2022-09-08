@@ -39,7 +39,7 @@ namespace lvgl::widgets {
          *  \param dsc: image descriptor serving as buffer.
          */
         void set_buffer(ImageDescriptor & dsc) {
-            lv_canvas_set_buffer(this->raw_ptr(), dsc->data, dsc->header.w, dsc->header.h, dsc->header.cf);
+            lv_canvas_set_buffer(this->raw_ptr(), const_cast<void*>(static_cast<const void*>(dsc->data)), dsc->header.w, dsc->header.h, dsc->header.cf);
         }
 
         /** \fn void set_px_color(lv_coord_t x, lv_coord_t y, lv_color_t c)

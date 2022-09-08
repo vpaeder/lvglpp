@@ -1040,11 +1040,10 @@ namespace lvgl::core {
         void set_style_pad_column(lv_coord_t value, lv_style_selector_t selector);
 
         /** \brief Sets size.
-         *  \param width: width.
-         *  \param height: height.
+         *  \param value: property value.
          *  \param selector: OR-ed combination of parts and states to apply the style to.
          */
-        void set_style_size(lv_coord_t width, lv_coord_t height, lv_style_selector_t selector);
+        void set_style_size(lv_coord_t value, lv_style_selector_t selector);
 
         /** \brief Sets width.
          *  \param width: property value.

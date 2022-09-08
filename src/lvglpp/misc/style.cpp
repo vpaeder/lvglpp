@@ -103,7 +103,7 @@ namespace lvgl::misc {
         return lv_style_register_prop(flag);
     }
 
-    lv_style_prop_t Style::get_num_custom_props() const {
+    lv_style_prop_t Style::get_num_custom_props() {
         return lv_style_get_num_custom_props();
     }
 

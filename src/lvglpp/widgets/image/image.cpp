@@ -8,7 +8,7 @@
 
 #if LV_USE_IMG != 0
 
-#include "../draw/image.h"
+#include "../../draw/image.h"
 
 namespace lvgl::widgets {
 

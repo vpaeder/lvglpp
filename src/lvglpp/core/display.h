@@ -217,16 +217,6 @@ namespace lvgl::core {
          */
         void set_bg_opa(lv_opa_t value);
 
-        /** \brief Get display driver's chroma key color.
-         *  \returns display driver's chroma key color.
-         */
-        lv_color_t get_chroma_key_color();
-        
-        /** \brief Set display driver's chroma key color.
-         *  \param color: new chroma key color.
-         */
-        void set_chroma_key_color(lv_color_t color);
-
         /** \brief Set state of display invalidation.
          *  \param en: if true, invalidation is enabled; if false, disabled.
          */

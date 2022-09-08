@@ -55,16 +55,6 @@ namespace lvgl::widgets {
          */
         void set_recolor(bool en);
 
-        /** \brief Sets start of selection.
-         *  \param index: character index.
-         */
-        void set_text_selection_start(uint32_t index);
-
-        /** \brief Sets end of selection.
-         *  \param index: character index.
-         */
-        void set_text_selection_end(uint32_t index);
-
         /** \fn const char * get_text() const
          *  \brief Gets label text.
          *  \returns pointer to label text string.

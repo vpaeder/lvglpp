@@ -203,11 +203,6 @@ namespace lvgl::widgets {
          */
         uint16_t get_password_show_time() const;
 
-        /** \brief Get character at current cursor position.
-         *  \returns character code.
-         */
-        uint32_t get_current_char() const;
-
         /** \fn void clear_selection()
          *  \brief Clears selection.
          */

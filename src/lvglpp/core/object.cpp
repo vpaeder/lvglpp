@@ -374,7 +374,7 @@ namespace lvgl::core {
 
     /* style */
     void Object::add_style(const Style & style, lv_style_selector_t selector) {
-        lv_obj_add_style(this->raw_ptr(), style.raw_ptr(), selector);
+        lv_obj_add_style(this->raw_ptr(), const_cast<lv_style_t*>(style.raw_ptr()), selector);
     }
 
     void Object::remove_style(lv_style_selector_t selector) {
@@ -382,7 +382,7 @@ namespace lvgl::core {
     }
 
     void Object::remove_style(const Style & style, lv_style_selector_t selector) {
-        lv_obj_remove_style(this->raw_ptr(), style.raw_ptr(), selector);
+        lv_obj_remove_style(this->raw_ptr(), const_cast<lv_style_t*>(style.raw_ptr()), selector);
     }
 
     void Object::remove_style_all() {
@@ -586,8 +586,8 @@ namespace lvgl::core {
     void Object::set_style_pad_gap(lv_coord_t value, lv_style_selector_t selector) {
       lv_obj_set_style_pad_gap(this->raw_ptr(), value, selector);
     }
-    void Object::set_style_size(lv_coord_t width, lv_coord_t height, lv_style_selector_t selector) {
-      lv_obj_set_style_size(this->raw_ptr(), width, height, selector);
+    void Object::set_style_size(lv_coord_t value, lv_style_selector_t selector) {
+      lv_obj_set_style_size(this->raw_ptr(), value, selector);
     }
     void Object::set_style_width(lv_coord_t width, lv_style_selector_t selector) {
       lv_obj_set_style_width(this->raw_ptr(), width, selector);

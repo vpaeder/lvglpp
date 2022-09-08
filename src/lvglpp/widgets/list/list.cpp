@@ -7,8 +7,9 @@
 #include "list.h"
 #if LV_USE_LIST
 
-#include "label.h"
-#include "button.h"
+#include "../label/label.h"
+#include "../button/button.h"
+#include "../../draw/image.h"
 
 namespace lvgl::widgets {
 

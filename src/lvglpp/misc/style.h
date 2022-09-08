@@ -243,7 +243,7 @@ namespace lvgl::misc {
         /** \brief Get the number of custom properties that have been registered thus far.
          *  \returns number of custom properties.
          */
-        static lv_style_prop_t get_num_custom_props() const;
+        static lv_style_prop_t get_num_custom_props();
 
         /** \fn bool remove_prop(lv_style_prop_t prop)
          *  \brief Removes a style property.

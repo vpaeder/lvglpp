@@ -100,11 +100,6 @@ namespace lvgl::core {
          */
         void wait_release();
 
-        /** \brief Get access to the input device's read timer.
-         *  \returns pointer to timer object.
-         */
-        lv_timer_t * get_read_timer();
-
     };
 
 

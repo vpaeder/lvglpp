@@ -95,11 +95,6 @@ namespace lvgl::widgets {
          */
         void set_change_rate(uint16_t rate);
 
-        /** \brief Set the offset for the knob from the main arc object.
-         *  \param offset: offset from main arc.
-         */
-        void set_knob_offset(int16_t offset);
-
         /** \fn uint16_t get_angle_start() const
          *  \brief Gets the arc start angle.
          *  \returns arc start angle.
@@ -147,16 +142,6 @@ namespace lvgl::widgets {
          *  \returns arc type.
          */
         lv_arc_mode_t get_mode() const;
-
-        /** \brief Gets the arc's rotation.
-         *  \returns arc rotation angle.
-         */
-        int16_t get_rotation() const;
-
-        /** \brief Gets the knob offset.
-         *  \returns knob offset.
-         */
-        int16_t get_knob_offset() const;
 
         /** \brief Align an object to the current position of the arc (knob).
          *  \param obj_to_align: object to align.

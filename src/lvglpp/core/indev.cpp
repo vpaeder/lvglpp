@@ -66,10 +66,6 @@ namespace lvgl::core {
         lv_indev_wait_release(this->raw_ptr());
     }
 
-    lv_timer_t * InputDevice::get_read_timer() {
-        return lv_indev_get_read_timer(this->raw_ptr());
-    }
-
 
     PointerInputDevice::PointerInputDevice() {
         this->set_type(LV_INDEV_TYPE_POINTER);

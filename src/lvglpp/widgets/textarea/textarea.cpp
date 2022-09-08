@@ -46,10 +46,10 @@ namespace lvgl::widgets {
     }
 
     void TextArea::set_password_bullet(const char * bullet) {
-        lv_textarea_set_password_bullet(bullet);
+        lv_textarea_set_password_bullet(this->raw_ptr(), bullet);
     }
     void TextArea::set_password_bullet(const std::string & bullet) {
-        lv_textarea_set_password_bullet(bullet.c_str());
+        lv_textarea_set_password_bullet(this->raw_ptr(), bullet.c_str());
     }
 
     void TextArea::set_one_line(bool en) {
@@ -133,10 +133,6 @@ namespace lvgl::widgets {
 
     uint16_t TextArea::get_password_show_time() const {
         return lv_textarea_get_password_show_time(const_cast<lv_cls_ptr>(this->raw_ptr()));
-    }
-
-    uint32_t TextArea::get_current_char() const {
-        return lv_textarea_get_current_char(const_cast<lv_cls_ptr>(this->raw_ptr()));
     }
 
     void TextArea::clear_selection() {

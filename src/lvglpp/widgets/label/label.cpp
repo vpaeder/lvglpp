@@ -25,14 +25,6 @@ namespace lvgl::widgets {
         lv_label_set_recolor(this->raw_ptr(), en);
     }
 
-    void Label::set_text_selection_start(uint32_t index) {
-        lv_label_set_text_selection_start(this->raw_ptr(), index);
-    }
-
-    void Label::set_text_selection_end(uint32_t index) {
-        lv_label_set_text_selection_end(this->raw_ptr(), index);
-    }
-
     const char * Label::get_text() const {
         return lv_label_get_text(this->raw_ptr());
     }

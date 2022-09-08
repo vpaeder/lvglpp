@@ -53,10 +53,6 @@ namespace lvgl::widgets {
         lv_arc_set_change_rate(this->raw_ptr(), rate);
     }
 
-    void Arc::set_knob_offset(int16_t offset) {
-        lv_arc_set_knob_offset(this->raw_ptr(), offset);
-    }
-
     uint16_t Arc::get_angle_start() const {
         return lv_arc_get_angle_start(const_cast<lv_cls_ptr>(this->raw_ptr()));
     }
@@ -87,14 +83,6 @@ namespace lvgl::widgets {
 
     lv_arc_mode_t Arc::get_mode() const {
         return lv_arc_get_mode(this->raw_ptr());
-    }
-
-    int16_t Arc::get_rotation() const {
-        return lv_arc_get_rotation(this->raw_ptr());
-    }
-
-    int16_t Arc::get_knob_offset() const {
-        return lv_arc_get_knob_offset(this->raw_ptr());
     }
 
     void Arc::align_obj_to_angle(Object & obj_to_align, lv_coord_t r_offset) const {

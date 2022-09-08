@@ -11,7 +11,7 @@ namespace lvgl::widgets {
 
     Object Menu::page_create(const std::string & title) {
         if (title.size()>0)
-            return Object(lv_menu_page_create(this->raw_ptr(), title.c_str()), false);
+            return Object(lv_menu_page_create(this->raw_ptr(), const_cast<char*>(title.c_str())), false);
         else
             return Object(lv_menu_page_create(this->raw_ptr(), nullptr), false);
     }
@@ -30,20 +30,6 @@ namespace lvgl::widgets {
 
     void Menu::set_page(const Object & page) {
         lv_menu_set_page(this->raw_ptr(), const_cast<lv_obj_t*>(page.raw_ptr()));
-    }
-
-    void Menu::set_page_title(Object & page, const char * title) {
-        lv_menu_set_page_title(page.raw_ptr(), title);
-    }
-    void Menu::set_page_title(Object & page, const std::string & title) {
-        lv_menu_set_page_title(page.raw_ptr(), title.c_str());
-    }
-
-    void Menu::set_page_title_static(Object & page, const char * title) {
-        lv_menu_set_page_title_static(page.raw_ptr(), title);
-    }
-    void Menu::set_page_title_static(Object & page, const std::string & title) {
-        lv_menu_set_page_title_static(page.raw_ptr(), title.c_str());
     }
 
     void Menu::clear_page() {

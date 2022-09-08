@@ -55,34 +55,6 @@ namespace lvgl::widgets {
          */
         void set_page(const Object & page);
 
-        /** \fn static void set_page_title(Object & page, const char * title)
-        /*  \brief Sets page title.
-         *  \param page: page object.
-         *  \param title: new title.
-         */
-        static void set_page_title(Object & page, const char * title);
-        /** \fn static void set_page_title(Object & page, const std::string & title)
-        /*  \brief Sets page title.
-         *  \param page: page object.
-         *  \param title: new title.
-         */
-        static void set_page_title(Object & page, const std::string & title);
-
-        /** \fn static void set_page_title_static(Object & page, const char * title)
-        /*  \brief Sets page title; this version keeps reference to string, which
-         *  must remain allocated.
-         *  \param page: page object.
-         *  \param title: new title.
-         */
-        static void set_page_title_static(Object & page, const char * title);
-        /** \fn static void set_page_title_static(Object & page, const std::string & title)
-        /*  \brief Sets page title; this version keeps reference to string, which
-         *  must remain allocated.
-         *  \param page: page object.
-         *  \param title: new title.
-         */
-        static void set_page_title_static(Object & page, const std::string & title);
-
         /** \fn void clear_page()
          *  \brief Clears menu page.
          */

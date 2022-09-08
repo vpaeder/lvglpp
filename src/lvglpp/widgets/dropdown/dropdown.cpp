@@ -80,11 +80,11 @@ namespace lvgl::widgets {
     }
 
     int32_t Dropdown::get_option_index(const char * option) const {
-        return lv_dropdown_get_option_index(option);
+        return lv_dropdown_get_option_index(const_cast<lv_cls_ptr>(this->raw_ptr()), option);
     }
 
     int32_t Dropdown::get_option_index(const std::string & option) const {
-        return lv_dropdown_get_option_index(option.c_str());
+        return lv_dropdown_get_option_index(const_cast<lv_cls_ptr>(this->raw_ptr()), option.c_str());
     }
 
     const char * Dropdown::get_symbol() const {

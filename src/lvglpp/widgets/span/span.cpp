@@ -7,7 +7,7 @@
 #include "span.h"
 #if LV_USE_SPAN != 0
 
-#include "../misc/style.h"
+#include "../../misc/style.h"
 
 namespace lvgl::widgets {
 

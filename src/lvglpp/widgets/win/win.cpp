@@ -7,7 +7,7 @@
 #include "win.h"
 #if LV_USE_WIN
 
-#include "../draw/image.h"
+#include "../../draw/image.h"
 
 namespace lvgl::widgets {
 
